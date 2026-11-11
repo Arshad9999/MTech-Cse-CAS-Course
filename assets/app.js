@@ -25,17 +25,27 @@ function courseCard(course) {
   return `<article class="card course-card" style="--accent:${course.accent};--soft:${course.accent}14"><div class="code">${course.code} · ${credit(course)}</div><h3>${esc(course.title)}</h3><p>${esc(course.tagline)}</p><div class="chips"><span class="chip">${course.modules.length} study blocks</span><span class="chip">Mastery hub</span><span class="chip">Worked examples</span></div><a class="button" href="${course.slug}/index.html">Open course →</a></article>`;
 }
 
+const featured = [
+  ['MCSC-101', 'MCSC-102', 'MCSC-103', 'MCSC-104', 'MCSC-105', 'MCSC-106'],
+  ['MCSC-201', 'MCSC-202', 'MMLC-201', 'MMLC-202', 'MCSE-202', 'MMLE-201'],
+  ['MCSC-301', 'MCSC-302', 'MMLC-301', 'MMLE-302'],
+  ['MCSC-401']
+];
+
 async function home() {
   const catalog = await loadJson('catalog.json');
   $('#nav').innerHTML = nav();
   $('#foot').innerHTML = foot();
   const descriptions = ['Foundations and independent study', 'Core subjects and specialisation choices', 'Advanced study and dissertation I', 'Dissertation II'];
+  const card = (course, isFeatured) => `<a class="catalog-card ${isFeatured ? 'featured-card' : ''}" href="subject.html?code=${encodeURIComponent(course.code)}"><span class="catalog-code">${esc(course.code)}</span><strong>${esc(course.title)}</strong><span class="catalog-category">${esc(course.category)}</span><span class="catalog-arrow" aria-hidden="true">↗</span><span class="catalog-status">${isFeatured ? 'Featured course' : course.guide ? 'Study guide available' : 'Syllabus reference'}</span></a>`;
   const render = query => {
     let count = 0;
     $('#semesters').innerHTML = [1, 2, 3, 4].map(semester => {
-      const courses = catalog.filter(course => course.semester === semester && `${course.title} ${course.code} ${course.category}`.toLowerCase().includes(query));
-      count += courses.length;
-      return `<section class="semester" id="semester-${semester}"><div class="semester-heading"><div><span class="semester-number">0${semester}</span><div><div class="eyebrow">Semester ${semester}</div><h3>${descriptions[semester - 1]}</h3></div></div><span class="semester-count">${courses.length} ${courses.length === 1 ? 'subject' : 'subjects'}</span></div><div class="catalog-grid">${courses.map(course => `<a class="catalog-card" href="subject.html?code=${encodeURIComponent(course.code)}"><span class="catalog-code">${esc(course.code)}</span><strong>${esc(course.title)}</strong><span class="catalog-category">${esc(course.category)}</span><span class="catalog-arrow" aria-hidden="true">↗</span><span class="catalog-status">${course.guide ? 'Study guide available' : 'Syllabus reference'}</span></a>`).join('') || '<p class="empty">No matching subjects in this semester.</p>'}</div></section>`;
+      const matches = catalog.filter(course => course.semester === semester && `${course.title} ${course.code} ${course.category}`.toLowerCase().includes(query));
+      const primary = featured[semester - 1].map(code => matches.find(course => course.code === code)).filter(Boolean);
+      const others = matches.filter(course => !featured[semester - 1].includes(course.code));
+      count += matches.length;
+      return `<section class="semester" id="semester-${semester}"><div class="semester-heading"><div><span class="semester-number">0${semester}</span><div><div class="eyebrow">Semester ${semester}</div><h3>${descriptions[semester - 1]}</h3></div></div><span class="semester-count">${matches.length} ${matches.length === 1 ? 'subject' : 'subjects'}</span></div>${primary.length ? `<p class="feature-label">Featured courses</p><div class="catalog-grid">${primary.map(course => card(course, true)).join('')}</div>` : ''}${others.length ? `<details class="other-courses" ${query ? 'open' : ''}><summary>Other subjects <span>${others.length}</span></summary><div class="catalog-grid">${others.map(course => card(course, false)).join('')}</div></details>` : ''}${matches.length ? '' : '<p class="empty">No matching subjects in this semester.</p>'}</section>`;
     }).join('');
     $('#search-status').textContent = query ? `${count} matching ${count === 1 ? 'subject' : 'subjects'}` : '';
   };
@@ -43,8 +53,13 @@ async function home() {
   $('#q').addEventListener('input', event => render(event.target.value.trim().toLowerCase()));
 }
 
+function examSection(paper) {
+  if (!paper) return `<section class="subject-box papers"><span class="eyebrow">Exam preparation</span><h2>Previous-year questions</h2><p>A verified matching or related AKTU M.Tech paper has not yet been added for this subject.</p></section>`;
+  return `<section class="subject-box papers"><span class="eyebrow">Exam preparation</span><h2>Questions from a related AKTU M.Tech paper</h2><p>Questions are paraphrased and answers are study explanations. ${esc(paper.source)}. Check your own scheme and examination requirements.</p><a href="${esc(paper.url)}">View the source paper ↗</a><div class="question-list">${paper.questions.map(item => `<details><summary>${esc(item.question)}</summary><p>${esc(item.answer)}</p></details>`).join('')}</div></section>`;
+}
+
 async function subject() {
-  const [catalog, topics] = await Promise.all([loadJson('catalog.json'), loadJson('subject-topics.json')]);
+  const [catalog, topics, guides, papers, legacy, supplements] = await Promise.all([loadJson('catalog.json'), loadJson('subject-topics.json'), loadJson('featured-guides.json'), loadJson('related-papers.json'), loadJson('course-data.json'), loadJson('course-supplements.json')]);
   const code = new URLSearchParams(location.search).get('code');
   const selected = catalog.find(item => item.code === code);
   $('#nav').innerHTML = nav();
@@ -54,8 +69,25 @@ async function subject() {
     return;
   }
   document.title = `${selected.title} · M.Tech CSE`;
-  const guide = selected.guide ? `<div class="subject-box"><span class="eyebrow">Available now</span><h2>Study guide</h2><p>Explore explanations, examples, definitions, comparisons and practice material from the existing guide.</p><a class="button" href="${esc(selected.guide)}/index.html">Open the study guide ↗</a><p class="small-note">The existing guide may show an older course code, semester or credit value. Use the 2021–22 syllabus for the scheme listed here.</p></div>` : `<div class="subject-box"><span class="eyebrow">In preparation</span><h2>Study guide</h2><p>A detailed guide is not yet available for this subject. Begin with the original syllabus and your instructor’s materials.</p></div>`;
-  $('#subject').innerHTML = `<a class="back-link" href="index.html#semester-${selected.semester}">← Back to semester ${selected.semester}</a><div class="subject-intro"><div class="eyebrow">Semester ${selected.semester} / ${esc(selected.category)}</div><h1>${esc(selected.title)}</h1><p class="subject-code">${esc(selected.code)} <span>·</span> 2021–22 scheme</p></div><div class="subject-grid">${guide}<div class="subject-box source-box"><span class="eyebrow">Official source</span><h2>Start with the syllabus</h2><p>Check the course description and programme structure in the university’s published PDF.</p><a class="source-link" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=${selected.page}">Open syllabus near page ${selected.page} ↗</a></div></div><section class="subject-box topic-overview"><span class="eyebrow">Topic overview</span><h2>Start with the concepts</h2><p>These short explanations are a starting point. Consult the syllabus for the complete course and use the detailed guide where available.</p><div class="topic-overview-grid">${(topics[selected.code] || []).map(([title, explanation]) => `<article><h3>${esc(title)}</h3><p>${esc(explanation)}</p></article>`).join('')}</div></section><div class="subject-box papers"><span class="eyebrow">Exam preparation</span><h2>Previous-year questions</h2><p>Verified previous-year papers and answers have not yet been added for this subject.</p></div>`;
+  const isFeatured = featured[selected.semester - 1].includes(code);
+  const guide = selected.guide ? `<div class="subject-box"><span class="eyebrow">Available now</span><h2>Original study guide</h2><p>The existing complete study page, visual maps and PDF remain available.</p><a class="button" href="${esc(selected.guide)}/index.html">Open original guide ↗</a><p class="small-note">The earlier guide may show different course labels or credits. Follow the 2021–22 scheme shown here.</p></div>` : `<div class="subject-box"><span class="eyebrow">${isFeatured ? 'Featured course' : 'In preparation'}</span><h2>Study guide</h2><p>${isFeatured ? 'Explore the topic-by-topic notes below, then use the syllabus and prescribed sources to deepen your study.' : 'A detailed guide is not yet available for this subject. Begin with the original syllabus and your instructor’s materials.'}</p></div>`;
+  const notes = guides[code] || [];
+  const lessons = notes.map((item,index) => `<article class="module feature-lesson"><span class="eyebrow">Study block ${String(index + 1).padStart(2,'0')}</span><h3>${esc(item.title)}</h3><p>${esc(item.explanation)}</p><div class="worked"><strong>Example</strong><br>${esc(item.example)}</div><p><strong>Distinction / checkpoint:</strong> ${esc(item.distinction)}</p></article>`).join('');
+  const prior = selected.guide && isFeatured ? legacy.courses.find(item => item.slug === selected.guide) : null;
+  const previousLessons = prior ? prior.modules.map((module, index) => lesson(module, index, (supplements[prior.slug].visuals || []).map(item => ({...item, src: item.src.replace(/^\.\.\//, '')})))).join('') + mastery(supplements[prior.slug]) : '';
+  const visuals = {
+    'MMLE-302': ['https://upload.wikimedia.org/wikipedia/commons/a/a5/Agent-environment-diagram-rl.svg', 'Diagram of an agent exchanging actions, states and rewards with its environment', 'Agent–environment interaction · Martin Thoma, CC0', 'https://commons.wikimedia.org/wiki/File:Agent-environment-diagram-rl.svg'],
+    'MCSC-201': ['https://upload.wikimedia.org/wikipedia/commons/9/9b/Internet_of_Things.svg', 'Historical roadmap showing examples of connected things', 'Internet of Things roadmap (2008) · SRI Consulting Business Intelligence / National Intelligence Council, public domain', 'https://commons.wikimedia.org/wiki/File:Internet_of_Things.svg'],
+    'MMLC-201': ['https://upload.wikimedia.org/wikipedia/commons/9/99/Neural_network_example.svg', 'A neural network with input, hidden and output nodes', 'Simple neural network · Wiso, public domain', 'https://commons.wikimedia.org/wiki/File:Neural_network_example.svg'],
+    'MMLC-301': ['https://upload.wikimedia.org/wikipedia/commons/9/99/Neural_network_example.svg', 'A neural network with input, hidden and output nodes', 'Simple neural network · Wiso, public domain', 'https://commons.wikimedia.org/wiki/File:Neural_network_example.svg']
+  };
+  const figure = visuals[code];
+  const visual = figure ? `<figure class="external-visual"><img src="${esc(figure[0])}" alt="${esc(figure[1])}" loading="lazy"><figcaption>${esc(figure[2])} · <a href="${esc(figure[3])}">Source and licence</a></figcaption></figure>` : '';
+
+  const practiceItems = prior ? prior.modules.slice(0, 3).map(item => ({ title: item.title, answer: `${item.definition} Example: ${item.example}` })) : notes.slice(0, 3).map(item => ({ title: item.title, answer: `${item.explanation} Example: ${item.example} ${item.distinction}` }));
+  const practice = isFeatured ? `<section class="subject-box papers"><span class="eyebrow">Retrieval practice</span><h2>Practice questions with answers</h2><p>These are original study questions, not previous-year examination questions.</p><div class="question-list">${practiceItems.map(item => `<details><summary>Explain ${esc(item.title)} with an example.</summary><p>${esc(item.answer)}</p></details>`).join('')}</div></section>` : '';
+  const body = isFeatured ? `<section class="featured-notes"><span class="eyebrow">Featured course · study guide</span><h2>Learn topic by topic</h2><p>Start with definitions, examples and distinctions. These notes support study alongside the official syllabus and instructor materials.</p>${visual}${lessons}${previousLessons}</section>` : `<section class="subject-box topic-overview"><span class="eyebrow">Topic overview</span><h2>Start with the concepts</h2><p>These short explanations are a starting point. Consult the syllabus for the complete course and use the detailed guide where available.</p><div class="topic-overview-grid">${(topics[selected.code] || []).map(([title, explanation]) => `<article><h3>${esc(title)}</h3><p>${esc(explanation)}</p></article>`).join('')}</div></section>`;
+  $('#subject').innerHTML = `<a class="back-link" href="index.html#semester-${selected.semester}">← Back to semester ${selected.semester}</a><div class="subject-intro"><div class="eyebrow">Semester ${selected.semester} / ${esc(selected.category)}${isFeatured ? ' / Featured' : ''}</div><h1>${esc(selected.title)}</h1><p class="subject-code">${esc(selected.code)} <span>·</span> 2021–22 scheme</p></div><div class="subject-grid">${guide}<div class="subject-box source-box"><span class="eyebrow">Official source</span><h2>Start with the syllabus</h2><p>Check the course description and programme structure in the university’s published PDF.</p><a class="source-link" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=${selected.page}">Open syllabus near page ${selected.page} ↗</a></div></div>${body}${practice}${examSection(papers[code])}`;
 }
 
 function comparisonTable(table) {

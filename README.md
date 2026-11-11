@@ -4,7 +4,7 @@
 
 An independent study companion for the Centre for Advanced Studies (CAS), AKTU M.Tech Computer Science and Engineering programme. It organises the [2021–22 programme syllabus](https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf) by semester, common core, specialisation and elective. Your batch's current scheme may differ; confirm requirements with the department.
 
-The site links to five existing detailed guides. Other course pages currently link to the official syllabus; detailed notes, verified previous-year questions and answers remain to be added. Some existing guides contain older course labels or credit values. The directory follows the 2021–22 semester tables, which themselves contain some inconsistencies.
+The site links to five existing detailed guides. The selected featured courses have topic notes, and five include the earlier detailed guides and visuals. Other course pages link to the official syllabus. Some pages include paraphrased questions and explanations from related AKTU M.Tech papers, identified by their actual course and year; these are not represented as CAS-specific papers. Some existing guides contain older course labels or credit values. The directory follows the 2021–22 semester tables, which themselves contain some inconsistencies.
 
 ## Course folders
 

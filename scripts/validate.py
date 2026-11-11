@@ -7,6 +7,18 @@ supplements=json.loads((ROOT/'assets/course-supplements.json').read_text())
 errors=[]
 catalog=json.loads((ROOT/'assets/catalog.json').read_text())
 topics=json.loads((ROOT/'assets/subject-topics.json').read_text())
+featured=[['MCSC-101','MCSC-102','MCSC-103','MCSC-104','MCSC-105','MCSC-106'],['MCSC-201','MCSC-202','MMLC-201','MMLC-202','MCSE-202','MMLE-201'],['MCSC-301','MCSC-302','MMLC-301','MMLE-302'],['MCSC-401']]
+guides=json.loads((ROOT/'assets/featured-guides.json').read_text())
+papers=json.loads((ROOT/'assets/related-papers.json').read_text())
+for semester,codes in enumerate(featured,1):
+    for code in codes:
+        course=next((c for c in catalog if c['code']==code and c['semester']==semester),None)
+        if not course: errors.append(f'Missing featured course {code} in semester {semester}')
+        elif not course.get('guide') and len(guides.get(code,[])) < 3: errors.append(f'Missing featured lessons for {code}')
+        for lesson in guides.get(code,[]):
+            if any(not lesson.get(key) for key in ('title','explanation','example','distinction')): errors.append(f'Incomplete lesson in {code}')
+for code,paper in papers.items():
+    if not paper.get('url','').startswith('https://') or not paper.get('source') or not paper.get('questions'): errors.append(f'Invalid paper for {code}')
 if {c['semester'] for c in catalog} != {1,2,3,4}: errors.append('Catalogue must cover all four semesters')
 if len({c['code'] for c in catalog}) != len(catalog): errors.append('Duplicate catalogue course code')
 for c in catalog:

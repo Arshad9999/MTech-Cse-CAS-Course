@@ -1,0 +1,386 @@
+{
+  "MCSC-101": [
+    {
+      "title": "Asymptotic analysis and structures",
+      "explanation": "Big-O bounds growth from above; amortised analysis bounds an average over a worst-case sequence. Fibonacci heaps support efficient amortised decrease-key; splay trees move accessed nodes towards the root; dynamic trees represent changing forests.",
+      "example": "Repeated accesses to a splay tree can become cheaper as frequently used nodes move near the root.",
+      "distinction": "Worst-case cost concerns one operation; amortised cost applies to a sequence, without assuming random inputs."
+    },
+    {
+      "title": "Network flows",
+      "explanation": "A feasible flow obeys edge capacities and conservation at intermediate vertices. The maximum-flow minimum-cut theorem equates maximum source-to-sink flow with the capacity of a smallest cut; minimum-cost flow also accounts for edge costs.",
+      "example": "For one source-to-sink path with capacities 3 and 2, at most 2 units can flow.",
+      "distinction": "Maximum flow optimises volume; minimum-cost flow optimises cost subject to required flow and capacities."
+    },
+    {
+      "title": "Linear and semidefinite programming",
+      "explanation": "A linear programme optimises a linear objective under linear equalities and inequalities. Semidefinite programming generalises this using a positive semidefinite matrix constraint, useful for relaxations.",
+      "example": "Maximise 3x+2y subject to x+y≤4 and x,y≥0: allocating all 4 units to x gives objective 12.",
+      "distinction": "Integer constraints make a linear model discrete; its continuous relaxation can give a bound rather than a feasible integer solution."
+    },
+    {
+      "title": "Approximation and intractability",
+      "explanation": "A polynomial-time approximation algorithm trades exact optimality for a proven quality guarantee on hard optimisation problems. The ratio is defined relative to an optimum and depends on whether the problem is minimisation or maximisation.",
+      "example": "A maximal matching gives a vertex cover with at most twice as many vertices as an optimal cover.",
+      "distinction": "An approximation guarantee is a proven bound; a heuristic may work well but need not offer one."
+    },
+    {
+      "title": "Large data and randomisation",
+      "explanation": "Streaming algorithms use limited memory and often one pass. Compression represents data economically; compressed sensing recovers structured sparse signals under suitable measurement assumptions. Randomised algorithms use random choices with a stated success or runtime guarantee.",
+      "example": "Reservoir sampling maintains a uniform random sample from a stream of unknown length.",
+      "distinction": "Monte Carlo algorithms allow bounded error; Las Vegas algorithms are correct when they terminate but have random runtime."
+    },
+    {
+      "title": "Geometry, parallelism and lab methods",
+      "explanation": "Computational geometry studies geometric objects and queries; parallel algorithms split work while accounting for synchronisation. The syllabus lab also includes search, sorting, linked lists, trees, BFS/DFS, spanning trees, string matching, greedy methods, dynamic programming and backtracking.",
+      "example": "Breadth-first search explores levels with a queue; depth-first search follows branches using a stack or recursion.",
+      "distinction": "Parallel speedup depends on serial work and communication, not simply the processor count."
+    }
+  ],
+  "MCSC-104": [
+    {
+      "title": "Learning and validation",
+      "explanation": "Supervised learning estimates a mapping from labelled examples; unsupervised learning finds structure without target labels. Training fits parameters, validation selects a model, and a held-out test estimates final generalisation.",
+      "example": "In five-fold cross-validation, train on four folds and validate on the fifth, rotating until every fold has served as validation.",
+      "distinction": "Fit preprocessing only within each training fold to avoid leakage from validation data."
+    },
+    {
+      "title": "Covariance, correlation and regression",
+      "explanation": "Covariance indicates joint variation; correlation standardises it. Linear regression predicts a continuous target as an intercept plus a weighted sum of features, often fitted by least squares.",
+      "example": "For y=2+3x, x=4 gives a prediction of 14; residuals are observed values minus predictions.",
+      "distinction": "Correlation measures linear association, not causation; multiple regression uses several predictors."
+    },
+    {
+      "title": "Principal component analysis",
+      "explanation": "PCA centres data and identifies orthogonal directions of maximum variance using eigenvectors of a covariance matrix or singular value decomposition. Retaining a few components can reduce dimension.",
+      "example": "Highly correlated height and weight variables may largely vary along a single diagonal component.",
+      "distinction": "Feature selection retains original variables; PCA creates new combinations. Scale matters when units differ."
+    },
+    {
+      "title": "Clustering",
+      "explanation": "Clustering groups similar examples using a distance or density criterion. k-means alternates assignments and centroid updates; hierarchical clustering builds nested groups; density methods identify dense regions and noise.",
+      "example": "With points near 1, 2 and 10, a two-centre solution may group 1 and 2 separately from 10.",
+      "distinction": "k-means requires a chosen k and favours compact groups; density-based methods can discover irregular shapes."
+    },
+    {
+      "title": "Classification and feature selection",
+      "explanation": "A classifier predicts labels. k-nearest neighbours votes among nearby training examples; naive Bayes combines class priors and feature likelihoods under conditional independence; support vector machines seek a separating margin.",
+      "example": "A 3-nearest-neighbour classifier with labels A, A, B predicts A for a new point.",
+      "distinction": "Distance-based methods are sensitive to scaling; naive Bayes can work despite imperfect independence assumptions."
+    },
+    {
+      "title": "Trees, ensembles and model quality",
+      "explanation": "Decision trees split features into regions; boosting sequentially combines weak learners. Bias describes systematic error while variance describes sensitivity to the training sample.",
+      "example": "A decision tree might split on attendance and then assignment score to predict a category.",
+      "distinction": "Cross-validation helps tune complexity, while a final untouched test set gives a less biased final assessment."
+    }
+  ],
+  "MCSC-201": [
+    {
+      "title": "IoT architecture and devices",
+      "explanation": "The Internet of Things connects sensing or actuating devices, networks, services and applications. A typical path runs from a sensor through a gateway to storage and a dashboard.",
+      "example": "A soil-moisture sensor sends readings to a gateway, which displays trends and can trigger irrigation.",
+      "distinction": "A microcontroller such as an Arduino-class board is typically resource constrained; a Raspberry Pi-class computer runs a fuller operating system."
+    },
+    {
+      "title": "Networking and Linux",
+      "explanation": "IP addressing and subnetting group network interfaces; switches forward frames locally, routers connect networks, and access points provide wireless connectivity. Linux exposes network interfaces and device files to software.",
+      "example": "A gateway can bridge sensor traffic to a LAN while a router forwards traffic to a remote service.",
+      "distinction": "A hub repeats traffic; a switch forwards frames based on learned addresses. Device-file permissions affect access."
+    },
+    {
+      "title": "Communication and protocols",
+      "explanation": "MQTT uses brokered publish–subscribe messaging; CoAP uses lightweight request–response messaging; HTTP supports widely used web APIs. 6LoWPAN adapts IPv6 packets to constrained low-power networks.",
+      "example": "A temperature sensor publishes to a broker topic and a dashboard subscribes to that topic.",
+      "distinction": "MQTT decouples publisher from subscriber; HTTP commonly uses direct client–server requests."
+    },
+    {
+      "title": "Web services and data storage",
+      "explanation": "A server receives device messages, validates them and stores observations. Relational tables suit structured records and joins; document databases can hold flexible JSON-like records.",
+      "example": "A reading record can contain device ID, time, value and unit; a dashboard requests a time range.",
+      "distinction": "JSON is a data format; MySQL and MongoDB are databases with different data models."
+    },
+    {
+      "title": "Security and privacy",
+      "explanation": "Identify devices, authenticate requests, encrypt suitable traffic, protect credentials and apply updates. Minimise collected data and design for failure, physical access and device lifecycle.",
+      "example": "A compromised sensor should not be able to issue administrator commands; assign it only the permissions it needs.",
+      "distinction": "Encryption protects confidentiality in transit, while authorisation controls permitted actions."
+    },
+    {
+      "title": "Applications and laboratory",
+      "explanation": "IoT supports monitoring, remote control, industrial systems, agriculture and healthcare. Evaluate accuracy, latency, availability, energy and safety for the use case.",
+      "example": "A greenhouse sensor samples periodically; compare measured temperature against a calibrated reference before automating control.",
+      "distinction": "Monitoring observes conditions; closed-loop control acts and observes the result. Validate sensor calibration and failure behaviour."
+    }
+  ],
+  "MMLC-201": [
+    {
+      "title": "Artificial neurons and network architectures",
+      "explanation": "An artificial neuron computes a weighted sum plus bias and applies an activation. Feed-forward networks pass information forward; recurrent networks also use state from earlier steps.",
+      "example": "For weights 0.5 and 1, inputs 2 and 1, and bias 0, the pre-activation is 2.",
+      "distinction": "Biological neurons inspire the abstraction, but an artificial neuron is a simplified mathematical model."
+    },
+    {
+      "title": "Training and backpropagation",
+      "explanation": "A loss measures prediction error. Backpropagation applies the chain rule to compute gradients; an optimiser adjusts weights to reduce loss on training data.",
+      "example": "With loss (w−3)² at w=1, its gradient is −4. A small gradient-descent step increases w towards 3.",
+      "distinction": "Training error measures fitted data; validation error helps reveal poor generalisation."
+    },
+    {
+      "title": "Fuzzy sets and membership",
+      "explanation": "A fuzzy set assigns membership in [0,1], expressing degree of membership in a specified set. Membership functions can be triangular, trapezoidal or other shapes.",
+      "example": "A temperature of 28°C might have membership 0.6 in the set warm, depending on the chosen function.",
+      "distinction": "Fuzzy membership expresses graded belonging; probability represents uncertainty about an event."
+    },
+    {
+      "title": "Fuzzy inference and control",
+      "explanation": "Rules combine fuzzy premises and conclusions, such as IF temperature is high THEN fan speed is fast. Fuzzification maps inputs to memberships; inference combines rules; defuzzification produces a crisp output.",
+      "example": "A controller can combine warm and hot memberships to produce an intermediate fan setting.",
+      "distinction": "A fuzzy rule system represents expert rules; a neural network learns parameters from data."
+    },
+    {
+      "title": "Genetic algorithms",
+      "explanation": "Genetic algorithms evolve candidate solutions using selection, crossover and mutation, guided by a fitness function. Encoding determines how a candidate is represented.",
+      "example": "A bit string can encode a subset of features; selection favours candidates with good validation fitness and mutation flips occasional bits.",
+      "distinction": "Crossover recombines parents; mutation introduces variation. Neither guarantees a global optimum."
+    },
+    {
+      "title": "Deep models and regularisation",
+      "explanation": "Deep feed-forward networks, CNNs, RNNs and deep belief networks learn different representations. Dropout and other regularisers can reduce overfitting; model selection requires separate validation.",
+      "example": "A CNN shares filters over an image, while an RNN processes a sequence with a recurring hidden state.",
+      "distinction": "Dropout is a training technique, whereas a CNN is an architectural family."
+    }
+  ],
+  "MCSE-202": [
+    {
+      "title": "Data, samples and bias",
+      "explanation": "Data science frames a question, collects data, analyses it and communicates conclusions. A population includes all units of interest; a sample is the subset observed. Selection and measurement bias can distort conclusions.",
+      "example": "An online survey about internet use excludes people without access, so its sample may not represent the whole population.",
+      "distinction": "Random sampling addresses selection mechanisms; a large but biased sample is not automatically representative."
+    },
+    {
+      "title": "Summary statistics and exploratory analysis",
+      "explanation": "Mean, median, spread and quantiles describe distributions. Histograms, scatter plots and box plots reveal shape, outliers and relationships before modelling.",
+      "example": "For 1, 2, 3, 4, 100, the mean is 22 but the median is 3, illustrating sensitivity to an outlier.",
+      "distinction": "A histogram shows a distribution; a scatter plot shows pairs of numerical values."
+    },
+    {
+      "title": "Probability and inference",
+      "explanation": "Conditional probability describes an event given evidence. Bayes’ rule combines a prior with a likelihood; intervals and hypothesis tests quantify uncertainty under assumptions.",
+      "example": "If P(A)=0.5, P(B",
+      "distinction": "A)=0.8 and P(B)=0.5, then P(A"
+    },
+    {
+      "title": "Association, confounding and Simpson’s paradox",
+      "explanation": "Association does not by itself establish causation. A confounder affects both an exposure and an outcome; Simpson’s paradox occurs when an aggregate trend reverses or changes across groups.",
+      "example": "Treatment success can appear lower overall if the treated group contains more severe cases, despite higher success within each severity group.",
+      "distinction": "Stratification can reveal group differences; causal conclusions still need a justified design and assumptions."
+    },
+    {
+      "title": "Regression and predictive models",
+      "explanation": "Linear regression predicts a numeric outcome. k-nearest neighbours predicts from nearby examples; naive Bayes estimates class probabilities; k-means groups unlabelled data.",
+      "example": "A model can estimate house price from area and location, but it must be evaluated on homes not used for fitting.",
+      "distinction": "k-nearest neighbours is supervised when trained with labels; k-means is an unsupervised clustering method."
+    },
+    {
+      "title": "Bayesian modelling and communication",
+      "explanation": "Bayesian inference updates a prior distribution using data likelihood to obtain a posterior. Hierarchical models share information across groups while allowing group-level differences.",
+      "example": "A prior for each district’s rate can be linked to a common population distribution, then updated with district observations.",
+      "distinction": "Posterior uncertainty depends on the model and prior; diagnostic plots and clear uncertainty reporting remain essential."
+    }
+  ],
+  "MMLE-201": [
+    {
+      "title": "Big data and distributed systems",
+      "explanation": "Big data problems arise when volume, velocity, variety or processing needs exceed convenient single-machine approaches. Distributed systems split storage and computation across machines.",
+      "example": "A stream of device events can be partitioned and processed by multiple workers.",
+      "distinction": "More data is not automatically better: quality, governance, cost and bias still matter."
+    },
+    {
+      "title": "Hadoop and HDFS",
+      "explanation": "Hadoop provides a distributed ecosystem; HDFS stores large files in blocks across machines and supports fault tolerance through replication. The NameNode manages metadata and DataNodes store blocks.",
+      "example": "A large file can be divided into blocks stored across several nodes; replicas help tolerate node failure.",
+      "distinction": "HDFS is designed for large-scale throughput; it is not a direct replacement for low-latency transactional storage."
+    },
+    {
+      "title": "MapReduce and data movement",
+      "explanation": "MapReduce applies a map operation to input records, groups intermediate values by key, and reduces each group. Input ingestion and output retrieval form part of a complete pipeline.",
+      "example": "Word count emits (word,1) pairs in map and sums values for each word in reduce.",
+      "distinction": "Map transforms individual records; reduce aggregates values sharing a key."
+    },
+    {
+      "title": "Hive and HiveQL",
+      "explanation": "Hive provides a SQL-like interface for querying data stored in a Hadoop environment. Tables describe schemas and queries are translated into execution plans.",
+      "example": "A HiveQL query can group event records by day and count rows per group.",
+      "distinction": "HiveQL resembles SQL but its execution and transaction features depend on the configured engine and storage."
+    },
+    {
+      "title": "Pig and HBase",
+      "explanation": "Pig provides a data-flow language for transformations; HBase is a distributed, column-family-oriented database built for different access patterns than batch queries.",
+      "example": "A batch pipeline can transform logs before a serving system retrieves records by key.",
+      "distinction": "Hive is commonly used for analytic queries; HBase targets keyed access over large distributed tables."
+    },
+    {
+      "title": "Spark and machine learning",
+      "explanation": "Spark processes distributed data with reusable computations and supports machine-learning workflows through Spark ML. H2O and Azure ML provide alternative tools or platforms named in the syllabus.",
+      "example": "Split data before fitting transformations, train a classifier and evaluate it on held-out records.",
+      "distinction": "Distributed training addresses scale, but does not by itself solve leakage, bias or poor evaluation."
+    }
+  ],
+  "MMLC-301": [
+    {
+      "title": "Probability, likelihood and loss",
+      "explanation": "Deep learning fits models with multiple learned transformations. Maximum likelihood chooses parameters that make observed data likely under a model; losses often express the negative log-likelihood.",
+      "example": "For binary classification, cross-entropy penalises a confidently wrong predicted probability heavily.",
+      "distinction": "Mean squared error is common for numerical predictions; cross-entropy is commonly used with class probabilities."
+    },
+    {
+      "title": "Feed-forward networks and activations",
+      "explanation": "An MLP applies affine transformations and nonlinear activations through hidden layers. Sigmoid and tanh are bounded; ReLU is max(0,z); softmax turns logits into probabilities across classes.",
+      "example": "For logits (0,0), softmax assigns probability 0.5 to each class.",
+      "distinction": "Without nonlinearities, a composition of linear layers is still a linear transformation."
+    },
+    {
+      "title": "Backpropagation and gradient descent",
+      "explanation": "The chain rule propagates derivatives from loss to each layer. Gradient descent updates a parameter θ as θ ← θ − η∇L; the learning rate η affects training.",
+      "example": "For L=(θ−3)² and θ=1, the gradient is −4; with η=0.1, the next θ is 1.4.",
+      "distinction": "Backpropagation computes gradients; the optimiser decides how parameters are updated."
+    },
+    {
+      "title": "Generalisation and training",
+      "explanation": "Overfitting occurs when training performance is much better than performance on new data. Regularisation, dropout, suitable augmentation and early stopping can help; GPUs speed suitable parallel computations.",
+      "example": "Monitor validation loss after each epoch and keep the checkpoint selected by a predeclared validation rule.",
+      "distinction": "A GPU changes execution speed, not the validity of an evaluation. Tune on validation data, not the test set."
+    },
+    {
+      "title": "CNNs and sequence models",
+      "explanation": "CNNs apply shared filters to local regions, often combining convolution, activation and pooling. RNNs carry hidden state across a sequence; both require task-appropriate data and evaluation.",
+      "example": "A CNN can learn image patterns; an RNN can process a sequence of sensor measurements.",
+      "distinction": "CNN weight sharing exploits spatial locality; recurrent connections encode sequential context."
+    },
+    {
+      "title": "Transfer and generative models",
+      "explanation": "Transfer learning reuses representations learned on one task for another. Autoencoders reconstruct input through a bottleneck; generative models learn a model of data, while deep belief networks combine layers of probabilistic representations.",
+      "example": "A pretrained image encoder can be fine-tuned for a smaller labelled dataset after checking that training and evaluation data do not overlap.",
+      "distinction": "An autoencoder’s reconstruction objective differs from a classifier’s label-prediction objective."
+    }
+  ],
+  "MMLE-302": [
+    {
+      "title": "Agent, environment and return",
+      "explanation": "In reinforcement learning an agent observes a state, chooses an action, receives a reward and moves to a next state. A policy maps states to actions or action probabilities; return sums future rewards, often with discount γ.",
+      "example": "A robot receives −1 per step and +10 at a goal. With γ=0.9, a reward one step later contributes 9 to present return.",
+      "distinction": "Reward is an immediate signal; return summarises a trajectory’s future rewards."
+    },
+    {
+      "title": "Markov processes and value functions",
+      "explanation": "The Markov property means the current state contains the relevant information needed to predict the next transition given an action. A value function estimates expected return from a state under a policy.",
+      "example": "For a terminal action paying 5, with no later reward, its return is 5.",
+      "distinction": "A state-value function V(s) evaluates a state; an action-value function Q(s,a) evaluates a state–action pair."
+    },
+    {
+      "title": "Planning with a known model",
+      "explanation": "A transition model gives probabilities and rewards for actions. Policy iteration alternates evaluating and improving a policy; value iteration repeatedly applies a Bellman optimality backup.",
+      "example": "In a small grid with known transition probabilities, compare the expected discounted return of available moves.",
+      "distinction": "Policy iteration evaluates an explicit policy; value iteration applies a greedy optimality update directly."
+    },
+    {
+      "title": "Model-free control",
+      "explanation": "When transition probabilities are unknown, temporal-difference methods learn from observed transitions. Q-learning uses the maximum estimated next-action value; SARSA uses the next action actually chosen by its policy.",
+      "example": "Q-learning updates Q(s,a) towards r+γ maxₐ′ Q(s′,a′); SARSA instead uses Q(s′,a′) for the selected next action.",
+      "distinction": "Q-learning is off-policy; SARSA is on-policy. Both require suitable learning conditions for classical tabular guarantees."
+    },
+    {
+      "title": "Exploration and approximation",
+      "explanation": "An agent must gather information as well as use its current estimates. ε-greedy chooses a random action with probability ε and otherwise acts greedily; function approximation generalises across large state spaces.",
+      "example": "With ε=0.1, a random action is selected on 10% of decisions, subject to the chosen random-action distribution.",
+      "distinction": "Exploration can discover better actions but may be unsafe; safety and evaluation must be considered separately."
+    },
+    {
+      "title": "Imitation, offline and search",
+      "explanation": "Imitation learning learns behaviour from demonstrations; offline RL learns from a fixed dataset and must handle actions poorly represented in that data. Monte Carlo tree search builds a search tree using sampled rollouts; meta-learning studies adaptation across tasks.",
+      "example": "A game-playing agent can use simulated rollouts to compare candidate moves before acting.",
+      "distinction": "Offline evaluation is difficult when the target policy differs greatly from the data-collection policy."
+    }
+  ],
+  "MCSC-106": [
+    {
+      "title": "Defining an independent study",
+      "explanation": "Start with a manageable topic and formulate a question whose scope can be investigated with the time and resources available. Agree goals and milestones with a supervisor.",
+      "example": "Replace “study AI security” with a focused question about one clearly defined threat and setting.",
+      "distinction": "A topic names an area; a research question states what you intend to investigate."
+    },
+    {
+      "title": "Finding and assessing sources",
+      "explanation": "Search scholarly databases, trace references and evaluate relevance, methods, limitations and publication context. Keep a record of search terms and decisions.",
+      "example": "Create a literature matrix listing problem, data, method, result and limitation for each paper.",
+      "distinction": "A literature review synthesises and compares sources rather than merely listing abstracts."
+    },
+    {
+      "title": "Research integrity and progress",
+      "explanation": "Record methods and sources, cite borrowed work, retain reproducible notes and report uncertainty. Confirm progress and submission requirements with your supervisor.",
+      "example": "Maintain a dated log of experiments, code versions, observations and next steps.",
+      "distinction": "A preliminary result is evidence to examine, not a conclusion that must be defended regardless of contrary data."
+    }
+  ],
+  "MCSC-202": [
+    {
+      "title": "Developing the research plan",
+      "explanation": "Refine a research question, review prior work and justify a method appropriate to the question. Define measurable outcomes and a feasible timetable with your supervisor.",
+      "example": "For a classification study, specify the dataset, baseline, split, metrics and intended analysis before training.",
+      "distinction": "A research objective states the aim; a method explains how evidence will be gathered."
+    },
+    {
+      "title": "Pilot and evaluation",
+      "explanation": "A pilot checks feasibility and can expose data, measurement or implementation problems before a full study. Document changes rather than treating exploratory decisions as preplanned.",
+      "example": "Run a small pipeline end to end to detect missing labels and estimate processing time.",
+      "distinction": "A pilot checks the process; a final evaluation supports the study’s conclusions."
+    },
+    {
+      "title": "Ethics and reproducibility",
+      "explanation": "Consider consent, privacy, data rights, security and the limitations of any available sample. Record versions and assumptions so results can be checked.",
+      "example": "Store only needed data and explain any permissions or approval required by the institution.",
+      "distinction": "Reproducibility of a computation does not by itself establish that its data or conclusions are valid."
+    }
+  ],
+  "MCSC-302": [
+    {
+      "title": "Dissertation I: proposal and literature",
+      "explanation": "Define a focused research problem, review the literature and show the gap your proposed work addresses. Agree the scope and institutional milestones with your supervisor.",
+      "example": "A proposal can state the problem, motivation, research questions, method, resources and expected evaluation.",
+      "distinction": "A research gap is an evidence-backed limitation in prior work, not simply an area with many publications."
+    },
+    {
+      "title": "Method and feasibility",
+      "explanation": "Select data, baselines, metrics and an analysis plan suited to the question; check practical, ethical and access constraints. Use a pilot to assess feasibility.",
+      "example": "Before an experiment, define a train–validation–test separation and a baseline appropriate to the task.",
+      "distinction": "A feasibility result supports a plan; it is not necessarily the final study result."
+    },
+    {
+      "title": "Documenting progress",
+      "explanation": "Maintain versioned code and data references, document assumptions and report deviations from the plan. Departmental rules determine the precise submission and review process.",
+      "example": "Keep a research log and a short progress report describing work completed, evidence, issues and next steps.",
+      "distinction": "A milestone is a planning aid; formal assessment requirements come from your institution."
+    }
+  ],
+  "MCSC-401": [
+    {
+      "title": "Dissertation II: execution and analysis",
+      "explanation": "Carry out the agreed study, record procedures and analyse results against the research questions. Clearly separate planned analyses from exploratory findings.",
+      "example": "Compare a proposed method with specified baselines on the same evaluation protocol and report uncertainty where appropriate.",
+      "distinction": "A measured improvement is not automatically evidence of causation or real-world usefulness."
+    },
+    {
+      "title": "Writing and presentation",
+      "explanation": "A dissertation commonly presents the problem, related work, methods, results, discussion, limitations and references. Follow your department’s current formatting and submission requirements.",
+      "example": "A results section reports observations; a discussion interprets their meaning and limitations.",
+      "distinction": "Results describe what was observed; discussion explains implications without overstating them."
+    },
+    {
+      "title": "Reproducibility and final checks",
+      "explanation": "Verify citations, figure permissions, data handling, calculations and reproducibility. Document what can and cannot be shared and secure any necessary approvals.",
+      "example": "Record software versions, dataset provenance, configuration and steps needed to rerun an analysis.",
+      "distinction": "Reproducible code supports checking, but valid design and representative data remain separate requirements."
+    }
+  ]
+}
