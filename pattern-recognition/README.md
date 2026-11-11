@@ -1,4 +1,12 @@
-# MCSC-106 - Pattern Recognition
+# MMLC-202 - Pattern Recognition
+
+**2021–22 scheme:** Semester 2 · MMLC-202 · Machine Learning core
+
+**Course page:** [Pattern Recognition](https://arshad9999.github.io/MTech-Cse-CAS-Course/subject.html?code=MMLC-202)
+
+**Official source:** [CAS syllabus, near page 22](https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=22)
+
+The existing guide below may use older course codes, semester labels or credit values. Consult the official syllabus and your department for your batch.
 
 **Credits:** 3
 

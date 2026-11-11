@@ -5,7 +5,8 @@
     "title": "Analysis and Design of Algorithms",
     "category": "Common core",
     "page": 11,
-    "guide": ""
+    "guide": "",
+    "folder": "mcsc-101-analysis-and-design-of-algorithms"
   },
   {
     "semester": 1,
@@ -13,7 +14,8 @@
     "title": "Probability and Statistics",
     "category": "Common core",
     "page": 12,
-    "guide": "probability-and-statistics"
+    "guide": "probability-and-statistics",
+    "folder": "probability-and-statistics"
   },
   {
     "semester": 1,
@@ -21,7 +23,8 @@
     "title": "Advanced Computer Networks and Communication",
     "category": "Common core",
     "page": 13,
-    "guide": "advanced-computer-networks-and-communication"
+    "guide": "advanced-computer-networks-and-communication",
+    "folder": "advanced-computer-networks-and-communication"
   },
   {
     "semester": 1,
@@ -29,7 +32,8 @@
     "title": "Foundation of Machine Learning",
     "category": "Common core",
     "page": 14,
-    "guide": ""
+    "guide": "",
+    "folder": "mcsc-104-foundation-of-machine-learning"
   },
   {
     "semester": 1,
@@ -37,7 +41,8 @@
     "title": "Discrete Mathematics and Graph Theory",
     "category": "Common core",
     "page": 15,
-    "guide": "discrete-mathematics-and-graph-theory"
+    "guide": "discrete-mathematics-and-graph-theory",
+    "folder": "discrete-mathematics-and-graph-theory"
   },
   {
     "semester": 1,
@@ -45,7 +50,8 @@
     "title": "Independent Study and Research I",
     "category": "Common core",
     "page": 15,
-    "guide": ""
+    "guide": "",
+    "folder": "mcsc-106-independent-study-and-research-i"
   },
   {
     "semester": 2,
@@ -53,7 +59,8 @@
     "title": "The Internet of Things",
     "category": "Common core",
     "page": 16,
-    "guide": ""
+    "guide": "",
+    "folder": "mcsc-201-the-internet-of-things"
   },
   {
     "semester": 2,
@@ -61,7 +68,8 @@
     "title": "Independent Study and Research II",
     "category": "Common core",
     "page": 34,
-    "guide": ""
+    "guide": "",
+    "folder": "mcsc-202-independent-study-and-research-ii"
   },
   {
     "semester": 2,
@@ -69,7 +77,8 @@
     "title": "Cryptography",
     "category": "Cyber Security core",
     "page": 17,
-    "guide": ""
+    "guide": "",
+    "folder": "mcysc-201-cryptography"
   },
   {
     "semester": 2,
@@ -77,7 +86,8 @@
     "title": "Fundamentals of Information Security and Practices",
     "category": "Cyber Security core",
     "page": 18,
-    "guide": ""
+    "guide": "",
+    "folder": "mcysc-202-fundamentals-of-information-security-and-practices"
   },
   {
     "semester": 2,
@@ -85,7 +95,8 @@
     "title": "Mathematical Foundations for Computing in ICT",
     "category": "ICT core",
     "page": 19,
-    "guide": ""
+    "guide": "",
+    "folder": "mictc-201-mathematical-foundations-for-computing-in-ict"
   },
   {
     "semester": 2,
@@ -93,7 +104,8 @@
     "title": "Embedded System",
     "category": "ICT core",
     "page": 20,
-    "guide": ""
+    "guide": "",
+    "folder": "mictc-202-embedded-system"
   },
   {
     "semester": 2,
@@ -101,7 +113,8 @@
     "title": "Neural Networks and Evolutionary Algorithms",
     "category": "Machine Learning core",
     "page": 21,
-    "guide": ""
+    "guide": "",
+    "folder": "mmlc-201-neural-networks-and-evolutionary-algorithms"
   },
   {
     "semester": 2,
@@ -109,7 +122,8 @@
     "title": "Pattern Recognition",
     "category": "Machine Learning core",
     "page": 22,
-    "guide": "pattern-recognition"
+    "guide": "pattern-recognition",
+    "folder": "pattern-recognition"
   },
   {
     "semester": 2,
@@ -117,7 +131,8 @@
     "title": "Introduction to Formal Methods and Verification of Large Systems",
     "category": "Cyber Security / ICT elective",
     "page": 23,
-    "guide": ""
+    "guide": "",
+    "folder": "mcse-201-introduction-to-formal-methods-and-verification-of-large-systems"
   },
   {
     "semester": 2,
@@ -125,7 +140,8 @@
     "title": "Ethical Hacking",
     "category": "Cyber Security elective",
     "page": 26,
-    "guide": ""
+    "guide": "",
+    "folder": "mcyse-204-ethical-hacking"
   },
   {
     "semester": 2,
@@ -133,7 +149,8 @@
     "title": "Security Standards and Project Management",
     "category": "Cyber Security elective",
     "page": 24,
-    "guide": ""
+    "guide": "",
+    "folder": "mcyse-201-security-standards-and-project-management"
   },
   {
     "semester": 2,
@@ -141,7 +158,8 @@
     "title": "System Security",
     "category": "Cyber Security elective",
     "page": 25,
-    "guide": ""
+    "guide": "",
+    "folder": "mcyse-202-system-security"
   },
   {
     "semester": 2,
@@ -149,7 +167,8 @@
     "title": "Identity and Access Management and Trusted Computing",
     "category": "Cyber Security elective",
     "page": 27,
-    "guide": ""
+    "guide": "",
+    "folder": "mcyse-203-identity-and-access-management-and-trusted-computing"
   },
   {
     "semester": 2,
@@ -157,7 +176,8 @@
     "title": "Speech Communication and Biomedical Signal Processing",
     "category": "ICT elective",
     "page": 29,
-    "guide": ""
+    "guide": "",
+    "folder": "micte-202-speech-communication-and-biomedical-signal-processing"
   },
   {
     "semester": 2,
@@ -165,7 +185,8 @@
     "title": "Data Science",
     "category": "ICT / Machine Learning elective",
     "page": 30,
-    "guide": ""
+    "guide": "",
+    "folder": "mcse-202-data-science"
   },
   {
     "semester": 2,
@@ -173,7 +194,8 @@
     "title": "Information Theory and Coding",
     "category": "ICT elective",
     "page": 28,
-    "guide": ""
+    "guide": "",
+    "folder": "micte-201-information-theory-and-coding"
   },
   {
     "semester": 2,
@@ -181,7 +203,8 @@
     "title": "Computer Vision",
     "category": "ICT / Machine Learning elective",
     "page": 31,
-    "guide": ""
+    "guide": "",
+    "folder": "mcse-203-computer-vision"
   },
   {
     "semester": 2,
@@ -189,7 +212,8 @@
     "title": "Big Data Analytics",
     "category": "Machine Learning elective",
     "page": 32,
-    "guide": ""
+    "guide": "",
+    "folder": "mmle-201-big-data-analytics"
   },
   {
     "semester": 2,
@@ -197,7 +221,8 @@
     "title": "Optimization Techniques",
     "category": "Machine Learning elective",
     "page": 33,
-    "guide": ""
+    "guide": "",
+    "folder": "mmle-202-optimization-techniques"
   },
   {
     "semester": 2,
@@ -205,7 +230,8 @@
     "title": "Probabilistic Graphical Model",
     "category": "Machine Learning elective",
     "page": 34,
-    "guide": ""
+    "guide": "",
+    "folder": "mmle-203-probabilistic-graphical-model"
   },
   {
     "semester": 3,
@@ -213,7 +239,8 @@
     "title": "Research Methodology",
     "category": "Common core",
     "page": 35,
-    "guide": "research-methodology"
+    "guide": "research-methodology",
+    "folder": "research-methodology"
   },
   {
     "semester": 3,
@@ -221,7 +248,8 @@
     "title": "Thesis / Dissertation I",
     "category": "Common core",
     "page": 48,
-    "guide": ""
+    "guide": "",
+    "folder": "mcsc-302-thesis-dissertation-i"
   },
   {
     "semester": 3,
@@ -229,7 +257,8 @@
     "title": "Digital and Cyber Forensics",
     "category": "Cyber Security core",
     "page": 36,
-    "guide": ""
+    "guide": "",
+    "folder": "mcysc-301-digital-and-cyber-forensics"
   },
   {
     "semester": 3,
@@ -237,7 +266,8 @@
     "title": "Multimedia Signal Processing",
     "category": "ICT core",
     "page": 37,
-    "guide": ""
+    "guide": "",
+    "folder": "mictc-301-multimedia-signal-processing"
   },
   {
     "semester": 3,
@@ -245,7 +275,8 @@
     "title": "Deep Learning",
     "category": "Machine Learning core",
     "page": 38,
-    "guide": ""
+    "guide": "",
+    "folder": "mmlc-301-deep-learning"
   },
   {
     "semester": 3,
@@ -253,7 +284,8 @@
     "title": "Cloud Computing",
     "category": "Cyber Security / ICT / Machine Learning elective",
     "page": 39,
-    "guide": ""
+    "guide": "",
+    "folder": "mcse-301-cloud-computing"
   },
   {
     "semester": 3,
@@ -261,7 +293,8 @@
     "title": "Network Protocol Security",
     "category": "Cyber Security elective",
     "page": 41,
-    "guide": ""
+    "guide": "",
+    "folder": "mcyse-301-network-protocol-security"
   },
   {
     "semester": 3,
@@ -269,7 +302,8 @@
     "title": "Wireless Sensor Network",
     "category": "Cyber Security / ICT elective",
     "page": 42,
-    "guide": ""
+    "guide": "",
+    "folder": "mcse-302-wireless-sensor-network"
   },
   {
     "semester": 3,
@@ -277,7 +311,8 @@
     "title": "Media Security",
     "category": "Cyber Security / ICT elective",
     "page": 40,
-    "guide": ""
+    "guide": "",
+    "folder": "mcse-304-media-security"
   },
   {
     "semester": 3,
@@ -285,7 +320,8 @@
     "title": "Intelligent System and Green Computing",
     "category": "Cyber Security / ICT elective",
     "page": 43,
-    "guide": ""
+    "guide": "",
+    "folder": "mcse-303-intelligent-system-and-green-computing"
   },
   {
     "semester": 3,
@@ -293,7 +329,8 @@
     "title": "Secure Coding",
     "category": "ICT elective",
     "page": 44,
-    "guide": ""
+    "guide": "",
+    "folder": "micte-301-secure-coding"
   },
   {
     "semester": 3,
@@ -301,7 +338,8 @@
     "title": "Advanced Kernel Methods",
     "category": "Machine Learning elective",
     "page": 45,
-    "guide": ""
+    "guide": "",
+    "folder": "mmle-301-advanced-kernel-methods"
   },
   {
     "semester": 3,
@@ -309,7 +347,8 @@
     "title": "Reinforcement Learning",
     "category": "Machine Learning elective",
     "page": 46,
-    "guide": ""
+    "guide": "",
+    "folder": "mmle-302-reinforcement-learning"
   },
   {
     "semester": 3,
@@ -317,7 +356,8 @@
     "title": "Machine Learning Applications",
     "category": "Machine Learning elective",
     "page": 47,
-    "guide": ""
+    "guide": "",
+    "folder": "mmle-303-machine-learning-applications"
   },
   {
     "semester": 3,
@@ -325,7 +365,8 @@
     "title": "Topological Data Analysis",
     "category": "Machine Learning elective",
     "page": 48,
-    "guide": ""
+    "guide": "",
+    "folder": "mmle-304-topological-data-analysis"
   },
   {
     "semester": 4,
@@ -333,6 +374,7 @@
     "title": "Thesis / Dissertation II",
     "category": "Common core",
     "page": 9,
-    "guide": ""
+    "guide": "",
+    "folder": "mcsc-401-thesis-dissertation-ii"
   }
 ]

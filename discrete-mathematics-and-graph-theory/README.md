@@ -1,5 +1,13 @@
 # MCSC-105 - Discrete Mathematics and Graph Theory
 
+**2021–22 scheme:** Semester 1 · MCSC-105 · Common core
+
+**Course page:** [Discrete Mathematics and Graph Theory](https://arshad9999.github.io/MTech-Cse-CAS-Course/subject.html?code=MCSC-105)
+
+**Official source:** [CAS syllabus, near page 15](https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=15)
+
+The existing guide below may use older course codes, semester labels or credit values. Consult the official syllabus and your department for your batch.
+
 **Credits:** 4
 
 Reason about finite structures, prove what must be true, and turn graph models into efficient algorithms.

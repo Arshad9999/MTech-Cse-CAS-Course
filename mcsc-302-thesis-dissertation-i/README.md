@@ -1,0 +1,9 @@
+# MCSC-302 - Thesis / Dissertation I
+
+**2021–22 scheme:** Semester 3 · MCSC-302 · Common core
+
+**Course page:** [Thesis / Dissertation I](https://arshad9999.github.io/MTech-Cse-CAS-Course/subject.html?code=MCSC-302)
+
+**Official source:** [CAS syllabus, near page 48](https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=48)
+
+This subject is listed in the programme directory. Detailed notes and verified previous-year questions have not yet been added.

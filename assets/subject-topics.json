@@ -1,0 +1,578 @@
+{
+  "MCSC-101": [
+    [
+      "Network flows",
+      "A flow assigns quantities to edges subject to capacity and conservation constraints. Maximum flow measures the greatest feasible throughput; a minimum cut identifies a bottleneck."
+    ],
+    [
+      "Algorithm design",
+      "Greedy algorithms make locally attractive choices, while dynamic programming combines solutions of overlapping subproblems. Proving correctness and analysing time and space are essential."
+    ],
+    [
+      "Intractability and approximation",
+      "For hard optimisation problems, approximation algorithms trade exactness for a provable solution bound. Randomised and streaming methods help when data or computation is large."
+    ]
+  ],
+  "MCSC-104": [
+    [
+      "Learning and validation",
+      "Machine learning estimates patterns from data. Keep evaluation data separate from training data; cross-validation rotates held-out folds to estimate generalisation."
+    ],
+    [
+      "Regression and dimensionality reduction",
+      "Regression predicts a numerical outcome from features. Principal component analysis constructs orthogonal directions of decreasing variance and can reduce dimensionality."
+    ],
+    [
+      "Clustering and classification",
+      "Clustering groups observations without given labels. Classification predicts known categories; examples include nearest neighbours, decision trees, support vector machines and ensembles."
+    ]
+  ],
+  "MCSC-201": [
+    [
+      "IoT architecture",
+      "An Internet of Things system connects sensors and actuators to networks, computing services and applications. Device, communication and application layers have different responsibilities."
+    ],
+    [
+      "Protocols and platforms",
+      "MQTT uses a publish–subscribe model; CoAP is designed for constrained devices; HTTP follows a request–response model. Hardware such as microcontrollers or single-board computers connects software to the physical world."
+    ],
+    [
+      "Security and applications",
+      "Authentication, protected communications, updates and data minimisation reduce risk in remote monitoring and control. Agriculture, healthcare and industrial systems impose different reliability and privacy needs."
+    ]
+  ],
+  "MCySC-201": [
+    [
+      "Symmetric cryptography",
+      "Symmetric encryption uses a shared secret. Block ciphers require an appropriate mode and unique nonces or IVs where required; encryption alone does not necessarily ensure integrity."
+    ],
+    [
+      "Public-key cryptography",
+      "Public-key methods use related public and private keys. Diffie–Hellman establishes a shared secret, while digital signatures can support authenticity and integrity."
+    ],
+    [
+      "Integrity and protocols",
+      "Hashes summarise data, and message authentication codes verify integrity using a secret key. Authenticated encryption combines confidentiality and integrity; real protocols also need safe key management."
+    ]
+  ],
+  "MCySC-202": [
+    [
+      "Security principles",
+      "Confidentiality restricts disclosure, integrity protects against unauthorised change, and availability supports access when needed. Security controls are chosen against specific threats and risks."
+    ],
+    [
+      "Risk and governance",
+      "Risk assessment considers threats, vulnerabilities, likelihood and impact. Policies, standards, roles and mitigation plans turn those findings into practical controls."
+    ],
+    [
+      "Security assessment",
+      "Vulnerability assessment identifies weaknesses; penetration testing attempts controlled exploitation under an agreed scope. Business continuity and disaster recovery address disruption and restoration."
+    ]
+  ],
+  "MICTC-201": [
+    [
+      "Mathematical foundations",
+      "Mathematical models express computing problems precisely. Work from definitions and assumptions before selecting a technique or interpreting a result."
+    ],
+    [
+      "Computing applications",
+      "Connect each mathematical method to the computing or communication problem it models; check the detailed syllabus for the full list of techniques."
+    ]
+  ],
+  "MICTC-202": [
+    [
+      "Embedded architecture",
+      "An embedded system combines hardware and software for a dedicated task. Processor, memory, peripherals and input/output constraints shape its design."
+    ],
+    [
+      "Interfacing and execution",
+      "Timers, interrupts and communication interfaces connect the processor to external devices. Real-time systems must meet timing constraints as well as produce correct results."
+    ]
+  ],
+  "MMLC-201": [
+    [
+      "Neural networks",
+      "A neural network composes parameterised transformations and nonlinear activations. Training adjusts parameters to reduce a loss, commonly through backpropagation and gradient-based optimisation."
+    ],
+    [
+      "Evolutionary algorithms",
+      "A population of candidate solutions evolves through selection, variation and evaluation. The fitness function measures suitability, but its design must reflect the actual objective."
+    ]
+  ],
+  "MCSE-201": [
+    [
+      "Formal specification",
+      "A formal specification describes required system behaviour using mathematical notation. This makes assumptions and properties explicit before implementation."
+    ],
+    [
+      "Verification",
+      "Model checking explores states against stated properties, while proof-based methods establish claims through logical reasoning. Results depend on whether the model and assumptions match the real system."
+    ]
+  ],
+  "MCySE-204": [
+    [
+      "Ethical hacking",
+      "Ethical hacking tests security under explicit authorisation and a defined scope. A typical process includes discovery, assessment, evidence collection and responsible reporting."
+    ],
+    [
+      "Findings and remediation",
+      "A useful report explains the affected asset, evidence, impact and a practical fix. Retesting checks whether the fix addresses the demonstrated weakness."
+    ]
+  ],
+  "MCySE-201": [
+    [
+      "Security standards",
+      "Standards provide structured requirements or guidance for controls, governance and assessment. A standard must be interpreted in the context of an organisation’s risks."
+    ],
+    [
+      "Project management",
+      "A security project defines scope, stakeholders, schedule, resources and risks. Track deliverables and change, and verify that controls satisfy the agreed requirements."
+    ]
+  ],
+  "MCySE-202": [
+    [
+      "System hardening",
+      "Hardening reduces unnecessary attack surface by limiting services and privileges, applying updates and configuring systems securely."
+    ],
+    [
+      "Defence and monitoring",
+      "Access control, logging, isolation and incident response work together. Monitoring is useful only when relevant events are collected and acted upon."
+    ]
+  ],
+  "MCySE-203": [
+    [
+      "Identity and authentication",
+      "Identity establishes who a subject claims to be; authentication tests that claim. Authorisation then determines what the authenticated subject may do."
+    ],
+    [
+      "Access and trusted computing",
+      "Least privilege grants only the access required for a task. Trusted-computing mechanisms use hardware and software roots of trust to support system integrity."
+    ]
+  ],
+  "MICTE-202": [
+    [
+      "Speech processing",
+      "Speech signals vary over time, so short frames are analysed to estimate features such as spectral content. Sampling and noise influence the quality of the representation."
+    ],
+    [
+      "Biomedical signals",
+      "Biomedical signals such as ECG contain physiological information mixed with noise and artefacts. Filtering and feature extraction should preserve the features relevant to the task."
+    ]
+  ],
+  "MCSE-202": [
+    [
+      "Data preparation",
+      "Data science starts with a question, data collection and assessment of quality. Cleaning, missing values and leakage can materially change downstream results."
+    ],
+    [
+      "Modelling and evaluation",
+      "Choose methods appropriate to the outcome and validate on unseen data. Interpret performance alongside uncertainty, bias and the practical consequences of errors."
+    ]
+  ],
+  "MICTE-201": [
+    [
+      "Information theory",
+      "Entropy measures uncertainty in a random variable; mutual information measures how much knowing one variable reduces uncertainty about another."
+    ],
+    [
+      "Coding",
+      "Source coding aims to represent information efficiently, while channel coding adds structured redundancy to detect or correct errors during communication."
+    ]
+  ],
+  "MCSE-203": [
+    [
+      "Image representation",
+      "An image is a grid of pixel values. Preprocessing and feature extraction transform those values into representations useful for a visual task."
+    ],
+    [
+      "Vision tasks",
+      "Classification assigns an image label; detection locates objects; segmentation assigns labels to pixels. Evaluation must reflect the task and the data distribution."
+    ]
+  ],
+  "MMLE-201": [
+    [
+      "Big-data processing",
+      "Large datasets are often partitioned across machines. Distributed processing needs to handle communication, failures and data movement as well as computation."
+    ],
+    [
+      "Analytics workflow",
+      "Ingestion, storage, transformation and analysis form a pipeline. Batch and stream processing suit different latency and consistency requirements."
+    ]
+  ],
+  "MMLE-202": [
+    [
+      "Optimisation basics",
+      "Optimisation selects variables to minimise or maximise an objective, possibly under constraints. Local and global optima need not coincide."
+    ],
+    [
+      "Gradient methods",
+      "Gradient descent iteratively moves against the gradient. Step size, conditioning and stopping criteria affect convergence; constrained problems require suitable constraint handling."
+    ]
+  ],
+  "MMLE-203": [
+    [
+      "Graphical models",
+      "A graphical model uses nodes and edges to represent a joint probability distribution and conditional dependencies."
+    ],
+    [
+      "Inference and learning",
+      "Inference estimates unknown variables given evidence; learning estimates model parameters or structure from data. Exact inference can become expensive in complex graphs."
+    ]
+  ],
+  "MCySC-301": [
+    [
+      "Digital evidence",
+      "Digital forensics identifies, preserves and examines digital evidence. Documenting collection and chain of custody helps others assess the integrity of the evidence."
+    ],
+    [
+      "Investigation",
+      "A defensible investigation uses authorised acquisition, repeatable analysis and clear reporting. Interpret artefacts in context and distinguish observation from inference."
+    ]
+  ],
+  "MICTC-301": [
+    [
+      "Multimedia signals",
+      "Images, audio and video are sampled signals with different spatial and temporal characteristics. Sampling and quantisation affect fidelity and storage."
+    ],
+    [
+      "Compression",
+      "Compression reduces representation size. Lossless methods permit exact reconstruction; lossy methods trade some fidelity for higher compression."
+    ]
+  ],
+  "MMLC-301": [
+    [
+      "Deep learning",
+      "Deep models learn layered representations by composing transformations. Optimisation, data quality and generalisation are central to successful training."
+    ],
+    [
+      "Architectures and evaluation",
+      "Convolutional networks exploit local structure, while sequence models address ordered data. Compare models using appropriate held-out data and metrics."
+    ]
+  ],
+  "MCSE-301": [
+    [
+      "Cloud service models",
+      "Infrastructure, platform and software services expose different levels of abstraction. Shared infrastructure can scale resources but introduces operational dependencies."
+    ],
+    [
+      "Cloud design",
+      "Availability, identity, network configuration, cost and data protection must be designed together. The provider and customer have different security responsibilities."
+    ]
+  ],
+  "MCySE-301": [
+    [
+      "Protocol security",
+      "Network protocols define how systems exchange messages. Security analysis examines authentication, confidentiality, integrity and the trust assumptions of those exchanges."
+    ],
+    [
+      "Threats and controls",
+      "Replay, interception and impersonation exploit different weaknesses. Protocol protections must be configured correctly and supported by sound key management."
+    ]
+  ],
+  "MCSE-302": [
+    [
+      "Sensor networks",
+      "Wireless sensor networks connect distributed sensing nodes under energy, memory and bandwidth constraints. Data is forwarded to a sink for processing."
+    ],
+    [
+      "Routing and energy",
+      "Routing choices affect coverage, latency and battery life. Aggregation reduces transmissions but can change the detail available to applications."
+    ]
+  ],
+  "MCSE-304": [
+    [
+      "Media security",
+      "Media security protects images, audio or video against unauthorised access, alteration or misuse. Confidentiality, integrity and provenance are distinct goals."
+    ],
+    [
+      "Watermarking and encryption",
+      "Encryption restricts access using keys; watermarking embeds information in media. Their effectiveness depends on the threat model and processing the media undergoes."
+    ]
+  ],
+  "MCSE-303": [
+    [
+      "Intelligent systems",
+      "Intelligent systems use models, rules or learned patterns to support decisions. Their behaviour depends on data, objectives and the environment."
+    ],
+    [
+      "Green computing",
+      "Green computing considers energy and resource use across a system’s lifecycle. Optimisation should measure both computational performance and environmental costs."
+    ]
+  ],
+  "MICTE-301": [
+    [
+      "Secure coding",
+      "Secure coding reduces exploitable defects by validating input, enforcing access control and handling errors safely."
+    ],
+    [
+      "Verification",
+      "Code review, automated checks and security testing help find different classes of problems. Security must also be maintained through dependencies and deployment configuration."
+    ]
+  ],
+  "MMLE-301": [
+    [
+      "Kernel methods",
+      "A kernel measures similarity in a way that can correspond to an implicit feature space. This allows some algorithms to model nonlinear relationships without explicitly computing every feature."
+    ],
+    [
+      "Model selection",
+      "Kernel choice and parameters affect complexity and generalisation. Use validation data to choose them and retain a separate test set for final evaluation."
+    ]
+  ],
+  "MMLE-302": [
+    [
+      "Reinforcement learning",
+      "An agent interacts with an environment, taking actions and receiving rewards. Its objective is to learn a policy that maximises expected cumulative reward."
+    ],
+    [
+      "Exploration and value",
+      "Exploration gathers information about actions; exploitation uses current knowledge. Value functions estimate future return, but estimates depend on the state representation and assumptions."
+    ]
+  ],
+  "MMLE-303": [
+    [
+      "Application design",
+      "An ML application connects a defined problem and data pipeline to a model and a decision. A strong baseline helps establish whether added complexity is useful."
+    ],
+    [
+      "Deployment and monitoring",
+      "Deployed systems need checks for data quality, performance drift and operational failures. Re-evaluation is necessary when the environment changes."
+    ]
+  ],
+  "MMLE-304": [
+    [
+      "Topology and data",
+      "Topology studies properties such as connected components and holes that persist under continuous deformation. Topological data analysis uses related ideas to study the shape of data."
+    ],
+    [
+      "Persistent homology",
+      "Persistent homology tracks features across a range of scales. Long-lived features may be meaningful, but interpretation depends on data, distance and noise."
+    ]
+  ],
+  "MCSC-105": [
+    [
+      "Counting principles",
+      "The product rule multiplies the number of choices made in sequence. The pigeonhole principle guarantees repetition when more objects are placed into fewer boxes. Inclusion-exclusion corrects double counting across overlapping sets."
+    ],
+    [
+      "Recurrences and generating functions",
+      "A recurrence defines each term using earlier terms. A generating function encodes a sequence as coefficients of a formal power series, allowing algebraic manipulation of the whole sequence."
+    ],
+    [
+      "Logic, sets, languages and machines",
+      "Logic formalizes valid inference; set theory describes collections and operations. A formal language is a set of strings over an alphabet. A finite state machine accepts a string by following transitions from a start state to an accepting state."
+    ],
+    [
+      "Graphs, trails and cycles",
+      "A graph G=(V,E) contains vertices and edges. Directed edges have orientation. An Eulerian trail uses every edge once; a Hamilton cycle visits every vertex once and returns to its start."
+    ],
+    [
+      "Connectivity and trees",
+      "A connected graph has a path between every pair of vertices. A tree is a connected acyclic undirected graph; with n vertices it has exactly n-1 edges and a unique simple path between each pair."
+    ],
+    [
+      "Graph traversal and shortest paths",
+      "BFS explores by distance layers and gives shortest unweighted paths. DFS explores deeply before backtracking and supports connectivity, cycle detection, and ordering tasks. Weighted shortest paths require an algorithm whose assumptions match the edge weights."
+    ],
+    [
+      "Spanning trees, matching and assignment",
+      "A minimum spanning tree connects every vertex with minimum total edge weight. A matching contains edges with no shared endpoint. Job assignment is a weighted bipartite matching problem between workers and jobs."
+    ],
+    [
+      "Network flows and transportation",
+      "A flow network is a directed graph with capacities, a source, and a sink. A feasible flow respects capacity constraints and flow conservation. Maximum flow models transportation, routing, and allocation."
+    ]
+  ],
+  "MCSC-103": [
+    [
+      "Telecommunications foundations",
+      "Telecommunication moves information over distance. Conducted media guides signals through copper or fiber; radiated media uses electromagnetic propagation. Bandwidth, attenuation, noise, delay, and signal-to-noise ratio shape achievable communication."
+    ],
+    [
+      "Coding, modulation and errors",
+      "Line and channel coding map information into transmitted symbols. Modulation varies a carrier. Detection adds redundancy to identify corruption; correction adds enough structured redundancy to recover some errors."
+    ],
+    [
+      "Networks, standards and layered design",
+      "Layering separates concerns through services and protocols. The OSI model organizes communication into seven conceptual layers. Hubs, switches, routers, and gateways act at different scopes; standards allow independently built systems to interoperate."
+    ],
+    [
+      "Applications and system selection",
+      "Network design translates application requirements into topology, capacity, redundancy, manageability, security, and cost choices. Selection should follow measured requirements rather than brand preference."
+    ],
+    [
+      "Security, signatures and authentication",
+      "Confidentiality prevents unauthorized disclosure, integrity detects alteration, and availability preserves service. Digital signatures bind a private-key operation to data; authentication protocols establish identity or possession of credentials."
+    ],
+    [
+      "Wireless mobility",
+      "A WLAN connects devices over radio through access points or peer modes. Mobility introduces association, roaming, interference, and security concerns. Mobile IP preserves reachability as a node changes its point of attachment."
+    ],
+    [
+      "SNMP models and proxying",
+      "SNMP managers query or configure agents using managed objects defined in MIB modules. The information model names typed objects; the communication model exchanges protocol data units; the functional model covers monitoring and control. A proxy represents devices that cannot communicate directly with the manager."
+    ],
+    [
+      "Broadband, ATM and network management",
+      "ATM transports fixed-size cells through virtual connections. Operational management keeps inventory and configuration consistent, detects and isolates faults, and measures performance indicators such as latency, loss, throughput, and utilization."
+    ],
+    [
+      "Web and XML management plus laboratory",
+      "Web-based management exposes operational views through browser-accessible interfaces. XML represents structured management data. Laboratory work connects protocol theory to parsers, sockets, traffic experiments, and numerical analysis."
+    ]
+  ],
+  "MCSC-102": [
+    [
+      "Events and probability rules",
+      "A sample space contains possible outcomes and an event is a subset. Conditional probability updates the relevant sample space. Independence means one event does not change the probability of the other. Bayes' rule reverses a conditional probability using priors and evidence."
+    ],
+    [
+      "Random variables and discrete distributions",
+      "A random variable maps outcomes to numbers. A probability mass function assigns probability to each discrete value. Each named distribution encodes a particular experiment and assumptions."
+    ],
+    [
+      "Continuous distributions, expectation and CLT",
+      "A continuous density integrates to probability. Expectation summarizes a distribution's center; moments describe shape. The Central Limit Theorem explains why standardized sums or means often approach a normal distribution under suitable conditions."
+    ],
+    [
+      "Simulation and Monte Carlo",
+      "Simulation generates pseudo-random observations from a model. Monte Carlo estimates quantities by repeated sampling. Bootstrapping resamples observed data to approximate sampling variability when analytic formulas are difficult."
+    ],
+    [
+      "Stochastic processes",
+      "A stochastic process is a time-indexed family of random variables. Markov chains condition the future on the current state. Queuing systems combine arrival and service processes to study waiting and congestion."
+    ],
+    [
+      "Sampling, estimation and confidence intervals",
+      "A parameter describes a population; a statistic is computed from a sample. Estimation uses data to infer parameters. Method of moments matches sample and population moments; maximum likelihood chooses parameters that make observed data most plausible."
+    ],
+    [
+      "Hypothesis testing and anomalies",
+      "A hypothesis test measures how incompatible data are with a null model. Type I error rejects a true null; Type II error fails to reject a false null. Anomaly detection needs an explicit baseline and false-alarm trade-off."
+    ],
+    [
+      "Exploration and statistical models",
+      "Exploratory graphics reveal distribution, relationships, and data quality. Least squares models a numeric response; logistic regression models log-odds for a binary response. ANOVA compares variation among and within groups. Robust and nonparametric methods reduce reliance on fragile assumptions."
+    ]
+  ],
+  "MMLC-202": [
+    [
+      "Learning problems and models",
+      "Learning uses experience to improve performance on a defined task. The output may be a label, function, relation, grammar, probability model, value estimate, behavior, or program. A sound formulation identifies input representation, target, loss, data source, and evaluation protocol."
+    ],
+    [
+      "Bayesian, MAP and MDL frameworks",
+      "Bayesian inference combines prior belief and likelihood into a posterior. MAP selects the parameter with highest posterior density. MDL favors the model that gives the shortest combined description of model and data."
+    ],
+    [
+      "Parameter estimation and model families",
+      "Parameter estimation fits a chosen model family. A sufficient statistic preserves all sample information relevant to a parameter under the model. Trees partition feature space, neural networks compose learned transformations, SVMs maximize a margin, and Bayesian networks encode conditional dependence."
+    ],
+    [
+      "Text and sequence models",
+      "Bag of words represents token counts while discarding order. N-grams preserve short local context. Markov models assume limited state dependence; hidden Markov models infer unobserved states from observed emissions. Relational models include dependencies among entities."
+    ],
+    [
+      "Instance, rule and ensemble methods",
+      "Association rules describe co-occurrence patterns using support and confidence. Nearest-neighbour methods predict from nearby training examples. Local regression fits around a query point. Ensembles combine diverse learners to reduce error."
+    ],
+    [
+      "Computational learning theory",
+      "Learning theory relates hypothesis complexity, data volume, errors, accuracy, and confidence. VC dimension measures the largest set a hypothesis class can shatter. Occam-style reasoning controls complexity; boosting combines weak learners into a stronger classifier."
+    ],
+    [
+      "Representation, reduction and visualization",
+      "Feature selection retains a subset of original variables. Dimensionality reduction maps data to a smaller representation. Visualization supports exploration but a two-dimensional projection can distort global or local structure."
+    ],
+    [
+      "Clustering and mixture models",
+      "Clustering groups observations without supplied labels. K-means minimizes within-cluster squared distance to centroids. Hierarchical methods build nested merges or splits. Mixture models view observations as arising from latent component distributions."
+    ],
+    [
+      "Document recognition application",
+      "Document recognition integrates preprocessing, segmentation, representation, classification or sequence modeling, and evaluation. Errors can propagate across stages, so component and end-to-end metrics are both useful."
+    ]
+  ],
+  "MCSC-301": [
+    [
+      "Foundations and language of research",
+      "Research is systematic inquiry designed to produce defensible knowledge. Deduction tests consequences derived from theory; induction develops patterns or theory from observations. Concepts become measurable through explicit operational definitions and variables."
+    ],
+    [
+      "Problem identification and hypotheses",
+      "A research problem identifies a knowledge gap; a research question makes it answerable. A hypothesis states a testable expectation. The null provides a reference model, while the alternative represents the competing claim."
+    ],
+    [
+      "Research design",
+      "Research design is the plan connecting questions to evidence and inference. Exploratory designs clarify poorly understood problems; descriptive designs characterize populations or phenomena; experiments manipulate an independent variable and observe outcomes under controlled comparison."
+    ],
+    [
+      "Qualitative and quantitative approaches",
+      "Qualitative research investigates meaning and context through rich evidence; quantitative research analyzes measured variables numerically. Mixed approaches integrate them when neither alone answers the full question."
+    ],
+    [
+      "Measurement quality and levels",
+      "Validity concerns whether an inference or instrument measures what it claims. Reliability concerns consistency. Nominal values are categories, ordinal values have order, interval scales have equal differences, and ratio scales also have a meaningful zero."
+    ],
+    [
+      "Sampling",
+      "A target population is the group of interest; the sampling frame is the operational list used to select units. Probability sampling gives known selection mechanisms. Sample size depends on precision, variability, design, analysis, and practical constraints."
+    ],
+    [
+      "Data preparation and analysis",
+      "Data preparation applies a documented codebook, type checks, missing-value rules, and quality checks. Univariate analysis summarizes one variable. Cross-tabulation and the chi-square test assess association between categorical variables under appropriate assumptions."
+    ],
+    [
+      "Interpretation and paper writing",
+      "Interpretation connects results to the research question, assumptions, uncertainty, limitations, and prior work. A paper typically communicates problem, related context, methods, results, discussion, and references. Venue selection should consider scope, audience, review quality, policies, and fit rather than a metric alone."
+    ],
+    [
+      "Research sources and databases",
+      "Reference works orient a topic and supply terminology; research databases help discover primary literature. Search should combine concepts, synonyms, Boolean operators, filters, citation chaining, and a documented inclusion process."
+    ],
+    [
+      "Research tools and techniques",
+      "Reference managers store metadata and attachments and generate citations, but records still require verification. Document tools support structured writing and revision. Similarity tools flag overlap for human review; they do not determine plagiarism by themselves."
+    ]
+  ],
+  "MCSC-106": [
+    [
+      "Independent study",
+      "Choose and investigate a topic with guidance from the supervisor. Define the question, locate relevant sources, and document methods and findings."
+    ],
+    [
+      "Research practice",
+      "Evaluate evidence, record sources accurately, and present progress. Confirm the specific requirements and assessment with your department."
+    ]
+  ],
+  "MCSC-202": [
+    [
+      "Independent study",
+      "Choose and investigate a topic with guidance from the supervisor. Define the question, locate relevant sources, and document methods and findings."
+    ],
+    [
+      "Research practice",
+      "Evaluate evidence, record sources accurately, and present progress. Confirm the specific requirements and assessment with your department."
+    ]
+  ],
+  "MCSC-302": [
+    [
+      "Dissertation work",
+      "Develop a research question, investigate related work, select an appropriate method, and document the evidence and conclusions."
+    ],
+    [
+      "Supervision and assessment",
+      "Agree milestones and reporting requirements with your supervisor. The department determines the exact scope, submission and evaluation rules."
+    ]
+  ],
+  "MCSC-401": [
+    [
+      "Dissertation work",
+      "Develop a research question, investigate related work, select an appropriate method, and document the evidence and conclusions."
+    ],
+    [
+      "Supervision and assessment",
+      "Agree milestones and reporting requirements with your supervisor. The department determines the exact scope, submission and evaluation rules."
+    ]
+  ]
+}

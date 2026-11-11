@@ -1,5 +1,13 @@
 # MCSC-103 - Advanced Computer Networks and Communication
 
+**2021–22 scheme:** Semester 1 · MCSC-103 · Common core
+
+**Course page:** [Advanced Computer Networks and Communication](https://arshad9999.github.io/MTech-Cse-CAS-Course/subject.html?code=MCSC-103)
+
+**Official source:** [CAS syllabus, near page 13](https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=13)
+
+The existing guide below may use older course codes, semester labels or credit values. Consult the official syllabus and your department for your batch.
+
 **Credits:** 4
 
 Connect physical transmission, network protocols, management, mobility, and security into one operational view.

@@ -1,4 +1,12 @@
-# MCSC-201 - Research Methodology
+# MCSC-301 - Research Methodology
+
+**2021–22 scheme:** Semester 3 · MCSC-301 · Common core
+
+**Course page:** [Research Methodology](https://arshad9999.github.io/MTech-Cse-CAS-Course/subject.html?code=MCSC-301)
+
+**Official source:** [CAS syllabus, near page 35](https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=35)
+
+The existing guide below may use older course codes, semester labels or credit values. Consult the official syllabus and your department for your batch.
 
 **Credits:** 3
 

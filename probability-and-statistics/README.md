@@ -1,4 +1,12 @@
-# MCSC-202 - Probability and Statistics
+# MCSC-102 - Probability and Statistics
+
+**2021–22 scheme:** Semester 1 · MCSC-102 · Common core
+
+**Course page:** [Probability and Statistics](https://arshad9999.github.io/MTech-Cse-CAS-Course/subject.html?code=MCSC-102)
+
+**Official source:** [CAS syllabus, near page 12](https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=12)
+
+The existing guide below may use older course codes, semester labels or credit values. Consult the official syllabus and your department for your batch.
 
 **Credits:** Not stated in the supplied syllabus
 
