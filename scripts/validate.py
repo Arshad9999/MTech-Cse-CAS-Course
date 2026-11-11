@@ -15,8 +15,12 @@ for semester,codes in enumerate(featured,1):
         course=next((c for c in catalog if c['code']==code and c['semester']==semester),None)
         if not course: errors.append(f'Missing featured course {code} in semester {semester}')
         elif not course.get('guide') and len(guides.get(code,[])) < 3: errors.append(f'Missing featured lessons for {code}')
+        elif semester <= 3 and len(guides.get(code,[])) < 2: errors.append(f'Missing enhanced lessons for {code}')
         for lesson in guides.get(code,[]):
             if any(not lesson.get(key) for key in ('title','explanation','example','distinction')): errors.append(f'Incomplete lesson in {code}')
+            for key in ('explanation','example','distinction'):
+                value=lesson.get(key,'')
+                if value.count('(') != value.count(')'): errors.append(f'Unbalanced parentheses in {code}: {lesson.get("title")} ({key})')
 for code,paper in papers.items():
     if not paper.get('url','').startswith('https://') or not paper.get('source') or not paper.get('questions'): errors.append(f'Invalid paper for {code}')
 if {c['semester'] for c in catalog} != {1,2,3,4}: errors.append('Catalogue must cover all four semesters')

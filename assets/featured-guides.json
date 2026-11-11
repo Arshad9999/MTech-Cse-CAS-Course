@@ -35,6 +35,24 @@
       "explanation": "Computational geometry studies geometric objects and queries; parallel algorithms split work while accounting for synchronisation. The syllabus lab also includes search, sorting, linked lists, trees, BFS/DFS, spanning trees, string matching, greedy methods, dynamic programming and backtracking.",
       "example": "Breadth-first search explores levels with a queue; depth-first search follows branches using a stack or recursion.",
       "distinction": "Parallel speedup depends on serial work and communication, not simply the processor count."
+    },
+    {
+      "title": "Residual graphs and augmenting paths",
+      "explanation": "A residual graph represents how much flow can still be sent or reversed on each edge. Ford–Fulkerson repeatedly finds an augmenting path and increases flow by its smallest residual capacity until no augmenting path remains.",
+      "example": "If a path has residual capacities 5, 2 and 4, its bottleneck is 2; augmenting by 2 saturates at least one edge.",
+      "distinction": "Reverse residual edges allow earlier choices to be revised; they are not necessarily original network edges."
+    },
+    {
+      "title": "Complexity and reductions",
+      "explanation": "A decision problem asks a yes/no question. A polynomial-time reduction transforms one problem into another, showing that an efficient solution to the second would solve the first; NP-completeness combines membership in NP with NP-hardness.",
+      "example": "To show problem B is NP-hard, reduce a known NP-hard problem A to B and prove that yes-instances correspond.",
+      "distinction": "A reduction from A to B supports B being at least as hard as A; the direction matters."
+    },
+    {
+      "title": "Dynamic programming and greedy strategies",
+      "explanation": "Dynamic programming stores solutions to overlapping subproblems and combines them using a recurrence. A greedy algorithm chooses a locally appealing step and needs a proof that those choices lead to an optimal result.",
+      "example": "For 0/1 knapsack, compare excluding an item with including it when capacity permits, using the preceding item row.",
+      "distinction": "A plausible greedy rule is not enough: 0/1 knapsack is not generally solved optimally by sorting items by value-to-weight ratio."
     }
   ],
   "MCSC-104": [
@@ -73,6 +91,24 @@
       "explanation": "Decision trees split features into regions; boosting sequentially combines weak learners. Bias describes systematic error while variance describes sensitivity to the training sample.",
       "example": "A decision tree might split on attendance and then assignment score to predict a category.",
       "distinction": "Cross-validation helps tune complexity, while a final untouched test set gives a less biased final assessment."
+    },
+    {
+      "title": "Cross-validation and data leakage",
+      "explanation": "Cross-validation repeatedly fits and evaluates on different training and validation folds. Scaling, feature selection and imputation must be learned inside each training fold to avoid using validation information.",
+      "example": "In five-fold validation, fit a scaler on four folds, transform the held-out fold using those parameters, and repeat for each fold.",
+      "distinction": "A test set is reserved for final evaluation; repeatedly selecting models on it turns it into validation data."
+    },
+    {
+      "title": "Naive Bayes and class imbalance",
+      "explanation": "Naive Bayes applies Bayes’ rule with a conditional-independence assumption between features given the class. For imbalanced data, report class-specific precision and recall rather than accuracy alone.",
+      "example": "If 100 cases contain 5 positives, predicting every case negative gives 95% accuracy but zero recall for the positive class.",
+      "distinction": "Precision asks how many predicted positives are correct; recall asks how many actual positives were found."
+    },
+    {
+      "title": "Bias, variance and boosting",
+      "explanation": "A model with high bias may underfit, while a high-variance model can fit noise and change substantially across datasets. Boosting combines weak learners sequentially to improve a chosen objective.",
+      "example": "A shallow tree ensemble can correct patterns missed by earlier trees, but excessive fitting to noise can still hurt held-out performance.",
+      "distinction": "Bagging fits models largely in parallel on resampled data; boosting fits a sequence where later learners address earlier errors."
     }
   ],
   "MCSC-201": [
@@ -111,6 +147,24 @@
       "explanation": "IoT supports monitoring, remote control, industrial systems, agriculture and healthcare. Evaluate accuracy, latency, availability, energy and safety for the use case.",
       "example": "A greenhouse sensor samples periodically; compare measured temperature against a calibrated reference before automating control.",
       "distinction": "Monitoring observes conditions; closed-loop control acts and observes the result. Validate sensor calibration and failure behaviour."
+    },
+    {
+      "title": "Addressing, subnetting and routing",
+      "explanation": "An IPv4 subnet mask identifies the network prefix and host portion. A router forwards packets between networks using routes; a switch forwards Ethernet frames within a local network.",
+      "example": "A /24 IPv4 prefix contains 256 addresses in total; usable host-address conventions depend on the subnet and network context.",
+      "distinction": "A MAC address identifies a link-layer interface on a local link; an IP address supports network-layer addressing and routing."
+    },
+    {
+      "title": "MQTT quality of service and device lifecycle",
+      "explanation": "MQTT connects clients through a broker and offers delivery levels: QoS 0 at most once, QoS 1 at least once, and QoS 2 exactly once at the MQTT protocol level.",
+      "example": "A sensor using QoS 1 may cause a duplicate message after retransmission, so an application should handle duplicates appropriately.",
+      "distinction": "A protocol delivery guarantee does not ensure a physical sensor reading is accurate or an actuator performed an action."
+    },
+    {
+      "title": "IoT data quality and resilience",
+      "explanation": "Sensor systems must consider calibration, timestamps, missing readings, power loss, connectivity interruptions and safe update procedures. Analyse end-to-end delay rather than network latency alone.",
+      "example": "A gateway can timestamp readings, buffer a bounded number while offline and transmit them after reconnecting, while preserving their original observation times.",
+      "distinction": "A measurement may be unavailable, stale or invalid; these states should not silently become zero."
     }
   ],
   "MMLC-201": [
@@ -149,6 +203,24 @@
       "explanation": "Deep feed-forward networks, CNNs, RNNs and deep belief networks learn different representations. Dropout and other regularisers can reduce overfitting; model selection requires separate validation.",
       "example": "A CNN shares filters over an image, while an RNN processes a sequence with a recurring hidden state.",
       "distinction": "Dropout is a training technique, whereas a CNN is an architectural family."
+    },
+    {
+      "title": "Perceptron and linear separability",
+      "explanation": "A perceptron applies a threshold to a weighted sum. The perceptron learning rule adjusts weights after a misclassification; a single-layer linear decision boundary cannot represent every Boolean function.",
+      "example": "The AND function is linearly separable, but XOR is not separable by one straight line in its two-dimensional binary input space.",
+      "distinction": "A multilayer network with nonlinear hidden units can represent functions that a single linear threshold unit cannot."
+    },
+    {
+      "title": "Fuzzy membership and defuzzification",
+      "explanation": "A membership function maps an input to a degree from 0 to 1. Fuzzy inference combines rule activations and an output membership shape; defuzzification converts that result to a crisp action.",
+      "example": "A triangular membership function with vertices (20,0), (25,1), (30,0) gives membership 0.6 at 27.",
+      "distinction": "A fuzzy membership of 0.6 is a degree of belonging to a chosen set, not necessarily a 60% probability."
+    },
+    {
+      "title": "Genetic representation and selection",
+      "explanation": "A genetic algorithm encodes each candidate, evaluates fitness, selects parents, applies crossover and mutation, and iterates. Representation, fitness and constraints determine what solutions are searchable.",
+      "example": "To select three features from a set of ten, use a ten-bit string and penalise or repair candidates that do not contain exactly three ones.",
+      "distinction": "Mutation introduces variation; selection changes which candidates contribute to later generations."
     }
   ],
   "MCSE-202": [
@@ -167,8 +239,8 @@
     {
       "title": "Probability and inference",
       "explanation": "Conditional probability describes an event given evidence. Bayes’ rule combines a prior with a likelihood; intervals and hypothesis tests quantify uncertainty under assumptions.",
-      "example": "If P(A)=0.5, P(B",
-      "distinction": "A)=0.8 and P(B)=0.5, then P(A"
+      "example": "If P(A)=0.5, P(B|A)=0.8 and P(B)=0.5, Bayes’ rule gives P(A|B)=0.8.",
+      "distinction": "A confidence interval is a procedure with long-run coverage, not automatically a posterior probability about a fixed parameter."
     },
     {
       "title": "Association, confounding and Simpson’s paradox",
@@ -187,6 +259,24 @@
       "explanation": "Bayesian inference updates a prior distribution using data likelihood to obtain a posterior. Hierarchical models share information across groups while allowing group-level differences.",
       "example": "A prior for each district’s rate can be linked to a common population distribution, then updated with district observations.",
       "distinction": "Posterior uncertainty depends on the model and prior; diagnostic plots and clear uncertainty reporting remain essential."
+    },
+    {
+      "title": "Simpson’s paradox and group composition",
+      "explanation": "An association in aggregate data can reverse after dividing data into relevant groups, because the group mix differs. Inspect denominators and group-level rates before interpreting a summary.",
+      "example": "Treatment A succeeds in 9/10 easy and 50/100 hard cases, while B succeeds in 80/100 easy and 4/10 hard cases. A has a higher success rate in each group, but A is 59/110 overall and B is 84/110 because their group composition differs.",
+      "distinction": "A reversal signals that aggregation matters; it does not by itself identify a causal effect."
+    },
+    {
+      "title": "Leakage and validation pipelines",
+      "explanation": "Leakage occurs when information unavailable at prediction time influences training or model selection. Fit preprocessing only on training partitions and keep a final test set separate.",
+      "example": "If the mean used for imputation is calculated using all records before a train–test split, test-set information has entered training.",
+      "distinction": "A random split can be misleading for temporal data; a chronological split may better match the deployment scenario."
+    },
+    {
+      "title": "Bayesian updating and prior choice",
+      "explanation": "Bayesian inference combines a prior distribution with a likelihood to produce a posterior. A posterior predictive distribution incorporates uncertainty about model parameters in predictions.",
+      "example": "With a Beta(1,1) prior and 8 successes in 10 independent Bernoulli observations, the posterior is Beta(9,3).",
+      "distinction": "A posterior depends on the likelihood and prior; sensitivity checks can reveal when conclusions depend strongly on assumptions."
     }
   ],
   "MMLE-201": [
@@ -225,6 +315,24 @@
       "explanation": "Spark processes distributed data with reusable computations and supports machine-learning workflows through Spark ML. H2O and Azure ML provide alternative tools or platforms named in the syllabus.",
       "example": "Split data before fitting transformations, train a classifier and evaluate it on held-out records.",
       "distinction": "Distributed training addresses scale, but does not by itself solve leakage, bias or poor evaluation."
+    },
+    {
+      "title": "HDFS blocks and fault tolerance",
+      "explanation": "HDFS separates file-system metadata from data blocks. A configured replication factor creates copies on different nodes, and the system attempts recovery when a copy becomes unavailable.",
+      "example": "If the replication factor is 3, the system targets three replicas of each block subject to cluster conditions and placement policy.",
+      "distinction": "Replication improves availability but is not a substitute for an independent backup or protection from logical deletion."
+    },
+    {
+      "title": "MapReduce word-count trace",
+      "explanation": "A mapper emits intermediate key–value pairs; the shuffle groups values by key; reducers aggregate each group. This separation allows work to be distributed.",
+      "example": "For “cat dog cat”, map emits (cat,1), (dog,1), (cat,1); shuffle groups cat:[1,1], dog:[1]; reduce emits cat:2 and dog:1.",
+      "distinction": "MapReduce is a programming model; Hadoop is an ecosystem that includes an implementation and storage components."
+    },
+    {
+      "title": "Hive partitions and query design",
+      "explanation": "Partitioning organises data by selected fields so a query can skip irrelevant partitions when filtering. Tables may be managed or external depending on configuration and engine version.",
+      "example": "Partitioning event data by date can avoid reading other dates for a date-filtered query.",
+      "distinction": "Partitioning can improve targeted scans, but too many tiny partitions or files can add overhead."
     }
   ],
   "MMLC-301": [
@@ -263,6 +371,24 @@
       "explanation": "Transfer learning reuses representations learned on one task for another. Autoencoders reconstruct input through a bottleneck; generative models learn a model of data, while deep belief networks combine layers of probabilistic representations.",
       "example": "A pretrained image encoder can be fine-tuned for a smaller labelled dataset after checking that training and evaluation data do not overlap.",
       "distinction": "An autoencoder’s reconstruction objective differs from a classifier’s label-prediction objective."
+    },
+    {
+      "title": "Convolution dimensions and receptive fields",
+      "explanation": "A convolutional layer uses a kernel applied across an input. For one dimension, output size is floor((n+2p−k)/s)+1 for input n, padding p, kernel k and stride s, assuming unit dilation.",
+      "example": "For n=32, k=3, p=1 and s=1, the output size is 32. With the same settings and s=2, it is 16.",
+      "distinction": "A feature map is the result of applying learned filters; a receptive field describes which input positions can affect an output."
+    },
+    {
+      "title": "Regularisation and evaluation",
+      "explanation": "Regularisation limits effective model complexity or discourages overfitting. Weight decay, dropout and early stopping affect training differently; compare them using a validation protocol.",
+      "example": "If training loss falls while validation loss rises over several epochs, evaluate whether the model is overfitting before selecting a checkpoint.",
+      "distinction": "Dropout changes activations during training; weight decay penalises or shrinks parameters, depending on the optimiser’s implementation."
+    },
+    {
+      "title": "Transfer learning and data leakage",
+      "explanation": "Transfer learning adapts parameters learned on a source task to a target task, often by training a new head and optionally fine-tuning earlier layers. Check dataset overlap and distribution mismatch.",
+      "example": "A pretrained image encoder can be evaluated on a new task with the test set kept separate from fine-tuning and model selection.",
+      "distinction": "Feature extraction freezes the encoder; fine-tuning updates some or all pretrained parameters."
     }
   ],
   "MMLE-302": [
@@ -301,6 +427,24 @@
       "explanation": "Imitation learning learns behaviour from demonstrations; offline RL learns from a fixed dataset and must handle actions poorly represented in that data. Monte Carlo tree search builds a search tree using sampled rollouts; meta-learning studies adaptation across tasks.",
       "example": "A game-playing agent can use simulated rollouts to compare candidate moves before acting.",
       "distinction": "Offline evaluation is difficult when the target policy differs greatly from the data-collection policy."
+    },
+    {
+      "title": "Bellman expectation and optimality",
+      "explanation": "The Bellman expectation equation expresses a policy’s value as expected immediate reward plus discounted value of the next state. The optimality equation chooses the best action at each state.",
+      "example": "If a state has a certain reward 2 and leads to a state valued at 5 with γ=0.9, its one-step backed-up value is 6.5.",
+      "distinction": "Policy evaluation follows a fixed policy; optimality backups compare available actions."
+    },
+    {
+      "title": "Q-learning and SARSA updates",
+      "explanation": "Both use sampled transitions, a learning rate and a temporal-difference target. Q-learning uses the largest next action value; SARSA uses the value of the next action selected by the behaviour policy.",
+      "example": "If old Q=2, α=0.5, r=1, γ=0.9 and the maximum next Q=4, a Q-learning update yields 3.3.",
+      "distinction": "Q-learning is off-policy because its target is greedy even when behaviour explores; SARSA’s target follows the behaviour action."
+    },
+    {
+      "title": "Offline reinforcement learning and evaluation",
+      "explanation": "Offline RL uses a fixed dataset rather than collecting new interaction while learning. The learned policy can choose actions rarely represented in the data, making value estimates unreliable.",
+      "example": "A policy trained from historical control logs should be checked for actions outside the logging policy’s coverage before any live use.",
+      "distinction": "Imitation learning copies behaviour from demonstrations; offline RL uses rewards and transitions to optimise a policy from a fixed dataset."
     }
   ],
   "MCSC-106": [
@@ -321,6 +465,18 @@
       "explanation": "Record methods and sources, cite borrowed work, retain reproducible notes and report uncertainty. Confirm progress and submission requirements with your supervisor.",
       "example": "Maintain a dated log of experiments, code versions, observations and next steps.",
       "distinction": "A preliminary result is evidence to examine, not a conclusion that must be defended regardless of contrary data."
+    },
+    {
+      "title": "Search strategies and evidence tables",
+      "explanation": "Build a search using concept blocks joined with AND and synonyms joined with OR. Record databases, dates, exact queries and selection criteria so the search can be revisited.",
+      "example": "A query might combine (phishing OR fraudulent website) with (detection OR classification); screen title and abstract against a defined question.",
+      "distinction": "A systematic search follows a documented process; a narrative overview may be broader and less reproducible."
+    },
+    {
+      "title": "Research questions and operational definitions",
+      "explanation": "A useful question defines the setting, variables and intended comparison. An operational definition states how an abstract construct will be observed or measured.",
+      "example": "Define detection latency as elapsed time between an event arriving and a decision being produced, measured by a specified clock and protocol.",
+      "distinction": "A conceptual definition explains meaning; an operational definition explains measurement."
     }
   ],
   "MCSC-202": [
@@ -341,6 +497,18 @@
       "explanation": "Consider consent, privacy, data rights, security and the limitations of any available sample. Record versions and assumptions so results can be checked.",
       "example": "Store only needed data and explain any permissions or approval required by the institution.",
       "distinction": "Reproducibility of a computation does not by itself establish that its data or conclusions are valid."
+    },
+    {
+      "title": "Research designs and baselines",
+      "explanation": "Choose an observational, experimental, simulation or other design according to the question, available resources and ethical constraints. Define a baseline that makes the proposed contribution meaningful.",
+      "example": "A system comparison can use the same dataset and evaluation split for both a proposed model and a simple existing baseline.",
+      "distinction": "A baseline is a reference for comparison; a control condition is defined by an experimental design."
+    },
+    {
+      "title": "Pilot studies and protocol changes",
+      "explanation": "A pilot checks whether recruitment, instruments, data handling or code are workable. Record changes made after the pilot and distinguish planned from exploratory analysis.",
+      "example": "A pilot of ten sample records may reveal malformed timestamps before the full data pipeline is run.",
+      "distinction": "A successful pilot does not guarantee adequate statistical power or unbiased results in the full study."
     }
   ],
   "MCSC-302": [
@@ -361,6 +529,18 @@
       "explanation": "Maintain versioned code and data references, document assumptions and report deviations from the plan. Departmental rules determine the precise submission and review process.",
       "example": "Keep a research log and a short progress report describing work completed, evidence, issues and next steps.",
       "distinction": "A milestone is a planning aid; formal assessment requirements come from your institution."
+    },
+    {
+      "title": "Literature synthesis and research gap",
+      "explanation": "Compare previous studies by problem, dataset, method, evaluation and limitations. Define a gap that follows from that comparison and a question that can be addressed with available evidence.",
+      "example": "If published models are tested only on one dataset, a proposed study might evaluate generalisation across clearly identified datasets, subject to access and comparability.",
+      "distinction": "A topic is a broad area; a gap is a specific supported limitation or unresolved question."
+    },
+    {
+      "title": "Methodology and study protocol",
+      "explanation": "Specify data provenance, inclusion rules, preprocessing, baselines, outcome measures, analysis and ethical safeguards before conducting the study where feasible.",
+      "example": "A classification protocol can define dataset versions, leakage-resistant splits, baseline models, metrics and a plan for handling failures.",
+      "distinction": "A pilot checks whether a procedure works; it does not guarantee that the full study is unbiased or adequately powered."
     }
   ],
   "MCSC-401": [
@@ -381,6 +561,106 @@
       "explanation": "Verify citations, figure permissions, data handling, calculations and reproducibility. Document what can and cannot be shared and secure any necessary approvals.",
       "example": "Record software versions, dataset provenance, configuration and steps needed to rerun an analysis.",
       "distinction": "Reproducible code supports checking, but valid design and representative data remain separate requirements."
+    }
+  ],
+  "MCSC-102": [
+    {
+      "title": "Conditional probability and Bayes’ rule",
+      "explanation": "Conditional probability updates an event probability when another event is known: P(A|B)=P(A∩B)/P(B), for P(B)>0. Bayes’ rule reverses the conditioning using a prior and likelihood.",
+      "example": "If P(A)=0.2, P(B|A)=0.8 and P(B|not A)=0.1, then P(B)=0.24 and P(A|B)=2/3.",
+      "distinction": "Mutually exclusive events cannot occur together; independent events satisfy P(A∩B)=P(A)P(B)."
+    },
+    {
+      "title": "Estimation, confidence intervals and tests",
+      "explanation": "A point estimate summarises a parameter with one value; a confidence interval is produced by a procedure designed to cover the fixed parameter at a stated long-run rate under assumptions. Hypothesis testing evaluates data against a null model.",
+      "example": "A 95% confidence-interval method would cover the true parameter in about 95% of repeated samples under its assumptions.",
+      "distinction": "A p-value is not the probability that the null hypothesis is true. Sampling bias is not cured by a larger sample alone."
+    },
+    {
+      "title": "Markov chains and queues",
+      "explanation": "A Markov chain models transitions between states where the present state supplies the information relevant to the next transition. Queueing models use arrival and service processes to study waiting and congestion.",
+      "example": "For transitions P(0→1)=0.2 and P(0→0)=0.8, a system currently in state 0 moves to state 1 next step with probability 0.2.",
+      "distinction": "A stationary distribution describes a long-run state distribution when applicable; it is not the same as a single transition probability."
+    }
+  ],
+  "MCSC-103": [
+    {
+      "title": "Layered communication and encapsulation",
+      "explanation": "Layering assigns communication responsibilities to protocols. Application data is carried by transport, network and link mechanisms; encapsulation adds control information at each relevant layer.",
+      "example": "A web request may use HTTP over TCP, IP and a local Ethernet or Wi-Fi link. A receiver processes the layers in reverse.",
+      "distinction": "A protocol specifies rules between peers; a layer is a way to organise responsibilities."
+    },
+    {
+      "title": "Error detection, retransmission and recovery",
+      "explanation": "A checksum or cyclic redundancy check detects many transmission errors; error-correcting codes add redundancy that can permit correction. Retransmission protocols can recover lost data when the communication design allows feedback.",
+      "example": "With a simple parity bit, adding one parity bit can detect an odd number of bit flips, but cannot reliably detect every multi-bit error.",
+      "distinction": "Detection identifies an invalid received pattern; correction reconstructs data only under the code’s guarantees."
+    },
+    {
+      "title": "SNMP, management and security",
+      "explanation": "SNMP management stations query or receive notifications about managed devices through management information represented by objects. Configuration, fault and performance management address different operational needs.",
+      "example": "A manager can monitor interface counters to identify increasing packet drops and investigate a fault.",
+      "distinction": "Monitoring identifies conditions; access control, authentication and encryption address different security requirements. SNMP versions have different security properties."
+    }
+  ],
+  "MCSC-105": [
+    {
+      "title": "Proof techniques and recurrence relations",
+      "explanation": "Mathematical induction proves a base case and then proves that a statement at one index implies the next. A recurrence defines later values using earlier values and initial conditions.",
+      "example": "If aₙ=2aₙ₋₁ and a₀=1, repeated substitution gives aₙ=2ⁿ.",
+      "distinction": "A recurrence states how terms depend on previous terms; a closed form gives an expression directly in n."
+    },
+    {
+      "title": "Trees, connectivity and spanning structures",
+      "explanation": "A connected undirected graph has a path between every pair of vertices. A tree is a connected acyclic undirected graph; a spanning tree connects all vertices without a cycle.",
+      "example": "A connected graph with four vertices has a spanning tree with three edges; different spanning trees can have different total weights.",
+      "distinction": "A minimum spanning tree minimises total tree-edge weight; a shortest-path tree minimises distances from one chosen source."
+    },
+    {
+      "title": "Matching and network applications",
+      "explanation": "A matching is a set of edges that share no endpoint. Bipartite matching can model assignments between two sets, while network flows represent movement subject to capacities.",
+      "example": "Students and projects form two vertex sets; a matching assigns a project to a student without assigning either twice.",
+      "distinction": "Maximum-cardinality matching maximises the number of matched edges; weighted assignment can optimise a separate cost or benefit."
+    }
+  ],
+  "MMLC-202": [
+    {
+      "title": "Decision boundaries and generalisation",
+      "explanation": "A classifier divides a feature space into regions that lead to predicted labels. Its decision boundary depends on the representation, learned parameters and training data.",
+      "example": "A linear classifier in two dimensions divides the plane with a line; a nonlinear model can represent more complex boundaries.",
+      "distinction": "A training decision boundary may fit the observed samples well while failing on new samples."
+    },
+    {
+      "title": "Feature selection and dimensionality reduction",
+      "explanation": "Feature selection chooses a subset of original variables. Dimensionality reduction creates a lower-dimensional representation; PCA is an unsupervised linear method that prioritises variance.",
+      "example": "If measurements are highly correlated, PCA may summarise much of their variation in fewer components, after appropriate scaling.",
+      "distinction": "High variance does not necessarily mean high class-discrimination value; evaluate the representation for the task."
+    },
+    {
+      "title": "Precision, recall and error trade-offs",
+      "explanation": "Precision is TP/(TP+FP), while recall is TP/(TP+FN), when the denominators are nonzero. The decision threshold and class prevalence influence the practical meaning of results.",
+      "example": "With TP=8, FP=2 and FN=4, precision is 0.8 and recall is 8/12, approximately 0.67.",
+      "distinction": "A high precision system may still miss many positive cases; choose measures based on consequences and class distribution."
+    }
+  ],
+  "MCSC-301": [
+    {
+      "title": "Research questions, claims and validity",
+      "explanation": "Align the research question, design, measurement, analysis and proposed claim. Internal validity concerns alternative explanations for an observed effect; external validity concerns whether results transfer to a defined context.",
+      "example": "A randomised comparison can reduce confounding under appropriate implementation; generalising from one class to all institutions requires additional evidence.",
+      "distinction": "Reliability concerns consistency of measurement; validity concerns whether the interpretation is supported."
+    },
+    {
+      "title": "Search, citation and research ethics",
+      "explanation": "Document the databases, dates, queries, screening decisions and inclusion criteria used in a literature review. Cite sources accurately and disclose reuse; a similarity score requires human interpretation.",
+      "example": "A search log can record a database, the exact Boolean query, date, filters and the reason each full-text paper was excluded.",
+      "distinction": "A reference manager helps organise citations, but the researcher must verify bibliographic metadata and relevance."
+    },
+    {
+      "title": "Sampling, power and uncertainty",
+      "explanation": "A sampling frame is the operational list from which participants are selected. Power depends on the effect of interest, variability, sample size, design and significance level.",
+      "example": "Increasing the sample size can reduce random uncertainty, but it will not eliminate systematic non-response bias.",
+      "distinction": "A statistically significant result does not establish a practically important effect or a sound research design."
     }
   ]
 }
