@@ -193,6 +193,8 @@ Each course has a folder and a README with its programme details and website lin
 ## Run locally
 
 ```bash
+npm ci
+npm run build
 python3 -m http.server 8000
 ```
 
@@ -203,7 +205,7 @@ Open http://localhost:8000. A web server is required because the pages load shar
 - `index.html` and `subject.html` provide the programme directory and subject pages.
 - `assets/catalog.json` holds semester, course, specialisation and syllabus references. `assets/course-data.json` and `assets/course-supplements.json` hold the five detailed guides.
 - Each course folder contains a README. Existing guides also contain an `index.html` and PDF.
-- `assets/styles.css`, `assets/portal.css` and `assets/mastery.css` define the interface.
+- `assets/styles.css`, `assets/portal.css` and `assets/mastery.css` define the interface. The home page uses Framer Motion and an adapted MicroKit gradient underline component, listed by 21st.dev. See `third-party/MICROKIT-LICENSE.txt`.
 - `.github/workflows/pages.yml` validates and deploys the site on pushes to `main`.
 
 ## Validation
