@@ -10,11 +10,11 @@ async function loadJson(file) {
 }
 
 function nav(depth = '') {
-  return `<header class="topbar"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="${depth}index.html">MTech<span>/01</span></a><div class="navlinks"><a href="${depth}index.html#courses">Courses</a><a href="${depth}index.html#study-path">Study path</a><a href="${depth}README.md">Repository guide</a></div></nav></header>`;
+  return `<header class="topbar"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="${depth}index.html">MTech<span> / CSE</span></a><div class="navlinks"><a href="${depth}index.html#courses">Courses</a><a href="${depth}index.html#study-path">Study path</a><a href="${depth}README.md">Repository guide</a></div></nav></header>`;
 }
 
 function foot() {
-  return `<footer class="footer"><div class="shell">MTech Semester I learning companion • Built from the supplied syllabus • Verify examination guidance with your institution.</div></footer>`;
+  return `<footer class="footer"><div class="shell">M.Tech CSE study companion · Based on the 2021–22 CAS syllabus · Verify current requirements with your department.</div></footer>`;
 }
 
 function credit(course) {
@@ -26,16 +26,36 @@ function courseCard(course) {
 }
 
 async function home() {
-  const data = await loadJson('course-data.json');
+  const catalog = await loadJson('catalog.json');
   $('#nav').innerHTML = nav();
-  $('#courseGrid').innerHTML = data.courses.map(courseCard).join('');
   $('#foot').innerHTML = foot();
-  $('#q').addEventListener('input', event => {
-    const query = event.target.value.toLowerCase();
-    $$('.course-card').forEach((element, index) => {
-      element.hidden = !JSON.stringify(data.courses[index]).toLowerCase().includes(query);
-    });
-  });
+  const descriptions = ['Foundations and independent study', 'Core subjects and specialisation choices', 'Advanced study and dissertation I', 'Dissertation II'];
+  const render = query => {
+    let count = 0;
+    $('#semesters').innerHTML = [1, 2, 3, 4].map(semester => {
+      const courses = catalog.filter(course => course.semester === semester && `${course.title} ${course.code} ${course.category}`.toLowerCase().includes(query));
+      count += courses.length;
+      return `<section class="semester" id="semester-${semester}"><div class="semester-heading"><div><span class="semester-number">0${semester}</span><div><div class="eyebrow">Semester ${semester}</div><h3>${descriptions[semester - 1]}</h3></div></div><span class="semester-count">${courses.length} ${courses.length === 1 ? 'subject' : 'subjects'}</span></div><div class="catalog-grid">${courses.map(course => `<a class="catalog-card" href="subject.html?code=${encodeURIComponent(course.code)}"><span class="catalog-code">${esc(course.code)}</span><strong>${esc(course.title)}</strong><span class="catalog-category">${esc(course.category)}</span><span class="catalog-arrow" aria-hidden="true">↗</span><span class="catalog-status">${course.guide ? 'Study guide available' : 'Syllabus reference'}</span></a>`).join('') || '<p class="empty">No matching subjects in this semester.</p>'}</div></section>`;
+    }).join('');
+    $('#search-status').textContent = query ? `${count} matching ${count === 1 ? 'subject' : 'subjects'}` : '';
+  };
+  render('');
+  $('#q').addEventListener('input', event => render(event.target.value.trim().toLowerCase()));
+}
+
+async function subject() {
+  const catalog = await loadJson('catalog.json');
+  const code = new URLSearchParams(location.search).get('code');
+  const selected = catalog.find(item => item.code === code);
+  $('#nav').innerHTML = nav();
+  $('#foot').innerHTML = foot();
+  if (!selected) {
+    $('#subject').innerHTML = '<h1>Subject not found</h1><p>Choose a subject from the programme directory.</p><a class="button" href="index.html#courses">Explore subjects</a>';
+    return;
+  }
+  document.title = `${selected.title} · M.Tech CSE`;
+  const guide = selected.guide ? `<div class="subject-box"><span class="eyebrow">Available now</span><h2>Study guide</h2><p>Explore explanations, examples, definitions, comparisons and practice material from the existing guide.</p><a class="button" href="${esc(selected.guide)}/index.html">Open the study guide ↗</a><p class="small-note">The existing guide may show an older course code, semester or credit value. Use the 2021–22 syllabus for the scheme listed here.</p></div>` : `<div class="subject-box"><span class="eyebrow">In preparation</span><h2>Study guide</h2><p>A detailed guide is not yet available for this subject. Begin with the original syllabus and your instructor’s materials.</p></div>`;
+  $('#subject').innerHTML = `<a class="back-link" href="index.html#semester-${selected.semester}">← Back to semester ${selected.semester}</a><div class="subject-intro"><div class="eyebrow">Semester ${selected.semester} / ${esc(selected.category)}</div><h1>${esc(selected.title)}</h1><p class="subject-code">${esc(selected.code)} <span>·</span> 2021–22 scheme</p></div><div class="subject-grid">${guide}<div class="subject-box source-box"><span class="eyebrow">Official source</span><h2>Start with the syllabus</h2><p>Check the course description and programme structure in the university’s published PDF.</p><a class="source-link" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=${selected.page}">Open syllabus near page ${selected.page} ↗</a></div></div><div class="subject-box papers"><span class="eyebrow">Exam preparation</span><h2>Previous-year questions</h2><p>Verified previous-year papers and answers have not yet been added for this subject.</p></div>`;
 }
 
 function comparisonTable(table) {
@@ -74,7 +94,7 @@ async function course() {
   document.documentElement.style.setProperty('--soft', selected.accent + '14');
   document.title = `${selected.code} · ${selected.title}`;
   $('#nav').innerHTML = nav('../');
-  $('#courseHero').innerHTML = `<div><div class="eyebrow">${selected.code} · ${credit(selected)}</div><h1>${esc(selected.title)}</h1><p class="lede">${esc(selected.tagline)}</p><div class="downloads"><a href="#m1">Start learning</a><a href="#mastery">Mastery hub</a><a href="${selected.code}-${selected.slug}.pdf">PDF handbook</a><a href="../index.html#courses">All courses</a></div></div><div class="hero-art"><img src="../assets/${selected.diagram}" alt="Concept diagram for ${esc(selected.title)}"></div>`;
+  $('#courseHero').innerHTML = `<div><p class="notice">This existing guide uses earlier course labels. Check the <a href="../index.html#courses">2021–22 programme directory</a> for the syllabus code and semester.</p><div class="eyebrow">${selected.code} · ${credit(selected)}</div><h1>${esc(selected.title)}</h1><p class="lede">${esc(selected.tagline)}</p><div class="downloads"><a href="#m1">Start learning</a><a href="#mastery">Mastery hub</a><a href="${selected.code}-${selected.slug}.pdf">PDF handbook</a><a href="../index.html#courses">All courses</a></div></div><div class="hero-art"><img src="../assets/${selected.diagram}" alt="Concept diagram for ${esc(selected.title)}"></div>`;
   $('#toc').innerHTML = '<strong>Course lessons</strong>' + selected.modules.map((module,index) => `<a href="#m${index + 1}">${index + 1}. ${esc(module.title)}</a>`).join('') + '<strong class="toc-group">Mastery hub</strong><a href="#glossary">Definitions</a><a href="#types">Types</a><a href="#formulas">Formula sheet</a><a href="#comparisons">Difference tables</a><a href="#practice">Practice</a><a href="#applications">Applied work</a>';
   $('#modules').innerHTML = selected.modules.map((module, index) => lesson(module, index, supplement.visuals || [])).join('') + mastery(supplement);
   $('#foot').innerHTML = foot();
@@ -82,7 +102,7 @@ async function course() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  (document.body.dataset.page === 'home' ? home() : course()).catch(error => {
+  (document.body.dataset.page === 'home' ? home() : document.body.dataset.page === 'subject' ? subject() : course()).catch(error => {
     document.body.innerHTML = `<main class="shell"><h1>Unable to load the course</h1><p>${esc(error.message)}</p></main>`;
   });
 });

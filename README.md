@@ -46,3 +46,11 @@ The content is derived from the supplied syllabus. It deliberately avoids invent
 ## License
 
 Educational content and source code are available under the MIT License unless a referenced asset states otherwise.
+
+## Four-semester programme directory
+
+The home page now lists the 2021–22 CAS CSE scheme across four semesters, including specialisation choices. Subject links open a source page, with links to the five existing guides where available. Edit `assets/catalog.json` to maintain the directory; `page` points to a PDF page and `guide` to an existing guide directory.
+
+The five older guides use some labels that conflict with the 2021–22 scheme, including course codes and credits. Their content, PDFs and URLs are preserved; consult the university syllabus and current departmental guidance for official details. The syllabus itself contains inconsistent details (for example Media Security's code differs between its scheme table and detailed page). The directory follows its semester tables. No previous-year questions are represented as verified unless independently sourced.
+
+The full set of detailed guides, sourced previous-year questions and worked answers remains to be completed. The 2021–22 scheme may not match every batch.

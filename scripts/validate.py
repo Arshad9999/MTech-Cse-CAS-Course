@@ -5,6 +5,12 @@ ROOT=Path(__file__).resolve().parents[1]
 data=json.loads((ROOT/'assets/course-data.json').read_text())['courses']
 supplements=json.loads((ROOT/'assets/course-supplements.json').read_text())
 errors=[]
+catalog=json.loads((ROOT/'assets/catalog.json').read_text())
+if {c['semester'] for c in catalog} != {1,2,3,4}: errors.append('Catalogue must cover all four semesters')
+if len({c['code'] for c in catalog}) != len(catalog): errors.append('Duplicate catalogue course code')
+for c in catalog:
+    if not c.get('title') or not c.get('category') or not 1 <= c.get('page',0) <= 49: errors.append(f"Invalid catalogue entry: {c.get('code')}")
+    if c.get('guide') and not (ROOT/c['guide']/'index.html').exists(): errors.append(f"Missing catalogue guide: {c['guide']}")
 if len(data)!=5: errors.append(f'Expected 5 courses, found {len(data)}')
 for c in data:
     d=ROOT/c['slug'];required=[d/'index.html',d/'README.md',d/f"{c['code']}-{c['slug']}.pdf",ROOT/'assets'/c['diagram']]

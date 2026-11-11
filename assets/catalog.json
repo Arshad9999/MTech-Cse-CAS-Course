@@ -1,0 +1,338 @@
+[
+  {
+    "semester": 1,
+    "code": "MCSC-101",
+    "title": "Analysis and Design of Algorithms",
+    "category": "Common core",
+    "page": 11,
+    "guide": ""
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-102",
+    "title": "Probability and Statistics",
+    "category": "Common core",
+    "page": 12,
+    "guide": "probability-and-statistics"
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-103",
+    "title": "Advanced Computer Networks and Communication",
+    "category": "Common core",
+    "page": 13,
+    "guide": "advanced-computer-networks-and-communication"
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-104",
+    "title": "Foundation of Machine Learning",
+    "category": "Common core",
+    "page": 14,
+    "guide": ""
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-105",
+    "title": "Discrete Mathematics and Graph Theory",
+    "category": "Common core",
+    "page": 15,
+    "guide": "discrete-mathematics-and-graph-theory"
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-106",
+    "title": "Independent Study and Research I",
+    "category": "Common core",
+    "page": 15,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCSC-201",
+    "title": "The Internet of Things",
+    "category": "Common core",
+    "page": 16,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCSC-202",
+    "title": "Independent Study and Research II",
+    "category": "Common core",
+    "page": 34,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCySC-201",
+    "title": "Cryptography",
+    "category": "Cyber Security core",
+    "page": 17,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCySC-202",
+    "title": "Fundamentals of Information Security and Practices",
+    "category": "Cyber Security core",
+    "page": 18,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MICTC-201",
+    "title": "Mathematical Foundations for Computing in ICT",
+    "category": "ICT core",
+    "page": 19,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MICTC-202",
+    "title": "Embedded System",
+    "category": "ICT core",
+    "page": 20,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MMLC-201",
+    "title": "Neural Networks and Evolutionary Algorithms",
+    "category": "Machine Learning core",
+    "page": 21,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MMLC-202",
+    "title": "Pattern Recognition",
+    "category": "Machine Learning core",
+    "page": 22,
+    "guide": "pattern-recognition"
+  },
+  {
+    "semester": 2,
+    "code": "MCSE-201",
+    "title": "Introduction to Formal Methods and Verification of Large Systems",
+    "category": "Cyber Security / ICT elective",
+    "page": 23,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-204",
+    "title": "Ethical Hacking",
+    "category": "Cyber Security elective",
+    "page": 26,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-201",
+    "title": "Security Standards and Project Management",
+    "category": "Cyber Security elective",
+    "page": 24,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-202",
+    "title": "System Security",
+    "category": "Cyber Security elective",
+    "page": 25,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-203",
+    "title": "Identity and Access Management and Trusted Computing",
+    "category": "Cyber Security elective",
+    "page": 27,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MICTE-202",
+    "title": "Speech Communication and Biomedical Signal Processing",
+    "category": "ICT elective",
+    "page": 29,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCSE-202",
+    "title": "Data Science",
+    "category": "ICT / Machine Learning elective",
+    "page": 30,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MICTE-201",
+    "title": "Information Theory and Coding",
+    "category": "ICT elective",
+    "page": 28,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MCSE-203",
+    "title": "Computer Vision",
+    "category": "ICT / Machine Learning elective",
+    "page": 31,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MMLE-201",
+    "title": "Big Data Analytics",
+    "category": "Machine Learning elective",
+    "page": 32,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MMLE-202",
+    "title": "Optimization Techniques",
+    "category": "Machine Learning elective",
+    "page": 33,
+    "guide": ""
+  },
+  {
+    "semester": 2,
+    "code": "MMLE-203",
+    "title": "Probabilistic Graphical Model",
+    "category": "Machine Learning elective",
+    "page": 34,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MCSC-301",
+    "title": "Research Methodology",
+    "category": "Common core",
+    "page": 35,
+    "guide": "research-methodology"
+  },
+  {
+    "semester": 3,
+    "code": "MCSC-302",
+    "title": "Thesis / Dissertation I",
+    "category": "Common core",
+    "page": 48,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MCySC-301",
+    "title": "Digital and Cyber Forensics",
+    "category": "Cyber Security core",
+    "page": 36,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MICTC-301",
+    "title": "Multimedia Signal Processing",
+    "category": "ICT core",
+    "page": 37,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MMLC-301",
+    "title": "Deep Learning",
+    "category": "Machine Learning core",
+    "page": 38,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-301",
+    "title": "Cloud Computing",
+    "category": "Cyber Security / ICT / Machine Learning elective",
+    "page": 39,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MCySE-301",
+    "title": "Network Protocol Security",
+    "category": "Cyber Security elective",
+    "page": 41,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-302",
+    "title": "Wireless Sensor Network",
+    "category": "Cyber Security / ICT elective",
+    "page": 42,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-304",
+    "title": "Media Security",
+    "category": "Cyber Security / ICT elective",
+    "page": 40,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-303",
+    "title": "Intelligent System and Green Computing",
+    "category": "Cyber Security / ICT elective",
+    "page": 43,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MICTE-301",
+    "title": "Secure Coding",
+    "category": "ICT elective",
+    "page": 44,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-301",
+    "title": "Advanced Kernel Methods",
+    "category": "Machine Learning elective",
+    "page": 45,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-302",
+    "title": "Reinforcement Learning",
+    "category": "Machine Learning elective",
+    "page": 46,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-303",
+    "title": "Machine Learning Applications",
+    "category": "Machine Learning elective",
+    "page": 47,
+    "guide": ""
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-304",
+    "title": "Topological Data Analysis",
+    "category": "Machine Learning elective",
+    "page": 48,
+    "guide": ""
+  },
+  {
+    "semester": 4,
+    "code": "MCSC-401",
+    "title": "Thesis / Dissertation II",
+    "category": "Common core",
+    "page": 9,
+    "guide": ""
+  }
+]
