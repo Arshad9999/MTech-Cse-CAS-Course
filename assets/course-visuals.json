@@ -1,0 +1,226 @@
+{
+  "MCSC-101": [
+    {
+      "src": "assets/course-visuals/mcsc-101-01.jpg",
+      "after": "Network flows",
+      "alt": "Network flow diagram with an s–t cut across four edges",
+      "note": "The shown cut has capacity 27, but it is not the minimum cut: for this network the minimum-cut capacity and maximum flow are 18."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-101-02.jpg",
+      "after": "Dynamic programming and greedy strategies",
+      "alt": "Comparison of greedy algorithms, dynamic programming, backtracking and branch-and-bound",
+      "note": "The Fibonacci dependency tree is illustrative but not correct: F(4) depends on F(3) and F(2), not two F(3) nodes. The greedy tree is not a worked fractional-knapsack calculation."
+    }
+  ],
+  "MCSC-102": [
+    {
+      "src": "assets/course-visuals/mcsc-102-01.jpg",
+      "after": "Conditional probability and Bayes’ rule",
+      "alt": "Bayes theorem with a probability tree and a numerical example",
+      "note": ""
+    },
+    {
+      "src": "assets/course-visuals/mcsc-102-02.jpg",
+      "after": "Estimation, confidence intervals and tests",
+      "alt": "Sampling, confidence intervals and hypothesis testing illustrated as an inference map",
+      "note": "The shaded area beyond a critical value represents a rejection region; a p-value is calculated from the observed test statistic, not necessarily from that critical value."
+    }
+  ],
+  "MCSC-103": [
+    {
+      "src": "assets/course-visuals/mcsc-103-01.jpg",
+      "after": "Layered communication and encapsulation",
+      "alt": "Five network layers on a sender and receiver with encapsulation and decapsulation",
+      "note": "At the receiver, processing proceeds upward from the physical layer to the application layer; some arrows in the illustration point downwards. Real packets encapsulate the transport header inside the network payload."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-103-02.jpg",
+      "after": "SNMP, management and security",
+      "alt": "Network management and security diagram showing SNMP, authentication and backup",
+      "note": "SNMP polling requests go from manager to agent, with responses returning; traps are initiated by agents. Replication alone is not a substitute for independently recoverable backups."
+    }
+  ],
+  "MCSC-104": [
+    {
+      "src": "assets/course-visuals/mcsc-104-01.jpg",
+      "after": "Cross-validation and data leakage",
+      "alt": "Training, validation and test sets in a machine-learning workflow",
+      "note": "The split percentages are examples, not mandatory proportions. The final evaluation estimates generalisation; it does not establish its exact true value. Some small text in the illustration is garbled."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-104-02.jpg",
+      "after": "Classification and feature selection",
+      "alt": "Comparison of supervised classification and unsupervised clustering",
+      "note": "The markers and labels on the classification side are inconsistent: treat the shapes as illustrative, not as a correctly labelled worked classification example."
+    }
+  ],
+  "MCSC-105": [
+    {
+      "src": "assets/course-visuals/mcsc-105-01.jpg",
+      "after": "Trees, connectivity and spanning structures",
+      "alt": "Breadth-first and depth-first traversal of a five-node graph",
+      "note": "For the pictured graph and ascending neighbour order, recursive DFS visits 1 → 2 → 3 → 4 → 5; the displayed DFS order and stack steps are inconsistent."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-105-02.jpg",
+      "after": "Proof techniques and recurrence relations",
+      "alt": "Product rule, pigeonhole principle and mathematical induction",
+      "note": "In the product-rule tree, the displayed leaf labels do not consistently match their parent branches. The six correct outcomes are A1, A2, B1, B2, C1 and C2."
+    }
+  ],
+  "MCSC-106": [
+    {
+      "src": "assets/course-visuals/mcsc-106-01.jpg",
+      "after": "Defining an independent study",
+      "alt": "Illustrative path from broad subject through literature review to a research question",
+      "note": ""
+    },
+    {
+      "src": "assets/course-visuals/mcsc-106-02.jpg",
+      "after": "Search strategies and evidence tables",
+      "alt": "Illustrative literature-review matrix comparing fictional papers A, B and C",
+      "note": "All studies in the figure are fictional examples; the apparent claim that no existing studies address the gap is not evidence about actual literature."
+    }
+  ],
+  "MCSC-201": [
+    {
+      "src": "assets/course-visuals/mcsc-201-01.jpg",
+      "after": "IoT architecture and devices",
+      "alt": "IoT architecture from sensors and microcontroller to gateway, network and dashboard",
+      "note": "The diagram is a simplified architecture. Sensor data is normally processed by the local controller before transmission; actual trust boundaries depend on deployment."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-201-02.jpg",
+      "after": "MQTT quality of service and device lifecycle",
+      "alt": "MQTT publishers, broker and subscriber with quality-of-service levels",
+      "note": "QoS describes MQTT protocol delivery behaviour under its specified conditions; it does not provide unconditional end-to-end delivery, physical accuracy or application-level guarantees."
+    }
+  ],
+  "MCSC-202": [
+    {
+      "src": "assets/course-visuals/mcsc-202-01.jpg",
+      "after": "Pilot studies and protocol changes",
+      "alt": "Illustrative research protocol from question and ethics through pilot and revision",
+      "note": "This is a general example; the need for ethics review or consent depends on the study and institution."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-202-02.jpg",
+      "after": "Ethics and reproducibility",
+      "alt": "Illustrative reproducible machine-learning experiment with a held-out test set",
+      "note": "A held-out evaluation estimates, but cannot establish, true generalisation. A reported hash can help identify files; it does not by itself prove that results are correct."
+    }
+  ],
+  "MCSE-202": [
+    {
+      "src": "assets/course-visuals/mcse-202-01.jpg",
+      "after": "Data, samples and bias",
+      "alt": "End-to-end data science workflow with sources of bias",
+      "note": "The figure contains minor garbled text. Split data before fitting learned preprocessing, and do not assume that measuring or adjusting for some confounders alone proves causation."
+    },
+    {
+      "src": "assets/course-visuals/mcse-202-02.jpg",
+      "after": "Simpson’s paradox and group composition",
+      "alt": "Numerical example of Simpson’s paradox across two treatment groups",
+      "note": "The displayed fractions are correct, but the coloured icons do not consistently represent their stated counts. Compare the numerical rates, not the number of icons."
+    }
+  ],
+  "MMLC-201": [
+    {
+      "src": "assets/course-visuals/mmlc-201-01.jpg",
+      "after": "Training and backpropagation",
+      "alt": "Feed-forward neural network with loss and backward gradients",
+      "note": "The target y is an input to the loss function, alongside the prediction; it is not an output of the loss as an arrow in the figure may suggest."
+    },
+    {
+      "src": "assets/course-visuals/mmlc-201-02.jpg",
+      "after": "Fuzzy membership and defuzzification",
+      "alt": "Triangular fuzzy membership function and stages of a genetic algorithm",
+      "note": "Genetic-algorithm selection need not always choose only the best candidates; selection can be probabilistic."
+    }
+  ],
+  "MMLC-202": [
+    {
+      "src": "assets/course-visuals/mmlc-202-01.jpg",
+      "after": "Feature selection and dimensionality reduction",
+      "alt": "Illustrative pattern-recognition pipeline for triangle and square recognition",
+      "note": "Split data before fitting any learned preprocessing or feature-selection parameters. The corner labels in the small example are illustrative and inconsistent."
+    },
+    {
+      "src": "assets/course-visuals/mmlc-202-02.jpg",
+      "after": "Precision, recall and error trade-offs",
+      "alt": "Confusion matrix with precision, recall, accuracy and F1 score",
+      "note": "Type I and Type II error labels depend on how the null hypothesis is defined; false positives and false negatives are the unambiguous classification terms."
+    }
+  ],
+  "MMLE-201": [
+    {
+      "src": "assets/course-visuals/mmle-201-01.jpg",
+      "after": "HDFS blocks and fault tolerance",
+      "alt": "HDFS NameNode, DataNodes and block replication",
+      "note": "The diagram omits production high-availability details, and some small text is garbled. Replication is not an independent backup."
+    },
+    {
+      "src": "assets/course-visuals/mmle-201-02.jpg",
+      "after": "MapReduce word-count trace",
+      "alt": "Map, shuffle and reduce word-count example",
+      "note": "Some explanatory labels contain duplicated or garbled words; the word-count example itself is cat = 2 and dog = 1."
+    }
+  ],
+  "MCSC-301": [
+    {
+      "src": "assets/course-visuals/mcsc-301-01.jpg",
+      "after": "Research questions, claims and validity",
+      "alt": "Research alignment from problem and question to analysis and conclusion",
+      "note": "Exploratory work can use prior ideas or hypotheses. Causal inference requires a suitable design and justified assumptions; controlling some measured confounders does not automatically prove causality."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-301-02.jpg",
+      "after": "Sampling, power and uncertainty",
+      "alt": "Hypothesis testing decision matrix with Type I and Type II errors",
+      "note": "A p-value concerns results at least as extreme as observed under the null model, not simply the probability of the exact observed data. Actual Type I error can be less than the stated significance level."
+    }
+  ],
+  "MCSC-302": [
+    {
+      "src": "assets/course-visuals/mcsc-302-01.jpg",
+      "after": "Literature synthesis and research gap",
+      "alt": "Illustrative dissertation proposal structure from problem to milestones",
+      "note": "Some text is repeated. A research gap should be supported by a sufficiently broad review; a few examples cannot prove that no related work exists."
+    },
+    {
+      "src": "assets/course-visuals/mcsc-302-02.jpg",
+      "after": "Methodology and study protocol",
+      "alt": "Research design, data provenance, baseline and evaluation framework",
+      "note": "A baseline is a comparison, not something the proposed method must outperform. Do not discard outliers automatically; apply justified and documented criteria."
+    }
+  ],
+  "MMLC-301": [
+    {
+      "src": "assets/course-visuals/mmlc-301-01.jpg",
+      "after": "Convolution dimensions and receptive fields",
+      "alt": "Convolution output size calculation for a 32 by 32 input and 3 by 3 kernel",
+      "note": "The numerical output-size calculation is correct for unit dilation, but the kernel drawn in the figure has two visible rows rather than a complete 3 × 3 grid; the large grids are schematic."
+    },
+    {
+      "src": "assets/course-visuals/mmlc-301-02.jpg",
+      "after": "Regularisation and evaluation",
+      "alt": "Conceptual training and validation loss curves with early-stopping checkpoint",
+      "note": "The figure is illustrative and contains a small typo. Early stopping uses a validation-based rule, often with patience; overfitting is not always identifiable at one exact epoch."
+    }
+  ],
+  "MMLE-302": [
+    {
+      "src": "assets/course-visuals/mmle-302-01.jpg",
+      "after": "Agent, environment and return",
+      "alt": "Agent–environment loop with reward and discounted return",
+      "note": "The standard timing convention shown in the return formula uses Rₜ₊₁ for the reward following action Aₜ; the immediate-reward panel labels it Rₜ."
+    },
+    {
+      "src": "assets/course-visuals/mmle-302-02.jpg",
+      "after": "Q-learning and SARSA updates",
+      "alt": "Comparison of Q-learning and SARSA temporal-difference targets",
+      "note": "Q-learning selects the maximum estimated next-action value, not a guaranteed objectively best action. SARSA is not always safer; behaviour depends on the policy, environment and learning conditions."
+    }
+  ]
+}

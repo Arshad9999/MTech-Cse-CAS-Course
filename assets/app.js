@@ -59,7 +59,7 @@ function examSection(paper) {
 }
 
 async function subject() {
-  const [catalog, topics, guides, papers, legacy, supplements] = await Promise.all([loadJson('catalog.json'), loadJson('subject-topics.json'), loadJson('featured-guides.json'), loadJson('related-papers.json'), loadJson('course-data.json'), loadJson('course-supplements.json')]);
+  const [catalog, topics, guides, papers, legacy, supplements, courseVisuals] = await Promise.all([loadJson('catalog.json'), loadJson('subject-topics.json'), loadJson('featured-guides.json'), loadJson('related-papers.json'), loadJson('course-data.json'), loadJson('course-supplements.json'), loadJson('course-visuals.json')]);
   const code = new URLSearchParams(location.search).get('code');
   const selected = catalog.find(item => item.code === code);
   $('#nav').innerHTML = nav();
@@ -72,7 +72,8 @@ async function subject() {
   const isFeatured = featured[selected.semester - 1].includes(code);
   const guide = selected.guide ? `<div class="subject-box"><span class="eyebrow">Available now</span><h2>Original study guide</h2><p>The existing complete study page, visual maps and PDF remain available.</p><a class="button" href="${esc(selected.guide)}/index.html">Open original guide ↗</a><p class="small-note">The earlier guide may show different course labels or credits. Follow the 2021–22 scheme shown here.</p></div>` : `<div class="subject-box"><span class="eyebrow">${isFeatured ? 'Featured course' : 'In preparation'}</span><h2>Study guide</h2><p>${isFeatured ? 'Explore the topic-by-topic notes below, then use the syllabus and prescribed sources to deepen your study.' : 'A detailed guide is not yet available for this subject. Begin with the original syllabus and your instructor’s materials.'}</p></div>`;
   const notes = guides[code] || [];
-  const lessons = notes.map((item,index) => `<article class="module feature-lesson"><span class="eyebrow">Study block ${String(index + 1).padStart(2,'0')}</span><h3>${esc(item.title)}</h3><p>${esc(item.explanation)}</p><div class="worked"><strong>Example</strong><br>${esc(item.example)}</div><p><strong>Distinction / checkpoint:</strong> ${esc(item.distinction)}</p></article>`).join('');
+  const userFigure = item => `<figure class="user-visual"><a href="${esc(item.src)}" aria-label="Open full-size illustration: ${esc(item.alt)}"><img src="${esc(item.src)}" alt="${esc(item.alt)}" width="2528" height="1696" loading="lazy" decoding="async"></a><figcaption>Course illustration · <a href="${esc(item.src)}">Open full size</a>${item.note ? `<p><strong>Reading note:</strong> ${esc(item.note)}</p>` : ''}</figcaption></figure>`;
+  const lessons = notes.map((item,index) => `<article class="module feature-lesson"><span class="eyebrow">Study block ${String(index + 1).padStart(2,'0')}</span><h3>${esc(item.title)}</h3><p>${esc(item.explanation)}</p><div class="worked"><strong>Example</strong><br>${esc(item.example)}</div><p><strong>Distinction / checkpoint:</strong> ${esc(item.distinction)}</p></article>${(courseVisuals[code] || []).filter(image => image.after === item.title).map(userFigure).join('')}`).join('');
   const prior = selected.guide && isFeatured ? legacy.courses.find(item => item.slug === selected.guide) : null;
   const previousLessons = prior ? prior.modules.map((module, index) => lesson(module, index, (supplements[prior.slug].visuals || []).map(item => ({...item, src: item.src.replace(/^\.\.\//, '')})))).join('') + mastery(supplements[prior.slug]) : '';
   const visuals = {

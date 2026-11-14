@@ -10,6 +10,13 @@ topics=json.loads((ROOT/'assets/subject-topics.json').read_text())
 featured=[['MCSC-101','MCSC-102','MCSC-103','MCSC-104','MCSC-105','MCSC-106'],['MCSC-201','MCSC-202','MMLC-201','MMLC-202','MCSE-202','MMLE-201'],['MCSC-301','MCSC-302','MMLC-301','MMLE-302'],['MCSC-401']]
 guides=json.loads((ROOT/'assets/featured-guides.json').read_text())
 papers=json.loads((ROOT/'assets/related-papers.json').read_text())
+course_visuals=json.loads((ROOT/'assets/course-visuals.json').read_text())
+for code, visual_list in course_visuals.items():
+    if code not in {c['code'] for c in catalog} or len(visual_list)!=2: errors.append(f'Invalid course visuals for {code}')
+    for visual in visual_list:
+        if visual.get('after') not in {lesson['title'] for lesson in guides.get(code,[])}: errors.append(f'Unmatched visual lesson in {code}')
+        if not visual.get('alt') or not (ROOT/visual.get('src','')).is_file(): errors.append(f'Missing visual or alt text for {code}')
+if len(course_visuals)!=16: errors.append('Expected visuals for all 16 featured courses in semesters 1–3')
 for semester,codes in enumerate(featured,1):
     for code in codes:
         course=next((c for c in catalog if c['code']==code and c['semester']==semester),None)
