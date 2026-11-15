@@ -11,6 +11,10 @@ featured=[['MCSC-101','MCSC-102','MCSC-103','MCSC-104','MCSC-105','MCSC-106'],['
 guides=json.loads((ROOT/'assets/featured-guides.json').read_text())
 papers=json.loads((ROOT/'assets/related-papers.json').read_text())
 course_visuals=json.loads((ROOT/'assets/course-visuals.json').read_text())
+reading=json.loads((ROOT/'assets/course-reading.json').read_text())
+if set(reading) != {code for semester in featured[:3] for code in semester}: errors.append('Further reading must cover all featured courses in semesters 1–3')
+for code, links in reading.items():
+    if code not in {c['code'] for c in catalog} or not links or any(not x.get('title') or not x.get('url','').startswith('https://') for x in links): errors.append(f'Invalid further reading for {code}')
 for code, visual_list in course_visuals.items():
     if code not in {c['code'] for c in catalog} or len(visual_list)!=2: errors.append(f'Invalid course visuals for {code}')
     for visual in visual_list:
@@ -23,6 +27,8 @@ for semester,codes in enumerate(featured,1):
         if not course: errors.append(f'Missing featured course {code} in semester {semester}')
         elif not course.get('guide') and len(guides.get(code,[])) < 3: errors.append(f'Missing featured lessons for {code}')
         elif semester <= 3 and len(guides.get(code,[])) < 2: errors.append(f'Missing enhanced lessons for {code}')
+        lesson_titles=[lesson.get('title') for lesson in guides.get(code,[])]
+        if len(lesson_titles)!=len(set(lesson_titles)): errors.append(f'Duplicate lesson title for {code}')
         for lesson in guides.get(code,[]):
             if any(not lesson.get(key) for key in ('title','explanation','example','distinction')): errors.append(f'Incomplete lesson in {code}')
             for key in ('explanation','example','distinction'):

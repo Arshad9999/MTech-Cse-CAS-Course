@@ -1,0 +1,122 @@
+{
+  "MCSC-101": [
+    {
+      "title": "MIT OpenCourseWare — Advanced Algorithms lecture notes",
+      "url": "https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2008/pages/lecture-notes/"
+    }
+  ],
+  "MCSC-102": [
+    {
+      "title": "Penn State — Hypothesis testing",
+      "url": "https://online.stat.psu.edu/stat415/Lesson09"
+    }
+  ],
+  "MCSC-103": [
+    {
+      "title": "RFC 9293 — Transmission Control Protocol",
+      "url": "https://www.rfc-editor.org/rfc/rfc9293.html"
+    }
+  ],
+  "MCSC-104": [
+    {
+      "title": "scikit-learn — Cross-validation",
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+    },
+    {
+      "title": "scikit-learn — Preventing data leakage",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html"
+    }
+  ],
+  "MCSC-105": [
+    {
+      "title": "MIT OpenCourseWare — Mathematics for Computer Science",
+      "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/readings/"
+    }
+  ],
+  "MCSC-106": [
+    {
+      "title": "Office of Research Integrity — Avoiding plagiarism",
+      "url": "https://ori.hhs.gov/28-guidelines-glance-avoiding-plagiarism"
+    }
+  ],
+  "MCSC-201": [
+    {
+      "title": "OASIS — MQTT 5.0 standard",
+      "url": "https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html"
+    },
+    {
+      "title": "NIST — IoT cybersecurity guidance",
+      "url": "https://csrc.nist.gov/pubs/ir/8259/r1/final"
+    }
+  ],
+  "MCSC-202": [
+    {
+      "title": "Office of Research Integrity — Research misconduct casebook",
+      "url": "https://ori.hhs.gov/rcr-casebook-research-misconduct"
+    }
+  ],
+  "MMLC-201": [
+    {
+      "title": "Deep Learning — online textbook",
+      "url": "https://www.deeplearningbook.org/"
+    }
+  ],
+  "MMLC-202": [
+    {
+      "title": "scikit-learn — Cross-validation",
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+    }
+  ],
+  "MCSE-202": [
+    {
+      "title": "Penn State — Hypothesis testing",
+      "url": "https://online.stat.psu.edu/stat415/Lesson09"
+    },
+    {
+      "title": "scikit-learn — Preventing data leakage",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html"
+    }
+  ],
+  "MMLE-201": [
+    {
+      "title": "Apache Hadoop — HDFS architecture",
+      "url": "https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html"
+    },
+    {
+      "title": "Apache Hadoop — MapReduce tutorial",
+      "url": "https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html"
+    }
+  ],
+  "MCSC-301": [
+    {
+      "title": "Penn State — Hypothesis testing",
+      "url": "https://online.stat.psu.edu/stat415/Lesson09"
+    },
+    {
+      "title": "Office of Research Integrity — Avoiding plagiarism",
+      "url": "https://ori.hhs.gov/28-guidelines-glance-avoiding-plagiarism"
+    }
+  ],
+  "MCSC-302": [
+    {
+      "title": "Office of Research Integrity — Research misconduct casebook",
+      "url": "https://ori.hhs.gov/rcr-casebook-research-misconduct"
+    }
+  ],
+  "MMLC-301": [
+    {
+      "title": "Deep Learning — online textbook",
+      "url": "https://www.deeplearningbook.org/"
+    }
+  ],
+  "MMLE-302": [
+    {
+      "title": "Spinning Up — Key concepts in reinforcement learning",
+      "url": "https://spinningup.openai.com/en/latest/spinningup/rl_intro.html"
+    },
+    {
+      "title": "Spinning Up — Kinds of RL algorithms",
+      "url": "https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html"
+    }
+  ]
+}

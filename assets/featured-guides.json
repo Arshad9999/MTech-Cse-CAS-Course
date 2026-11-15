@@ -53,6 +53,18 @@
       "explanation": "Dynamic programming stores solutions to overlapping subproblems and combines them using a recurrence. A greedy algorithm chooses a locally appealing step and needs a proof that those choices lead to an optimal result.",
       "example": "For 0/1 knapsack, compare excluding an item with including it when capacity permits, using the preceding item row.",
       "distinction": "A plausible greedy rule is not enough: 0/1 knapsack is not generally solved optimally by sorting items by value-to-weight ratio."
+    },
+    {
+      "title": "Min-cost flow and circulation",
+      "explanation": "A min-cost flow problem assigns a cost per unit of flow to each directed edge and asks for a feasible flow of minimum total cost. A circulation requires conservation at every vertex; supplies, demands and lower bounds can be incorporated by an appropriate transformation. Negative-cost cycles matter because pushing flow around one may reduce the objective.",
+      "example": "Sending three units along a path of per-unit costs 2 and 1 costs 3 × (2+1) = 9, provided both edges have capacity at least three. A cheaper path may become unavailable when its capacity is exhausted.",
+      "distinction": "Maximum flow maximises how much reaches the sink; min-cost flow chooses a least-cost feasible allocation for a specified demand or objective."
+    },
+    {
+      "title": "Approximation: vertex cover worked example",
+      "explanation": "A vertex cover contains at least one endpoint of every edge. Repeatedly choose an uncovered edge, add both endpoints to the cover and remove their incident edges. The chosen edges form a matching; any cover needs at least one endpoint per chosen edge, so selecting both gives a cover no larger than twice the optimum.",
+      "example": "For edges AB and BC, selecting AB adds A and B and covers both edges. The returned cover has size 2; {B} is an optimal cover of size 1.",
+      "distinction": "The factor 2 is a worst-case guarantee, not a prediction that every output is twice optimal."
     }
   ],
   "MCSC-104": [
@@ -109,6 +121,18 @@
       "explanation": "A model with high bias may underfit, while a high-variance model can fit noise and change substantially across datasets. Boosting combines weak learners sequentially to improve a chosen objective.",
       "example": "A shallow tree ensemble can correct patterns missed by earlier trees, but excessive fitting to noise can still hurt held-out performance.",
       "distinction": "Bagging fits models largely in parallel on resampled data; boosting fits a sequence where later learners address earlier errors."
+    },
+    {
+      "title": "k-nearest neighbours worked example",
+      "explanation": "k-nearest neighbours compares a new observation with training points under a chosen distance. For classification, neighbours vote; for regression, their target values may be averaged. Scaling, k and the distance metric materially affect the result, so they should be selected without using the final test set.",
+      "example": "For a new point with three nearest labels A, A and B, majority-vote 3-NN predicts A. With k=1, the prediction is simply the closest point’s label.",
+      "distinction": "k-NN is supervised: it uses known targets. k-means is an unsupervised clustering procedure and does not use class labels."
+    },
+    {
+      "title": "Principal components and explained variance",
+      "explanation": "PCA identifies orthogonal directions that successively capture variance in centred data. If covariance eigenvalues are λ₁,…,λₚ, the proportion of variance explained by component i is λᵢ divided by their sum, provided the total variance is positive. Standardising features changes the problem when units differ.",
+      "example": "If two eigenvalues are 3 and 1, the first component explains 3/(3+1)=75% of total variance.",
+      "distinction": "A component that explains much input variance is not automatically the most predictive direction for a labelled task."
     }
   ],
   "MCSC-201": [
@@ -165,6 +189,18 @@
       "explanation": "Sensor systems must consider calibration, timestamps, missing readings, power loss, connectivity interruptions and safe update procedures. Analyse end-to-end delay rather than network latency alone.",
       "example": "A gateway can timestamp readings, buffer a bounded number while offline and transmit them after reconnecting, while preserving their original observation times.",
       "distinction": "A measurement may be unavailable, stale or invalid; these states should not silently become zero."
+    },
+    {
+      "title": "MQTT topics, delivery and retained messages",
+      "explanation": "MQTT uses clients and a broker: publishers send messages to topics, and subscribers request topic filters. QoS 0, 1 and 2 express different protocol-level delivery semantics; retained messages allow a broker to store the latest retained message for a topic subject to broker configuration.",
+      "example": "A sensor publishes a temperature reading to campus/room1/temp; a monitoring client subscribes to campus/room1/temp and receives matching publications through the broker.",
+      "distinction": "QoS 1 permits duplicates. QoS 2 addresses exactly-once delivery at the protocol exchange level, not guaranteed correct sensor readings or safe physical actuation."
+    },
+    {
+      "title": "6LoWPAN and constrained networking",
+      "explanation": "6LoWPAN adapts IPv6 to low-power networks with constrained frame sizes. It supports mechanisms such as header compression and fragmentation when needed; the exact link and deployment determine achievable reliability and performance.",
+      "example": "A small sensor network can use an adaptation layer to carry IPv6 traffic over a constrained link, while a border router connects it with a wider IP network.",
+      "distinction": "6LoWPAN is an adaptation layer; MQTT and CoAP are application-layer protocols serving different messaging needs."
     }
   ],
   "MMLC-201": [
@@ -221,6 +257,18 @@
       "explanation": "A genetic algorithm encodes each candidate, evaluates fitness, selects parents, applies crossover and mutation, and iterates. Representation, fitness and constraints determine what solutions are searchable.",
       "example": "To select three features from a set of ten, use a ten-bit string and penalise or repair candidates that do not contain exactly three ones.",
       "distinction": "Mutation introduces variation; selection changes which candidates contribute to later generations."
+    },
+    {
+      "title": "Perceptron prediction and learning",
+      "explanation": "A perceptron computes z=w·x+b and applies a threshold to obtain a binary decision. In the classical update, weights are adjusted when a training example is misclassified. A single linear threshold unit cannot solve a non-linearly separable task such as XOR.",
+      "example": "With x=(1,1), w=(0.5,0.5) and b=−0.75, z=0.25; using threshold z≥0 predicts the positive class.",
+      "distinction": "A multilayer network adds hidden transformations and nonlinear activations; it can represent decision boundaries a single linear perceptron cannot."
+    },
+    {
+      "title": "Fuzzy rules and centroid defuzzification",
+      "explanation": "A fuzzy controller typically fuzzifies a crisp input, applies rules using a chosen inference method, aggregates resulting output sets and defuzzifies to obtain an action. For a continuous output membership μ(y), the centroid is ∫yμ(y)dy / ∫μ(y)dy when the denominator is nonzero.",
+      "example": "If an aggregated output membership is symmetric around fan speed 50 and has nonzero area, its centroid is 50 in the chosen speed units.",
+      "distinction": "A fuzzy membership degree describes belonging to a defined set; it is not necessarily a probability."
     }
   ],
   "MCSE-202": [
@@ -277,6 +325,18 @@
       "explanation": "Bayesian inference combines a prior distribution with a likelihood to produce a posterior. A posterior predictive distribution incorporates uncertainty about model parameters in predictions.",
       "example": "With a Beta(1,1) prior and 8 successes in 10 independent Bernoulli observations, the posterior is Beta(9,3).",
       "distinction": "A posterior depends on the likelihood and prior; sensitivity checks can reveal when conclusions depend strongly on assumptions."
+    },
+    {
+      "title": "Regression residuals and diagnostic plots",
+      "explanation": "A residual is observed outcome minus fitted outcome. Plotting residuals against fitted values or relevant predictors can reveal patterns, changing spread or outliers that suggest a model is inadequate; diagnostic results do not independently prove causation.",
+      "example": "If an observation is 12 and the model predicts 9, its residual is 3. A curved residual pattern across fitted values may indicate that a straight-line relationship is inadequate.",
+      "distinction": "A residual is computed from a fitted model; the unobserved population error is not generally available directly."
+    },
+    {
+      "title": "Bayesian updating with a beta prior",
+      "explanation": "For independent Bernoulli trials with a common success probability p, a Beta(a,b) prior and s successes in n observations yield a Beta(a+s,b+n−s) posterior. This result follows from the chosen likelihood and prior and should not be applied when those assumptions are inappropriate.",
+      "example": "A Beta(1,1) prior updated with 8 successes and 2 failures becomes Beta(9,3), whose posterior mean is 9/12=0.75.",
+      "distinction": "A posterior mean is a model-based estimate; it should be reported with uncertainty and the assumptions that produced it."
     }
   ],
   "MMLE-201": [
@@ -333,6 +393,18 @@
       "explanation": "Partitioning organises data by selected fields so a query can skip irrelevant partitions when filtering. Tables may be managed or external depending on configuration and engine version.",
       "example": "Partitioning event data by date can avoid reading other dates for a date-filtered query.",
       "distinction": "Partitioning can improve targeted scans, but too many tiny partitions or files can add overhead."
+    },
+    {
+      "title": "HDFS read path and failure handling",
+      "explanation": "An HDFS client asks the NameNode for metadata and block locations, then ordinarily transfers file data directly with suitable DataNodes. DataNodes report their status and blocks; replication and re-replication help the system tolerate failures subject to configuration.",
+      "example": "For a file stored in several blocks, a client obtains locations and reads the blocks from available DataNodes rather than routing all block data through the NameNode.",
+      "distinction": "Replication improves fault tolerance but does not replace a separately managed backup, particularly for accidental or malicious deletion."
+    },
+    {
+      "title": "MapReduce shuffle and aggregation",
+      "explanation": "A map task emits intermediate key–value pairs. The framework partitions, transfers and groups values by key before reduce tasks process each group. Combiners can reduce transfer volume when their use is valid for the operation.",
+      "example": "For input “cat dog cat”, mapping emits (cat,1), (dog,1), (cat,1); after grouping, reducers sum cat:[1,1] to 2 and dog:[1] to 1.",
+      "distinction": "MapReduce defines a processing model; Hive is a query layer that can use different execution engines depending on deployment."
     }
   ],
   "MMLC-301": [
@@ -389,6 +461,18 @@
       "explanation": "Transfer learning adapts parameters learned on a source task to a target task, often by training a new head and optionally fine-tuning earlier layers. Check dataset overlap and distribution mismatch.",
       "example": "A pretrained image encoder can be evaluated on a new task with the test set kept separate from fine-tuning and model selection.",
       "distinction": "Feature extraction freezes the encoder; fine-tuning updates some or all pretrained parameters."
+    },
+    {
+      "title": "Backpropagation through a simple model",
+      "explanation": "Backpropagation uses the chain rule to compute loss gradients through a computation graph. For a scalar example ŷ=wx and L=(ŷ−y)², the gradient with respect to w is 2(wx−y)x. An optimiser uses that gradient to update the parameter.",
+      "example": "With w=1, x=1 and y=3, the gradient is −4. Gradient descent with learning rate 0.1 updates w to 1−0.1(−4)=1.4.",
+      "distinction": "Backpropagation computes derivatives; an optimiser such as gradient descent specifies how to update parameters."
+    },
+    {
+      "title": "CNN output shape and receptive fields",
+      "explanation": "For input length n, kernel size k, padding p, stride s and unit dilation, the output length is floor((n+2p−k)/s)+1. Apply the expression separately to height and width; the number of output channels equals the number of filters for a standard convolution layer.",
+      "example": "A 32×32 input with a 3×3 kernel, padding 1 and stride 1 yields a 32×32 spatial output; using eight filters yields eight output feature maps.",
+      "distinction": "Spatial dimensions, channel count and receptive field describe different properties of a layer."
     }
   ],
   "MMLE-302": [
@@ -445,6 +529,18 @@
       "explanation": "Offline RL uses a fixed dataset rather than collecting new interaction while learning. The learned policy can choose actions rarely represented in the data, making value estimates unreliable.",
       "example": "A policy trained from historical control logs should be checked for actions outside the logging policy’s coverage before any live use.",
       "distinction": "Imitation learning copies behaviour from demonstrations; offline RL uses rewards and transitions to optimise a policy from a fixed dataset."
+    },
+    {
+      "title": "Bellman expectation backup",
+      "explanation": "For a fixed policy, the value of a state is the expected immediate reward plus the discounted value of the next state: Vπ(s)=Eπ[Rₜ₊₁+γVπ(Sₜ₊₁)|Sₜ=s]. This assumes a well-defined return and the stated model or expectation.",
+      "example": "If a transition is certain, gives reward 2 and reaches a state valued at 5 with γ=0.9, its one-step backed-up value is 2+0.9×5=6.5.",
+      "distinction": "Policy evaluation evaluates a specified policy; an optimality backup chooses the best action according to the relevant values."
+    },
+    {
+      "title": "Temporal-difference update: Q-learning",
+      "explanation": "Q-learning updates Q(s,a) toward the sampled target r+γ maxₐ′Q(s′,a′), using a learning rate α. For a terminal transition, the continuation term is normally zero. The maximum uses current estimates, which need not be the true optimal action values.",
+      "example": "If old Q=2, α=0.5, r=1, γ=0.9 and max next Q=4, the target is 4.6 and the updated value is 2+0.5(4.6−2)=3.3.",
+      "distinction": "SARSA instead uses the estimated value of the next action actually selected by its behaviour policy; it is an on-policy method."
     }
   ],
   "MCSC-106": [
@@ -477,6 +573,18 @@
       "explanation": "A useful question defines the setting, variables and intended comparison. An operational definition states how an abstract construct will be observed or measured.",
       "example": "Define detection latency as elapsed time between an event arriving and a decision being produced, measured by a specified clock and protocol.",
       "distinction": "A conceptual definition explains meaning; an operational definition explains measurement."
+    },
+    {
+      "title": "Search strategy and screening record",
+      "explanation": "Identify a research question, list synonyms for its key concepts, and search suitable scholarly databases. Record the database, exact query, search date, filters, screening criteria and reasons for exclusion. Backward and forward citation searches can identify additional relevant sources.",
+      "example": "A search can combine (phishing OR fraudulent website) AND (detection OR classification), then screen results against a predeclared scope and document the decision.",
+      "distinction": "A broad scoping search helps learn the field; a systematic review requires a documented protocol and suitable, transparent screening."
+    },
+    {
+      "title": "Evaluating evidence and research gaps",
+      "explanation": "A literature matrix can compare each paper’s problem, data, method, evaluation and limitations. A credible gap emerges from a synthesis of relevant work and should be stated at an appropriate level of certainty; a small matrix cannot establish that nobody has ever addressed the issue.",
+      "example": "If several reviewed studies evaluate on one dataset, a possible question is how their methods perform across additional datasets; check the broader literature before asserting novelty.",
+      "distinction": "A claim that a gap exists needs evidence from actual sources; fictional examples illustrate the method only."
     }
   ],
   "MCSC-202": [
@@ -509,6 +617,18 @@
       "explanation": "A pilot checks whether recruitment, instruments, data handling or code are workable. Record changes made after the pilot and distinguish planned from exploratory analysis.",
       "example": "A pilot of ten sample records may reveal malformed timestamps before the full data pipeline is run.",
       "distinction": "A successful pilot does not guarantee adequate statistical power or unbiased results in the full study."
+    },
+    {
+      "title": "Pilot design and stopping criteria",
+      "explanation": "A pilot evaluates whether an intended procedure is feasible: data access, recruitment, measurement, runtime and safety should be checked against pre-specified criteria where practical. Record deviations and changes, including how pilot data will be handled in the full study.",
+      "example": "A pilot processes a small sample through collection, preprocessing and reporting, revealing that some timestamps are missing; the protocol is revised and the change recorded.",
+      "distinction": "A pilot can reveal practical problems but does not establish adequate power or unbiased effects in a full study."
+    },
+    {
+      "title": "Baselines and reproducible comparison",
+      "explanation": "Choose a simple baseline and relevant established methods suited to the research question. Keep comparisons fair by stating data splits, resources, tuning budgets, metrics and uncertainty; record code, versions and random seeds where relevant.",
+      "example": "When comparing two classifiers, use the same predefined test split and report their training and tuning procedures as well as precision and recall.",
+      "distinction": "A proposed approach need not outperform every baseline for the study to be useful; transparent negative results can be informative."
     }
   ],
   "MCSC-302": [
@@ -541,6 +661,18 @@
       "explanation": "Specify data provenance, inclusion rules, preprocessing, baselines, outcome measures, analysis and ethical safeguards before conducting the study where feasible.",
       "example": "A classification protocol can define dataset versions, leakage-resistant splits, baseline models, metrics and a plan for handling failures.",
       "distinction": "A pilot checks whether a procedure works; it does not guarantee that the full study is unbiased or adequately powered."
+    },
+    {
+      "title": "Research objectives and operationalisation",
+      "explanation": "A dissertation objective should be answerable with the chosen evidence and feasible within the available time and resources. Operationalisation translates important constructs into measurable or otherwise observable indicators, with units and procedures stated where appropriate.",
+      "example": "For a system-performance objective, specify workload, measurement hardware, latency definition and a baseline before making a comparison.",
+      "distinction": "A research objective states what the study seeks to learn; a performance metric states how one aspect of a system is measured."
+    },
+    {
+      "title": "Limitations, evidence and dissertation claims",
+      "explanation": "Document the boundaries of the data, method, measurement and evaluation. Relate conclusions to the design and avoid presenting a dataset-specific result as universally valid. Follow the supervisor’s and university’s current dissertation requirements.",
+      "example": "A model evaluated on one institution’s data may not generalise to other institutions; name that limit and, where possible, propose an independent external evaluation.",
+      "distinction": "A limitation qualifies what the evidence supports; it does not automatically invalidate a carefully scoped result."
     }
   ],
   "MCSC-401": [
@@ -581,6 +713,18 @@
       "explanation": "A Markov chain models transitions between states where the present state supplies the information relevant to the next transition. Queueing models use arrival and service processes to study waiting and congestion.",
       "example": "For transitions P(0→1)=0.2 and P(0→0)=0.8, a system currently in state 0 moves to state 1 next step with probability 0.2.",
       "distinction": "A stationary distribution describes a long-run state distribution when applicable; it is not the same as a single transition probability."
+    },
+    {
+      "title": "Discrete distributions and expectation",
+      "explanation": "A Bernoulli variable has outcomes 1 and 0 with probabilities p and 1−p, so E[X]=p. A binomial variable counts successes in n independent Bernoulli trials with common probability p; its mean is np and variance is np(1−p). A Poisson model counts events under different assumptions and has equal mean and variance λ.",
+      "example": "For n=10 and p=0.2, a binomial model has mean 2 and variance 1.6. This does not mean every sample contains exactly two successes.",
+      "distinction": "A binomial model has a fixed number of independent trials; a Poisson model typically represents event counts over an interval under an appropriate process."
+    },
+    {
+      "title": "Confidence interval for a population mean",
+      "explanation": "For independent observations from a normal population with unknown standard deviation, a two-sided t interval for the mean is x̄ ± t* s/√n, with n−1 degrees of freedom. Its validity depends on the sampling design and model assumptions; approximate use for larger samples needs suitable conditions.",
+      "example": "If n=25, x̄=50, s=10 and the chosen critical value is 2.064, the standard error is 2 and the interval is approximately [45.872, 54.128].",
+      "distinction": "The interval procedure has a long-run coverage interpretation; it is not a 95% probability statement about the fixed mean conditional on this one interval."
     }
   ],
   "MCSC-103": [
@@ -601,6 +745,18 @@
       "explanation": "SNMP management stations query or receive notifications about managed devices through management information represented by objects. Configuration, fault and performance management address different operational needs.",
       "example": "A manager can monitor interface counters to identify increasing packet drops and investigate a fault.",
       "distinction": "Monitoring identifies conditions; access control, authentication and encryption address different security requirements. SNMP versions have different security properties."
+    },
+    {
+      "title": "TCP connection and reliable delivery",
+      "explanation": "TCP provides a reliable ordered byte stream using sequence numbers, acknowledgements and retransmission. A connection is normally established by SYN, SYN-ACK and ACK; flow control and congestion control address different constraints. TCP does not preserve application message boundaries.",
+      "example": "If a receiver acknowledges byte sequence number 1001, it indicates that bytes before 1001 have been received in order; the next expected byte is 1001.",
+      "distinction": "Flow control limits sending to what a receiver can accept; congestion control responds to network capacity and congestion."
+    },
+    {
+      "title": "Subnetting and forwarding",
+      "explanation": "An IPv4 prefix identifies the network portion of an address. Routers select forwarding routes using the destination and their routing table, normally preferring the longest matching prefix. Private addressing and network address translation are separate concepts.",
+      "example": "For 192.168.1.130/26, the block containing the address is 192.168.1.128–192.168.1.191; in conventional subnets .128 is the network address and .191 is the broadcast address.",
+      "distinction": "A subnet mask determines address grouping; a router uses its routing table to decide where packets go next."
     }
   ],
   "MCSC-105": [
@@ -621,6 +777,18 @@
       "explanation": "A matching is a set of edges that share no endpoint. Bipartite matching can model assignments between two sets, while network flows represent movement subject to capacities.",
       "example": "Students and projects form two vertex sets; a matching assigns a project to a student without assigning either twice.",
       "distinction": "Maximum-cardinality matching maximises the number of matched edges; weighted assignment can optimise a separate cost or benefit."
+    },
+    {
+      "title": "Inclusion–exclusion principle",
+      "explanation": "When two finite sets overlap, adding their sizes counts the intersection twice. The two-set formula |A∪B|=|A|+|B|−|A∩B| corrects that double count; larger unions require alternating sums over intersections.",
+      "example": "If 30 students study topic A, 25 study B and 10 study both, then 30+25−10=45 study at least one of the topics.",
+      "distinction": "The sum rule applies directly to disjoint alternatives; inclusion–exclusion handles overlaps."
+    },
+    {
+      "title": "Euler trails and Hamilton cycles",
+      "explanation": "An Euler trail uses every edge exactly once; in a connected undirected graph after ignoring isolated vertices, one exists when exactly zero or two vertices have odd degree. A Hamilton cycle visits every vertex exactly once before returning to the start; no corresponding simple degree test applies in general.",
+      "example": "A path with three vertices and two edges has two odd-degree vertices and an Euler trail, but it has no Hamilton cycle.",
+      "distinction": "Euler properties concern edges, whereas Hamilton properties concern vertices."
     }
   ],
   "MMLC-202": [
@@ -641,6 +809,18 @@
       "explanation": "Precision is TP/(TP+FP), while recall is TP/(TP+FN), when the denominators are nonzero. The decision threshold and class prevalence influence the practical meaning of results.",
       "example": "With TP=8, FP=2 and FN=4, precision is 0.8 and recall is 8/12, approximately 0.67.",
       "distinction": "A high precision system may still miss many positive cases; choose measures based on consequences and class distribution."
+    },
+    {
+      "title": "Bayesian classification and decision costs",
+      "explanation": "A Bayesian classifier compares posterior class probabilities. Under equal misclassification costs, it may select the class with highest posterior probability; when errors have unequal costs, the decision should minimise expected loss instead.",
+      "example": "If P(A|x)=0.7 and P(B|x)=0.3, maximum-posterior classification selects A. A much greater cost for missing B could justify a different threshold.",
+      "distinction": "Posterior probabilities describe uncertainty under the model; the final decision also depends on the loss attached to each outcome."
+    },
+    {
+      "title": "Precision and recall worked example",
+      "explanation": "For a binary classifier, precision is TP/(TP+FP) and recall is TP/(TP+FN), provided each denominator is nonzero. The F1 score is 2PR/(P+R) when precision P and recall R are defined and their sum is nonzero.",
+      "example": "With TP=8, FP=2 and FN=4, precision is 0.8, recall is 8/12≈0.667 and F1 is approximately 0.727.",
+      "distinction": "Precision and recall answer different questions; accuracy alone can obscure poor minority-class performance."
     }
   ],
   "MCSC-301": [
@@ -661,6 +841,18 @@
       "explanation": "A sampling frame is the operational list from which participants are selected. Power depends on the effect of interest, variability, sample size, design and significance level.",
       "example": "Increasing the sample size can reduce random uncertainty, but it will not eliminate systematic non-response bias.",
       "distinction": "A statistically significant result does not establish a practically important effect or a sound research design."
+    },
+    {
+      "title": "Sampling bias, error and inference",
+      "explanation": "A target population is the group to which a study seeks to generalise; a sampling frame is the operational source from which units are selected. Sampling error is variation arising from sampling, whereas coverage and non-response biases are systematic concerns that may persist in large samples.",
+      "example": "A survey sent only to students enrolled in one elective may not represent all programme students, even if every invited student responds.",
+      "distinction": "Larger random samples can reduce sampling uncertainty, but size alone does not repair an unsuitable sampling frame."
+    },
+    {
+      "title": "Hypothesis tests and interpretation",
+      "explanation": "A hypothesis test specifies a null model, alternative, test statistic and decision procedure. A p-value is the probability, assuming the null model and relevant assumptions, of a result at least as extreme as the observed result under the chosen test statistic.",
+      "example": "If a pre-specified two-sided test gives p=0.03 and α=0.05, the result is statistically significant under that rule; report the estimated effect and uncertainty too.",
+      "distinction": "A p-value is not the probability that the null hypothesis is true, and statistical significance does not by itself establish practical importance."
     }
   ]
 }
