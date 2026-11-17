@@ -1,0 +1,19 @@
+{
+  "name": "CAS M.Tech CSE Study Companion",
+  "short_name": "CAS M.Tech",
+  "description": "Comprehensive academic study companion for M.Tech CSE at Centre for Advanced Studies, AKTU (2021–22 Curriculum).",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f8f2",
+  "theme_color": "#174e37",
+  "lang": "en-IN",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/semester-map.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+/* ==========================================================================
+   CAS M.Tech CSE — Print-Ready Revision Stylesheet (print.css)
+   Target: Clean A4 PDF / Physical Study Timetable & Revision Sheet
+   ========================================================================== */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+
+  /* Reset layout */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+  }
+
+  /* Hide interactive / screen UI chrome */
+  .topbar,
+  #nav,
+  #foot,
+  .footer,
+  .sticky-ribbon-container,
+  .docket-floating-trigger,
+  .docket-drawer-overlay,
+  .cmd-palette-overlay,
+  .modal-overlay,
+  .cas-toast,
+  .button,
+  .docket-toggle-btn,
+  .card-action-bar,
+  .catalog-tools,
+  .hero-actions,
+  .skip,
+  .docket-close-btn,
+  .docket-receipt-footer,
+  .matchmaker-canvas-wrapper,
+  .preset-paths-strip {
+    display: none !important;
+  }
+
+  /* Expand hidden contents for full paper printout */
+  details {
+    display: block !important;
+  }
+  details > summary {
+    font-weight: bold !important;
+    list-style: none !important;
+  }
+  details[open] summary ~ * {
+    display: block !important;
+  }
+
+  /* Academic Print Header */
+  .print-only-header {
+    display: block !important;
+    border-bottom: 2pt solid #000000;
+    padding-bottom: 8pt;
+    margin-bottom: 16pt;
+  }
+
+  .print-only-header h1 {
+    font-size: 18pt !important;
+    margin: 0 0 4pt !important;
+    font-weight: bold !important;
+  }
+
+  .print-only-header p {
+    font-size: 10pt !important;
+    color: #444444 !important;
+    margin: 0 !important;
+  }
+
+  /* Printable Table / Cards */
+  .catalog-grid,
+  .topic-overview-grid,
+  .subject-grid {
+    display: block !important;
+  }
+
+  .catalog-card,
+  .subject-box,
+  .module {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 1pt solid #cccccc !important;
+    margin-bottom: 12pt !important;
+    padding: 10pt !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .catalog-code {
+    font-weight: bold !important;
+    font-size: 10pt !important;
+    color: #000000 !important;
+  }
+
+  .catalog-card strong {
+    font-size: 12pt !important;
+    display: block !important;
+    margin: 2pt 0 4pt !important;
+  }
+
+  /* Study Docket Print Table */
+  .print-docket-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 14pt !important;
+  }
+
+  .print-docket-table th,
+  .print-docket-table td {
+    border: 1pt solid #000000 !important;
+    padding: 6pt 8pt !important;
+    text-align: left !important;
+    font-size: 9pt !important;
+  }
+
+  .print-docket-table th {
+    background: #eeeeee !important;
+    font-weight: bold !important;
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Show URLs after links if helpful, except internal anchors */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    font-family: monospace;
+  }
+
+  /* Avoid breaking sections across pages awkwardly */
+  .semester,
+  .section,
+  .featured-notes {
+    page-break-after: auto;
+    break-inside: auto;
+  }
+
+  .semester-heading {
+    border-bottom: 1pt solid #666666 !important;
+    margin-top: 16pt !important;
+    padding-bottom: 4pt !important;
+  }
+}
+
+/* Screen default for print-only elements */
+@media screen {
+  .print-only-header,
+  .print-only {
+    display: none !important;
+  }
+}

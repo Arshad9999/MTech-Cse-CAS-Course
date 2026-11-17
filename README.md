@@ -202,10 +202,19 @@ Open http://localhost:8000. A web server is required because the pages load shar
 
 ## Project structure
 
-- `index.html` and `subject.html` provide the programme directory and subject pages.
-- `assets/catalog.json` holds semester, course, specialisation and syllabus references. `assets/course-data.json` and `assets/course-supplements.json` hold the five detailed guides.
-- Each course folder contains a README. Existing guides also contain an `index.html` and PDF.
-- `assets/styles.css`, `assets/portal.css` and `assets/mastery.css` define the interface. The home page uses Framer Motion and an adapted MicroKit gradient underline component, listed by 21st.dev. See `third-party/MICROKIT-LICENSE.txt`.
+- `index.html` and `subject.html` provide the semantic programme directory and subject pages.
+- `manifest.json` and `sw.js` enable offline-first Progressive Web App (PWA) caching for campus access.
+- `data/courses.json` provides structured course telemetry: semesters, credits, unit breakdowns, domain classification, and PYQ availability.
+- `assets/css/` contains modular stylesheets:
+  - `tokens.css`: Editorial typography, spacing, light/dark colours, and domain colour accents.
+  - `components.css`: Sticky filter ribbon, tactile receipt-style Study Docket drawer, examination planner, and 2-axis matchmaker.
+  - `print.css`: Clean A4 print rules for physical revision timetables and dossiers.
+- `assets/js/` contains modular application logic:
+  - `app.js`: Main controller, catalogue rendering, live search/filtering, and telemetry.
+  - `study-docket.js`: Docket state management (`localStorage`), RFC 5545 `.ics` iCalendar timetable export, and zero-dependency client-side SVG QR code generator.
+  - `matchmaker.js`: Interactive 2-axis elective explorer (Theory ↔ Systems vs. AI/Data ↔ Security/Networks).
+  - `command-palette.js`: Global fuzzy search modal (`Ctrl+K` / `/`) jumping across subjects, units, and official syllabus links.
+- `guides/index.html` indexes interactive mastery hubs and postgraduate study resources.
 - `.github/workflows/pages.yml` validates and deploys the site on pushes to `main`.
 
 ## Validation

@@ -1,6 +1,115 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore the CAS M.Tech CSE programme, semester by semester."><title>M.Tech CSE · Study Companion</title><link rel="stylesheet" href="assets/styles.css"><link rel="stylesheet" href="assets/portal.css"></head>
-<body data-page="home"><a class="skip" href="#main">Skip to content</a><div id="nav"></div><main id="main">
-<section class="portal-hero shell"><div><div class="eyebrow">Centre for Advanced Studies · AKTU</div><h1>Your path through <em>M.Tech CSE.</em></h1><p class="lede">A clearer way to navigate the programme, find your subjects, and build understanding one idea at a time.</p><div class="hero-actions"><a class="button" href="#courses">Explore the semesters <span aria-hidden="true">↗</span></a><span id="syllabus-link"><a class="source-link" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf">View the 2021–22 syllabus ↗</a></span></div></div><aside class="hero-panel"><span class="panel-label">THE STUDY COMPANION</span><div class="panel-mark">01 <span>—</span> 04</div><p>Four semesters.<br>One place to begin.</p><div class="panel-bottom"><span>EXPLORE AT YOUR PACE</span><span>↘</span></div></aside></section>
-<section class="section shell" id="courses"><div class="section-head"><div><div class="eyebrow">Your programme / 2021–22 scheme</div><h2>Find your next subject.</h2></div><p>Explore the featured courses first, followed by the other subjects in each semester. The scheme may differ from your batch; check with your department.</p></div><div class="catalog-tools"><label for="q">Search the programme</label><input class="search" id="q" type="search" placeholder="Try a subject, code or specialisation…"><p id="search-status" role="status"></p></div><div id="semesters"></div></section>
-<section class="section shell" id="study-path"><div class="study-banner"><div><div class="eyebrow">A simple study loop</div><h2>Understand. Apply. Recall.</h2></div><p>Start with the syllabus, work through examples, then test your understanding. Available guides bring concepts, comparisons and practice together.</p><a href="https://cas.res.in/Mtechcse.html">About the programme ↗</a></div><p class="notice">An independent learning aid, not an official university publication. Course guides and verified past papers are being developed; availability is shown for each subject.</p></section></main><div id="foot"></div><script src="assets/app.js?v=20261115-notes"></script><script defer src="assets/home-motion.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the CAS M.Tech CSE programme, semester by semester. Postgraduate academic study companion with syllabus guides, elective matchmaker, and revision timetables.">
+  <title>M.Tech CSE · Study Companion | Centre for Advanced Studies AKTU</title>
+  
+  <!-- PWA & Identity -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#174e37">
+  <link rel="icon" href="assets/semester-map.svg" type="image/svg+xml">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/portal.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body data-page="home">
+  <!-- Accessibility Skip Link -->
+  <a class="skip" href="#main">Skip to main academic content</a>
+
+  <!-- Global Header Navigation -->
+  <div id="nav"></div>
+
+  <!-- Print-Only Header -->
+  <header class="print-only-header">
+    <h1>Centre for Advanced Studies · AKTU Lucknow</h1>
+    <p>Postgraduate M.Tech Computer Science & Engineering (2021–22 Curriculum Scheme) — Academic Study Companion</p>
+  </header>
+
+  <main id="main">
+    <!-- Hero Portal Section -->
+    <section class="portal-hero shell">
+      <div>
+        <div class="eyebrow">Centre for Advanced Studies · AKTU</div>
+        <h1>Your path through <em>M.Tech CSE.</em></h1>
+        <p class="lede">
+          A clearer way to navigate the programme, find your subjects, and build understanding one idea at a time.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#courses">Explore the semesters <span aria-hidden="true">↗</span></a>
+          <span id="syllabus-link">
+            <a class="source-link" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf" target="_blank" rel="noopener">
+              View the 2021–22 syllabus ↗
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Hero Companion Card (Dynamic Telemetry & Resume) -->
+      <aside class="hero-panel" aria-label="Programme Overview and Progress">
+        <span class="panel-label">THE STUDY COMPANION</span>
+        <div class="panel-mark">01 <span>—</span> 04</div>
+        <p>Four semesters.<br>One place to begin.</p>
+        <div class="panel-bottom">
+          <span>EXPLORE AT YOUR PACE</span>
+          <span>↘</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Master Catalogue Section (#courses) -->
+    <section class="section shell" id="courses">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Your programme / 2021–22 scheme</div>
+          <h2>Find your next subject.</h2>
+        </div>
+        <p>
+          Explore core and elective subjects across all four semesters. Curriculum parameters strictly follow the autonomous CAS AKTU PG scheme.
+        </p>
+      </div>
+
+      <div class="catalog-tools" style="display:none;" aria-hidden="true">
+        <!-- Replaced by Sticky Ribbon -->
+        <label for="q">Search the programme</label>
+        <input class="search" id="q" type="search" placeholder="Try a subject, code or specialisation…">
+        <p id="search-status" role="status"></p>
+      </div>
+
+      <div id="semesters"></div>
+    </section>
+
+    <!-- Evidence-Based Study Loop Section (#study-path) -->
+    <section class="section shell" id="study-path">
+      <div class="study-banner">
+        <div>
+          <div class="eyebrow">A simple study loop</div>
+          <h2>Understand. Apply. Recall.</h2>
+        </div>
+        <p>
+          Start with the syllabus, work through examples, then test your understanding. Available guides bring concepts, comparisons and practice together.
+        </p>
+        <a href="https://cas.res.in/Mtechcse.html" target="_blank" rel="noopener">About the programme ↗</a>
+      </div>
+      <p class="notice">
+        An independent learning aid, not an official university publication. Course guides and verified past papers are being developed; availability is shown for each subject.
+      </p>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <div id="foot"></div>
+
+  <!-- Interactive JavaScript Modules -->
+  <script src="assets/js/study-docket.js"></script>
+  <script src="assets/js/matchmaker.js"></script>
+  <script src="assets/js/command-palette.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script defer src="assets/home-motion.js"></script>
+</body>
+</html>

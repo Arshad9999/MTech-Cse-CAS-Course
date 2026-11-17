@@ -1,0 +1,2661 @@
+[
+  {
+    "semester": 1,
+    "code": "MCSC-101",
+    "title": "Analysis and Design of Algorithms",
+    "category": "Common core",
+    "page": 11,
+    "guide": "",
+    "folder": "mcsc-101-analysis-and-design-of-algorithms",
+    "credits": 4,
+    "domain": "theory",
+    "tagline": "Comprehensive postgraduate exploration of analysis and design of algorithms under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 3,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Network flows",
+        "topics": [
+          "Network flows"
+        ],
+        "checkpoint": "A flow assigns quantities to edges subject to capacity and conservation constraints. Maximum flow measures the greatest ...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Algorithm design",
+        "topics": [
+          "Algorithm design"
+        ],
+        "checkpoint": "Greedy algorithms make locally attractive choices, while dynamic programming combines solutions of overlapping subproble...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Intractability and approximation",
+        "topics": [
+          "Intractability and approximation"
+        ],
+        "checkpoint": "For hard optimisation problems, approximation algorithms trade exactness for a provable solution bound. Randomised and s...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": true,
+    "pyqDetails": {
+      "questionsCount": 2,
+      "source": "AKTU M.Tech Advanced Algorithm, MTCS102, 2017–18 (related course; not the CAS MCSC-101 paper)"
+    },
+    "estimatedHours": 27,
+    "prerequisites": [
+      "MCSC-105"
+    ],
+    "coordinates": {
+      "x": -0.75,
+      "y": 0.2
+    }
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-102",
+    "title": "Probability and Statistics",
+    "category": "Common core",
+    "page": 12,
+    "guide": "probability-and-statistics",
+    "folder": "probability-and-statistics",
+    "credits": 4,
+    "domain": "systems-ict",
+    "tagline": "Model uncertainty, simulate systems, and make defensible statistical inferences from data.",
+    "unitsCount": 8,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Events and probability rules",
+        "topics": [
+          "Introduction",
+          "Events and outcomes",
+          "Probability rules",
+          "Conditional probability",
+          "Independence",
+          "Bayes' rule",
+          "Combinatorics"
+        ],
+        "checkpoint": "Always define the sample space and distinguish P(A|B) from P(B|A).",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Random variables and discrete distributions",
+        "topics": [
+          "Random variables and distributions",
+          "Discrete random variables",
+          "Bernoulli",
+          "Binomial",
+          "Geometric",
+          "Negative binomial",
+          "Poisson"
+        ],
+        "checkpoint": "Match the story to assumptions: fixed trials, waiting time, or event count.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Continuous distributions, expectation and CLT",
+        "topics": [
+          "Probability densities",
+          "Exponential",
+          "Gamma",
+          "Weibull",
+          "Hyperexponential",
+          "Normal",
+          "Expectation and moments",
+          "Central Limit Theorem"
+        ],
+        "checkpoint": "A density value is not itself a probability; integrate over an interval.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Simulation and Monte Carlo",
+        "topics": [
+          "Simulation of discrete variables",
+          "Simulation of continuous variables",
+          "Monte Carlo methods",
+          "Performance evaluation",
+          "Bootstrapping"
+        ],
+        "checkpoint": "Report seed, number of runs, uncertainty, and convergence evidence.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Stochastic processes",
+        "topics": [
+          "Concepts and classification",
+          "Bernoulli process",
+          "Poisson process",
+          "Markov chains",
+          "Simple queuing systems"
+        ],
+        "checkpoint": "State the index set, state space, transition assumptions, and whether time is discrete or continuous.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Sampling, estimation and confidence intervals",
+        "topics": [
+          "Sample mean distribution",
+          "Sample proportion distribution",
+          "Parameters and statistics",
+          "Method of moments",
+          "Maximum likelihood",
+          "Pivotal quantity confidence intervals"
+        ],
+        "checkpoint": "Report estimator, assumptions, standard error, confidence level, and interpretation.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "Hypothesis testing and anomalies",
+        "topics": [
+          "Hypothesis testing",
+          "Type I and Type II errors",
+          "Anomalous events",
+          "Parameter estimation and testing"
+        ],
+        "checkpoint": "A p-value is not the probability that the null hypothesis is true.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Exploration and statistical models",
+        "topics": [
+          "Graphics and exploratory data analysis",
+          "Simple and multiple regression",
+          "Least squares",
+          "Logistic regression",
+          "Analysis of variance",
+          "Robust statistics",
+          "Nonparametric statistics"
+        ],
+        "checkpoint": "Inspect data and residuals before trusting a fitted model.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 72,
+    "prerequisites": [],
+    "coordinates": {
+      "x": -0.8,
+      "y": 0.4
+    }
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-103",
+    "title": "Advanced Computer Networks and Communication",
+    "category": "Common core",
+    "page": 13,
+    "guide": "advanced-computer-networks-and-communication",
+    "folder": "advanced-computer-networks-and-communication",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Connect physical transmission, network protocols, management, mobility, and security into one operational view.",
+    "unitsCount": 9,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Telecommunications foundations",
+        "topics": [
+          "Telecommunications history",
+          "Conducted media",
+          "Radiated media",
+          "Transmission characteristics"
+        ],
+        "checkpoint": "Compare a medium by bandwidth, reach, interference, mobility, cost, and security exposure.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Coding, modulation and errors",
+        "topics": [
+          "Coding techniques",
+          "Modulation techniques",
+          "Error characteristics",
+          "Error detection",
+          "Error correction"
+        ],
+        "checkpoint": "Distinguish source coding, channel coding, line coding, and modulation.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Networks, standards and layered design",
+        "topics": [
+          "LAN and WAN applications, hardware, and software",
+          "OSI model",
+          "Industry standards",
+          "Topologies",
+          "Protocols",
+          "Internetworking devices"
+        ],
+        "checkpoint": "For any device or protocol, name its layer, inputs, outputs, and failure scope.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Applications and system selection",
+        "topics": [
+          "Information system applications",
+          "Selection of telecommunications and networking systems",
+          "Communications management"
+        ],
+        "checkpoint": "Record functional needs, service-level targets, risks, and total cost before selecting a system.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Security, signatures and authentication",
+        "topics": [
+          "Security and recovery",
+          "Communication security",
+          "Digital signatures",
+          "Authentication protocols"
+        ],
+        "checkpoint": "Separate encryption from signatures and authentication from authorization.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Wireless mobility",
+        "topics": [
+          "WLAN",
+          "Mobile IP"
+        ],
+        "checkpoint": "Analyze mobility at link, network, transport, and application layers.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "SNMP models and proxying",
+        "topics": [
+          "SNMP v1 and v2 organizational model",
+          "System overview",
+          "Information model",
+          "Communication model",
+          "Functional model",
+          "SNMP proxy server"
+        ],
+        "checkpoint": "Explain manager, agent, MIB, OID, polling, notification, and proxy roles.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Broadband, ATM and network management",
+        "topics": [
+          "Broadband networks and services",
+          "ATM technology",
+          "Configuration management",
+          "Fault management",
+          "Performance management",
+          "Network management tools",
+          "Network statistics measurement systems"
+        ],
+        "checkpoint": "For each metric, define its unit, collection interval, baseline, and alert threshold.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 9,
+        "title": "Web and XML management plus laboratory",
+        "topics": [
+          "Web-based management",
+          "XML-based network management",
+          "Programming protocols using C/C++ and MATLAB",
+          "Theory practice"
+        ],
+        "checkpoint": "Every lab report should state topology, assumptions, procedure, raw observations, calculations, and limitations.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 81,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.5,
+      "y": -0.6
+    }
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-104",
+    "title": "Foundation of Machine Learning",
+    "category": "Common core",
+    "page": 14,
+    "guide": "",
+    "folder": "mcsc-104-foundation-of-machine-learning",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of foundation of machine learning under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 3,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Learning and validation",
+        "topics": [
+          "Learning and validation"
+        ],
+        "checkpoint": "Machine learning estimates patterns from data. Keep evaluation data separate from training data; cross-validation rotate...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Regression and dimensionality reduction",
+        "topics": [
+          "Regression and dimensionality reduction"
+        ],
+        "checkpoint": "Regression predicts a numerical outcome from features. Principal component analysis constructs orthogonal directions of ...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Clustering and classification",
+        "topics": [
+          "Clustering and classification"
+        ],
+        "checkpoint": "Clustering groups observations without given labels. Classification predicts known categories; examples include nearest ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": true,
+    "pyqDetails": {
+      "questionsCount": 2,
+      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MCSC-104 paper)"
+    },
+    "estimatedHours": 27,
+    "prerequisites": [
+      "MCSC-102"
+    ],
+    "coordinates": {
+      "x": -0.3,
+      "y": 0.7
+    }
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-105",
+    "title": "Discrete Mathematics and Graph Theory",
+    "category": "Common core",
+    "page": 15,
+    "guide": "discrete-mathematics-and-graph-theory",
+    "folder": "discrete-mathematics-and-graph-theory",
+    "credits": 4,
+    "domain": "theory",
+    "tagline": "Reason about finite structures, prove what must be true, and turn graph models into efficient algorithms.",
+    "unitsCount": 8,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Counting principles",
+        "topics": [
+          "Basic counting principle",
+          "Pigeonhole principle",
+          "Inclusion-exclusion principle"
+        ],
+        "checkpoint": "Can you identify whether a problem needs the sum rule, product rule, pigeonhole principle, or inclusion-exclusion?",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Recurrences and generating functions",
+        "topics": [
+          "Recurrence relations",
+          "Generating functions"
+        ],
+        "checkpoint": "Write base cases before expanding or solving a recurrence.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Logic, sets, languages and machines",
+        "topics": [
+          "Fundamentals of logic",
+          "Set theory",
+          "Language",
+          "Finite state machines"
+        ],
+        "checkpoint": "Construct a truth table and trace at least three strings through a finite state machine.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Graphs, trails and cycles",
+        "topics": [
+          "Undirected and directed graphs",
+          "Modelling with graphs",
+          "Trail and cycle",
+          "Eulerian trail",
+          "Hamilton cycle"
+        ],
+        "checkpoint": "Do not confuse an Eulerian condition with a Hamiltonian condition.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Connectivity and trees",
+        "topics": [
+          "Connectivity",
+          "Trees"
+        ],
+        "checkpoint": "Prove the tree properties from connectedness and absence of cycles.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Graph traversal and shortest paths",
+        "topics": [
+          "Breadth-first search (BFS)",
+          "Depth-first search (DFS)",
+          "Shortest path"
+        ],
+        "checkpoint": "State whether the graph is directed, weighted, and allowed to contain negative weights before choosing an algorithm.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "Spanning trees, matching and assignment",
+        "topics": [
+          "Optimal spanning trees",
+          "Matching",
+          "Job assignment problem"
+        ],
+        "checkpoint": "Explain why a locally light edge is safe before applying a greedy MST step.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Network flows and transportation",
+        "topics": [
+          "Optimal transportation through flows in networks"
+        ],
+        "checkpoint": "Check capacity, conservation, and residual edges after every augmentation.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 72,
+    "prerequisites": [],
+    "coordinates": {
+      "x": -0.85,
+      "y": 0.1
+    }
+  },
+  {
+    "semester": 1,
+    "code": "MCSC-106",
+    "title": "Independent Study and Research I",
+    "category": "Common core",
+    "page": 15,
+    "guide": "",
+    "folder": "mcsc-106-independent-study-and-research-i",
+    "credits": 2,
+    "domain": "systems-ict",
+    "tagline": "Learn representations and decision rules from experience, then evaluate what generalizes.",
+    "unitsCount": 9,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Learning problems and models",
+        "topics": [
+          "Introduction",
+          "Algorithmic models of learning",
+          "Classifiers",
+          "Functions",
+          "Relations",
+          "Grammars",
+          "Probabilistic models",
+          "Value functions",
+          "Behaviors",
+          "Programs from experience"
+        ],
+        "checkpoint": "Define task, experience, performance measure, and generalization target.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Bayesian, MAP and MDL frameworks",
+        "topics": [
+          "Bayesian framework",
+          "Maximum a posteriori",
+          "Minimum description length"
+        ],
+        "checkpoint": "State priors and model assumptions; do not present MAP as prior-free.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Parameter estimation and model families",
+        "topics": [
+          "Parameter estimation",
+          "Sufficient statistics",
+          "Decision trees",
+          "Neural networks",
+          "Support vector machines",
+          "Bayesian networks"
+        ],
+        "checkpoint": "Compare interpretability, capacity, optimization, data needs, and calibration.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Text and sequence models",
+        "topics": [
+          "Bag of words classifiers",
+          "N-gram models",
+          "Markov models",
+          "Hidden Markov models",
+          "Probabilistic relational models"
+        ],
+        "checkpoint": "Identify what information is lost by the independence or Markov assumption.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Instance, rule and ensemble methods",
+        "topics": [
+          "Association rules",
+          "Nearest neighbour classifiers",
+          "Locally weighted regression",
+          "Ensemble classifiers"
+        ],
+        "checkpoint": "Check leakage, scaling, distance choice, diversity, and validation design.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Computational learning theory",
+        "topics": [
+          "Mistake bound analysis",
+          "Sample complexity",
+          "VC dimension",
+          "Occam learning",
+          "Accuracy and confidence boosting"
+        ],
+        "checkpoint": "Separate training error from a claim about unseen-data error.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "Representation, reduction and visualization",
+        "topics": [
+          "Dimensionality reduction",
+          "Feature selection",
+          "Visualization"
+        ],
+        "checkpoint": "Treat a visualization as evidence to investigate, not automatic proof of separable classes.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Clustering and mixture models",
+        "topics": [
+          "Clustering",
+          "Mixture models",
+          "K-means",
+          "Hierarchical clustering",
+          "Distributional clustering"
+        ],
+        "checkpoint": "Justify distance, scaling, cluster count, and evaluation method.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 9,
+        "title": "Document recognition application",
+        "topics": [
+          "Applications: document recognition"
+        ],
+        "checkpoint": "Document data provenance, train-test separation, class imbalance, and representative failure cases.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 30,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.8473395616558455,
+      "y": -0.14365001014258405
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCSC-201",
+    "title": "The Internet of Things",
+    "category": "Common core",
+    "page": 16,
+    "guide": "",
+    "folder": "mcsc-201-the-internet-of-things",
+    "credits": 4,
+    "domain": "systems-ict",
+    "tagline": "Move from a defensible question to ethical evidence, analysis, interpretation, and publication.",
+    "unitsCount": 10,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Foundations and language of research",
+        "topics": [
+          "Meaning, objectives, motivation, and utility",
+          "Theory and empiricism",
+          "Deductive and inductive theory",
+          "Scientific method",
+          "Concept, construct, definition, and variable",
+          "Research process"
+        ],
+        "checkpoint": "Write one conceptual definition and one operational definition for every key construct.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Problem identification and hypotheses",
+        "topics": [
+          "Research question",
+          "Investigation question",
+          "Measurement issues",
+          "Hypothesis",
+          "Good hypothesis qualities",
+          "Null and alternative hypothesis",
+          "Testing logic and importance"
+        ],
+        "checkpoint": "A useful hypothesis is specific, measurable, falsifiable, and connected to theory.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Research design",
+        "topics": [
+          "Concept and importance",
+          "Features of a good design",
+          "Exploratory design",
+          "Descriptive design",
+          "Experimental design",
+          "Independent and dependent variables"
+        ],
+        "checkpoint": "Align question, sampling, measurement, comparison, analysis, and validity threats.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Qualitative and quantitative approaches",
+        "topics": [
+          "Qualitative research",
+          "Quantitative research",
+          "Measurement",
+          "Causality",
+          "Generalization",
+          "Replication",
+          "Merging approaches"
+        ],
+        "checkpoint": "Choose methods because they answer the question, not because one label sounds more rigorous.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Measurement quality and levels",
+        "topics": [
+          "What is measured",
+          "Measurement problems",
+          "Validity",
+          "Reliability",
+          "Nominal",
+          "Ordinal",
+          "Interval",
+          "Ratio"
+        ],
+        "checkpoint": "Name the scale level before choosing summaries or statistical tests.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Sampling",
+        "topics": [
+          "Population, sample, frame, error, size, and non-response",
+          "Good sample characteristics",
+          "Simple random",
+          "Systematic",
+          "Stratified random",
+          "Multi-stage sampling",
+          "Sample-size determination",
+          "Practical considerations"
+        ],
+        "checkpoint": "Document target population, frame coverage, selection method, response, and exclusions.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "Data preparation and analysis",
+        "topics": [
+          "Data preparation",
+          "Univariate analysis",
+          "Frequency tables",
+          "Bar and pie charts",
+          "Percentages",
+          "Bivariate cross-tabulation",
+          "Chi-square association test"
+        ],
+        "checkpoint": "Preserve raw data, make transformations reproducible, and distinguish missing from zero.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Interpretation and paper writing",
+        "topics": [
+          "Interpretation of data",
+          "Research paper layout",
+          "Computer science journals",
+          "Journal impact factor",
+          "When and where to publish",
+          "Publishing ethics",
+          "Plagiarism and self-plagiarism"
+        ],
+        "checkpoint": "Audit every claim for evidence, uncertainty, attribution, and reproducibility.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 9,
+        "title": "Research sources and databases",
+        "topics": [
+          "Encyclopedias",
+          "Research guides",
+          "Handbooks",
+          "Academic databases for computer science"
+        ],
+        "checkpoint": "A reproducible search records database, exact query, date, filters, and screening criteria.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 10,
+        "title": "Research tools and techniques",
+        "topics": [
+          "Effective information search",
+          "Zotero and Mendeley",
+          "LaTeX and MS Office",
+          "Plagiarism-detection software"
+        ],
+        "checkpoint": "Back up the library, verify metadata, preserve notes, and never treat a similarity score as a verdict.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 90,
+    "prerequisites": [
+      "MCSC-103"
+    ],
+    "coordinates": {
+      "x": 0.7,
+      "y": -0.3
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCSC-202",
+    "title": "Independent Study and Research II",
+    "category": "Common core",
+    "page": 34,
+    "guide": "",
+    "folder": "mcsc-202-independent-study-and-research-ii",
+    "credits": 2,
+    "domain": "systems-ict",
+    "tagline": "Model uncertainty, simulate systems, and make defensible statistical inferences from data.",
+    "unitsCount": 8,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Events and probability rules",
+        "topics": [
+          "Introduction",
+          "Events and outcomes",
+          "Probability rules",
+          "Conditional probability",
+          "Independence",
+          "Bayes' rule",
+          "Combinatorics"
+        ],
+        "checkpoint": "Always define the sample space and distinguish P(A|B) from P(B|A).",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Random variables and discrete distributions",
+        "topics": [
+          "Random variables and distributions",
+          "Discrete random variables",
+          "Bernoulli",
+          "Binomial",
+          "Geometric",
+          "Negative binomial",
+          "Poisson"
+        ],
+        "checkpoint": "Match the story to assumptions: fixed trials, waiting time, or event count.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Continuous distributions, expectation and CLT",
+        "topics": [
+          "Probability densities",
+          "Exponential",
+          "Gamma",
+          "Weibull",
+          "Hyperexponential",
+          "Normal",
+          "Expectation and moments",
+          "Central Limit Theorem"
+        ],
+        "checkpoint": "A density value is not itself a probability; integrate over an interval.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Simulation and Monte Carlo",
+        "topics": [
+          "Simulation of discrete variables",
+          "Simulation of continuous variables",
+          "Monte Carlo methods",
+          "Performance evaluation",
+          "Bootstrapping"
+        ],
+        "checkpoint": "Report seed, number of runs, uncertainty, and convergence evidence.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Stochastic processes",
+        "topics": [
+          "Concepts and classification",
+          "Bernoulli process",
+          "Poisson process",
+          "Markov chains",
+          "Simple queuing systems"
+        ],
+        "checkpoint": "State the index set, state space, transition assumptions, and whether time is discrete or continuous.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Sampling, estimation and confidence intervals",
+        "topics": [
+          "Sample mean distribution",
+          "Sample proportion distribution",
+          "Parameters and statistics",
+          "Method of moments",
+          "Maximum likelihood",
+          "Pivotal quantity confidence intervals"
+        ],
+        "checkpoint": "Report estimator, assumptions, standard error, confidence level, and interpretation.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "Hypothesis testing and anomalies",
+        "topics": [
+          "Hypothesis testing",
+          "Type I and Type II errors",
+          "Anomalous events",
+          "Parameter estimation and testing"
+        ],
+        "checkpoint": "A p-value is not the probability that the null hypothesis is true.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Exploration and statistical models",
+        "topics": [
+          "Graphics and exploratory data analysis",
+          "Simple and multiple regression",
+          "Least squares",
+          "Logistic regression",
+          "Analysis of variance",
+          "Robust statistics",
+          "Nonparametric statistics"
+        ],
+        "checkpoint": "Inspect data and residuals before trusting a fitted model.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 30,
+    "prerequisites": [
+      "MCSC-106"
+    ],
+    "coordinates": {
+      "x": 0.8473395616558455,
+      "y": -0.14365001014258405
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCySC-201",
+    "title": "Cryptography",
+    "category": "Cyber Security core",
+    "page": 17,
+    "guide": "",
+    "folder": "mcysc-201-cryptography",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of cryptography under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 3,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Symmetric cryptography",
+        "topics": [
+          "Symmetric cryptography"
+        ],
+        "checkpoint": "Symmetric encryption uses a shared secret. Block ciphers require an appropriate mode and unique nonces or IVs where requ...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Public-key cryptography",
+        "topics": [
+          "Public-key cryptography"
+        ],
+        "checkpoint": "Public-key methods use related public and private keys. Diffie–Hellman establishes a shared secret, while digital signat...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Integrity and protocols",
+        "topics": [
+          "Integrity and protocols"
+        ],
+        "checkpoint": "Hashes summarise data, and message authentication codes verify integrity using a secret key. Authenticated encryption co...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 27,
+    "prerequisites": [
+      "MCSC-105"
+    ],
+    "coordinates": {
+      "x": -0.5,
+      "y": -0.8
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCySC-202",
+    "title": "Fundamentals of Information Security and Practices",
+    "category": "Cyber Security core",
+    "page": 18,
+    "guide": "",
+    "folder": "mcysc-202-fundamentals-of-information-security-and-practices",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of fundamentals of information security and practices under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 3,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Security principles",
+        "topics": [
+          "Security principles"
+        ],
+        "checkpoint": "Confidentiality restricts disclosure, integrity protects against unauthorised change, and availability supports access w...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Risk and governance",
+        "topics": [
+          "Risk and governance"
+        ],
+        "checkpoint": "Risk assessment considers threats, vulnerabilities, likelihood and impact. Policies, standards, roles and mitigation pla...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Security assessment",
+        "topics": [
+          "Security assessment"
+        ],
+        "checkpoint": "Vulnerability assessment identifies weaknesses; penetration testing attempts controlled exploitation under an agreed sco...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 27,
+    "prerequisites": [
+      "MCSC-103"
+    ],
+    "coordinates": {
+      "x": -0.35556513094233844,
+      "y": -0.476364454427473
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MICTC-201",
+    "title": "Mathematical Foundations for Computing in ICT",
+    "category": "ICT core",
+    "page": 19,
+    "guide": "",
+    "folder": "mictc-201-mathematical-foundations-for-computing-in-ict",
+    "credits": 4,
+    "domain": "systems-ict",
+    "tagline": "Comprehensive postgraduate exploration of mathematical foundations for computing in ict under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Mathematical foundations",
+        "topics": [
+          "Mathematical foundations"
+        ],
+        "checkpoint": "Mathematical models express computing problems precisely. Work from definitions and assumptions before selecting a techn...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Computing applications",
+        "topics": [
+          "Computing applications"
+        ],
+        "checkpoint": "Connect each mathematical method to the computing or communication problem it models; check the detailed syllabus for th...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.7030296213104391,
+      "y": -0.37333907856540305
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MICTC-202",
+    "title": "Embedded System",
+    "category": "ICT core",
+    "page": 20,
+    "guide": "",
+    "folder": "mictc-202-embedded-system",
+    "credits": 4,
+    "domain": "systems-ict",
+    "tagline": "Comprehensive postgraduate exploration of embedded system under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Embedded architecture",
+        "topics": [
+          "Embedded architecture"
+        ],
+        "checkpoint": "An embedded system combines hardware and software for a dedicated task. Processor, memory, peripherals and input/output ...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Interfacing and execution",
+        "topics": [
+          "Interfacing and execution"
+        ],
+        "checkpoint": "Timers, interrupts and communication interfaces connect the processor to external devices. Real-time systems must meet t...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.7030296213104391,
+      "y": -0.37333907856540305
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MMLC-201",
+    "title": "Neural Networks and Evolutionary Algorithms",
+    "category": "Machine Learning core",
+    "page": 21,
+    "guide": "",
+    "folder": "mmlc-201-neural-networks-and-evolutionary-algorithms",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of neural networks and evolutionary algorithms under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Neural networks",
+        "topics": [
+          "Neural networks"
+        ],
+        "checkpoint": "A neural network composes parameterised transformations and nonlinear activations. Training adjusts parameters to reduce...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Evolutionary algorithms",
+        "topics": [
+          "Evolutionary algorithms"
+        ],
+        "checkpoint": "A population of candidate solutions evolves through selection, variation and evaluation. The fitness function measures s...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": true,
+    "pyqDetails": {
+      "questionsCount": 1,
+      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLC-201 paper)"
+    },
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCSC-104",
+      "MCSC-102"
+    ],
+    "coordinates": {
+      "x": -0.2,
+      "y": 0.85
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MMLC-202",
+    "title": "Pattern Recognition",
+    "category": "Machine Learning core",
+    "page": 22,
+    "guide": "pattern-recognition",
+    "folder": "pattern-recognition",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Learn representations and decision rules from experience, then evaluate what generalizes.",
+    "unitsCount": 9,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Learning problems and models",
+        "topics": [
+          "Introduction",
+          "Algorithmic models of learning",
+          "Classifiers",
+          "Functions",
+          "Relations",
+          "Grammars",
+          "Probabilistic models",
+          "Value functions",
+          "Behaviors",
+          "Programs from experience"
+        ],
+        "checkpoint": "Define task, experience, performance measure, and generalization target.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Bayesian, MAP and MDL frameworks",
+        "topics": [
+          "Bayesian framework",
+          "Maximum a posteriori",
+          "Minimum description length"
+        ],
+        "checkpoint": "State priors and model assumptions; do not present MAP as prior-free.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Parameter estimation and model families",
+        "topics": [
+          "Parameter estimation",
+          "Sufficient statistics",
+          "Decision trees",
+          "Neural networks",
+          "Support vector machines",
+          "Bayesian networks"
+        ],
+        "checkpoint": "Compare interpretability, capacity, optimization, data needs, and calibration.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Text and sequence models",
+        "topics": [
+          "Bag of words classifiers",
+          "N-gram models",
+          "Markov models",
+          "Hidden Markov models",
+          "Probabilistic relational models"
+        ],
+        "checkpoint": "Identify what information is lost by the independence or Markov assumption.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Instance, rule and ensemble methods",
+        "topics": [
+          "Association rules",
+          "Nearest neighbour classifiers",
+          "Locally weighted regression",
+          "Ensemble classifiers"
+        ],
+        "checkpoint": "Check leakage, scaling, distance choice, diversity, and validation design.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Computational learning theory",
+        "topics": [
+          "Mistake bound analysis",
+          "Sample complexity",
+          "VC dimension",
+          "Occam learning",
+          "Accuracy and confidence boosting"
+        ],
+        "checkpoint": "Separate training error from a claim about unseen-data error.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "Representation, reduction and visualization",
+        "topics": [
+          "Dimensionality reduction",
+          "Feature selection",
+          "Visualization"
+        ],
+        "checkpoint": "Treat a visualization as evidence to investigate, not automatic proof of separable classes.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Clustering and mixture models",
+        "topics": [
+          "Clustering",
+          "Mixture models",
+          "K-means",
+          "Hierarchical clustering",
+          "Distributional clustering"
+        ],
+        "checkpoint": "Justify distance, scaling, cluster count, and evaluation method.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 9,
+        "title": "Document recognition application",
+        "topics": [
+          "Applications: document recognition"
+        ],
+        "checkpoint": "Document data provenance, train-test separation, class imbalance, and representative failure cases.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 81,
+    "prerequisites": [
+      "MCSC-104"
+    ],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCSE-201",
+    "title": "Introduction to Formal Methods and Verification of Large Systems",
+    "category": "Cyber Security / ICT elective",
+    "page": 23,
+    "guide": "",
+    "folder": "mcse-201-introduction-to-formal-methods-and-verification-of-large-systems",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of introduction to formal methods and verification of large systems under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Formal specification",
+        "topics": [
+          "Formal specification"
+        ],
+        "checkpoint": "A formal specification describes required system behaviour using mathematical notation. This makes assumptions and prope...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Verification",
+        "topics": [
+          "Verification"
+        ],
+        "checkpoint": "Model checking explores states against stated properties, while proof-based methods establish claims through logical rea...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.027249983095693237,
+      "y": -0.30319252601298546
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-204",
+    "title": "Ethical Hacking",
+    "category": "Cyber Security elective",
+    "page": 26,
+    "guide": "",
+    "folder": "mcyse-204-ethical-hacking",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of ethical hacking under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Ethical hacking",
+        "topics": [
+          "Ethical hacking"
+        ],
+        "checkpoint": "Ethical hacking tests security under explicit authorisation and a defined scope. A typical process includes discovery, a...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Findings and remediation",
+        "topics": [
+          "Findings and remediation"
+        ],
+        "checkpoint": "A useful report explains the affected asset, evidence, impact and a practical fix. Retesting checks whether the fix addr...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCySC-201",
+      "MCSC-103"
+    ],
+    "coordinates": {
+      "x": 0.6,
+      "y": -0.85
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-201",
+    "title": "Security Standards and Project Management",
+    "category": "Cyber Security elective",
+    "page": 24,
+    "guide": "",
+    "folder": "mcyse-201-security-standards-and-project-management",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of security standards and project management under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Security standards",
+        "topics": [
+          "Security standards"
+        ],
+        "checkpoint": "Standards provide structured requirements or guidance for controls, governance and assessment. A standard must be interp...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Project management",
+        "topics": [
+          "Project management"
+        ],
+        "checkpoint": "A security project defines scope, stakeholders, schedule, resources and risks. Track deliverables and change, and verify...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": -0.35556513094233844,
+      "y": -0.476364454427473
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-202",
+    "title": "System Security",
+    "category": "Cyber Security elective",
+    "page": 25,
+    "guide": "",
+    "folder": "mcyse-202-system-security",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of system security under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "System hardening",
+        "topics": [
+          "System hardening"
+        ],
+        "checkpoint": "Hardening reduces unnecessary attack surface by limiting services and privileges, applying updates and configuring syste...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Defence and monitoring",
+        "topics": [
+          "Defence and monitoring"
+        ],
+        "checkpoint": "Access control, logging, isolation and incident response work together. Monitoring is useful only when relevant events a...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": -0.35556513094233844,
+      "y": -0.476364454427473
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCySE-203",
+    "title": "Identity and Access Management and Trusted Computing",
+    "category": "Cyber Security elective",
+    "page": 27,
+    "guide": "",
+    "folder": "mcyse-203-identity-and-access-management-and-trusted-computing",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of identity and access management and trusted computing under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Identity and authentication",
+        "topics": [
+          "Identity and authentication"
+        ],
+        "checkpoint": "Identity establishes who a subject claims to be; authentication tests that claim. Authorisation then determines what the...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Access and trusted computing",
+        "topics": [
+          "Access and trusted computing"
+        ],
+        "checkpoint": "Least privilege grants only the access required for a task. Trusted-computing mechanisms use hardware and software roots...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": -0.35556513094233844,
+      "y": -0.476364454427473
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MICTE-202",
+    "title": "Speech Communication and Biomedical Signal Processing",
+    "category": "ICT elective",
+    "page": 29,
+    "guide": "",
+    "folder": "micte-202-speech-communication-and-biomedical-signal-processing",
+    "credits": 4,
+    "domain": "systems-ict",
+    "tagline": "Comprehensive postgraduate exploration of speech communication and biomedical signal processing under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Speech processing",
+        "topics": [
+          "Speech processing"
+        ],
+        "checkpoint": "Speech signals vary over time, so short frames are analysed to estimate features such as spectral content. Sampling and ...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Biomedical signals",
+        "topics": [
+          "Biomedical signals"
+        ],
+        "checkpoint": "Biomedical signals such as ECG contain physiological information mixed with noise and artefacts. Filtering and feature e...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.7030296213104391,
+      "y": -0.37333907856540305
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCSE-202",
+    "title": "Data Science",
+    "category": "ICT / Machine Learning elective",
+    "page": 30,
+    "guide": "",
+    "folder": "mcse-202-data-science",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of data science under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Data preparation",
+        "topics": [
+          "Data preparation"
+        ],
+        "checkpoint": "Data science starts with a question, data collection and assessment of quality. Cleaning, missing values and leakage can...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Modelling and evaluation",
+        "topics": [
+          "Modelling and evaluation"
+        ],
+        "checkpoint": "Choose methods appropriate to the outcome and validate on unseen data. Interpret performance alongside uncertainty, bias...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCSC-102",
+      "MCSC-104"
+    ],
+    "coordinates": {
+      "x": 0,
+      "y": 0.65
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MICTE-201",
+    "title": "Information Theory and Coding",
+    "category": "ICT elective",
+    "page": 28,
+    "guide": "",
+    "folder": "micte-201-information-theory-and-coding",
+    "credits": 4,
+    "domain": "theory",
+    "tagline": "Comprehensive postgraduate exploration of information theory and coding under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Information theory",
+        "topics": [
+          "Information theory"
+        ],
+        "checkpoint": "Entropy measures uncertainty in a random variable; mutual information measures how much knowing one variable reduces unc...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Coding",
+        "topics": [
+          "Coding"
+        ],
+        "checkpoint": "Source coding aims to represent information efficiently, while channel coding adds structured redundancy to detect or co...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": -0.6175763029516487,
+      "y": -0.3644521047538708
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MCSE-203",
+    "title": "Computer Vision",
+    "category": "ICT / Machine Learning elective",
+    "page": 31,
+    "guide": "",
+    "folder": "mcse-203-computer-vision",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of computer vision under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Image representation",
+        "topics": [
+          "Image representation"
+        ],
+        "checkpoint": "An image is a grid of pixel values. Preprocessing and feature extraction transform those values into representations use...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Vision tasks",
+        "topics": [
+          "Vision tasks"
+        ],
+        "checkpoint": "Classification assigns an image label; detection locates objects; segmentation assigns labels to pixels. Evaluation must...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCSC-104"
+    ],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MMLE-201",
+    "title": "Big Data Analytics",
+    "category": "Machine Learning elective",
+    "page": 32,
+    "guide": "",
+    "folder": "mmle-201-big-data-analytics",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of big data analytics under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Big-data processing",
+        "topics": [
+          "Big-data processing"
+        ],
+        "checkpoint": "Large datasets are often partitioned across machines. Distributed processing needs to handle communication, failures and...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Analytics workflow",
+        "topics": [
+          "Analytics workflow"
+        ],
+        "checkpoint": "Ingestion, storage, transformation and analysis form a pipeline. Batch and stream processing suit different latency and ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCSC-104"
+    ],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MMLE-202",
+    "title": "Optimization Techniques",
+    "category": "Machine Learning elective",
+    "page": 33,
+    "guide": "",
+    "folder": "mmle-202-optimization-techniques",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of optimization techniques under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Optimisation basics",
+        "topics": [
+          "Optimisation basics"
+        ],
+        "checkpoint": "Optimisation selects variables to minimise or maximise an objective, possibly under constraints. Local and global optima...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Gradient methods",
+        "topics": [
+          "Gradient methods"
+        ],
+        "checkpoint": "Gradient descent iteratively moves against the gradient. Step size, conditioning and stopping criteria affect convergenc...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCSC-101",
+      "MCSC-105"
+    ],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 2,
+    "code": "MMLE-203",
+    "title": "Probabilistic Graphical Model",
+    "category": "Machine Learning elective",
+    "page": 34,
+    "guide": "",
+    "folder": "mmle-203-probabilistic-graphical-model",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of probabilistic graphical model under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Graphical models",
+        "topics": [
+          "Graphical models"
+        ],
+        "checkpoint": "A graphical model uses nodes and edges to represent a joint probability distribution and conditional dependencies....",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Inference and learning",
+        "topics": [
+          "Inference and learning"
+        ],
+        "checkpoint": "Inference estimates unknown variables given evidence; learning estimates model parameters or structure from data. Exact ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCSC-301",
+    "title": "Research Methodology",
+    "category": "Common core",
+    "page": 35,
+    "guide": "research-methodology",
+    "folder": "research-methodology",
+    "credits": 0,
+    "domain": "systems-ict",
+    "tagline": "Move from a defensible question to ethical evidence, analysis, interpretation, and publication.",
+    "unitsCount": 10,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Foundations and language of research",
+        "topics": [
+          "Meaning, objectives, motivation, and utility",
+          "Theory and empiricism",
+          "Deductive and inductive theory",
+          "Scientific method",
+          "Concept, construct, definition, and variable",
+          "Research process"
+        ],
+        "checkpoint": "Write one conceptual definition and one operational definition for every key construct.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Problem identification and hypotheses",
+        "topics": [
+          "Research question",
+          "Investigation question",
+          "Measurement issues",
+          "Hypothesis",
+          "Good hypothesis qualities",
+          "Null and alternative hypothesis",
+          "Testing logic and importance"
+        ],
+        "checkpoint": "A useful hypothesis is specific, measurable, falsifiable, and connected to theory.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 3,
+        "title": "Research design",
+        "topics": [
+          "Concept and importance",
+          "Features of a good design",
+          "Exploratory design",
+          "Descriptive design",
+          "Experimental design",
+          "Independent and dependent variables"
+        ],
+        "checkpoint": "Align question, sampling, measurement, comparison, analysis, and validity threats.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 4,
+        "title": "Qualitative and quantitative approaches",
+        "topics": [
+          "Qualitative research",
+          "Quantitative research",
+          "Measurement",
+          "Causality",
+          "Generalization",
+          "Replication",
+          "Merging approaches"
+        ],
+        "checkpoint": "Choose methods because they answer the question, not because one label sounds more rigorous.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 5,
+        "title": "Measurement quality and levels",
+        "topics": [
+          "What is measured",
+          "Measurement problems",
+          "Validity",
+          "Reliability",
+          "Nominal",
+          "Ordinal",
+          "Interval",
+          "Ratio"
+        ],
+        "checkpoint": "Name the scale level before choosing summaries or statistical tests.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 6,
+        "title": "Sampling",
+        "topics": [
+          "Population, sample, frame, error, size, and non-response",
+          "Good sample characteristics",
+          "Simple random",
+          "Systematic",
+          "Stratified random",
+          "Multi-stage sampling",
+          "Sample-size determination",
+          "Practical considerations"
+        ],
+        "checkpoint": "Document target population, frame coverage, selection method, response, and exclusions.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 7,
+        "title": "Data preparation and analysis",
+        "topics": [
+          "Data preparation",
+          "Univariate analysis",
+          "Frequency tables",
+          "Bar and pie charts",
+          "Percentages",
+          "Bivariate cross-tabulation",
+          "Chi-square association test"
+        ],
+        "checkpoint": "Preserve raw data, make transformations reproducible, and distinguish missing from zero.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 8,
+        "title": "Interpretation and paper writing",
+        "topics": [
+          "Interpretation of data",
+          "Research paper layout",
+          "Computer science journals",
+          "Journal impact factor",
+          "When and where to publish",
+          "Publishing ethics",
+          "Plagiarism and self-plagiarism"
+        ],
+        "checkpoint": "Audit every claim for evidence, uncertainty, attribution, and reproducibility.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 9,
+        "title": "Research sources and databases",
+        "topics": [
+          "Encyclopedias",
+          "Research guides",
+          "Handbooks",
+          "Academic databases for computer science"
+        ],
+        "checkpoint": "A reproducible search records database, exact query, date, filters, and screening criteria.",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 10,
+        "title": "Research tools and techniques",
+        "topics": [
+          "Effective information search",
+          "Zotero and Mendeley",
+          "LaTeX and MS Office",
+          "Plagiarism-detection software"
+        ],
+        "checkpoint": "Back up the library, verify metadata, preserve notes, and never treat a similarity score as a verdict.",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": true,
+    "pyqDetails": {
+      "questionsCount": 2,
+      "source": "AKTU M.Tech Research Process and Methodology, MTCC101, 2017–18 (related course; not the CAS MCSC-301 paper)"
+    },
+    "estimatedHours": 90,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.8473395616558455,
+      "y": -0.14365001014258405
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCSC-302",
+    "title": "Thesis / Dissertation I",
+    "category": "Common core",
+    "page": 48,
+    "guide": "",
+    "folder": "mcsc-302-thesis-dissertation-i",
+    "credits": 8,
+    "domain": "systems-ict",
+    "tagline": "Comprehensive postgraduate exploration of thesis / dissertation i under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Dissertation work",
+        "topics": [
+          "Dissertation work"
+        ],
+        "checkpoint": "Develop a research question, investigate related work, select an appropriate method, and document the evidence and concl...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Supervision and assessment",
+        "topics": [
+          "Supervision and assessment"
+        ],
+        "checkpoint": "Agree milestones and reporting requirements with your supervisor. The department determines the exact scope, submission ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 90,
+    "prerequisites": [
+      "MCSC-202"
+    ],
+    "coordinates": {
+      "x": 0.8473395616558455,
+      "y": -0.14365001014258405
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCySC-301",
+    "title": "Digital and Cyber Forensics",
+    "category": "Cyber Security core",
+    "page": 36,
+    "guide": "",
+    "folder": "mcysc-301-digital-and-cyber-forensics",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of digital and cyber forensics under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Digital evidence",
+        "topics": [
+          "Digital evidence"
+        ],
+        "checkpoint": "Digital forensics identifies, preserves and examines digital evidence. Documenting collection and chain of custody helps...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Investigation",
+        "topics": [
+          "Investigation"
+        ],
+        "checkpoint": "A defensible investigation uses authorised acquisition, repeatable analysis and clear reporting. Interpret artefacts in ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCySC-202"
+    ],
+    "coordinates": {
+      "x": -0.35556513094233844,
+      "y": -0.476364454427473
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MICTC-301",
+    "title": "Multimedia Signal Processing",
+    "category": "ICT core",
+    "page": 37,
+    "guide": "",
+    "folder": "mictc-301-multimedia-signal-processing",
+    "credits": 4,
+    "domain": "systems-ict",
+    "tagline": "Comprehensive postgraduate exploration of multimedia signal processing under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Multimedia signals",
+        "topics": [
+          "Multimedia signals"
+        ],
+        "checkpoint": "Images, audio and video are sampled signals with different spatial and temporal characteristics. Sampling and quantisati...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Compression",
+        "topics": [
+          "Compression"
+        ],
+        "checkpoint": "Compression reduces representation size. Lossless methods permit exact reconstruction; lossy methods trade some fidelity...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.7030296213104391,
+      "y": -0.37333907856540305
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MMLC-301",
+    "title": "Deep Learning",
+    "category": "Machine Learning core",
+    "page": 38,
+    "guide": "",
+    "folder": "mmlc-301-deep-learning",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of deep learning under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Deep learning",
+        "topics": [
+          "Deep learning"
+        ],
+        "checkpoint": "Deep models learn layered representations by composing transformations. Optimisation, data quality and generalisation ar...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Architectures and evaluation",
+        "topics": [
+          "Architectures and evaluation"
+        ],
+        "checkpoint": "Convolutional networks exploit local structure, while sequence models address ordered data. Compare models using appropr...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MMLC-201"
+    ],
+    "coordinates": {
+      "x": 0.1,
+      "y": 0.9
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-301",
+    "title": "Cloud Computing",
+    "category": "Cyber Security / ICT / Machine Learning elective",
+    "page": 39,
+    "guide": "",
+    "folder": "mcse-301-cloud-computing",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of cloud computing under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Cloud service models",
+        "topics": [
+          "Cloud service models"
+        ],
+        "checkpoint": "Infrastructure, platform and software services expose different levels of abstraction. Shared infrastructure can scale r...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Cloud design",
+        "topics": [
+          "Cloud design"
+        ],
+        "checkpoint": "Availability, identity, network configuration, cost and data protection must be designed together. The provider and cust...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCSC-103"
+    ],
+    "coordinates": {
+      "x": 0.8,
+      "y": 0.2
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCySE-301",
+    "title": "Network Protocol Security",
+    "category": "Cyber Security elective",
+    "page": 41,
+    "guide": "",
+    "folder": "mcyse-301-network-protocol-security",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of network protocol security under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Protocol security",
+        "topics": [
+          "Protocol security"
+        ],
+        "checkpoint": "Network protocols define how systems exchange messages. Security analysis examines authentication, confidentiality, inte...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Threats and controls",
+        "topics": [
+          "Threats and controls"
+        ],
+        "checkpoint": "Replay, interception and impersonation exploit different weaknesses. Protocol protections must be configured correctly a...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MCySC-201",
+      "MCSC-103"
+    ],
+    "coordinates": {
+      "x": -0.35556513094233844,
+      "y": -0.476364454427473
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-302",
+    "title": "Wireless Sensor Network",
+    "category": "Cyber Security / ICT elective",
+    "page": 42,
+    "guide": "",
+    "folder": "mcse-302-wireless-sensor-network",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of wireless sensor network under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Sensor networks",
+        "topics": [
+          "Sensor networks"
+        ],
+        "checkpoint": "Wireless sensor networks connect distributed sensing nodes under energy, memory and bandwidth constraints. Data is forwa...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Routing and energy",
+        "topics": [
+          "Routing and energy"
+        ],
+        "checkpoint": "Routing choices affect coverage, latency and battery life. Aggregation reduces transmissions but can change the detail a...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.027249983095693237,
+      "y": -0.30319252601298546
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-304",
+    "title": "Media Security",
+    "category": "Cyber Security / ICT elective",
+    "page": 40,
+    "guide": "",
+    "folder": "mcse-304-media-security",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of media security under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Media security",
+        "topics": [
+          "Media security"
+        ],
+        "checkpoint": "Media security protects images, audio or video against unauthorised access, alteration or misuse. Confidentiality, integ...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Watermarking and encryption",
+        "topics": [
+          "Watermarking and encryption"
+        ],
+        "checkpoint": "Encryption restricts access using keys; watermarking embeds information in media. Their effectiveness depends on the thr...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.027249983095693237,
+      "y": -0.30319252601298546
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MCSE-303",
+    "title": "Intelligent System and Green Computing",
+    "category": "Cyber Security / ICT elective",
+    "page": 43,
+    "guide": "",
+    "folder": "mcse-303-intelligent-system-and-green-computing",
+    "credits": 4,
+    "domain": "security-networks",
+    "tagline": "Comprehensive postgraduate exploration of intelligent system and green computing under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Intelligent systems",
+        "topics": [
+          "Intelligent systems"
+        ],
+        "checkpoint": "Intelligent systems use models, rules or learned patterns to support decisions. Their behaviour depends on data, objecti...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Green computing",
+        "topics": [
+          "Green computing"
+        ],
+        "checkpoint": "Green computing considers energy and resource use across a system’s lifecycle. Optimisation should measure both computat...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.027249983095693237,
+      "y": -0.30319252601298546
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MICTE-301",
+    "title": "Secure Coding",
+    "category": "ICT elective",
+    "page": 44,
+    "guide": "",
+    "folder": "micte-301-secure-coding",
+    "credits": 4,
+    "domain": "systems-ict",
+    "tagline": "Comprehensive postgraduate exploration of secure coding under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Secure coding",
+        "topics": [
+          "Secure coding"
+        ],
+        "checkpoint": "Secure coding reduces exploitable defects by validating input, enforcing access control and handling errors safely....",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Verification",
+        "topics": [
+          "Verification"
+        ],
+        "checkpoint": "Code review, automated checks and security testing help find different classes of problems. Security must also be mainta...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.7030296213104391,
+      "y": -0.37333907856540305
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-301",
+    "title": "Advanced Kernel Methods",
+    "category": "Machine Learning elective",
+    "page": 45,
+    "guide": "",
+    "folder": "mmle-301-advanced-kernel-methods",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of advanced kernel methods under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Kernel methods",
+        "topics": [
+          "Kernel methods"
+        ],
+        "checkpoint": "A kernel measures similarity in a way that can correspond to an implicit feature space. This allows some algorithms to m...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Model selection",
+        "topics": [
+          "Model selection"
+        ],
+        "checkpoint": "Kernel choice and parameters affect complexity and generalisation. Use validation data to choose them and retain a separ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-302",
+    "title": "Reinforcement Learning",
+    "category": "Machine Learning elective",
+    "page": 46,
+    "guide": "",
+    "folder": "mmle-302-reinforcement-learning",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of reinforcement learning under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Reinforcement learning",
+        "topics": [
+          "Reinforcement learning"
+        ],
+        "checkpoint": "An agent interacts with an environment, taking actions and receiving rewards. Its objective is to learn a policy that ma...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Exploration and value",
+        "topics": [
+          "Exploration and value"
+        ],
+        "checkpoint": "Exploration gathers information about actions; exploitation uses current knowledge. Value functions estimate future retu...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": true,
+    "pyqDetails": {
+      "questionsCount": 1,
+      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLE-302 paper)"
+    },
+    "estimatedHours": 18,
+    "prerequisites": [
+      "MMLC-201",
+      "MCSC-101"
+    ],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-303",
+    "title": "Machine Learning Applications",
+    "category": "Machine Learning elective",
+    "page": 47,
+    "guide": "",
+    "folder": "mmle-303-machine-learning-applications",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of machine learning applications under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Application design",
+        "topics": [
+          "Application design"
+        ],
+        "checkpoint": "An ML application connects a defined problem and data pipeline to a model and a decision. A strong baseline helps establ...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Deployment and monitoring",
+        "topics": [
+          "Deployment and monitoring"
+        ],
+        "checkpoint": "Deployed systems need checks for data quality, performance drift and operational failures. Re-evaluation is necessary wh...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 3,
+    "code": "MMLE-304",
+    "title": "Topological Data Analysis",
+    "category": "Machine Learning elective",
+    "page": 48,
+    "guide": "",
+    "folder": "mmle-304-topological-data-analysis",
+    "credits": 4,
+    "domain": "ai-ml",
+    "tagline": "Comprehensive postgraduate exploration of topological data analysis under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Topology and data",
+        "topics": [
+          "Topology and data"
+        ],
+        "checkpoint": "Topology studies properties such as connected components and holes that persist under continuous deformation. Topologica...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Persistent homology",
+        "topics": [
+          "Persistent homology"
+        ],
+        "checkpoint": "Persistent homology tracks features across a range of scales. Long-lived features may be meaningful, but interpretation ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": false,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 18,
+    "prerequisites": [],
+    "coordinates": {
+      "x": 0.19574329864935275,
+      "y": 0.44907498816698527
+    }
+  },
+  {
+    "semester": 4,
+    "code": "MCSC-401",
+    "title": "Thesis / Dissertation II",
+    "category": "Common core",
+    "page": 9,
+    "guide": "",
+    "folder": "mcsc-401-thesis-dissertation-ii",
+    "credits": 16,
+    "domain": "systems-ict",
+    "tagline": "Comprehensive postgraduate exploration of thesis / dissertation ii under the CAS AKTU 2021–22 curriculum.",
+    "unitsCount": 2,
+    "units": [
+      {
+        "unitNumber": 1,
+        "title": "Dissertation work",
+        "topics": [
+          "Dissertation work"
+        ],
+        "checkpoint": "Develop a research question, investigate related work, select an appropriate method, and document the evidence and concl...",
+        "estimatedHours": 8
+      },
+      {
+        "unitNumber": 2,
+        "title": "Supervision and assessment",
+        "topics": [
+          "Supervision and assessment"
+        ],
+        "checkpoint": "Agree milestones and reporting requirements with your supervisor. The department determines the exact scope, submission ...",
+        "estimatedHours": 8
+      }
+    ],
+    "hasGuide": true,
+    "hasPyq": false,
+    "pyqDetails": null,
+    "estimatedHours": 180,
+    "prerequisites": [
+      "MCSC-302"
+    ],
+    "coordinates": {
+      "x": 0.8473395616558455,
+      "y": -0.14365001014258405
+    }
+  }
+]

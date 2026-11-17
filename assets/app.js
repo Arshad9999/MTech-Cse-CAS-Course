@@ -10,7 +10,7 @@ async function loadJson(file) {
 }
 
 function nav(depth = '') {
-  return `<header class="topbar"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="${depth}index.html">MTech<span> / CSE</span></a><div class="navlinks"><a href="${depth}index.html#courses">Courses</a><a href="${depth}index.html#study-path">Study path</a><a href="${depth}README.md">Repository guide</a></div></nav></header>`;
+  return `<header class="topbar"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="${depth}index.html">MTech<span> / CSE</span></a><div class="navlinks"><a href="${depth}index.html#courses">Catalogue</a><a href="${depth}index.html#matchmaker">Elective Matchmaker</a><a href="${depth}index.html#study-loop">Study Loop</a><a href="${depth}guides/index.html">Guides Directory</a></div></nav></header>`;
 }
 
 function foot() {
