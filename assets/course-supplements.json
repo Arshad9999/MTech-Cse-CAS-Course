@@ -4,28 +4,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/discrete/counting-principles.png",
-        "title": "Mind map \u00b7 Counting principles",
+        "title": "Mind map · Counting principles",
         "caption": "Connect the product rule, pigeonhole principle, inclusion-exclusion, recurrences, and generating functions before choosing a counting method.",
         "alt": "Text mind map linking Counting Principles to Product Rule, Pigeonhole Principle, Inclusion-Exclusion, Recurrence Relations, and Generating Functions."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/discrete/logic-computation.png",
-        "title": "Mind map \u00b7 Logic and computation",
+        "title": "Mind map · Logic and computation",
         "caption": "Use the branches to relate propositions and sets to formal languages and finite-state machines.",
         "alt": "Text mind map linking Logic and Computation to Propositions, Set Theory, Formal Languages, and Finite State Machines."
       },
       {
         "afterModule": 5,
         "src": "../assets/generated/discrete/graph-structures.png",
-        "title": "Mind map \u00b7 Graph structures",
-        "caption": "Compare graph direction, walks, trails, cycles, connectivity, trees, and the Eulerian\u2013Hamiltonian distinction.",
+        "title": "Mind map · Graph structures",
+        "caption": "Compare graph direction, walks, trails, cycles, connectivity, trees, and the Eulerian–Hamiltonian distinction.",
         "alt": "Text mind map linking Graph Structures to Directed Graph, Undirected Graph, Trail, Cycle, Connectivity, Trees, Eulerian, and Hamiltonian."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/discrete/graph-algorithms.png",
-        "title": "Mind map \u00b7 Graph algorithms",
+        "title": "Mind map · Graph algorithms",
         "caption": "Choose an algorithm by objective: traversal, shortest route, spanning cost, matching, assignment, or flow.",
         "alt": "Text mind map linking Graph Algorithms to BFS, DFS, Shortest Path, Minimum Spanning Tree, Matching, Assignment, and Network Flow."
       }
@@ -346,28 +346,28 @@
       {
         "afterModule": 2,
         "src": "../assets/generated/networks/transmission-media.png",
-        "title": "Mind map \u00b7 Transmission and media",
+        "title": "Mind map · Transmission and media",
         "caption": "Relate guided and wireless media to coding, modulation, error detection, and error correction.",
         "alt": "Text mind map linking Transmission and Media to Conducted Media, Radiated Media, Coding, Modulation, Error Detection, and Error Correction."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/networks/network-architecture.png",
-        "title": "Mind map \u00b7 Network architecture",
+        "title": "Mind map · Network architecture",
         "caption": "Place LANs, WANs, topologies, protocols, switches, and routers within the layered OSI view.",
         "alt": "Text mind map linking Network Architecture to LAN, WAN, OSI Model, Topologies, Protocols, Switches, and Routers."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/networks/secure-networking.png",
-        "title": "Mind map \u00b7 Secure networking",
+        "title": "Mind map · Secure networking",
         "caption": "Distinguish authentication, signatures, recovery, WLAN concerns, and Mobile IP responsibilities.",
         "alt": "Text mind map connecting secure networking topics including Communication Security, Digital Signatures, Authentication, Recovery, WLAN, and Mobile IP."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/networks/network-management.png",
-        "title": "Mind map \u00b7 Network management",
+        "title": "Mind map · Network management",
         "caption": "Connect SNMP, MIBs, proxies, management functions, web/XML integration, and ATM.",
         "alt": "Text mind map linking Network Management to SNMP v1, SNMP v2, MIB, Proxy Server, Configuration, Fault, Performance, Web and XML, and ATM."
       }
@@ -718,28 +718,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/probability/probability-foundations.png",
-        "title": "Mind map \u00b7 Probability foundations",
+        "title": "Mind map · Probability foundations",
         "caption": "Move from events and combinatorics to conditioning, independence, and Bayesian updating.",
         "alt": "Text mind map linking Probability Foundations to Events, Conditional Probability, Independence, Bayes Rule, and Combinatorics."
       },
       {
         "afterModule": 2,
         "src": "../assets/generated/probability/discrete-distributions.png",
-        "title": "Mind map \u00b7 Discrete distributions",
+        "title": "Mind map · Discrete distributions",
         "caption": "Compare Bernoulli, binomial, geometric, negative binomial, and Poisson random variables by experiment and support.",
         "alt": "Text mind map linking Discrete Distributions to Bernoulli, Binomial, Geometric, Negative Binomial, and Poisson."
       },
       {
         "afterModule": 5,
         "src": "../assets/generated/probability/continuous-simulation.png",
-        "title": "Mind map \u00b7 Continuous models and simulation",
+        "title": "Mind map · Continuous models and simulation",
         "caption": "Connect lifetime distributions and the normal model to the Central Limit Theorem and Monte Carlo simulation.",
         "alt": "Text mind map linking Continuous and Simulation to Exponential, Gamma, Weibull, Hyperexponential, Normal, Central Limit Theorem, and Monte Carlo."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/probability/statistical-inference.png",
-        "title": "Mind map \u00b7 Statistical inference",
+        "title": "Mind map · Statistical inference",
         "caption": "Use this map to separate estimation, interval construction, testing errors, regression, ANOVA, and nonparametric methods.",
         "alt": "Text mind map linking Statistical Inference to Estimation, Confidence Intervals, Hypothesis Testing, Type I Error, Type II Error, Regression, ANOVA, and Nonparametric."
       }
@@ -1133,28 +1133,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/pattern/learning-models.png",
-        "title": "Mind map \u00b7 Learning models",
+        "title": "Mind map · Learning models",
         "caption": "Survey the syllabus model families before studying how each represents and learns patterns.",
         "alt": "Text mind map linking Learning Models to Classifiers, Functions, Relations, Grammars, Probabilistic Models, Value Functions, Behaviors, and Programs."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/pattern/core-classifiers.png",
-        "title": "Mind map \u00b7 Core classifiers",
+        "title": "Mind map · Core classifiers",
         "caption": "Compare interpretable, probabilistic, margin-based, neural, local, and ensemble classification families.",
         "alt": "Text mind map linking Core Classifiers to Decision Trees, Neural Networks, Support Vector Machines, Bayesian Networks, Nearest Neighbour, and Ensemble Classifiers."
       },
       {
         "afterModule": 5,
         "src": "../assets/generated/pattern/text-sequence-models.png",
-        "title": "Mind map \u00b7 Text and sequence models",
+        "title": "Mind map · Text and sequence models",
         "caption": "Trace the progression from token counts and N-grams to Markov models, hidden states, and association rules.",
         "alt": "Text mind map linking Text and Sequence Models to Bag of Words, N-gram Models, Markov Models, Hidden Markov Models, and Association Rules."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/pattern/representation-clustering.png",
-        "title": "Mind map \u00b7 Representation and clustering",
+        "title": "Mind map · Representation and clustering",
         "caption": "Relate lower-dimensional representations to visualization, clustering families, and document recognition.",
         "alt": "Text mind map linking Representation and Clustering to Dimensionality Reduction, Feature Selection, Visualization, K-means, Hierarchical Clustering, Mixture Models, and Document Recognition."
       }
@@ -1544,28 +1544,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/research/research-foundations.png",
-        "title": "Mind map \u00b7 Research foundations",
+        "title": "Mind map · Research foundations",
         "caption": "Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.",
         "alt": "Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/research/problem-design.png",
-        "title": "Mind map \u00b7 Problem and design",
+        "title": "Mind map · Problem and design",
         "caption": "Align research questions and hypotheses with exploratory, descriptive, or experimental designs.",
         "alt": "Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/research/measurement-sampling.png",
-        "title": "Mind map \u00b7 Measurement and sampling",
+        "title": "Mind map · Measurement and sampling",
         "caption": "Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.",
         "alt": "Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."
       },
       {
         "afterModule": 10,
         "src": "../assets/generated/research/analysis-publishing.png",
-        "title": "Mind map \u00b7 Analysis and publishing",
+        "title": "Mind map · Analysis and publishing",
         "caption": "Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.",
         "alt": "Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."
       }
@@ -2272,28 +2272,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/pattern/learning-models.png",
-        "title": "Mind map \u00b7 Learning models",
+        "title": "Mind map · Learning models",
         "caption": "Survey the syllabus model families before studying how each represents and learns patterns.",
         "alt": "Text mind map linking Learning Models to Classifiers, Functions, Relations, Grammars, Probabilistic Models, Value Functions, Behaviors, and Programs."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/pattern/core-classifiers.png",
-        "title": "Mind map \u00b7 Core classifiers",
+        "title": "Mind map · Core classifiers",
         "caption": "Compare interpretable, probabilistic, margin-based, neural, local, and ensemble classification families.",
         "alt": "Text mind map linking Core Classifiers to Decision Trees, Neural Networks, Support Vector Machines, Bayesian Networks, Nearest Neighbour, and Ensemble Classifiers."
       },
       {
         "afterModule": 5,
         "src": "../assets/generated/pattern/text-sequence-models.png",
-        "title": "Mind map \u00b7 Text and sequence models",
+        "title": "Mind map · Text and sequence models",
         "caption": "Trace the progression from token counts and N-grams to Markov models, hidden states, and association rules.",
         "alt": "Text mind map linking Text and Sequence Models to Bag of Words, N-gram Models, Markov Models, Hidden Markov Models, and Association Rules."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/pattern/representation-clustering.png",
-        "title": "Mind map \u00b7 Representation and clustering",
+        "title": "Mind map · Representation and clustering",
         "caption": "Relate lower-dimensional representations to visualization, clustering families, and document recognition.",
         "alt": "Text mind map linking Representation and Clustering to Dimensionality Reduction, Feature Selection, Visualization, K-means, Hierarchical Clustering, Mixture Models, and Document Recognition."
       }
@@ -3022,7 +3022,7 @@
     "types": [
       [
         "Spark Transformations",
-        "Narrow (map, filter \u2014 no shuffle), Wide (groupByKey, join \u2014 requires shuffle)",
+        "Narrow (map, filter — no shuffle), Wide (groupByKey, join — requires shuffle)",
         "Govern stage boundaries and execution plan pipelining in Spark DAGs."
       ],
       [
@@ -3138,228 +3138,516 @@
   },
   "MMLC-301": {
     "objectives": [
-      "Formulate scaled dot-product attention and multi-head attention mechanisms in Transformer architectures.",
-      "Implement Vision Transformers (ViT) by decomposing images into flattened patch embeddings.",
-      "Design and train Generative Adversarial Networks (GANs) using minimax and Wasserstein loss formulations.",
-      "Analyze diffusion models and score-based generative processes for conditional synthesis."
+      "Derive Maximum-Likelihood Estimation (MLE) and demonstrate its equivalence to minimizing Cross-Entropy loss.",
+      "Formulate the forward and backward propagation equations for Multi-Layer Perceptrons using multivariate vector calculus.",
+      "Analyze activation dynamics (Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax) with respect to saturation, zero-centering, and vanishing gradients.",
+      "Design Convolutional Neural Networks, computing spatial output feature map dimensions and effective receptive fields.",
+      "Differentiate Recurrent Neural Networks and LSTMs, explaining how cell state additive error carousels prevent gradient collapse.",
+      "Evaluate deep generative models, comparing Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs) across loss formulations and training stability."
     ],
     "glossary": [
       [
-        "Multi-Head Attention",
-        "Splitting queries, keys, and values into h subspaces to attend to information at different representation positions simultaneously."
+        "Representation Learning",
+        "Algorithms that automatically discover hierarchical abstractions and feature spaces directly from raw input data without manual engineering."
       ],
       [
-        "Vision Transformer (ViT)",
-        "An architecture that applies standard Transformer encoders directly to sequences of non-overlapping image patches."
+        "Maximum-Likelihood Estimation (MLE)",
+        "Parameter estimation technique choosing theta to maximize observed data likelihood: theta_MLE = argmax_theta sum log P(x^(i); theta)."
       ],
       [
-        "GAN",
-        "A framework where a Generator and Discriminator compete in a minimax game to synthesize realistic data distributions."
+        "Universal Approximation Theorem",
+        "Mathematical theorem establishing that standard feed-forward networks with a single non-linear hidden layer and sufficient width can approximate any continuous function on compact subsets of R^n."
       ],
       [
-        "Diffusion Model",
-        "A generative model that learns to reverse a forward Markov process that gradually adds Gaussian noise to data."
+        "Dying ReLU Problem",
+        "Phenomenon where neuron activations permanently drop below zero (z < 0), causing gradient g'(z) = 0 and preventing weight updates across all future training iterations."
       ],
       [
-        "Self-Supervised Learning",
-        "Learning representations from unlabeled data using pretext tasks such as masked autoencoding or contrastive loss."
+        "Vanishing Gradient Problem",
+        "Exponential decay of backpropagated error gradients through deep layers caused by repeated multiplication by saturating derivatives (e.g. sigmoid max derivative 0.25)."
+      ],
+      [
+        "Translation Equivariance",
+        "Property of convolutional layers where a spatial shift in the input image produces a corresponding identical shift in the output feature map: f(g(x)) = g(f(x))."
+      ],
+      [
+        "LSTM Cell State (C_t)",
+        "An internal memory highway in LSTMs updated additively via forget and input gates, enabling error gradients to propagate without exponential decay."
+      ],
+      [
+        "Variational Autoencoder (VAE)",
+        "A directed probabilistic generative model that maps inputs to latent distribution parameters (mu, sigma) and trains via Evidence Lower Bound (ELBO) optimization."
+      ],
+      [
+        "Generative Adversarial Network (GAN)",
+        "A minimax game-theoretic generative architecture where a Generator G and Discriminator D compete in a zero-sum contest without explicit density calculation."
+      ],
+      [
+        "Deadly Triad",
+        "The dangerous combination of function approximation, bootstrapping, and off-policy updates that can cause value functions to diverge to infinity."
       ]
     ],
     "types": [
       [
-        "Attention Variants",
-        "Self-Attention, Cross-Attention, FlashAttention, Linear Attention",
-        "Vary in sequence dependencies, causal masking, and memory IO tile caching."
+        "Autoencoder Architectures",
+        "Undercomplete · Denoising (DAE) · Sparse · Variational (VAE)",
+        "Undercomplete uses latent bottleneck dim(z) < dim(x) for dimensionality reduction; DAE injects noise into inputs to force robust manifold discovery; Sparse enforces L1/KL penalties on activations; VAE maps inputs to latent probability distributions for continuous generation."
       ],
       [
-        "Generative Modeling Families",
-        "Autoregressive (GPT), GANs (StyleGAN), Normalizing Flows, Diffusion Models (Stable Diffusion)",
-        "Differ in sampling speed, mode coverage, and exact likelihood tractability."
+        "Deep Learning Application Domains",
+        "Computer Vision · Natural Language Processing · Speech Recognition · Autonomous Agents",
+        "Computer Vision relies on ResNet, YOLO, and Mask R-CNN; NLP leverages multi-head attention Transformer architectures (GPT-4, BERT); Speech utilizes end-to-end Whisper models; Autonomous systems combine deep neural function approximators with reinforcement learning."
+      ],
+      [
+        "Transfer Learning Strategies",
+        "Feature Extractor · High-Level Tuning · Full Fine-Tuning",
+        "Feature extraction keeps pre-trained backbone frozen, training only a new classification head (best for small datasets with high domain similarity); Full fine-tuning unfreezes all layers with small learning rates and warmup schedules."
       ]
     ],
     "formulas": [
       [
-        "Scaled Dot-Product Attention",
-        "Attention(Q, K, V) = softmax(Q * K^T / sqrt(d_k)) * V",
-        "Fundamental attention formula with scale factor preventing softmax saturation."
+        "Maximum Likelihood to Cross-Entropy",
+        "theta_MLE = argmax_theta sum_{i=1}^N log P(x^(i); theta)  =>  J_BCE = - (1/N) sum [y log y_hat + (1-y) log(1 - y_hat)]",
+        "Minimizing negative log-likelihood of Bernoulli distributed targets directly yields the Binary Cross-Entropy loss function."
       ],
       [
-        "Multi-Head Combination",
-        "MultiHead(Q,K,V) = Concat(head_1, ..., head_h) * W_O",
-        "Projected and concatenated outputs from h independent attention heads."
+        "Recursive Backpropagation Delta",
+        "delta^(L) = grad_{a^(L)} J (hadamard) g'^(L)(z^(L)),   delta^(l) = ((W^(l+1))^T delta^(l+1)) (hadamard) g'^(l)(z^(l))",
+        "Recursive multivariate calculus chain rule computing layer-wise error delta vectors from output layer L back to input layer 1."
+      ],
+      [
+        "Parameter Gradient Accumulation",
+        "del J / del W^(l) = delta^(l) * (a^(l-1))^T,   del J / del b^(l) = delta^(l)",
+        "Gradient matrices with respect to weight tensor W^(l) and bias vector b^(l) for gradient descent update W <- W - alpha * (del J / del W)."
+      ],
+      [
+        "CNN Spatial Output Dimension",
+        "O = floor((W - K + 2P) / S) + 1",
+        "Computes output spatial feature map resolution O given input size W, kernel size K, zero padding P, and stride S."
+      ],
+      [
+        "LSTM Gating and Cell Update",
+        "f_t = sigma(W_f [h_{t-1}, x_t] + b_f),   C_t = f_t (hadamard) C_{t-1} + i_t (hadamard) C_tilde_t,   h_t = o_t (hadamard) tanh(C_t)",
+        "Mathematical gating equations for forget gate f_t, candidate C_tilde_t, additive cell state C_t, and output state h_t."
       ],
       [
         "GAN Minimax Objective",
-        "min_G max_D V(D,G) = E[log D(x)] + E[log(1 - D(G(z)))]",
-        "Zero-sum game formulation between discriminator D and generator G."
+        "min_G max_D V(D, G) = E_{x~p_data}[log D(x)] + E_{z~p_z}[log(1 - D(G(z)))]",
+        "Zero-sum minimax formulation between discriminator D(x) maximizing accuracy and generator G(z) creating indistinguishable counterfeits."
       ]
     ],
     "comparisons": [
       {
-        "title": "CNN vs Vision Transformer (ViT)",
+        "title": "Linear Regression vs Logistic Regression",
         "headers": [
-          "Aspect",
-          "Convolutional Neural Network (CNN)",
-          "Vision Transformer (ViT)"
+          "Feature",
+          "Linear Regression",
+          "Logistic Regression"
         ],
         "rows": [
           [
-            "Inductive Bias",
-            "Strong (translation invariance and spatial locality)",
-            "Weak (learns relationships globally from data)"
+            "Task Objective",
+            "Continuous Value Prediction",
+            "Binary / Class Probability Classification"
           ],
           [
-            "Receptive Field",
-            "Grows gradually layer by layer",
-            "Global from the very first attention layer"
+            "Hypothesis Function",
+            "h(x) = w^T x + b",
+            "h(x) = sigma(w^T x + b) = 1 / (1 + e^{-(w^T x + b)})"
           ],
           [
-            "Data Requirements",
-            "Performs well on smaller/moderate datasets",
-            "Requires large-scale pretraining (JFT-300M / ImageNet-21k)"
+            "Output Space",
+            "(-inf, +inf)",
+            "[0, 1] probability range"
           ],
           [
-            "Scaling Ceiling",
-            "Tends to saturate at huge compute regimes",
-            "Scales smoothly with increased parameters and compute"
+            "Cost Function",
+            "Mean Squared Error (MSE)",
+            "Binary Cross-Entropy (Log-Loss)"
+          ]
+        ]
+      },
+      {
+        "title": "Deep Learning Activation Functions",
+        "headers": [
+          "Unit / Function",
+          "Formula g(z)",
+          "Output Range",
+          "Key Characteristics & Trade-offs"
+        ],
+        "rows": [
+          [
+            "Sigmoid",
+            "1 / (1 + e^-z)",
+            "(0, 1)",
+            "Used in binary outputs. Cons: Vanishing gradients, non-zero centered."
+          ],
+          [
+            "Tanh",
+            "(e^z - e^-z) / (e^z + e^-z)",
+            "(-1, 1)",
+            "Zero-centered output. Cons: Suffers from vanishing gradients at saturation (|z| >> 0)."
+          ],
+          [
+            "ReLU",
+            "max(0, z)",
+            "[0, +inf)",
+            "Fast computation, no saturation for z > 0. Cons: Dying ReLU issue when z < 0."
+          ],
+          [
+            "Leaky ReLU",
+            "max(0.01z, z)",
+            "(-inf, +inf)",
+            "Introduces small slope for z < 0, resolving dying ReLU problem."
+          ],
+          [
+            "Softmax",
+            "e^(z_i) / sum e^(z_j)",
+            "(0, 1)",
+            "Multi-class categorical output unit. Normalizes real logits into valid probability vector."
+          ]
+        ]
+      },
+      {
+        "title": "Deep Generative Models: VAEs vs GANs",
+        "headers": [
+          "Dimension",
+          "Variational Autoencoders (VAEs)",
+          "Generative Adversarial Networks (GANs)"
+        ],
+        "rows": [
+          [
+            "Mathematical Objective",
+            "Maximize Evidence Lower Bound (ELBO)",
+            "Minimax zero-sum game between G and D"
+          ],
+          [
+            "Sample Quality",
+            "Often slightly blurry due to pixel-space L2 loss",
+            "Sharper, highly realistic synthetic samples"
+          ],
+          [
+            "Training Stability",
+            "Stable optimization, smooth latent space",
+            "Suffer from mode collapse, oscillations, vanishing gradients"
+          ],
+          [
+            "Inference Capability",
+            "Direct probabilistic latent encoding z ~ q(z|x)",
+            "No direct inference without auxiliary encoder networks"
           ]
         ]
       }
     ],
     "pitfalls": [
-      "Quadratic memory scaling O(n^2) with sequence length n in standard attention without chunking or FlashAttention.",
-      "Mode collapse in GANs where the generator produces a limited set of identical outputs that fool the discriminator.",
-      "Forgetting to disable dropout and update running batch statistics during evaluation mode."
+      "Assuming deep linear networks gain expressiveness: without non-linear activations, multi-layer networks collapse mathematically to a single linear transformation y = W_eff x.",
+      "Allowing dying ReLU neurons by using overly aggressive learning rates without monitoring zero-gradient activations.",
+      "Using Mean Squared Error for multi-class classification: MSE penalizes confident wrong probabilities weakly compared to the steep logarithmic gradient of Cross-Entropy.",
+      "Fine-tuning pre-trained models with excessive learning rates, which triggers catastrophic forgetting of learned foundational representations.",
+      "Neglecting data leakage during normalization: fitting z-score scalers or data augmentations on the combined train+test set invalidates generalization."
     ],
     "practice": [
       [
-        "Compute parameter count of a Multi-Head Attention layer with d_model=512, h=8, d_k=64",
-        "W_Q, W_K, W_V each (512x512) + W_O (512x512) = 4 * 512^2 = 1,048,576 parameters."
+        "Calculate the output spatial dimensions of a 64x64 image passed through a 7x7 convolutional filter with stride S=2 and padding P=3.",
+        "Apply formula O = floor((W - K + 2P)/S) + 1. W=64, K=7, P=3, S=2 => (64 - 7 + 6)/2 = 63/2 = 31.5 => floor(31.5) + 1 = 31 + 1 = 32x32."
       ],
       [
-        "Explain the role of sinusoidal positional encodings in Transformers",
-        "Informs the permutation-invariant self-attention mechanism of token order in sequences."
+        "Explain how the Long Short-Term Memory (LSTM) cell state update equation resolves the vanishing gradient problem encountered in standard RNNs.",
+        "Focus on the additive highway C_t = f_t (hadamard) C_{t-1} + i_t (hadamard) C_tilde_t. Because the update is additive rather than purely multiplicative, the gradient dC_t / dC_{t-1} contains the forget gate f_t, allowing error gradients to propagate unattenuated over long horizons when f_t approx 1."
+      ],
+      [
+        "State the Universal Approximation Theorem and explain why non-linear activation functions are mandatory.",
+        "A feed-forward network with a single hidden layer and non-linear activation can approximate any continuous function on a compact set. If activations were linear, any depth L collapses to a single affine transform y = (prod W_l) x + b_eff, which cannot model non-linear boundaries."
       ]
     ],
     "applications": [
       [
-        "Large Language Models (LLMs)",
-        "GPT and LLaMA autoregressive causal decoders for reasoning, summarization, and code generation."
+        "Image Classification with Pre-Trained ResNet Backbone",
+        "Download pre-trained weights from PyTorch vision library, freeze feature extraction residual blocks, append a customized Linear(in_features, num_classes) classification head, and fine-tune with learning rate alpha = 1e-4."
       ],
       [
-        "Medical Diagnostic Image Segmentation",
-        "Hybrid ViT-CNN backbones delivering pixel-level segmentation on MRI and CT scans."
+        "Sequence-to-Sequence Modeling with LSTM & Attention",
+        "Construct an encoder-decoder architecture with bi-directional LSTM layers, computing scaled dot-product attention over encoder hidden states to generate accurate multi-lingual translations."
       ]
     ]
   },
   "MMLE-302": {
     "objectives": [
-      "Formulate sequential decision-making problems under uncertainty as Markov Decision Processes (MDP).",
-      "Derive and solve Bellman expectation and optimality equations using dynamic programming.",
-      "Implement model-free temporal difference methods (SARSA and Q-Learning).",
-      "Design policy gradient and actor-critic algorithms (REINFORCE, PPO) for continuous action spaces."
+      "Formulate Markov Decision Processes (MDPs) and POMDPs with rigorous mathematical state, transition, and reward definitions.",
+      "Derive and solve Bellman Expectation and Optimality equations using dynamic programming planning (Policy Iteration and Value Iteration).",
+      "Contrast model-free prediction methods: Monte Carlo (MC) return averaging versus Temporal-Difference TD(0) bootstrapping.",
+      "Calculate and analyze model-free control updates: on-policy SARSA versus off-policy Q-learning under exploration.",
+      "Implement deep reinforcement learning architectures (DQN, Double DQN, Actor-Critic, PPO) with experience replay and target networks.",
+      "Evaluate advanced paradigms: Imitation Learning (BC, DAgger, IRL, GAIL), Exploration (UCB1, Thompson Sampling), Meta-RL (MAML), and Monte Carlo Tree Search (MCTS with UCT)."
     ],
     "glossary": [
       [
-        "MDP",
-        "A formal mathematical framework for modeling decision making where outcomes are partly random and partly under control of an agent."
+        "Markov Property",
+        "The property stating that future state transitions depend solely upon the current state and action: P(S_{t+1}|S_t, A_t, ..., S_0, A_0) = P(S_{t+1}|S_t, A_t)."
       ],
       [
-        "Bellman Equation",
-        "Recursive relationship expressing the value of a state in terms of immediate reward and discounted value of successor states."
+        "Discount Factor (gamma)",
+        "Scalar parameter in [0, 1) ensuring convergence of infinite-horizon returns and determining the weighting of immediate versus long-term rewards."
       ],
       [
-        "Q-Function",
-        "Action-value function Q(s, a) representing expected cumulative return from state s after executing action a."
+        "Value Function (V^pi)",
+        "Expected discounted cumulative return starting from state s and following policy pi: V^pi(s) = E_pi[G_t | S_t = s]."
       ],
       [
-        "Temporal Difference (TD)",
-        "Learning method that updates value estimates based on other learned estimates without waiting for final outcomes (bootstrapping)."
+        "Action-Value Function (Q^pi)",
+        "Expected discounted return starting from state s, taking specific action a, and subsequently following policy pi: Q^pi(s, a) = E_pi[G_t | S_t = s, A_t = a]."
       ],
       [
-        "Experience Replay",
-        "A technique in deep Q-networks that stores state transitions in a buffer and samples mini-batches to break temporal correlation."
+        "Advantage Function (A^pi)",
+        "The relative quality of taking action a over the expected policy behavior: A^pi(s, a) = Q^pi(s, a) - V^pi(s)."
+      ],
+      [
+        "Dynamic Programming (DP)",
+        "Planning algorithms that compute optimal policies by performing recursive expected Bellman backups using complete knowledge of environment dynamics P and R."
+      ],
+      [
+        "Temporal-Difference (TD) Error",
+        "The discrepancy between the bootstrapped target estimate and current value estimate: delta_t = R_{t+1} + gamma * V(S_{t+1}) - V(S_t)."
+      ],
+      [
+        "Off-Policy Learning",
+        "Algorithms that evaluate and learn the value of a target policy pi (e.g. greedy optimal) while generating behavior using an exploratory policy mu."
+      ],
+      [
+        "On-Policy Learning",
+        "Algorithms that evaluate and improve the exact policy currently used to make decisions and generate actions (e.g. SARSA)."
+      ],
+      [
+        "Upper Confidence Bound for Trees (UCT)",
+        "Selection rule in MCTS balancing exploitation of high-value branches with exploration of unvisited actions: UCT(s, a) = Q_bar(s, a) + c * sqrt(ln N(s) / N(s, a))."
       ]
     ],
     "types": [
       [
-        "RL Agent Architectures",
-        "Value-Based (DQN), Policy-Based (REINFORCE), Actor-Critic (A2C, PPO)",
-        "Differ in explicit policy representation and action selection mechanics."
+        "Reinforcement Learning Method Taxonomy",
+        "Model-Based · Model-Free Value-Based · Model-Free Policy-Based · Actor-Critic",
+        "Model-based methods plan using known or learned transition dynamics; Value-based methods (Q-learning, DQN) learn Q-values and act greedily; Policy-based methods (REINFORCE) directly optimize parameterized policies; Actor-Critic methods (A2C, SAC, PPO) combine policy actors with value critics."
       ],
       [
-        "Learning Paradigms",
-        "Model-Free vs Model-Based, On-Policy (SARSA) vs Off-Policy (Q-Learning)",
-        "Distinguish between environment dynamics knowledge and target policy updates."
+        "Exploration Strategies",
+        "Fixed Epsilon-Greedy · Decaying Epsilon · Optimistic Initialization · UCB1 · Thompson Sampling",
+        "Epsilon-greedy explores uniformly at random; UCB1 adds an analytic uncertainty bonus based on action visit counts; Thompson Sampling samples from Bayesian posterior distributions over reward models."
+      ],
+      [
+        "Imitation Learning Approaches",
+        "Behavior Cloning (BC) · DAgger · Inverse RL (IRL) · GAIL",
+        "Behavior Cloning treats demonstrations as supervised data; DAgger aggregates states visited by the agent and queries an expert for corrective actions to overcome covariate shift; IRL recovers the underlying reward function; GAIL uses adversarial occupancy matching."
       ]
     ],
     "formulas": [
       [
-        "Bellman Optimality for V*(s)",
-        "V*(s) = max_a sum(P(s, a, s prime) * [R(s, a, s prime) + gamma * V*(s prime)])",
-        "Fundamental recursive equation governing optimal state values."
+        "Cumulative Discounted Return",
+        "G_t = sum_{k=0}^inf gamma^k R_{t+k+1} = R_{t+1} + gamma * G_{t+1}",
+        "The foundational discounted return metric defining total future reward accumulated from step t."
       ],
       [
-        "Q-Learning Update Rule",
-        "Q(s, a) <- Q(s, a) + alpha * [r + gamma * max_a prime Q(s prime, a prime) - Q(s, a)]",
-        "Off-policy TD update rule converging to optimal action-value function."
+        "Bellman Optimality for V*(s)",
+        "V*(s) = max_{a in A} sum_{s' in S} P(s'|s, a) [ R(s, a, s') + gamma * V*(s') ]",
+        "Governs the highest achievable expected return from state s by choosing the action maximizing expected immediate plus future value."
+      ],
+      [
+        "Bellman Optimality for Q*(s, a)",
+        "Q*(s, a) = sum_{s' in S} P(s'|s, a) [ R(s, a, s') + gamma * max_{a' in A} Q*(s', a') ]",
+        "Recursive relation defining optimal action values without requiring a separate policy evaluation step."
+      ],
+      [
+        "SARSA On-Policy Control Update",
+        "Q(S_t, A_t) <- Q(S_t, A_t) + alpha * [ R_{t+1} + gamma * Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t) ]",
+        "Updates using the action A_{t+1} actually selected by the exploratory behavior policy."
+      ],
+      [
+        "Q-Learning Off-Policy Control Update",
+        "Q(S_t, A_t) <- Q(S_t, A_t) + alpha * [ R_{t+1} + gamma * max_{a'} Q(S_{t+1}, a') - Q(S_t, A_t) ]",
+        "Updates toward the maximum action value at the successor state, independent of the executed action."
       ],
       [
         "Policy Gradient Theorem",
-        "grad J(theta) = E[grad_theta log pi_theta(a|s) * Q^pi(s, a)]",
-        "Gradient of expected cumulative return with respect to policy parameters theta."
+        "grad_theta J(theta) = E_{tau ~ pi_theta}[ sum_t grad_theta log pi_theta(A_t | S_t) * G_t ]",
+        "Enables gradient ascent on expected return without needing to differentiate environmental dynamics P(s'|s, a)."
+      ],
+      [
+        "UCT Selection Formula (MCTS)",
+        "UCT(s, a) = Q_bar(s, a) + c * sqrt( ln N(s) / N(s, a) )",
+        "Balances empirical exploitation Q_bar with exploration bonus proportional to visit counts in Monte Carlo Tree Search."
       ]
     ],
     "comparisons": [
       {
-        "title": "SARSA (On-Policy) vs Q-Learning (Off-Policy)",
+        "title": "Q-Learning vs SARSA (With Worked Numeric Example)",
         "headers": [
-          "Aspect",
-          "SARSA",
-          "Q-Learning"
+          "Dimension",
+          "Q-Learning (Off-Policy)",
+          "SARSA (On-Policy)"
         ],
         "rows": [
           [
-            "Update Policy",
-            "Uses actual action a prime chosen by current epsilon-greedy policy",
-            "Uses greedy action max_a prime Q(s prime, a prime) irrespective of policy"
+            "Policy Relationship",
+            "Off-policy: evaluates greedy target policy while exploring",
+            "On-policy: evaluates actual exploratory behavior policy"
           ],
           [
-            "Risk Behavior",
-            "Conservative (learns safer paths avoiding catastrophic cliff falls)",
-            "Optimal (learns theoretical shortest path assuming zero mistakes)"
+            "Update Target",
+            "r + gamma * max_a' Q(s', a')",
+            "r + gamma * Q(s', a') for sampled exploratory action a'"
           ],
           [
-            "Convergence Requirement",
-            "All states visited infinitely and epsilon decays to 0",
-            "All state-action pairs visited infinitely and learning rate meets Robbins-Monro"
+            "Worked Example Setup",
+            "Current Q(s, a)=2, r=1, gamma=0.9, alpha=0.5. Next state has Q(s', left)=4, Q(s', right)=6. Selected action: left.",
+            "Same setup: Current Q(s, a)=2, r=1, gamma=0.9, alpha=0.5. Selected action: left."
+          ],
+          [
+            "Worked Target Value",
+            "Target = 1 + 0.9 * max(4, 6) = 1 + 5.4 = 6.40",
+            "Target = 1 + 0.9 * Q(s', left) = 1 + 0.9 * 4 = 4.60"
+          ],
+          [
+            "Worked New Q-Value",
+            "New Q = 2 + 0.5 * (6.4 - 2) = 4.20",
+            "New Q = 2 + 0.5 * (4.6 - 2) = 3.30"
+          ],
+          [
+            "Cliff Walking Behavior",
+            "Learns optimal shortest path hugging cliff edge; suffers falls during exploration",
+            "Learns safer path farther from cliff edge because exploratory slips penalize target"
+          ]
+        ]
+      },
+      {
+        "title": "Monte Carlo vs Temporal-Difference TD(0) Prediction",
+        "headers": [
+          "Dimension",
+          "Monte Carlo (MC)",
+          "Temporal-Difference TD(0)"
+        ],
+        "rows": [
+          [
+            "Update Timing",
+            "After complete episode termination",
+            "After every individual transition (online)"
+          ],
+          [
+            "Update Target",
+            "Observed complete return G_t",
+            "One-step bootstrap: R_{t+1} + gamma * V(S_{t+1})"
+          ],
+          [
+            "Bootstrapping",
+            "No bootstrapping (uses empirical return)",
+            "Bootstraps from successor value estimate V(S_{t+1})"
+          ],
+          [
+            "Bias and Variance",
+            "Zero bias (unbiased target), high variance",
+            "Biased target (depends on estimates), lower variance"
+          ],
+          [
+            "Continuing Tasks",
+            "Requires artificial truncation or windowing",
+            "Naturally handles ongoing non-terminating environments"
+          ]
+        ]
+      },
+      {
+        "title": "Policy Iteration vs Value Iteration",
+        "headers": [
+          "Dimension",
+          "Policy Iteration (PI)",
+          "Value Iteration (VI)"
+        ],
+        "rows": [
+          [
+            "Main Loop Structure",
+            "Alternates full policy evaluation with policy improvement",
+            "Applies Bellman optimality backup directly every sweep"
+          ],
+          [
+            "Evaluation Cost",
+            "Can be computationally demanding (linear system or sweeps)",
+            "Only one-step backup per state sweep"
+          ],
+          [
+            "Intermediate Representation",
+            "Maintains an explicit policy pi_k at every iteration",
+            "Maintains value table V_k until final greedy policy extraction"
+          ],
+          [
+            "Convergence Guarantee",
+            "Terminates in finitely many policy improvements",
+            "Converges asymptotically to V* under contraction mapping"
+          ]
+        ]
+      },
+      {
+        "title": "Imitation Learning Method Comparison",
+        "headers": [
+          "Method",
+          "What It Learns",
+          "Supervision Required",
+          "Key Strengths & Limitations"
+        ],
+        "rows": [
+          [
+            "Behavior Cloning (BC)",
+            "Direct policy mapping s -> a",
+            "Expert state-action demonstrations",
+            "Simple supervised tooling. Con: Fails under covariate shift."
+          ],
+          [
+            "DAgger",
+            "Aggregated policy on learner-induced states",
+            "Expert labels queried on agent-visited states",
+            "Solves covariate shift. Con: Requires an interactive expert."
+          ],
+          [
+            "Inverse RL (IRL)",
+            "Infers underlying reward function R(s, a)",
+            "Expert trajectories",
+            "Transfers reward across domains. Con: Computationally expensive nested loops."
+          ],
+          [
+            "GAIL",
+            "Policy via adversarial occupancy matching",
+            "Expert trajectories + agent interaction",
+            "Matches expert distribution without manual reward. Con: Adversarial instability."
           ]
         ]
       }
     ],
     "pitfalls": [
-      "Using deep Q-learning without a separate Target Network, leading to moving-target divergence and unbounded Q-values.",
-      "Setting discount factor gamma=1 in infinite-horizon continuing tasks, leading to infinite returns.",
-      "Premature exploration decay trapping the agent in suboptimal local reward attractors."
+      "Confusing immediate reward R_{t+1} with cumulative return G_t: rewards evaluate single step feedback; returns evaluate total trajectory utility.",
+      "Calling Q-learning on-policy: Q-learning is strictly off-policy because its backup target maximizes over all actions regardless of which action was executed.",
+      "Bootstrapping from a true terminal state: at terminal states, successor value V(S_terminal) must be strictly 0.0.",
+      "Confusing time-limit truncation with true task termination: environment timeouts require bootstrapping continuation values to avoid distorting state desirability.",
+      "Falling prey to the Deadly Triad: combining function approximation (neural networks), bootstrapping (TD updates), and off-policy data collection without target networks and experience replay leads to divergent Q-values.",
+      "Deploying ordinary off-policy RL in batch/offline settings: evaluating unseen out-of-distribution actions causes severe extrapolation error."
     ],
     "practice": [
       [
-        "Calculate TD error delta_t given r=2, gamma=0.9, V(s)=4, V(s prime)=5",
-        "delta_t = r + gamma * V(s prime) - V(s) = 2 + 0.9*5 - 4 = 2.5."
+        "Perform one Q-learning and one SARSA update given: Q(s, a)=2.0, r=1.0, gamma=0.9, alpha=0.5, with next state action values Q(s', left)=4.0 and Q(s', right)=6.0 when the behavior policy chose left.",
+        "Q-Learning target = 1 + 0.9 * max(4, 6) = 6.4 => Q <- 2 + 0.5*(6.4 - 2) = 4.20. SARSA target = 1 + 0.9 * Q(s', left) = 1 + 0.9*4 = 4.6 => Q <- 2 + 0.5*(4.6 - 2) = 3.30."
       ],
       [
-        "Explain why continuous action spaces make standard Q-learning intractable without actor-critic models",
-        "Finding max_a Q(s, a) requires non-convex continuous optimization at every single decision step."
+        "Explain the role of the experience replay buffer and the target network in Deep Q-Networks (DQN).",
+        "The experience replay buffer stores transitions and samples random minibatches to break temporal correlations and stabilize gradient descent. The target network maintains frozen weights theta^- for calculating targets, preventing the optimization from chasing a rapidly moving target."
+      ],
+      [
+        "State the four phases of Monte Carlo Tree Search (MCTS) and explain how the UCT rule balances exploration with exploitation.",
+        "1. Selection: follow tree using UCT. 2. Expansion: add untried child node. 3. Simulation: rollout to terminal outcome. 4. Backpropagation: propagate rewards up the path. UCT formula Q_bar + c * sqrt(ln N(s) / N(s, a)) exploits high average value Q_bar while adding an exploration bonus that increases for actions visited few times relative to parent."
       ]
     ],
     "applications": [
       [
-        "Autonomous Vehicle Motion Planning",
-        "Policy optimization navigating highway traffic merging and obstacle avoidance."
+        "Discrete Control Benchmark (Gymnasium CartPole / FrozenLake)",
+        "Implement tabular Q-learning and SARSA on FrozenLake, comparing learning curves under slippery versus deterministic dynamics. Transition to DQN with target network on CartPole-v1."
       ],
       [
-        "Industrial HVAC Control",
-        "Energy conservation in server farm data center cooling loops using deep reinforcement learning."
+        "Continuous Control with Actor-Critic (PPO / SAC)",
+        "Train a Proximal Policy Optimization (PPO) agent with clipped surrogate objectives on continuous robotic control tasks (Pendulum / Ant), evaluating sample efficiency across multiple random seeds."
       ]
     ]
   },
@@ -3368,28 +3656,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/research/research-foundations.png",
-        "title": "Mind map \u00b7 Research foundations",
+        "title": "Mind map · Research foundations",
         "caption": "Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.",
         "alt": "Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/research/problem-design.png",
-        "title": "Mind map \u00b7 Problem and design",
+        "title": "Mind map · Problem and design",
         "caption": "Align research questions and hypotheses with exploratory, descriptive, or experimental designs.",
         "alt": "Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/research/measurement-sampling.png",
-        "title": "Mind map \u00b7 Measurement and sampling",
+        "title": "Mind map · Measurement and sampling",
         "caption": "Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.",
         "alt": "Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."
       },
       {
         "afterModule": 10,
         "src": "../assets/generated/research/analysis-publishing.png",
-        "title": "Mind map \u00b7 Analysis and publishing",
+        "title": "Mind map · Analysis and publishing",
         "caption": "Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.",
         "alt": "Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."
       }
@@ -3809,28 +4097,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/research/research-foundations.png",
-        "title": "Mind map \u00b7 Research foundations",
+        "title": "Mind map · Research foundations",
         "caption": "Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.",
         "alt": "Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/research/problem-design.png",
-        "title": "Mind map \u00b7 Problem and design",
+        "title": "Mind map · Problem and design",
         "caption": "Align research questions and hypotheses with exploratory, descriptive, or experimental designs.",
         "alt": "Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/research/measurement-sampling.png",
-        "title": "Mind map \u00b7 Measurement and sampling",
+        "title": "Mind map · Measurement and sampling",
         "caption": "Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.",
         "alt": "Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."
       },
       {
         "afterModule": 10,
         "src": "../assets/generated/research/analysis-publishing.png",
-        "title": "Mind map \u00b7 Analysis and publishing",
+        "title": "Mind map · Analysis and publishing",
         "caption": "Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.",
         "alt": "Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."
       }
@@ -4250,28 +4538,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/research/research-foundations.png",
-        "title": "Mind map \u00b7 Research foundations",
+        "title": "Mind map · Research foundations",
         "caption": "Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.",
         "alt": "Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/research/problem-design.png",
-        "title": "Mind map \u00b7 Problem and design",
+        "title": "Mind map · Problem and design",
         "caption": "Align research questions and hypotheses with exploratory, descriptive, or experimental designs.",
         "alt": "Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/research/measurement-sampling.png",
-        "title": "Mind map \u00b7 Measurement and sampling",
+        "title": "Mind map · Measurement and sampling",
         "caption": "Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.",
         "alt": "Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."
       },
       {
         "afterModule": 10,
         "src": "../assets/generated/research/analysis-publishing.png",
-        "title": "Mind map \u00b7 Analysis and publishing",
+        "title": "Mind map · Analysis and publishing",
         "caption": "Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.",
         "alt": "Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."
       }
@@ -4691,28 +4979,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/research/research-foundations.png",
-        "title": "Mind map \u00b7 Research foundations",
+        "title": "Mind map · Research foundations",
         "caption": "Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.",
         "alt": "Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/research/problem-design.png",
-        "title": "Mind map \u00b7 Problem and design",
+        "title": "Mind map · Problem and design",
         "caption": "Align research questions and hypotheses with exploratory, descriptive, or experimental designs.",
         "alt": "Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/research/measurement-sampling.png",
-        "title": "Mind map \u00b7 Measurement and sampling",
+        "title": "Mind map · Measurement and sampling",
         "caption": "Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.",
         "alt": "Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."
       },
       {
         "afterModule": 10,
         "src": "../assets/generated/research/analysis-publishing.png",
-        "title": "Mind map \u00b7 Analysis and publishing",
+        "title": "Mind map · Analysis and publishing",
         "caption": "Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.",
         "alt": "Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."
       }
@@ -5132,28 +5420,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/research/research-foundations.png",
-        "title": "Mind map \u00b7 Research foundations",
+        "title": "Mind map · Research foundations",
         "caption": "Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.",
         "alt": "Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/research/problem-design.png",
-        "title": "Mind map \u00b7 Problem and design",
+        "title": "Mind map · Problem and design",
         "caption": "Align research questions and hypotheses with exploratory, descriptive, or experimental designs.",
         "alt": "Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/research/measurement-sampling.png",
-        "title": "Mind map \u00b7 Measurement and sampling",
+        "title": "Mind map · Measurement and sampling",
         "caption": "Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.",
         "alt": "Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."
       },
       {
         "afterModule": 10,
         "src": "../assets/generated/research/analysis-publishing.png",
-        "title": "Mind map \u00b7 Analysis and publishing",
+        "title": "Mind map · Analysis and publishing",
         "caption": "Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.",
         "alt": "Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."
       }
@@ -5573,28 +5861,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/probability/probability-foundations.png",
-        "title": "Mind map \u00b7 Probability foundations",
+        "title": "Mind map · Probability foundations",
         "caption": "Move from events and combinatorics to conditioning, independence, and Bayesian updating.",
         "alt": "Text mind map linking Probability Foundations to Events, Conditional Probability, Independence, Bayes Rule, and Combinatorics."
       },
       {
         "afterModule": 2,
         "src": "../assets/generated/probability/discrete-distributions.png",
-        "title": "Mind map \u00b7 Discrete distributions",
+        "title": "Mind map · Discrete distributions",
         "caption": "Compare Bernoulli, binomial, geometric, negative binomial, and Poisson random variables by experiment and support.",
         "alt": "Text mind map linking Discrete Distributions to Bernoulli, Binomial, Geometric, Negative Binomial, and Poisson."
       },
       {
         "afterModule": 5,
         "src": "../assets/generated/probability/continuous-simulation.png",
-        "title": "Mind map \u00b7 Continuous models and simulation",
+        "title": "Mind map · Continuous models and simulation",
         "caption": "Connect lifetime distributions and the normal model to the Central Limit Theorem and Monte Carlo simulation.",
         "alt": "Text mind map linking Continuous and Simulation to Exponential, Gamma, Weibull, Hyperexponential, Normal, Central Limit Theorem, and Monte Carlo."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/probability/statistical-inference.png",
-        "title": "Mind map \u00b7 Statistical inference",
+        "title": "Mind map · Statistical inference",
         "caption": "Use this map to separate estimation, interval construction, testing errors, regression, ANOVA, and nonparametric methods.",
         "alt": "Text mind map linking Statistical Inference to Estimation, Confidence Intervals, Hypothesis Testing, Type I Error, Type II Error, Regression, ANOVA, and Nonparametric."
       }
@@ -5988,28 +6276,28 @@
       {
         "afterModule": 2,
         "src": "../assets/generated/networks/transmission-media.png",
-        "title": "Mind map \u00b7 Transmission and media",
+        "title": "Mind map · Transmission and media",
         "caption": "Relate guided and wireless media to coding, modulation, error detection, and error correction.",
         "alt": "Text mind map linking Transmission and Media to Conducted Media, Radiated Media, Coding, Modulation, Error Detection, and Error Correction."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/networks/network-architecture.png",
-        "title": "Mind map \u00b7 Network architecture",
+        "title": "Mind map · Network architecture",
         "caption": "Place LANs, WANs, topologies, protocols, switches, and routers within the layered OSI view.",
         "alt": "Text mind map linking Network Architecture to LAN, WAN, OSI Model, Topologies, Protocols, Switches, and Routers."
       },
       {
         "afterModule": 6,
         "src": "../assets/generated/networks/secure-networking.png",
-        "title": "Mind map \u00b7 Secure networking",
+        "title": "Mind map · Secure networking",
         "caption": "Distinguish authentication, signatures, recovery, WLAN concerns, and Mobile IP responsibilities.",
         "alt": "Text mind map connecting secure networking topics including Communication Security, Digital Signatures, Authentication, Recovery, WLAN, and Mobile IP."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/networks/network-management.png",
-        "title": "Mind map \u00b7 Network management",
+        "title": "Mind map · Network management",
         "caption": "Connect SNMP, MIBs, proxies, management functions, web/XML integration, and ATM.",
         "alt": "Text mind map linking Network Management to SNMP v1, SNMP v2, MIB, Proxy Server, Configuration, Fault, Performance, Web and XML, and ATM."
       }
@@ -6360,28 +6648,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/discrete/counting-principles.png",
-        "title": "Mind map \u00b7 Counting principles",
+        "title": "Mind map · Counting principles",
         "caption": "Connect the product rule, pigeonhole principle, inclusion-exclusion, recurrences, and generating functions before choosing a counting method.",
         "alt": "Text mind map linking Counting Principles to Product Rule, Pigeonhole Principle, Inclusion-Exclusion, Recurrence Relations, and Generating Functions."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/discrete/logic-computation.png",
-        "title": "Mind map \u00b7 Logic and computation",
+        "title": "Mind map · Logic and computation",
         "caption": "Use the branches to relate propositions and sets to formal languages and finite-state machines.",
         "alt": "Text mind map linking Logic and Computation to Propositions, Set Theory, Formal Languages, and Finite State Machines."
       },
       {
         "afterModule": 5,
         "src": "../assets/generated/discrete/graph-structures.png",
-        "title": "Mind map \u00b7 Graph structures",
-        "caption": "Compare graph direction, walks, trails, cycles, connectivity, trees, and the Eulerian\u2013Hamiltonian distinction.",
+        "title": "Mind map · Graph structures",
+        "caption": "Compare graph direction, walks, trails, cycles, connectivity, trees, and the Eulerian–Hamiltonian distinction.",
         "alt": "Text mind map linking Graph Structures to Directed Graph, Undirected Graph, Trail, Cycle, Connectivity, Trees, Eulerian, and Hamiltonian."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/discrete/graph-algorithms.png",
-        "title": "Mind map \u00b7 Graph algorithms",
+        "title": "Mind map · Graph algorithms",
         "caption": "Choose an algorithm by objective: traversal, shortest route, spanning cost, matching, assignment, or flow.",
         "alt": "Text mind map linking Graph Algorithms to BFS, DFS, Shortest Path, Minimum Spanning Tree, Matching, Assignment, and Network Flow."
       }
@@ -6702,28 +6990,28 @@
       {
         "afterModule": 1,
         "src": "../assets/generated/pattern/learning-models.png",
-        "title": "Mind map \u00b7 Learning models",
+        "title": "Mind map · Learning models",
         "caption": "Survey the syllabus model families before studying how each represents and learns patterns.",
         "alt": "Text mind map linking Learning Models to Classifiers, Functions, Relations, Grammars, Probabilistic Models, Value Functions, Behaviors, and Programs."
       },
       {
         "afterModule": 3,
         "src": "../assets/generated/pattern/core-classifiers.png",
-        "title": "Mind map \u00b7 Core classifiers",
+        "title": "Mind map · Core classifiers",
         "caption": "Compare interpretable, probabilistic, margin-based, neural, local, and ensemble classification families.",
         "alt": "Text mind map linking Core Classifiers to Decision Trees, Neural Networks, Support Vector Machines, Bayesian Networks, Nearest Neighbour, and Ensemble Classifiers."
       },
       {
         "afterModule": 5,
         "src": "../assets/generated/pattern/text-sequence-models.png",
-        "title": "Mind map \u00b7 Text and sequence models",
+        "title": "Mind map · Text and sequence models",
         "caption": "Trace the progression from token counts and N-grams to Markov models, hidden states, and association rules.",
         "alt": "Text mind map linking Text and Sequence Models to Bag of Words, N-gram Models, Markov Models, Hidden Markov Models, and Association Rules."
       },
       {
         "afterModule": 8,
         "src": "../assets/generated/pattern/representation-clustering.png",
-        "title": "Mind map \u00b7 Representation and clustering",
+        "title": "Mind map · Representation and clustering",
         "caption": "Relate lower-dimensional representations to visualization, clustering families, and document recognition.",
         "alt": "Text mind map linking Representation and Clustering to Dimensionality Reduction, Feature Selection, Visualization, K-means, Hierarchical Clustering, Mixture Models, and Document Recognition."
       }

@@ -224,3 +224,19 @@ Install `pypdf`, then run `python3 scripts/validate.py`. It checks the catalogue
 ## License
 
 Educational content and source code are available under the MIT License unless a referenced asset states otherwise.
+
+
+## Downloadable Master Study Notes & Academic Reference Dossiers
+
+The platform includes comprehensive downloadable PDF dossiers for advanced semester courses:
+
+- **[Deep Learning Master Study Notes (PDF)](assets/docs/Deep-Learning-Master-Study-Notes.pdf)** · `MMLC-301` (8 Pages, Complete Mathematical Foundations, MLE to Cross-Entropy Derivation, Backpropagation Recursive Delta Equations, CNN Output Spatial Dimension Formula, LSTM Gating Highway, Autoencoders, and VAE vs GAN Minimax Formulation).
+- **[Reinforcement Learning Complete Study Notes & Revision Guide (PDF)](assets/docs/Reinforcement-Learning-Complete-Study-Guide.pdf)** · `MMLE-302` (38 Pages, Sutton & Barto 2nd Edition Mapping, Markov Decision Processes, Dynamic Programming, SARSA vs Q-Learning Worked Numerics, Deep Q-Networks, Imitation Learning, Meta-RL, Offline RL, MCTS with UCT, Common Exam Traps & 14-Day Study Plan).
+
+## Interactive Examination Tools
+
+- **Unit-by-Unit Topic Filtering:** Switch between syllabus units to focus on specific modules.
+- **Interactive Self-Assessment Quizzes:** Step-by-step immediate solution feedback for each question.
+- **GeeksforGeeks (GFG) Curated Vault:** Mapped tutorials and implementations for interview & lab readiness.
+- **Study Docket:** Save subjects to your revision queue, calculate preparation pacing, and export iCalendar (.ics) revision milestones.
+- **Support & Contribution:** If you find this project valuable, please **⭐ Star this repository** on GitHub and open a pull request or issue to contribute past papers or additional notes!

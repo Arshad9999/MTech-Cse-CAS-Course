@@ -4,7 +4,7 @@
  * with resilient offline cache fallback.
  */
 
-const CACHE_NAME = 'cas-mtech-cse-v2026.11.18-mastery100';
+const CACHE_NAME = 'cas-mtech-cse-v2026.11.18-dl-rl-docs';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -20,6 +20,9 @@ const STATIC_ASSETS = [
   './assets/course-reading.json',
   './assets/course-supplements.json',
   './assets/course-gfg.json',
+  './assets/course-quizzes.json',
+  './assets/docs/Deep-Learning-Master-Study-Notes.pdf',
+  './assets/docs/Reinforcement-Learning-Complete-Study-Guide.pdf',
   './assets/styles.css',
   './assets/portal.css',
   './assets/mastery.css',

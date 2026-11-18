@@ -409,138 +409,138 @@
   ],
   "MMLC-301": [
     {
-      "title": "Probability, likelihood and loss",
-      "explanation": "Deep learning fits models with multiple learned transformations. Maximum likelihood chooses parameters that make observed data likely under a model; losses often express the negative log-likelihood.",
-      "example": "For binary classification, cross-entropy penalises a confidently wrong predicted probability heavily.",
-      "distinction": "Mean squared error is common for numerical predictions; cross-entropy is commonly used with class probabilities."
+      "title": "Probability, Likelihood and Loss Formulations",
+      "explanation": "Deep learning replaces manual feature engineering with hierarchical representation learning across multiple processing layers. Probabilistic modeling forms the bedrock for defining objective functions: Bernoulli distributions model binary classification with Sigmoid outputs (P(X=x) = p^x (1-p)^(1-x)), Categorical distributions model multi-class classification with Softmax outputs (P(X=k) = p_k, sum p_k = 1), and Gaussian distributions derive Mean Squared Error under additive Gaussian noise assumptions. Maximum Likelihood Estimation (MLE) determines parameters theta by maximizing observed data probability, computed numerically via log-likelihood to prevent underflow: theta_MLE = argmax_theta sum_{i=1}^N log P(x^(i); theta).",
+      "example": "Step-by-step MLE to Cross-Entropy Derivation:\n1. Given independent binary targets y^(i) in {0, 1} with predicted probability y_hat^(i) = P(Y=1|x^(i); theta):\n   L(theta) = prod_{i=1}^N (y_hat^(i))^(y^(i)) * (1 - y_hat^(i))^(1 - y^(i))\n2. Take natural logarithm:\n   log L(theta) = sum_{i=1}^N [y^(i) log y_hat^(i) + (1 - y^(i)) log(1 - y_hat^(i))]\n3. Minimizing negative log-likelihood (NLL) normalized by sample count N yields Binary Cross-Entropy Loss:\n   J_BCE = - (1/N) * sum_{i=1}^N [y^(i) log y_hat^(i) + (1 - y^(i)) log(1 - y_hat^(i))]\nFor multi-class categorical targets across C classes, this generalizes to Categorical Cross-Entropy:\n   J_CCE = - sum_{i=1}^N sum_{c=1}^C y_{i,c} log(y_hat_{i,c}).",
+      "distinction": "Linear regression minimizes Mean Squared Error (MSE = (1/2N) sum (y - y_hat)^2) assuming continuous outputs with Gaussian noise; Logistic regression minimizes Cross-Entropy loss mapping projections to the [0, 1] probability simplex via sigmoid sigma(w^T x + b)."
     },
     {
-      "title": "Feed-forward networks and activations",
-      "explanation": "An MLP applies affine transformations and nonlinear activations through hidden layers. Sigmoid and tanh are bounded; ReLU is max(0,z); softmax turns logits into probabilities across classes.",
-      "example": "For logits (0,0), softmax assigns probability 0.5 to each class.",
-      "distinction": "Without nonlinearities, a composition of linear layers is still a linear transformation."
+      "title": "Feed-Forward Networks, Universal Approximation and Activation Units",
+      "explanation": "Multi-Layer Perceptrons (MLPs) compose input signals through affine transformations and non-linear point-wise activations: a^(0) = x, z^(l) = W^(l) a^(l-1) + b^(l), a^(l) = g^(l)(z^(l)). If all activation functions g^(l) were linear, an L-layer network would collapse mathematically to a single matrix multiplication: y = W_L ... W_2 W_1 x = W_eff x, eliminating any depth representation. Non-linear activations enable networks with even a single hidden layer of sufficient width to approximate any continuous function over compact domains (Universal Approximation Theorem).",
+      "example": "Activation Comparison & Behavior:\n• Sigmoid: g(z) = 1 / (1 + e^(-z)) in (0, 1). Saturates at both tails causing vanishing gradients; non-zero centered.\n• Tanh: g(z) = (e^z - e^(-z)) / (e^z + e^(-z)) in (-1, 1). Zero-centered, but still suffers from saturation when |z| >> 0.\n• ReLU: g(z) = max(0, z) in [0, +inf). Constant unit gradient for z > 0 accelerates convergence with zero saturation, but neurons can permanently die if z < 0 across all training data (Dying ReLU).\n• Leaky ReLU: g(z) = max(0.01z, z) ensures a persistent gradient for negative inputs.\n• Softmax: g(z_i) = e^(z_i) / sum_{j=1}^C e^(z_j) normalizes arbitrary real logits into a rigorous probability distribution summing to 1.",
+      "distinction": "Hidden layers use intermediate activations (ReLU, Leaky ReLU, Tanh) to build non-linear latent feature spaces; output layers use activations tailored to the task distribution (Linear for regression, Sigmoid for binary Bernoulli classification, Softmax for categorical multi-class classification)."
     },
     {
-      "title": "Backpropagation and gradient descent",
-      "explanation": "The chain rule propagates derivatives from loss to each layer. Gradient descent updates a parameter θ as θ ← θ − η∇L; the learning rate η affects training.",
-      "example": "For L=(θ−3)² and θ=1, the gradient is −4; with η=0.1, the next θ is 1.4.",
-      "distinction": "Backpropagation computes gradients; the optimiser decides how parameters are updated."
+      "title": "Backpropagation and Recursive Multivariate Chain Rule",
+      "explanation": "Backpropagation computes the exact partial derivatives of the scalar loss J with respect to every weight tensor W^(l) and bias vector b^(l) across all network layers by recursively propagating error signals backward from output layer L to input layer 1.",
+      "example": "Recursive Delta Backpropagation Equations:\n1. Output Layer Delta (l = L):\n   delta^(L) = grad_{a^(L)} J (hadamard product) g'^(L)(z^(L))\n   For Cross-Entropy with Softmax output: delta^(L) = y_hat - y (convenient numerical cancellation).\n2. Hidden Layer Delta (l = L-1 down to 1):\n   delta^(l) = ((W^(l+1))^T delta^(l+1)) (hadamard product) g'^(l)(z^(l))\n3. Parameter Gradient Accumulation:\n   del J / del W^(l) = delta^(l) * (a^(l-1))^T\n   del J / del b^(l) = delta^(l)\n4. Parameter Update via Gradient Descent:\n   W^(l) <- W^(l) - alpha * (del J / del W^(l))\n   b^(l) <- b^(l) - alpha * (del J / del b^(l)).",
+      "distinction": "Forward propagation maps inputs to activations and computes the scalar objective J; backward propagation caches activation vectors and recursively applies transposed weight matrices to compute gradients in O(parameters) time rather than O(parameters^2)."
     },
     {
-      "title": "Generalisation and training",
-      "explanation": "Overfitting occurs when training performance is much better than performance on new data. Regularisation, dropout, suitable augmentation and early stopping can help; GPUs speed suitable parallel computations.",
-      "example": "Monitor validation loss after each epoch and keep the checkpoint selected by a predeclared validation rule.",
-      "distinction": "A GPU changes execution speed, not the validity of an evaluation. Tune on validation data, not the test set."
+      "title": "Generalisation, Regularisation and Bias-Variance Mechanics",
+      "explanation": "Total expected generalization error decomposes into Bias^2 + Variance + Irreducible Noise. High bias indicates model underfitting (failure to capture underlying patterns); high variance indicates overfitting (sensitivity to training sample noise). Regularization constraints network capacity to minimize test error.",
+      "example": "Mechanics of Regularization Techniques:\n• L2 Regularization (Weight Decay): Adds (lambda / 2N) sum ||w||^2 to the loss. Weight update becomes W <- W * (1 - alpha * lambda / N) - alpha * grad J, shrinking weights exponentially toward zero to penalize explosive parameters.\n• L1 Regularization (Lasso): Adds (lambda / N) sum |w| to the loss, driving non-essential weights to exact zero and inducing architectural sparsity.\n• Dropout: At each training step, neurons are randomly set to zero with probability p (typically 0.2 to 0.5), preventing co-adaptation of features. At test time, all neurons remain active with weights multiplied by (1-p) for inverted scaling.\n• Early Stopping: Monitors validation loss and halts optimization before overtraining occurs.",
+      "distinction": "L2 regularization smoothly shrinks all weights towards zero preserving dense representations; L1 regularization creates true coordinate zeros for feature selection."
     },
     {
-      "title": "CNNs and sequence models",
-      "explanation": "CNNs apply shared filters to local regions, often combining convolution, activation and pooling. RNNs carry hidden state across a sequence; both require task-appropriate data and evaluation.",
-      "example": "A CNN can learn image patterns; an RNN can process a sequence of sensor measurements.",
-      "distinction": "CNN weight sharing exploits spatial locality; recurrent connections encode sequential context."
+      "title": "Convolutional Neural Networks: Receptive Fields and Spatial Dimensions",
+      "explanation": "Convolutional Neural Networks (CNNs) process grid-structured topological data (e.g., 2D images, audio spectrograms) by leveraging three core architectural principles: sparse local receptive fields, parameter sharing (tying kernel weights across spatial locations), and translation equivariance (f(g(x)) = g(f(x))).",
+      "example": "Spatial Output Dimension Formula:\nGiven input spatial size W, kernel filter size K, zero-padding P, and stride S, the output spatial dimension O is given by:\n   O = floor((W - K + 2P) / S) + 1\nNumerical Calculation:\nInput image = 32x32, Kernel = 5x5, Padding P = 2, Stride S = 1:\n   O = floor((32 - 5 + 2*2) / 1) + 1 = floor(31 / 1) + 1 = 32 (Same-padding preserves spatial resolution).\nIf Stride S = 2 without padding (P = 0):\n   O = floor((32 - 5 + 0) / 2) + 1 = floor(27 / 2) + 1 = 13 + 1 = 14x14 output feature map.",
+      "distinction": "Fully connected layers require a unique parameter for every input-output coordinate pair, scaling quadratically with spatial resolution; convolutional layers share kernel weights across the entire feature plane, making them parameter-efficient and translation-equivariant."
     },
     {
-      "title": "Transfer and generative models",
-      "explanation": "Transfer learning reuses representations learned on one task for another. Autoencoders reconstruct input through a bottleneck; generative models learn a model of data, while deep belief networks combine layers of probabilistic representations.",
-      "example": "A pretrained image encoder can be fine-tuned for a smaller labelled dataset after checking that training and evaluation data do not overlap.",
-      "distinction": "An autoencoder’s reconstruction objective differs from a classifier’s label-prediction objective."
+      "title": "Recurrent Neural Networks, Sequence Models and LSTM Gating Architecture",
+      "explanation": "Recurrent Neural Networks (RNNs) process sequential sequences by maintaining a continuous recurrent hidden state: h_t = tanh(W_hh h_{t-1} + W_xh x_t + b). However, backpropagating through long sequences causes repeated matrix multiplications by W_hh, triggering catastrophic exponential vanishing or exploding gradients.",
+      "example": "Long Short-Term Memory (LSTM) Additive Highway Equations:\nLSTMs resolve vanishing gradients by introducing an internal constant error carousel (cell state C_t) regulated by 4 multiplicative gates:\n1. Forget Gate: f_t = sigma(W_f [h_{t-1}, x_t] + b_f) in [0, 1] (decides what historical memory to discard)\n2. Input Gate: i_t = sigma(W_i [h_{t-1}, x_t] + b_i) (decides which candidate values to store)\n3. Candidate Cell State: C_tilde_t = tanh(W_c [h_{t-1}, x_t] + b_c)\n4. Cell State Update: C_t = f_t (hadamard) C_{t-1} + i_t (hadamard) C_tilde_t (additive highway preserves long gradients!)\n5. Output Gate: o_t = sigma(W_o [h_{t-1}, x_t] + b_o)\n6. Final Hidden State: h_t = o_t (hadamard) tanh(C_t).",
+      "distinction": "Standard RNNs multiply hidden states recursively at every step leading to vanishing gradients; LSTMs perform additive updates to cell state C_t, allowing error gradients to propagate across hundreds of time steps unattenuated."
     },
     {
-      "title": "Convolution dimensions and receptive fields",
-      "explanation": "A convolutional layer uses a kernel applied across an input. For one dimension, output size is floor((n+2p−k)/s)+1 for input n, padding p, kernel k and stride s, assuming unit dilation.",
-      "example": "For n=32, k=3, p=1 and s=1, the output size is 32. With the same settings and s=2, it is 16.",
-      "distinction": "A feature map is the result of applying learned filters; a receptive field describes which input positions can affect an output."
+      "title": "Autoencoders: Bottleneck Latent Spaces and Taxonomy",
+      "explanation": "Autoencoders are self-supervised neural architectures designed to compress high-dimensional inputs x into a lower-dimensional bottleneck latent representation z, and subsequently reconstruct the input as x_hat with minimal distortion loss ||x - x_hat||^2.",
+      "example": "Autoencoder Taxonomy & Mechanics:\n• Undercomplete AE: Latent dimensionality dim(z) < dim(x). Compels the network to discover the most salient non-linear manifold features.\n• Denoising AE (DAE): Corrupts raw input with noise x_tilde ~ q(x_tilde|x) and trains the network to reconstruct the original clean x, preventing identity shortcut mapping.\n• Sparse AE: Penalizes non-zero activations in an overcomplete latent space (dim(z) > dim(x)) using L1 or Kullback-Leibler (KL) divergence penalty.\n• Variational Autoencoder (VAE): Maps inputs probabilistically to parameters of a distribution (mean mu(x) and log-variance sigma^2(x)), optimized via the Evidence Lower Bound (ELBO) with the reparameterization trick z = mu + sigma * epsilon where epsilon ~ N(0, I).",
+      "distinction": "Deterministic autoencoders map inputs to fixed discrete latent vectors which can leave gaps in the latent space; Variational Autoencoders map inputs to continuous probability distributions, allowing smooth generative sampling."
     },
     {
-      "title": "Regularisation and evaluation",
-      "explanation": "Regularisation limits effective model complexity or discourages overfitting. Weight decay, dropout and early stopping affect training differently; compare them using a validation protocol.",
-      "example": "If training loss falls while validation loss rises over several epochs, evaluate whether the model is overfitting before selecting a checkpoint.",
-      "distinction": "Dropout changes activations during training; weight decay penalises or shrinks parameters, depending on the optimiser’s implementation."
+      "title": "Generative Adversarial Networks (GANs) vs Variational Autoencoders (VAEs)",
+      "explanation": "Deep generative modeling aims to estimate and sample from complex unknown probability distributions p_data(x). VAEs adopt an explicit probabilistic formulation, whereas GANs utilize an adversarial game-theoretic formulation without explicit density estimation.",
+      "example": "GAN Minimax Formulation:\nA Generator G(z; theta_g) and a Discriminator D(x; theta_d) compete in a zero-sum game:\n   min_G max_D V(D, G) = E_{x~p_data}[log D(x)] + E_{z~p_z}[log(1 - D(G(z)))]\n• Discriminator Goal: Maximize log D(x) for real samples and log(1 - D(G(z))) for generated samples.\n• Generator Goal: Minimize log(1 - D(G(z))) (or maximize log D(G(z)) to prevent early training vanishing gradients).\nComparison Matrix:\n• Objective: VAE maximizes ELBO (Reconstruction + KL Divergence); GAN solves a zero-sum minimax saddle point.\n• Output Quality: VAEs produce slightly blurry images due to pixel-space L2/MSE loss; GANs produce crisp, highly realistic samples.\n• Training Stability: VAE training is stable and convex in latent parameters; GANs suffer from mode collapse, oscillations, and vanishing gradients.",
+      "distinction": "VAEs provide tractable approximate inference and a structured latent space at the cost of blurriness; GANs produce sharper images but offer no direct inference or latent representation inversion."
     },
     {
-      "title": "Transfer learning and data leakage",
-      "explanation": "Transfer learning adapts parameters learned on a source task to a target task, often by training a new head and optionally fine-tuning earlier layers. Check dataset overlap and distribution mismatch.",
-      "example": "A pretrained image encoder can be evaluated on a new task with the test set kept separate from fine-tuning and model selection.",
-      "distinction": "Feature extraction freezes the encoder; fine-tuning updates some or all pretrained parameters."
+      "title": "Transfer Learning Strategies and Fine-Tuning Protocols",
+      "explanation": "Transfer learning leverages deep representations acquired from massive benchmark corpora (e.g., ImageNet, LAION, Wikipedia) and adapts them to specialized downstream target tasks where annotated data is scarce.",
+      "example": "Transfer Strategy Decision Matrix:\n1. Small Target Dataset + High Similarity to Pre-training Domain:\n   Strategy: Freeze pre-trained convolutional/transformer backbone; train only the linear output classification head. Prevents catastrophic overfitting.\n2. Small Target Dataset + Low Similarity:\n   Strategy: Train high-level layers and output head; freeze only initial fundamental edge/texture filters. (Challenging; data augmentation is vital).\n3. Large Target Dataset + High/Low Similarity:\n   Strategy: Full Model Fine-Tuning. Initialize with pre-trained weights and fine-tune all layers using a small learning rate (e.g., alpha = 1e-4 or 1e-5 with warmup and cosine decay) so learned features are gently adapted without destroying pre-trained representations.",
+      "distinction": "Feature extraction keeps pre-trained backbone weights strictly frozen; fine-tuning updates backbone weights with conservative learning rates."
     },
     {
-      "title": "Backpropagation through a simple model",
-      "explanation": "Backpropagation uses the chain rule to compute loss gradients through a computation graph. For a scalar example ŷ=wx and L=(ŷ−y)², the gradient with respect to w is 2(wx−y)x. An optimiser uses that gradient to update the parameter.",
-      "example": "With w=1, x=1 and y=3, the gradient is −4. Gradient descent with learning rate 0.1 updates w to 1−0.1(−4)=1.4.",
-      "distinction": "Backpropagation computes derivatives; an optimiser such as gradient descent specifies how to update parameters."
+      "title": "Deep Belief Networks and Stacked Restricted Boltzmann Machines",
+      "explanation": "Deep Belief Networks (DBNs) are deep probabilistic graphical models composed of multiple layers of stochastic latent variables. The top two layers form an undirected bipartite Restricted Boltzmann Machine (RBM), while lower layers form a directed generative graph.",
+      "example": "Layer-Wise Greedy Pre-training Protocol:\n1. Step 1: Train RBM 1 on raw data vectors x in an unsupervised fashion using Contrastive Divergence (CD-k).\n2. Step 2: Freeze RBM 1 weights W_1, compute hidden probabilities h_1, and treat h_1 as visible training inputs for RBM 2.\n3. Step 3: Repeat layer by layer to stack representations without requiring target labels.\n4. Step 4: Add a supervised linear or softmax classification layer on top, then fine-tune all layer parameters globally using supervised backpropagation.",
+      "distinction": "Classical deep networks trained from scratch with random initialization suffered from vanishing gradients; DBN greedy layer-wise pre-training placed network weights in a basins of attraction prior to gradient descent."
     },
     {
-      "title": "CNN output shape and receptive fields",
-      "explanation": "For input length n, kernel size k, padding p, stride s and unit dilation, the output length is floor((n+2p−k)/s)+1. Apply the expression separately to height and width; the number of output channels equals the number of filters for a standard convolution layer.",
-      "example": "A 32×32 input with a 3×3 kernel, padding 1 and stride 1 yields a 32×32 spatial output; using eight filters yields eight output feature maps.",
-      "distinction": "Spatial dimensions, channel count and receptive field describe different properties of a layer."
+      "title": "Practical Hardware Optimization and Numerical Stability",
+      "explanation": "Deploying deep learning in practice demands disciplined attention to hardware acceleration (CUDA tensor cores, mixed precision), gradient stability, and numerical safeguards.",
+      "example": "Essential Engineering Safeguards:\n1. Gradient Clipping: If ||grad J|| > threshold c, re-scale: grad <- (c / ||grad J||) * grad to prevent catastrophic exploding gradients.\n2. Mixed Precision (FP16/BF16): Performs matrix multiplications in 16-bit floating point while storing master weights in FP32, reducing GPU memory footprint by 50% and doubling tensor throughput.\n3. Log-Sum-Exp Trick: Evaluates log(sum e^{z_i}) as c + log(sum e^{z_i - c}) where c = max(z_i) to prevent numerical overflow in Softmax and Cross-Entropy computations.\n4. Learning Rate Schedules: Warmup for the first 5% of training steps followed by Cosine Annealing to smoothly converge to local minima.",
+      "distinction": "Vanishing gradients make weights stop learning; exploding gradients cause NaN loss values and arithmetic overflow."
     }
   ],
   "MMLE-302": [
     {
-      "title": "Agent, environment and return",
-      "explanation": "In reinforcement learning an agent observes a state, chooses an action, receives a reward and moves to a next state. A policy maps states to actions or action probabilities; return sums future rewards, often with discount γ.",
-      "example": "A robot receives −1 per step and +10 at a goal. With γ=0.9, a reward one step later contributes 9 to present return.",
-      "distinction": "Reward is an immediate signal; return summarises a trajectory’s future rewards."
+      "title": "The RL Interaction Loop, Return and Discounting Mechanics",
+      "explanation": "Reinforcement Learning (RL) is a mathematical framework for learning optimal sequential decision making through environmental feedback. An agent observes state S_t, selects action A_t according to policy pi, receives scalar reward R_{t+1}, and transitions to next state S_{t+1}. Unlike supervised learning (where correct target labels are given), RL receives delayed, evaluative scalar feedback. The goal is to maximize the cumulative return G_t = sum_{k=0}^inf gamma^k R_{t+k+1}, where discount factor gamma in [0, 1) ensures infinite-horizon convergence and balances immediate versus far-future rewards.",
+      "example": "Return Calculation Example:\nGiven gamma = 0.9 and an agent receives rewards R_1 = -1, R_2 = 0, R_3 = +10, R_4 = 0 (terminal):\n• Return from t=0:\n   G_0 = R_1 + gamma * R_2 + gamma^2 * R_3 = -1 + 0.9*(0) + (0.9)^2 * 10 = -1 + 0 + 8.1 = +7.1.\nIf gamma = 0 (myopic/greedy):\n   G_0 = R_1 = -1.\nIf gamma = 1 (undiscounted):\n   G_0 = -1 + 0 + 10 = +9.0.",
+      "distinction": "Reward R_{t+1} is the immediate scalar feedback received at step t+1; Return G_t is the accumulated discounted future reward over the entire subsequent trajectory."
     },
     {
-      "title": "Markov processes and value functions",
-      "explanation": "The Markov property means the current state contains the relevant information needed to predict the next transition given an action. A value function estimates expected return from a state under a policy.",
-      "example": "For a terminal action paying 5, with no later reward, its return is 5.",
-      "distinction": "A state-value function V(s) evaluates a state; an action-value function Q(s,a) evaluates a state–action pair."
+      "title": "Markov Decision Processes, POMDPs and the Markov Property",
+      "explanation": "A stochastic process possesses the Markov Property if the conditional probability distribution of future states depends solely upon the present state and action, independent of preceding history: P(S_{t+1} | S_t, A_t, ..., S_0, A_0) = P(S_{t+1} | S_t, A_t). A Markov Decision Process (MDP) is formally defined by the tuple (S, A, P, R, gamma). When the environment state is only partially observed through sensor measurements O_t, the system is modeled as a Partially Observable MDP (POMDP), where the agent must maintain a belief state distribution b(s) = P(S_t = s | history).",
+      "example": "MDP Tuple Components:\n• S: Set of all valid environment states.\n• A: Set of valid actions (may be state-dependent A(s)).\n• P(s' | s, a) = Pr(S_{t+1} = s' | S_t = s, A_t = a): State transition probability matrix.\n• R(s, a) = E[R_{t+1} | S_t = s, A_t = a]: Expected reward function.\n• gamma in [0, 1): Discount factor.",
+      "distinction": "In a fully observable MDP, the current state S_t is a sufficient statistic for optimal decision making; in a POMDP, observation O_t is incomplete, requiring history or belief state tracking."
     },
     {
-      "title": "Planning with a known model",
-      "explanation": "A transition model gives probabilities and rewards for actions. Policy iteration alternates evaluating and improving a policy; value iteration repeatedly applies a Bellman optimality backup.",
-      "example": "In a small grid with known transition probabilities, compare the expected discounted return of available moves.",
-      "distinction": "Policy iteration evaluates an explicit policy; value iteration applies a greedy optimality update directly."
+      "title": "Value Functions, Advantage and Bellman Expectation Equations",
+      "explanation": "Value functions quantify the long-term desirability of states and state-action pairs under a policy pi. The state-value function V^pi(s) = E_pi[G_t | S_t = s] evaluates states; the action-value function Q^pi(s, a) = E_pi[G_t | S_t = s, A_t = a] evaluates actions. The Advantage function A^pi(s, a) = Q^pi(s, a) - V^pi(s) quantifies how much better action a is compared to the default expected policy return.",
+      "example": "Recursive Bellman Expectation Equations:\n• For State Value V^pi(s):\n   V^pi(s) = sum_{a in A} pi(a|s) sum_{s' in S} P(s'|s, a) [ R(s, a, s') + gamma * V^pi(s') ]\n• For Action Value Q^pi(s, a):\n   Q^pi(s, a) = sum_{s' in S} P(s'|s, a) [ R(s, a, s') + gamma * sum_{a' in A} pi(a'|s') Q^pi(s', a') ]\nNumerical Example:\nIf an action yields immediate reward r = -1, leads to next state s' with V(s') = 5, and gamma = 0.9:\n   Backed-up Value = -1 + 0.9 * (5) = +3.5.",
+      "distinction": "V^pi(s) averages values over all actions chosen by policy pi; Q^pi(s, a) evaluates taking a specific first action a and then following policy pi thereafter."
     },
     {
-      "title": "Model-free control",
-      "explanation": "When transition probabilities are unknown, temporal-difference methods learn from observed transitions. Q-learning uses the maximum estimated next-action value; SARSA uses the next action actually chosen by its policy.",
-      "example": "Q-learning updates Q(s,a) towards r+γ maxₐ′ Q(s′,a′); SARSA instead uses Q(s′,a′) for the selected next action.",
-      "distinction": "Q-learning is off-policy; SARSA is on-policy. Both require suitable learning conditions for classical tabular guarantees."
+      "title": "Bellman Optimality Equations and Dynamic Programming Planning",
+      "explanation": "The optimal value function V*(s) = max_pi V^pi(s) represents the maximum expected return achievable from state s. Dynamic programming (DP) algorithms assume complete knowledge of the MDP transition matrix P and reward function R, solving for optimal behavior through recursive backups without live trial-and-error.",
+      "example": "Bellman Optimality Equations:\n• V*(s) = max_{a in A} sum_{s' in S} P(s'|s, a) [ R(s, a, s') + gamma * V*(s') ]\n• Q*(s, a) = sum_{s' in S} P(s'|s, a) [ R(s, a, s') + gamma * max_{a' in A} Q*(s', a') ]\nPolicy Iteration vs Value Iteration:\n• Policy Iteration (PI): Alternates full Policy Evaluation (solving V_k+1(s) = sum_a pi(a|s) sum_s' P[R + gamma V_k]) until convergence, followed by Policy Improvement (pi'(s) = argmax_a sum_s' P[R + gamma V]). Reaches exact optimal policy in finitely many sweeps.\n• Value Iteration (VI): Combines evaluation and improvement into a single Bellman optimality backup: V_{k+1}(s) = max_a sum_s' P(s'|s, a)[R + gamma V_k(s')]. Sweeps stop when max_s |V_{k+1}(s) - V_k(s)| < epsilon.",
+      "distinction": "Policy iteration explicitly computes and updates a distinct policy at each outer loop; value iteration updates state values directly using the max operator and extracts the greedy policy only at termination."
     },
     {
-      "title": "Exploration and approximation",
-      "explanation": "An agent must gather information as well as use its current estimates. ε-greedy chooses a random action with probability ε and otherwise acts greedily; function approximation generalises across large state spaces.",
-      "example": "With ε=0.1, a random action is selected on 10% of decisions, subject to the chosen random-action distribution.",
-      "distinction": "Exploration can discover better actions but may be unsafe; safety and evaluation must be considered separately."
+      "title": "Model-Free Evaluation: Monte Carlo vs Temporal-Difference Learning",
+      "explanation": "When environment dynamics P and R are unknown, the agent must estimate value functions from sampled interaction trajectories. Monte Carlo (MC) methods learn from completed episode returns G_t, whereas Temporal-Difference (TD) methods bootstrap using successor state value estimates after each individual transition.",
+      "example": "Update Equations:\n• Monte Carlo (MC): V(S_t) <- V(S_t) + alpha * [G_t - V(S_t)]\n  Requires waiting until the terminal state to compute full return G_t. Target is unbiased but exhibits high variance.\n• Temporal-Difference TD(0): V(S_t) <- V(S_t) + alpha * [R_{t+1} + gamma * V(S_{t+1}) - V(S_t)]\n  Where delta_t = R_{t+1} + gamma * V(S_{t+1}) - V(S_t) is the TD Error. Updates online transition-by-transition. Introduces estimation bias but drastically reduces variance.",
+      "distinction": "Monte Carlo does not bootstrap (evaluates true sample return G_t after episode ends); TD(0) bootstraps immediately from the estimated successor value V(S_{t+1}) without waiting for episode termination."
     },
     {
-      "title": "Imitation, offline and search",
-      "explanation": "Imitation learning learns behaviour from demonstrations; offline RL learns from a fixed dataset and must handle actions poorly represented in that data. Monte Carlo tree search builds a search tree using sampled rollouts; meta-learning studies adaptation across tasks.",
-      "example": "A game-playing agent can use simulated rollouts to compare candidate moves before acting.",
-      "distinction": "Offline evaluation is difficult when the target policy differs greatly from the data-collection policy."
+      "title": "Model-Free Control: SARSA vs Q-Learning with Worked Numerical Update",
+      "explanation": "Control algorithms discover optimal policies without an explicit world model. SARSA is an on-policy TD control method that updates Q using the action actually executed by the behavior policy. Q-learning is an off-policy TD control method that updates Q toward the maximum achievable action value regardless of which action was executed.",
+      "example": "Step-by-Step Numerical Comparison:\nSuppose current state-action value Q(s, a) = 2.0, immediate reward r = 1.0, discount gamma = 0.9, learning rate alpha = 0.5. At successor state s', the available action values are Q(s', left) = 4.0 and Q(s', right) = 6.0. An exploratory behavior policy chooses action A' = left.\n\n1. Q-Learning Update (Off-Policy):\n   Target Y_Q = r + gamma * max_a' Q(s', a') = 1.0 + 0.9 * max(4.0, 6.0) = 1.0 + 0.9 * 6.0 = 6.4\n   New Q(s, a) = 2.0 + 0.5 * (6.4 - 2.0) = 2.0 + 0.5 * (4.4) = 4.20.\n\n2. SARSA Update (On-Policy):\n   Target Y_SARSA = r + gamma * Q(s', A'=left) = 1.0 + 0.9 * (4.0) = 1.0 + 3.6 = 4.6\n   New Q(s, a) = 2.0 + 0.5 * (4.6 - 2.0) = 2.0 + 0.5 * (2.6) = 3.30.\n\nConclusion: Q-learning evaluates the optimal greedy target (6.0) yielding Q = 4.20; SARSA evaluates the actual exploratory action taken (left, value 4.0) yielding Q = 3.30.",
+      "distinction": "Q-learning directly learns Q* for the greedy optimal policy while exploring (off-policy); SARSA learns the action-value function for the behavior policy including its exploratory mistakes (on-policy, learning safer paths in Cliff Walking)."
     },
     {
-      "title": "Bellman expectation and optimality",
-      "explanation": "The Bellman expectation equation expresses a policy’s value as expected immediate reward plus discounted value of the next state. The optimality equation chooses the best action at each state.",
-      "example": "If a state has a certain reward 2 and leads to a state valued at 5 with γ=0.9, its one-step backed-up value is 6.5.",
-      "distinction": "Policy evaluation follows a fixed policy; optimality backups compare available actions."
+      "title": "Deep Q-Networks (DQN), Replay Buffers and Double DQN",
+      "explanation": "Tabular Q-learning cannot scale to high-dimensional state spaces (e.g., raw pixels or continuous kinematics). Deep Q-Networks (DQN) parameterize Q(s, a; theta) with deep neural networks. Standard training destabilizes due to the \"Deadly Triad\": combining function approximation, bootstrapping, and off-policy updates.",
+      "example": "DQN Stabilization Mechanisms:\n1. Experience Replay Buffer D: Stores transitions (s_t, a_t, r_{t+1}, s_{t+1}, done). Random minibatch sampling breaks temporal correlation and prevents catastrophic forgetting.\n2. Target Network Q(s, a; theta^-): Maintains a frozen copy of weights theta^- updated periodically (every C steps) to provide stable regression targets:\n   y = r + gamma * (1 - done) * max_{a'} Q(s', a'; theta^-)\n   Loss L(theta) = Huber_loss(y - Q(s, a; theta)).\n3. Double DQN: Standard DQN overestimates Q-values due to the max operator. Double DQN decouples action selection from action evaluation:\n   y_Double = r + gamma * Q(s', argmax_{a'} Q(s', a'; theta); theta^-).",
+      "distinction": "Standard DQN uses the same target network weights to both pick and evaluate the maximum action; Double DQN uses the online network to select the best action and the target network to evaluate its value, eliminating overestimation bias."
     },
     {
-      "title": "Q-learning and SARSA updates",
-      "explanation": "Both use sampled transitions, a learning rate and a temporal-difference target. Q-learning uses the largest next action value; SARSA uses the value of the next action selected by the behaviour policy.",
-      "example": "If old Q=2, α=0.5, r=1, γ=0.9 and the maximum next Q=4, a Q-learning update yields 3.3.",
-      "distinction": "Q-learning is off-policy because its target is greedy even when behaviour explores; SARSA’s target follows the behaviour action."
+      "title": "Policy Search, REINFORCE and Actor-Critic Architectures",
+      "explanation": "Policy gradient methods parameterize policy pi_theta(a|s) directly and maximize expected return J(theta) = E_{tau ~ pi_theta}[G_0] via gradient ascent theta <- theta + alpha * grad_theta J(theta). By the Policy Gradient Theorem, the gradient can be computed without differentiating environmental transition dynamics: grad_theta J(theta) = E[ sum_t grad_theta log pi_theta(A_t | S_t) * G_t ].",
+      "example": "Policy Gradient Algorithms:\n• REINFORCE: Monte Carlo policy gradient. Samples complete trajectories, computes return-to-go G_t = sum_{k=t}^T gamma^{k-t} R_{k+1}, and updates: theta <- theta + alpha * sum_t grad_theta log pi_theta(A_t|S_t) * (G_t - b(S_t)). Subtracting state baseline b(S_t) = V(S_t) drastically reduces gradient variance without introducing bias.\n• Advantage Actor-Critic (A2C/A3C): Replaces high-variance return G_t with a 1-step TD advantage estimate A(S_t, A_t) = R_{t+1} + gamma * V_w(S_{t+1}) - V_w(S_t). The Actor updates policy parameters theta; the Critic updates value parameters w.\n• Modern Continuous Control: PPO (Proximal Policy Optimization) clips probability ratios r_t(theta) to prevent destructive policy updates; SAC (Soft Actor-Critic) maximizes entropy alongside reward.",
+      "distinction": "Value-based methods select actions implicitly via argmax Q(s, a), struggling with continuous high-dimensional actions; policy-based methods directly output action probabilities or Gaussian distribution parameters (mu, sigma)."
     },
     {
-      "title": "Offline reinforcement learning and evaluation",
-      "explanation": "Offline RL uses a fixed dataset rather than collecting new interaction while learning. The learned policy can choose actions rarely represented in the data, making value estimates unreliable.",
-      "example": "A policy trained from historical control logs should be checked for actions outside the logging policy’s coverage before any live use.",
-      "distinction": "Imitation learning copies behaviour from demonstrations; offline RL uses rewards and transitions to optimise a policy from a fixed dataset."
+      "title": "Imitation Learning: Behavior Cloning, DAgger, IRL and GAIL",
+      "explanation": "When rewards are sparse, expensive, or dangerous to discover through random exploration, imitation learning leverages expert demonstration trajectories D_demo = {(s_i, a_i)} to train policies.",
+      "example": "Taxonomy of Imitation Learning Paradigms:\n• Behavior Cloning (BC): Supervised learning mapping states to expert actions: theta* = argmin_theta E_{(s,a)~D}[ -log pi_theta(a|s) ]. Vulnerable to Covariate Shift / Compounding Errors: minor execution deviations place the agent into unobserved states where it fails catastrophically.\n• DAgger (Dataset Aggregation): Interleaves learner execution with expert re-labeling. The learner visits states, queries the expert for correct actions on those visited states, aggregates them into dataset D, and retrains, eliminating distribution shift.\n• Inverse Reinforcement Learning (IRL): Recovers the underlying reward function R*(s, a) that rationalizes the expert demonstrations, then trains an RL agent on R*.\n• GAIL (Generative Adversarial Imitation Learning): Uses a GAN-like discriminator D(s, a) to distinguish expert transitions from agent transitions, training policy pi to fool the discriminator.",
+      "distinction": "Behavior cloning is simple supervised learning that breaks down under distribution drift; DAgger queries an interactive expert on newly visited states to guarantee robust covariate coverage."
     },
     {
-      "title": "Bellman expectation backup",
-      "explanation": "For a fixed policy, the value of a state is the expected immediate reward plus the discounted value of the next state: Vπ(s)=Eπ[Rₜ₊₁+γVπ(Sₜ₊₁)|Sₜ=s]. This assumes a well-defined return and the stated model or expectation.",
-      "example": "If a transition is certain, gives reward 2 and reaches a state valued at 5 with γ=0.9, its one-step backed-up value is 2+0.9×5=6.5.",
-      "distinction": "Policy evaluation evaluates a specified policy; an optimality backup chooses the best action according to the relevant values."
+      "title": "Exploration Strategies: Epsilon-Greedy, UCB, and Thompson Sampling",
+      "explanation": "The exploration-exploitation trade-off balances exploiting current value estimates to maximize immediate performance versus exploring untried actions to reduce epistemic uncertainty and discover superior long-term policies.",
+      "example": "Exploration Mechanics:\n• Fixed vs Decaying Epsilon-Greedy: Selects argmax Q with probability 1 - epsilon and uniform random action with probability epsilon. Decaying epsilon over episodes (e.g., epsilon_t = max(epsilon_min, epsilon_0 * exp(-decay * t))) explores broadly early on and exploits later.\n• Upper Confidence Bound (UCB1): Balances value estimates with confidence intervals:\n   a_t = argmax_{a in A} [ Q_bar(a) + c * sqrt( ln(t) / N_t(a) ) ]\n   The exploration bonus c * sqrt(ln(t) / N_t(a)) shrinks as an action is repeatedly selected, implementing optimism in the face of uncertainty.\n• Thompson Sampling: Maintains a Bayesian posterior distribution over action rewards and selects action a according to its posterior probability of being optimal.\n• Entropy Regularization: In policy gradients, adds beta * H(pi_theta(.|s)) to the objective, penalizing premature deterministic collapse.",
+      "distinction": "Epsilon-greedy explores purely randomly with uniform probability across all alternative actions; UCB directs exploration purposefully toward actions with high uncertainty."
     },
     {
-      "title": "Temporal-difference update: Q-learning",
-      "explanation": "Q-learning updates Q(s,a) toward the sampled target r+γ maxₐ′Q(s′,a′), using a learning rate α. For a terminal transition, the continuation term is normally zero. The maximum uses current estimates, which need not be the true optimal action values.",
-      "example": "If old Q=2, α=0.5, r=1, γ=0.9 and max next Q=4, the target is 4.6 and the updated value is 2+0.5(4.6−2)=3.3.",
-      "distinction": "SARSA instead uses the estimated value of the next action actually selected by its behaviour policy; it is an on-policy method."
+      "title": "Monte Carlo Tree Search (MCTS), UCT and AlphaZero Paradigm",
+      "explanation": "Monte Carlo Tree Search (MCTS) is a heuristic planning algorithm for vast decision spaces (such as Go, Chess, and complex robotics) that selectively grows a search tree guided by simulation outcomes.",
+      "example": "The Four MCTS Standard Phases:\n1. Selection: Starting from root state s_0, recursively traverses tree nodes using the UCT (Upper Confidence bounds applied to Trees) formula until reaching an expandable leaf node:\n   UCT(s, a) = Q_bar(s, a) + c * sqrt( ln N(s) / N(s, a) )\n2. Expansion: Adds one or more untried child nodes corresponding to legal successor actions.\n3. Simulation (Rollout): Simulates the remainder of the episode using a fast default rollout policy (or evaluates the leaf using a trained neural network value head V_theta(s)).\n4. Backpropagation: Propagates the terminal outcome reward z up the selected path, updating visit counts N(s) <- N(s) + 1 and running mean values Q_bar(s, a) <- Q_bar(s, a) + (z - Q_bar(s, a)) / N(s, a).\nAlphaZero Enhancement: Replaces random rollouts with a dual-head policy-value network (p, v) = f_theta(s) and uses PUCT: UCT(s, a) = Q(s, a) + c_puct * P(s, a) * sqrt(sum_b N(s, b)) / (1 + N(s, a)).",
+      "distinction": "Dynamic programming sweeps exhaustively across all states and actions; MCTS builds an asymmetric tree allocating compute power exclusively to promising trajectories."
     }
   ],
   "MCSC-106": [

@@ -9,7 +9,7 @@
     "folder": "mcsc-101-analysis-and-design-of-algorithms",
     "credits": 4,
     "domain": "theory",
-    "tagline": "Comprehensive postgraduate exploration of analysis and design of algorithms under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of analysis and design of algorithms under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 3,
     "units": [
       {
@@ -44,7 +44,7 @@
     "hasPyq": true,
     "pyqDetails": {
       "questionsCount": 2,
-      "source": "AKTU M.Tech Advanced Algorithm, MTCS102, 2017\u201318 (related course; not the CAS MCSC-101 paper)"
+      "source": "AKTU M.Tech Advanced Algorithm, MTCS102, 2017–18 (related course; not the CAS MCSC-101 paper)"
     },
     "estimatedHours": 27,
     "prerequisites": [
@@ -345,7 +345,7 @@
     "folder": "mcsc-104-foundation-of-machine-learning",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of foundation of machine learning under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of foundation of machine learning under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 3,
     "units": [
       {
@@ -380,7 +380,7 @@
     "hasPyq": true,
     "pyqDetails": {
       "questionsCount": 2,
-      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MCSC-104 paper)"
+      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MCSC-104 paper)"
     },
     "estimatedHours": 27,
     "prerequisites": [
@@ -808,7 +808,7 @@
     "hasPyq": true,
     "pyqDetails": {
       "questionsCount": 2,
-      "source": "AKTU M.Tech Internet of Things Examination Pattern (2021\u201322 Scheme)"
+      "source": "AKTU M.Tech Internet of Things Examination Pattern (2021–22 Scheme)"
     },
     "estimatedHours": 90,
     "prerequisites": [
@@ -971,7 +971,7 @@
     "folder": "mcysc-201-cryptography",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of cryptography under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of cryptography under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 3,
     "units": [
       {
@@ -989,7 +989,7 @@
         "topics": [
           "Public-key cryptography"
         ],
-        "checkpoint": "Public-key methods use related public and private keys. Diffie\u2013Hellman establishes a shared secret, while digital signat...",
+        "checkpoint": "Public-key methods use related public and private keys. Diffie–Hellman establishes a shared secret, while digital signat...",
         "estimatedHours": 8
       },
       {
@@ -1024,7 +1024,7 @@
     "folder": "mcysc-202-fundamentals-of-information-security-and-practices",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of fundamentals of information security and practices under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of fundamentals of information security and practices under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 3,
     "units": [
       {
@@ -1077,7 +1077,7 @@
     "folder": "mictc-201-mathematical-foundations-for-computing-in-ict",
     "credits": 4,
     "domain": "systems-ict",
-    "tagline": "Comprehensive postgraduate exploration of mathematical foundations for computing in ict under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of mathematical foundations for computing in ict under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1119,7 +1119,7 @@
     "folder": "mictc-202-embedded-system",
     "credits": 4,
     "domain": "systems-ict",
-    "tagline": "Comprehensive postgraduate exploration of embedded system under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of embedded system under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1161,7 +1161,7 @@
     "folder": "mmlc-201-neural-networks-and-evolutionary-algorithms",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of neural networks and evolutionary algorithms under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of neural networks and evolutionary algorithms under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1187,7 +1187,7 @@
     "hasPyq": true,
     "pyqDetails": {
       "questionsCount": 1,
-      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MMLC-201 paper)"
+      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLC-201 paper)"
     },
     "estimatedHours": 18,
     "prerequisites": [
@@ -1352,7 +1352,7 @@
     "folder": "mcse-201-introduction-to-formal-methods-and-verification-of-large-systems",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of introduction to formal methods and verification of large systems under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of introduction to formal methods and verification of large systems under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1394,7 +1394,7 @@
     "folder": "mcyse-204-ethical-hacking",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of ethical hacking under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of ethical hacking under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1439,7 +1439,7 @@
     "folder": "mcyse-201-security-standards-and-project-management",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of security standards and project management under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of security standards and project management under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1481,7 +1481,7 @@
     "folder": "mcyse-202-system-security",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of system security under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of system security under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1523,7 +1523,7 @@
     "folder": "mcyse-203-identity-and-access-management-and-trusted-computing",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of identity and access management and trusted computing under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of identity and access management and trusted computing under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1565,7 +1565,7 @@
     "folder": "micte-202-speech-communication-and-biomedical-signal-processing",
     "credits": 4,
     "domain": "systems-ict",
-    "tagline": "Comprehensive postgraduate exploration of speech communication and biomedical signal processing under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of speech communication and biomedical signal processing under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1607,7 +1607,7 @@
     "folder": "mcse-202-data-science",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of data science under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of data science under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1655,7 +1655,7 @@
     "folder": "micte-201-information-theory-and-coding",
     "credits": 4,
     "domain": "theory",
-    "tagline": "Comprehensive postgraduate exploration of information theory and coding under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of information theory and coding under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1697,7 +1697,7 @@
     "folder": "mcse-203-computer-vision",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of computer vision under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of computer vision under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1741,7 +1741,7 @@
     "folder": "mmle-201-big-data-analytics",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of big data analytics under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of big data analytics under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1788,7 +1788,7 @@
     "folder": "mmle-202-optimization-techniques",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of optimization techniques under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of optimization techniques under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -1833,7 +1833,7 @@
     "folder": "mmle-203-probabilistic-graphical-model",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of probabilistic graphical model under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of probabilistic graphical model under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2027,7 +2027,7 @@
     "hasPyq": true,
     "pyqDetails": {
       "questionsCount": 2,
-      "source": "AKTU M.Tech Research Process and Methodology, MTCC101, 2017\u201318 (related course; not the CAS MCSC-301 paper)"
+      "source": "AKTU M.Tech Research Process and Methodology, MTCC101, 2017–18 (related course; not the CAS MCSC-301 paper)"
     },
     "estimatedHours": 90,
     "prerequisites": [],
@@ -2046,7 +2046,7 @@
     "folder": "mcsc-302-thesis-dissertation-i",
     "credits": 8,
     "domain": "systems-ict",
-    "tagline": "Comprehensive postgraduate exploration of thesis / dissertation i under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of thesis / dissertation i under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2093,7 +2093,7 @@
     "folder": "mcysc-301-digital-and-cyber-forensics",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of digital and cyber forensics under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of digital and cyber forensics under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2137,7 +2137,7 @@
     "folder": "mictc-301-multimedia-signal-processing",
     "credits": 4,
     "domain": "systems-ict",
-    "tagline": "Comprehensive postgraduate exploration of multimedia signal processing under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of multimedia signal processing under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2179,7 +2179,7 @@
     "folder": "mmlc-301-deep-learning",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of deep learning under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of deep learning under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2204,7 +2204,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Advanced Deep Learning Examination Pattern"
     },
     "estimatedHours": 18,
@@ -2214,6 +2214,23 @@
     "coordinates": {
       "x": 0.1,
       "y": 0.9
+    },
+    "downloadDoc": {
+      "title": "Deep Learning Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual · Mathematical Foundations & Theory",
+      "filename": "Deep-Learning-Master-Study-Notes.pdf",
+      "path": "assets/docs/Deep-Learning-Master-Study-Notes.pdf",
+      "pages": 8,
+      "size": "442 KB",
+      "modules": [
+        "Module 1: Mathematical Foundations, MLE & Regression Models",
+        "Module 2: Perceptrons, Universal Approximation & Task Losses",
+        "Module 3: Backpropagation Recursive Chain Rule & Activations",
+        "Module 4: Training Strategies, Advanced ReLU & Transfer Learning",
+        "Module 5: CNNs, LSTMs, Autoencoders, VAEs vs GANs Minimax",
+        "Module 6: Curated Bibliography & Key Examination Derivations"
+      ]
     }
   },
   {
@@ -2226,7 +2243,7 @@
     "folder": "mcse-301-cloud-computing",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of cloud computing under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of cloud computing under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2270,7 +2287,7 @@
     "folder": "mcyse-301-network-protocol-security",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of network protocol security under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of network protocol security under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2315,7 +2332,7 @@
     "folder": "mcse-302-wireless-sensor-network",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of wireless sensor network under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of wireless sensor network under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2357,7 +2374,7 @@
     "folder": "mcse-304-media-security",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of media security under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of media security under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2399,7 +2416,7 @@
     "folder": "mcse-303-intelligent-system-and-green-computing",
     "credits": 4,
     "domain": "security-networks",
-    "tagline": "Comprehensive postgraduate exploration of intelligent system and green computing under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of intelligent system and green computing under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2417,7 +2434,7 @@
         "topics": [
           "Green computing"
         ],
-        "checkpoint": "Green computing considers energy and resource use across a system\u2019s lifecycle. Optimisation should measure both computat...",
+        "checkpoint": "Green computing considers energy and resource use across a system’s lifecycle. Optimisation should measure both computat...",
         "estimatedHours": 8
       }
     ],
@@ -2441,7 +2458,7 @@
     "folder": "micte-301-secure-coding",
     "credits": 4,
     "domain": "systems-ict",
-    "tagline": "Comprehensive postgraduate exploration of secure coding under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of secure coding under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2483,7 +2500,7 @@
     "folder": "mmle-301-advanced-kernel-methods",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of advanced kernel methods under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of advanced kernel methods under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2525,7 +2542,7 @@
     "folder": "mmle-302-reinforcement-learning",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of reinforcement learning under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of reinforcement learning under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2550,8 +2567,8 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 1,
-      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MMLE-302 paper)"
+      "questionsCount": 3,
+      "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLE-302 paper)"
     },
     "estimatedHours": 18,
     "prerequisites": [
@@ -2561,6 +2578,25 @@
     "coordinates": {
       "x": 0.19574329864935275,
       "y": 0.44907498816698527
+    },
+    "downloadDoc": {
+      "title": "Reinforcement Learning Complete Study Guide",
+      "badge": "Official 38-Page Master Dossier",
+      "subtitle": "Comprehensive Postgraduate Companion · Sutton & Barto Mapping, Worked Numerics & 14-Day Plan",
+      "filename": "Reinforcement-Learning-Complete-Study-Guide.pdf",
+      "path": "assets/docs/Reinforcement-Learning-Complete-Study-Guide.pdf",
+      "pages": 38,
+      "size": "1.3 MB",
+      "modules": [
+        "Part 1: The RL Interaction Loop & Stochastic Foundations",
+        "Part 2: Markov Decision Processes, POMDPs & Bellman Equations",
+        "Part 3: Dynamic Programming Planning (Policy vs Value Iteration)",
+        "Part 4: Model-Free Control (Q-Learning vs SARSA Numerical Update)",
+        "Part 5: Deep RL, DQN, Replay Buffers & Target Networks",
+        "Part 6: Imitation Learning (BC, DAgger, IRL, GAIL) & Exploration",
+        "Part 7: Meta-RL (MAML), Offline / Batch RL & MCTS with UCT",
+        "Part 8: Formula Sheet, Common Exam Mistakes & 14-Day Study Schedule"
+      ]
     }
   },
   {
@@ -2573,7 +2609,7 @@
     "folder": "mmle-303-machine-learning-applications",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of machine learning applications under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of machine learning applications under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2615,7 +2651,7 @@
     "folder": "mmle-304-topological-data-analysis",
     "credits": 4,
     "domain": "ai-ml",
-    "tagline": "Comprehensive postgraduate exploration of topological data analysis under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of topological data analysis under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {
@@ -2657,7 +2693,7 @@
     "folder": "mcsc-401-thesis-dissertation-ii",
     "credits": 16,
     "domain": "systems-ict",
-    "tagline": "Comprehensive postgraduate exploration of thesis / dissertation ii under the CAS AKTU 2021\u201322 curriculum.",
+    "tagline": "Comprehensive postgraduate exploration of thesis / dissertation ii under the CAS AKTU 2021–22 curriculum.",
     "unitsCount": 2,
     "units": [
       {

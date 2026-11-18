@@ -1,0 +1,702 @@
+{
+  "MCSC-101": [
+    {
+      "question": "What is the theoretical amortized time complexity of the Decrease-Key operation in a Fibonacci Heap?",
+      "options": [
+        "O(1) amortized",
+        "O(log n) worst-case",
+        "O(n) worst-case",
+        "O(log log n)"
+      ],
+      "answer": 0,
+      "explanation": "Fibonacci Heaps achieve O(1) amortized time for Decrease-Key using cascading cuts, which is crucial for speeding up Dijkstra and Prim algorithms to O(E + V log V)."
+    },
+    {
+      "question": "In the Ford-Fulkerson method, what condition guarantees that maximum source-to-sink flow has been achieved?",
+      "options": [
+        "All forward edges are saturated",
+        "No augmenting path exists from source to sink in the residual graph",
+        "The source has zero residual capacity",
+        "Flow equals sum of edge capacities"
+      ],
+      "answer": 1,
+      "explanation": "By the Max-Flow Min-Cut theorem, a flow is maximum if and only if there are no directed augmenting paths in the residual network from source s to sink t."
+    },
+    {
+      "question": "What is the approximation ratio achieved by taking both endpoints of edges in a maximal matching for Vertex Cover?",
+      "options": [
+        "1.5",
+        "2.0",
+        "log n",
+        "1 + epsilon"
+      ],
+      "answer": 1,
+      "explanation": "Since any valid vertex cover must select at least one endpoint from each disjoint matching edge, selecting both endpoints yields at most 2 * |OPT|, giving a 2-approximation."
+    }
+  ],
+  "MCSC-102": [
+    {
+      "question": "What happens to the power of a hypothesis test (1 - beta) as sample size n increases while keeping significance level alpha constant?",
+      "options": [
+        "Decreases",
+        "Increases",
+        "Remains unchanged",
+        "Fluctuates randomly"
+      ],
+      "answer": 1,
+      "explanation": "Increasing sample size reduces the standard error of the estimator, narrowing the sampling distribution and increasing the probability of correctly rejecting a false null hypothesis."
+    },
+    {
+      "question": "Under Bayes Theorem, which term represents the updated probability of a hypothesis after observing empirical evidence?",
+      "options": [
+        "Likelihood",
+        "Prior probability",
+        "Posterior probability",
+        "Marginal evidence"
+      ],
+      "answer": 2,
+      "explanation": "Posterior probability P(H | E) = P(E | H) * P(H) / P(E) represents the revised belief in hypothesis H after observing evidence E."
+    }
+  ],
+  "MCSC-103": [
+    {
+      "question": "In TCP Congestion Control, what action does the sender take immediately upon receiving 3 duplicate ACKs?",
+      "options": [
+        "Drop cwnd to 1 MSS and enter Slow Start",
+        "Fast Retransmit the missing packet and enter Fast Recovery",
+        "Double ssthresh",
+        "Terminate connection"
+      ],
+      "answer": 1,
+      "explanation": "Three duplicate ACKs indicate segment loss without full timeout. Fast Retransmit retransmits the missing packet immediately and Fast Recovery sets ssthresh = cwnd / 2 without restarting from 1 MSS."
+    },
+    {
+      "question": "How does BGP (Border Gateway Protocol) fundamentally prevent routing loops between Autonomous Systems (AS)?",
+      "options": [
+        "Split horizon with poison reverse",
+        "AS-PATH attribute checking",
+        "Dijkstra shortest path calculation",
+        "Hop count limit of 15"
+      ],
+      "answer": 1,
+      "explanation": "BGP is a path-vector protocol where route advertisements include the entire AS-PATH sequence. If a router sees its own AS number in AS-PATH, it discards the advertisement."
+    }
+  ],
+  "MCSC-104": [
+    {
+      "question": "In Support Vector Machines (SVM), what mathematical principle determines the optimal separating hyperplane?",
+      "options": [
+        "Minimizing training cross-entropy",
+        "Maximizing the geometric margin 2 / ||w||",
+        "Maximizing feature variance",
+        "Minimizing number of support vectors"
+      ],
+      "answer": 1,
+      "explanation": "The optimal hyperplane maximizes the functional margin between nearest data points of opposing classes, equivalent to minimizing (1/2) ||w||^2 subject to margin constraints."
+    },
+    {
+      "question": "How does high model complexity affect the Bias and Variance components of generalization error?",
+      "options": [
+        "High Bias, Low Variance",
+        "Low Bias, High Variance",
+        "Both Bias and Variance increase",
+        "Both Bias and Variance decrease"
+      ],
+      "answer": 1,
+      "explanation": "Complex models fit training data closely (low bias) but become sensitive to small fluctuations in training samples (high variance / overfitting)."
+    }
+  ],
+  "MCSC-105": [
+    {
+      "question": "According to the Handshaking Lemma, what must be true about the number of vertices with odd degree in any undirected graph?",
+      "options": [
+        "Must be zero",
+        "Must be even",
+        "Must be odd",
+        "Equal to number of edges"
+      ],
+      "answer": 1,
+      "explanation": "Since the sum of all vertex degrees is 2 * |E| (an even number), the sum of odd degrees must also be even, meaning there must always be an even number of odd-degree vertices."
+    },
+    {
+      "question": "What is the necessary and sufficient condition for a connected undirected graph to have an Eulerian circuit?",
+      "options": [
+        "Every vertex has odd degree",
+        "Every vertex has even degree",
+        "Graph is a tree",
+        "Graph is bipartite"
+      ],
+      "answer": 1,
+      "explanation": "Euler proved that a connected graph has a closed Eulerian circuit traversing every edge exactly once if and only if every single vertex has an even degree."
+    }
+  ],
+  "MCSC-201": [
+    {
+      "question": "Which MQTT Quality of Service (QoS) level guarantees that a message is delivered exactly once without duplicates?",
+      "options": [
+        "QoS 0",
+        "QoS 1",
+        "QoS 2",
+        "QoS 3"
+      ],
+      "answer": 2,
+      "explanation": "QoS 2 uses a 4-step two-level handshake (PUBLISH, PUBREC, PUBREL, PUBCOMP) to ensure that the message is received exactly once without duplication."
+    },
+    {
+      "question": "Why is UDP preferred over TCP as the underlying transport layer for CoAP in constrained sensor networks?",
+      "options": [
+        "UDP supports automatic routing",
+        "Lower protocol header overhead and zero connection handshake latency",
+        "UDP has built-in encryption",
+        "UDP supports flow control natively"
+      ],
+      "answer": 1,
+      "explanation": "CoAP runs over UDP with a compact 4-byte header to eliminate TCP connection setup packets and SYN/ACK handshakes, preserving sensor battery and memory."
+    }
+  ],
+  "MMLC-201": [
+    {
+      "question": "What causes the vanishing gradient problem when using Sigmoid activation functions in deep neural networks?",
+      "options": [
+        "Maximum derivative of sigmoid is only 0.25",
+        "Weights are initialized too small",
+        "Learning rate is too large",
+        "Dead neuron saturation"
+      ],
+      "answer": 0,
+      "explanation": "The derivative of sigmoid is sigma(z) * (1 - sigma(z)), which peaks at 0.25. When multiplying many gradients across deep layers by values <= 0.25, the backpropagated gradient shrinks exponentially toward zero."
+    },
+    {
+      "question": "How do Residual Connections (Skip Connections) in ResNets resolve vanishing gradients in networks with 50+ layers?",
+      "options": [
+        "They scale down network weights",
+        "They provide an identity path allowing gradients to flow back unaltered",
+        "They eliminate activation functions",
+        "They replace backpropagation with genetic algorithms"
+      ],
+      "answer": 1,
+      "explanation": "By computing F(x) + x, the gradient dLoss/dx = dLoss/dF * dF/dx + dLoss/dF * 1. The additive +1 term ensures gradient signals can flow directly to early layers without decay."
+    }
+  ],
+  "MCSE-202": [
+    {
+      "question": "Why does L1 Lasso regularization lead to sparse models while L2 Ridge regularization does not?",
+      "options": [
+        "L1 penalty has sharp corners at parameter axes where optimal contours intersect",
+        "L1 uses quadratic optimization",
+        "L2 eliminates multi-collinearity completely",
+        "L1 is non-convex"
+      ],
+      "answer": 0,
+      "explanation": "The L1 diamond-shaped constraint region has sharp corners on the coordinate axes. The elliptical contours of the error function are likely to hit these corners first, setting coefficients strictly to zero."
+    }
+  ],
+  "MMLE-201": [
+    {
+      "question": "In Apache Spark, which of the following operations is considered a Wide Transformation that triggers a shuffle stage boundary?",
+      "options": [
+        "map()",
+        "filter()",
+        "flatMap()",
+        "groupByKey()"
+      ],
+      "answer": 3,
+      "explanation": "groupByKey() requires data with the same key from multiple partitions across the entire cluster to be redistributed over the network, creating a shuffle dependency and new stage boundary."
+    }
+  ],
+  "MMLC-301": [
+    {
+      "question": "A 64x64 pixel image is processed by a convolutional layer with 7x7 filters, stride S = 2, and zero padding P = 3. What is the spatial dimension (height and width) of the output feature map?",
+      "options": [
+        "31 x 31",
+        "32 x 32",
+        "29 x 29",
+        "64 x 64"
+      ],
+      "correctIndex": 1,
+      "explanation": "Using the spatial dimension formula O = floor((W - K + 2P)/S) + 1: O = floor((64 - 7 + 2*3)/2) + 1 = floor(63 / 2) + 1 = 31 + 1 = 32. Thus the output spatial dimension is 32x32."
+    },
+    {
+      "question": "Why does an artificial neural network containing only linear activation functions fail to benefit from added hidden depth, regardless of how many layers are stacked?",
+      "options": [
+        "Gradient descent oscillates wildly when backpropagating through linear layers.",
+        "The composition of affine/linear transformations simplifies mathematically to a single linear transformation y = W_eff x + b_eff.",
+        "Linear activation functions cause numerical overflow during forward propagation.",
+        "Dropout regularization cannot be applied to linear units."
+      ],
+      "correctIndex": 1,
+      "explanation": "By matrix multiplication, y = W_L ... W_2 W_1 x = W_eff x. Stacking linear layers yields no additional expressive power beyond a single linear layer; non-linear activations are required to approximate non-linear decision boundaries (Universal Approximation Theorem)."
+    },
+    {
+      "question": "How do Long Short-Term Memory (LSTM) networks overcome the vanishing gradient problem inherent in standard recurrent networks (RNNs)?",
+      "options": [
+        "By replacing backpropagation with genetic algorithms during sequence training.",
+        "By introducing an additive cell state update (C_t = f_t * C_{t-1} + i_t * C_tilde_t) that acts as an error carousel.",
+        "By constraining hidden state dimensions to strictly power-of-two sizes.",
+        "By replacing the tanh activation with step functions."
+      ],
+      "correctIndex": 1,
+      "explanation": "The internal cell state C_t is updated additively via the forget gate f_t and input gate i_t. This additive constant error carousel allows error gradients dC_t/dC_{t-1} to flow across long time horizons without exponential attenuation when f_t is close to 1."
+    },
+    {
+      "question": "In deep generative modeling, what is the primary structural trade-off between Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs)?",
+      "options": [
+        "VAEs cannot generate images, whereas GANs can generate images.",
+        "VAEs offer stable training and explicit probabilistic inference but produce slightly blurry samples; GANs generate sharper, photorealistic samples but suffer from training instability and mode collapse.",
+        "GANs are supervised models requiring labeled pairs, whereas VAEs are completely unsupervised.",
+        "VAEs require quantum computing hardware, while GANs run on standard CPUs."
+      ],
+      "correctIndex": 1,
+      "explanation": "VAEs optimize the Evidence Lower Bound (ELBO) with pixel-level reconstruction loss (yielding smooth, slightly blurry outputs and stable training); GANs engage in a minimax zero-sum game between G and D, achieving sharper samples at the expense of non-convergence, mode collapse, and vanishing gradients."
+    }
+  ],
+  "MMLE-302": [
+    {
+      "question": "Given current Q(s, a) = 2.0, immediate reward r = 1.0, discount gamma = 0.9, and learning rate alpha = 0.5. At successor state s', Q(s', left) = 4.0 and Q(s', right) = 6.0. An exploratory behavior policy chooses action left. What is the updated Q(s, a) value under Q-Learning?",
+      "options": [
+        "3.30",
+        "4.20",
+        "6.40",
+        "5.00"
+      ],
+      "correctIndex": 1,
+      "explanation": "Q-learning is off-policy: Target = r + gamma * max_a' Q(s', a') = 1.0 + 0.9 * max(4.0, 6.0) = 1.0 + 5.4 = 6.40. New Q = 2.0 + 0.5 * (6.40 - 2.0) = 2.0 + 0.5 * (4.40) = 4.20. (Notice SARSA would have used the sampled action left yielding Target = 4.60 and New Q = 3.30)."
+    },
+    {
+      "question": "Why is Q-learning classified as an off-policy reinforcement learning algorithm, whereas SARSA is classified as an on-policy algorithm?",
+      "options": [
+        "Q-learning updates offline from a database, while SARSA only runs in memory.",
+        "Q-learning updates toward the greedy optimal action regardless of the behavior policy's actual next action; SARSA updates toward the value of the action actually executed by the behavior policy.",
+        "SARSA requires a transition model P(s'|s, a), while Q-learning is model-free.",
+        "Q-learning only works for continuous state spaces."
+      ],
+      "correctIndex": 1,
+      "explanation": "Q-learning evaluates the optimal greedy target policy max_a' Q(s', a') while behaving according to an exploratory policy (off-policy). SARSA evaluates the policy generating behavior by using the actual sampled action Q(s', A_{t+1}) in its backup target (on-policy)."
+    },
+    {
+      "question": "What constitutes the \"Deadly Triad\" that can cause temporal-difference learning to diverge uncontrollably in Deep Reinforcement Learning?",
+      "options": [
+        "Dynamic Programming, High Learning Rate, and Stochastic Rewards.",
+        "Function Approximation, Bootstrapping, and Off-Policy Learning.",
+        "Experience Replay, Epsilon Greedy, and Discounting.",
+        "Continuous Actions, Sparse Rewards, and Policy Gradients."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Deadly Triad consists of: 1) Function approximation (e.g. neural networks), 2) Bootstrapping (updating from successor estimates rather than complete returns), and 3) Off-policy learning (evaluating a policy different from the data generator). DQN mitigates this using target networks and experience replay."
+    },
+    {
+      "question": "In Monte Carlo Tree Search (MCTS), what is the function of the second term in the Upper Confidence Bound for Trees formula: UCT(s, a) = Q_bar(s, a) + c * sqrt(ln N(s) / N(s, a))?",
+      "options": [
+        "It penalizes nodes that have already resulted in terminal losses.",
+        "It provides an exploration bonus that favors actions that have been visited fewer times relative to the parent visit count.",
+        "It computes the heuristic evaluation of the leaf state using deep neural networks.",
+        "It guarantees that visit counts sum to 1.0."
+      ],
+      "correctIndex": 1,
+      "explanation": "The second term is an exploration bonus: as parent visits N(s) increase, the bonus grows for actions selected infrequently (low N(s, a)), implementing optimism under uncertainty and ensuring untried actions are explored."
+    }
+  ],
+  "MCSC-106": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MCSC-202": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MCySC-201": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCySC-202": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MICTC-201": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MICTC-202": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MMLC-202": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MCSE-201": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCySE-204": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCySE-201": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCySE-202": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCySE-203": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MICTE-202": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MICTE-201": [
+    {
+      "question": "What characterizes an NP-Complete problem?",
+      "options": [
+        "Solvable in polynomial time",
+        "In NP and every problem in NP reduces to it in polynomial time",
+        "Undecidable problem",
+        "Solvable in O(log n) space"
+      ],
+      "answer": 1,
+      "explanation": "An NP-complete problem belongs to NP and is NP-hard, meaning an efficient polynomial-time algorithm for it would solve all problems in NP."
+    }
+  ],
+  "MCSE-203": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MMLE-202": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MMLE-203": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MCSC-301": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MCSC-302": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MCySC-301": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MICTC-301": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MCSE-301": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MCySE-301": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCSE-302": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCSE-304": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MCSE-303": [
+    {
+      "question": "What mathematical problem underpins the security of standard RSA asymmetric encryption?",
+      "options": [
+        "Discrete logarithm in finite fields",
+        "Prime factorization of large composite integers",
+        "Elliptic curve point multiplication",
+        "Shortest vector in lattices"
+      ],
+      "answer": 1,
+      "explanation": "RSA relies on the computational hardness of factoring the product n = p * q of two very large prime numbers."
+    }
+  ],
+  "MICTE-301": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ],
+  "MMLE-301": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MMLE-303": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MMLE-304": [
+    {
+      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "options": [
+        "To compute final test accuracy for publication",
+        "To tune hyperparameters and prevent overfitting on training data",
+        "To replace missing values",
+        "To augment training samples"
+      ],
+      "answer": 1,
+      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+    }
+  ],
+  "MCSC-401": [
+    {
+      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "options": [
+        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
+        "Clusters always prioritize Consistency over Availability",
+        "Partition tolerance is optional",
+        "Latency scales logarithmically with node count"
+      ],
+      "answer": 0,
+      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+    }
+  ]
+}

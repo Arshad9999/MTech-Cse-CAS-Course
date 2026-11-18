@@ -95,6 +95,10 @@
             <a href="${depth}index.html#matchmaker">Elective Matchmaker</a>
             <a href="${depth}index.html#study-loop">Study Loop</a>
             <a href="${depth}guides/index.html">Guides Directory</a>
+            <a href="https://github.com/Arshad9999/MTech-Cse-CAS-Course" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; font-weight:600; color:var(--color-ink);" aria-label="GitHub Repository">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
             
             <!-- Global Command Palette Shortcut -->
             <button class="cmd-key-hint" onclick="window.CommandPalette && window.CommandPalette.open()" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;" aria-label="Search curriculum">
@@ -114,8 +118,11 @@
             <strong style="color:var(--color-ink);">Centre for Advanced Studies · AKTU Lucknow</strong><br>
             <span style="font-size:0.84rem; color:var(--color-ink-muted);">Postgraduate M.Tech Computer Science & Engineering (2021–22 Curriculum Scheme)</span>
           </div>
-          <div style="font-size:0.84rem; color:var(--color-ink-muted);">
-            Independent Academic Study Aid · Verify official requirements via <a href="https://cas.res.in" target="_blank" rel="noopener" style="color:var(--color-accent); font-weight:600;">cas.res.in ↗</a>
+          <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; font-size:0.84rem; color:var(--color-ink-muted);">
+            <span>Independent Academic Study Aid · <a href="https://cas.res.in" target="_blank" rel="noopener" style="color:var(--color-accent); font-weight:600;">cas.res.in ↗</a></span>
+            <a href="https://github.com/Arshad9999/MTech-Cse-CAS-Course" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:var(--color-ink); font-weight:600; text-decoration:none; background:var(--color-surface); border:1px solid var(--color-line); padding:0.25rem 0.65rem; border-radius:999px;">
+              <span>⭐ Star on GitHub</span>
+            </a>
           </div>
         </div>
       </footer>
@@ -1084,14 +1091,16 @@
     // Fetch all study resources: guides, visuals, supplements, papers, readings, and GeeksforGeeks vault
     let guides = {}, visuals = {}, supplements = {}, papers = {}, readings = {}, legacy = { courses: [] }, gfgData = {};
     try {
-      const [g, v, s, p, r, l, gfg] = await Promise.all([
+      let quizzesData = {};
+      const [g, v, s, p, r, l, gfg, qz] = await Promise.all([
         fetch('assets/featured-guides.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-visuals.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-supplements.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/related-papers.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-reading.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-data.json').then(res => res.json()).catch(() => ({ courses: [] })),
-        fetch('assets/course-gfg.json').then(res => res.json()).catch(() => ({}))
+        fetch('assets/course-gfg.json').then(res => res.json()).catch(() => ({})),
+        fetch('assets/course-quizzes.json').then(res => res.json()).catch(() => ({}))
       ]);
       guides = g;
       visuals = v;
@@ -1100,6 +1109,7 @@
       readings = r;
       legacy = l;
       gfgData = gfg;
+      quizzesData = qz;
     } catch (e) {}
 
     const isQueued = window.StudyDocket && window.StudyDocket.isInDocket(selected.code);
@@ -1126,12 +1136,62 @@
       </div>
     ` : '';
 
+    // Official Downloadable Master Dossier (PDF)
+    const downloadDoc = selected.downloadDoc || null;
+    const downloadHeroBtnHtml = downloadDoc ? `
+      <a class="button button-download-doc" href="${esc(downloadDoc.path)}" download="${esc(downloadDoc.filename)}" target="_blank" rel="noopener">
+        <span>📥 Download ${downloadDoc.pages}-Page Master Notes</span>
+        <span style="font-size:0.75rem; background:rgba(255,255,255,0.25); padding:0.15rem 0.45rem; border-radius:999px;">PDF · ${downloadDoc.size}</span>
+      </a>
+    ` : '';
+
+    const downloadDossierHtml = downloadDoc ? `
+      <section class="reference-section download-dossier-section" id="download-dossier">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:1.8rem;">
+          <div style="flex:1 1 340px;">
+            <span class="eyebrow" style="color:var(--color-accent); font-weight:700;">${esc(downloadDoc.badge || 'Official Curriculum Study Notes')}</span>
+            <h2 style="font-size:1.85rem; margin:0.3rem 0 0.5rem; line-height:1.25;">${esc(downloadDoc.title)}</h2>
+            <p style="color:var(--color-ink); font-weight:600; font-size:1rem; margin-bottom:0.8rem;">${esc(downloadDoc.subtitle)}</p>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.2rem;">
+              <span class="telemetry-pill" style="background:#ffffff; border:1px solid var(--color-line); font-weight:600;">📄 ${downloadDoc.pages} Pages Unabridged</span>
+              <span class="telemetry-pill" style="background:#ffffff; border:1px solid var(--color-line); font-weight:600;">💾 ${downloadDoc.size}</span>
+              <span class="telemetry-pill" style="background:#ffffff; border:1px solid var(--color-line); font-weight:600;">🔒 Complete Offline Dossier</span>
+            </div>
+            <p style="color:var(--color-ink-muted); font-size:0.94rem; line-height:1.6; margin-bottom:1.6rem; max-width:58ch;">
+              Comprehensive academic study dossier containing full curriculum coverage, mathematical derivations, comparison matrices, worked numerical examples, and examination revision checklists directly prepared for postgraduate studies.
+            </p>
+            <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+              <a class="button button-download-doc" href="${esc(downloadDoc.path)}" download="${esc(downloadDoc.filename)}" target="_blank" rel="noopener">
+                <span>📥 Download PDF (${downloadDoc.size})</span>
+              </a>
+              <a class="button" href="${esc(downloadDoc.path)}" target="_blank" rel="noopener" style="background:#ffffff; color:var(--color-ink); border:1px solid var(--color-line); font-weight:600;">
+                <span>👁 Open in Browser ↗</span>
+              </a>
+            </div>
+          </div>
+          <div class="dossier-preview-box" style="flex:1 1 300px; max-width:420px;">
+            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:700; color:var(--color-ink-muted); margin-bottom:0.8rem; display:flex; align-items:center; gap:0.4rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+              Dossier Contents & Module Index
+            </div>
+            <ul style="margin:0; padding-left:1.2rem; font-size:0.86rem; line-height:1.7; color:var(--color-ink);">
+              ${(downloadDoc.modules || []).map(m => `<li>${esc(m)}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </section>
+    ` : '';
+
+    const courseQuizList = (typeof quizzesData !== 'undefined' && quizzesData[selected.code]) || [];
+
     // 2. Quick Jump Navigation Pills
     const navPillsHtml = `
       <nav class="course-nav-pills" aria-label="Course Sections">
+        ${downloadDoc ? '<a class="course-nav-pill" href="#download-dossier" style="color:var(--color-accent); font-weight:700;">Official Master PDF</a>' : ''}
         ${unitsList.length > 0 ? '<a class="course-nav-pill" href="#syllabus-units">Syllabus Units</a>' : ''}
         <a class="course-nav-pill" href="#lessons">Topic Lessons</a>
         ${courseGfgList.length > 0 ? '<a class="course-nav-pill" href="#gfg-vault" style="color:var(--color-emerald); font-weight:700;">GFG References</a>' : ''}
+        ${courseQuizList.length > 0 ? '<a class="course-nav-pill" href="#quick-quiz" style="color:var(--color-accent); font-weight:700;">Self-Assessment Quiz</a>' : ''}
         <a class="course-nav-pill" href="#mastery">Mastery Hub</a>
         <a class="course-nav-pill" href="#objectives">Objectives</a>
         <a class="course-nav-pill" href="#glossary">Definitions</a>
@@ -1191,6 +1251,20 @@
       </figure>
     `;
 
+    // Unit filtering pill markup
+    const unitFilterPillsHtml = unitsList.length > 0 ? `
+      <div class="unit-filter-pills" role="tablist" aria-label="Filter lessons by syllabus unit">
+        <button class="unit-filter-pill is-active" type="button" onclick="window.filterLessonsByUnit('all', this)">
+          All Lessons (${courseLessons.length})
+        </button>
+        ${unitsList.map(u => `
+          <button class="unit-filter-pill" type="button" onclick="window.filterLessonsByUnit(${u.unitNumber}, this)">
+            Unit 0${u.unitNumber} (${esc(u.title.split(' ')[0])})
+          </button>
+        `).join('')}
+      </div>
+    ` : '';
+
     const lessonsHtml = courseLessons.map((item, index) => {
       const matchingVisuals = courseVisualList.filter(img => img.after === item.title);
       const matchingGfg = courseGfgList.find(g => 
@@ -1198,8 +1272,12 @@
         (g.title && item.title.toLowerCase().split(' ').some(w => w.length > 4 && g.title.toLowerCase().includes(w)))
       ) || (courseGfgList.length > 0 ? courseGfgList[index % courseGfgList.length] : null);
 
+      const assignedUnit = unitsList.length > 0 
+        ? Math.min(unitsList.length, Math.floor(index / Math.max(1, Math.ceil(courseLessons.length / unitsList.length))) + 1)
+        : 1;
+
       return `
-        <article class="module" id="lesson-${index + 1}">
+        <article class="module" id="lesson-${index + 1}" data-unit="${assignedUnit}">
           <span class="eyebrow">Study Block ${String(index + 1).padStart(2, '0')}</span>
           <h3>${esc(item.title)}</h3>
           <p>${esc(item.explanation)}</p>
@@ -1236,6 +1314,41 @@
         </article>
       `;
     }).join('');
+
+    // Interactive Self-Assessment Quiz Section
+    const quizSectionHtml = courseQuizList.length > 0 ? `
+      <section class="reference-section quiz-section" id="quick-quiz">
+        <div class="section-kicker" style="color:var(--color-accent); display:inline-flex; align-items:center; gap:0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Active Recall & Knowledge Verification
+        </div>
+        <h2>Self-Assessment Examination Quiz</h2>
+        <p style="color:var(--color-ink-muted); margin-bottom:1.4rem; max-width:68ch;">
+          Test your conceptual understanding and numerical agility against authentic examination problems. Instant feedback details complete step-by-step reasoning.
+        </p>
+        <div class="quiz-cards-list">
+          ${courseQuizList.map((q, qIdx) => `
+            <article class="quiz-question-card" id="quiz-card-${qIdx}">
+              <span class="eyebrow" style="color:var(--color-accent);">Question 0${qIdx + 1}</span>
+              <h3>${esc(q.question)}</h3>
+              <div class="quiz-options-list">
+                ${q.options.map((opt, optIdx) => `
+                  <button class="quiz-option-btn" 
+                          type="button"
+                          onclick="window.handleQuizAnswer(this, ${qIdx}, ${optIdx}, ${optIdx === q.correctIndex}, ${esc(JSON.stringify(q.explanation))})"
+                          data-qindex="${qIdx}" 
+                          data-optindex="${optIdx}">
+                    <span style="font-family:var(--font-mono); font-weight:700; width:1.5rem; color:var(--color-ink-muted);">${String.fromCharCode(65 + optIdx)}.</span>
+                    <span>${esc(opt)}</span>
+                  </button>
+                `).join('')}
+              </div>
+              <div class="quiz-feedback" id="quiz-feedback-${qIdx}" style="display:none;" role="status"></div>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    ` : '';
 
     // 5. GeeksforGeeks (GFG) Reference Vault Section
     const gfgVaultHtml = courseGfgList.length > 0 ? `
@@ -1522,6 +1635,7 @@
           </p>
 
           <div class="hero-actions" style="margin-top:2rem;">
+            ${downloadHeroBtnHtml}
             <button class="docket-toggle-btn ${isQueued ? 'is-queued' : ''}" 
                     data-code="${selected.code}" 
                     onclick="window.toggleSubjectDocket('${selected.code}', this)" 
@@ -1552,6 +1666,9 @@
       <!-- Syllabus Units Blueprint -->
       ${syllabusUnitsHtml}
 
+      <!-- Official Master PDF Study Dossier -->
+      ${downloadDossierHtml}
+
       <!-- Topic Lessons Section -->
       <section id="lessons">
         <div style="margin-bottom:1.5rem;">
@@ -1560,12 +1677,16 @@
           <p style="color:var(--color-ink-muted); margin:0;">
             Deconstruct each module with mathematical formulations, worked examples, and key invariants.
           </p>
+          ${unitFilterPillsHtml}
         </div>
         ${lessonsHtml}
       </section>
 
       <!-- GeeksforGeeks (GFG) Curated Reference Vault -->
       ${gfgVaultHtml}
+
+      <!-- Self-Assessment Examination Quiz -->
+      ${quizSectionHtml}
 
       <!-- Deep Study Layer / Mastery Hub -->
       ${masteryHtml}
@@ -1583,7 +1704,9 @@
     setupMobileQRModal();
     if (window.CommandPalette) window.CommandPalette.init(allCourses);
     updateAllDocketUI();
+    setupGitHubEngagement();
     setupReadingProgressBar();
+    setupGitHubEngagement();
   }
 
   function setupReadingProgressBar() {
@@ -1618,6 +1741,138 @@
         setTimeout(() => { btn.innerText = orig; }, 1800);
       }).catch(() => {});
     }
+  };
+
+  // Syllabus Unit Filter Handler
+  window.filterLessonsByUnit = function (unit, btn) {
+    const container = document.getElementById('lessons');
+    if (!container) return;
+    const pills = container.querySelectorAll('.unit-filter-pill');
+    pills.forEach(p => p.classList.remove('is-active'));
+    if (btn) btn.classList.add('is-active');
+
+    const modules = container.querySelectorAll('.module');
+    modules.forEach(m => {
+      if (unit === 'all' || m.getAttribute('data-unit') === String(unit)) {
+        m.style.display = 'block';
+      } else {
+        m.style.display = 'none';
+      }
+    });
+  };
+
+  // Quiz Option Click Handler
+  window.handleQuizAnswer = function (btn, qIdx, optIdx, isCorrect, explanation) {
+    const card = document.getElementById(`quiz-card-${qIdx}`);
+    if (!card) return;
+    const allBtns = card.querySelectorAll('.quiz-option-btn');
+    allBtns.forEach(b => {
+      b.disabled = true;
+      b.style.pointerEvents = 'none';
+    });
+
+    if (isCorrect) {
+      btn.classList.add('is-correct');
+    } else {
+      btn.classList.add('is-incorrect');
+    }
+
+    const feedback = document.getElementById(`quiz-feedback-${qIdx}`);
+    if (feedback) {
+      feedback.style.display = 'block';
+      feedback.style.borderLeftColor = isCorrect ? 'var(--color-emerald)' : 'var(--color-amber)';
+      feedback.innerHTML = `
+        <div style="font-weight:700; color:${isCorrect ? 'var(--color-emerald)' : 'var(--color-amber)'}; margin-bottom:0.3rem;">
+          ${isCorrect ? '✓ Correct Solution' : '✗ Conceptual Clarification'}
+        </div>
+        <div>${explanation}</div>
+      `;
+    }
+  };
+
+  // --------------------------------------------------------------------------
+  // GitHub Community & Star Pop-Up Engagement System
+  // --------------------------------------------------------------------------
+  function setupGitHubEngagement() {
+    // 1. Inject Floating Pill if not present
+    if (!document.getElementById('github-floating-pill')) {
+      const pill = document.createElement('div');
+      pill.id = 'github-floating-pill';
+      pill.className = 'github-floating-pill';
+      pill.innerHTML = `
+        <button type="button" class="github-pill-btn" onclick="window.openGitHubModal()" aria-label="Support repository on GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>⭐ Star on GitHub</span>
+          <span style="font-size:0.7rem; background:rgba(0,0,0,0.06); padding:0.1rem 0.45rem; border-radius:999px;">Repo</span>
+        </button>
+      `;
+      document.body.appendChild(pill);
+    }
+
+    // 2. Inject Modal Overlay if not present
+    if (!document.getElementById('github-popup-overlay')) {
+      const modal = document.createElement('div');
+      modal.id = 'github-popup-overlay';
+      modal.className = 'github-popup-overlay';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-label', 'Support M.Tech CSE Academic Repository on GitHub');
+      modal.innerHTML = `
+        <div class="github-popup-card" onclick="event.stopPropagation()">
+          <button type="button" class="github-popup-close" onclick="window.closeGitHubModal()" aria-label="Close dialog">×</button>
+          <div class="github-popup-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="#1d1d1f"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <span class="eyebrow" style="color:var(--color-accent); font-weight:700;">Open-Source Academic Companion</span>
+          <h2 style="font-size:1.55rem; margin:0.3rem 0 0.8rem; line-height:1.25;">Support the M.Tech CSE Companion on GitHub</h2>
+          <p style="color:var(--color-ink-muted); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;">
+            If this study companion, solved past examination papers, and downloadable master course notes help your preparation, please consider giving the repository a Star on GitHub!
+          </p>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <a class="button" href="https://github.com/Arshad9999/MTech-Cse-CAS-Course" target="_blank" rel="noopener" style="background:#1d1d1f; color:#ffffff; font-weight:700; border-color:#1d1d1f; padding:0.8rem 1.4rem; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.2);">
+              ⭐ Star Repository on GitHub ↗
+            </a>
+            <a class="button" href="https://github.com/Arshad9999/MTech-Cse-CAS-Course/issues" target="_blank" rel="noopener" style="background:#ffffff; color:var(--color-ink); border:1px solid var(--color-line); padding:0.7rem 1.4rem; justify-content:center; font-weight:600;">
+              🤝 Contribute Notes or Past Papers ↗
+            </a>
+            <button type="button" class="button" onclick="window.dismissGitHubModal()" style="background:transparent; color:var(--color-ink-muted); border:none; padding:0.4rem; font-size:0.82rem; text-decoration:underline; cursor:pointer;">
+              Maybe Later
+            </button>
+          </div>
+        </div>
+      `;
+      modal.onclick = window.closeGitHubModal;
+      document.body.appendChild(modal);
+    }
+
+    // 3. Proactive timer trigger (after 12 seconds if not previously dismissed)
+    try {
+      const dismissed = localStorage.getItem('cas_github_popup_dismissed');
+      if (!dismissed) {
+        setTimeout(() => {
+          if (!localStorage.getItem('cas_github_popup_dismissed')) {
+            window.openGitHubModal();
+          }
+        }, 12000);
+      }
+    } catch (e) {}
+  }
+
+  window.openGitHubModal = function () {
+    const modal = document.getElementById('github-popup-overlay');
+    if (modal) modal.classList.add('is-visible');
+  };
+
+  window.closeGitHubModal = function () {
+    const modal = document.getElementById('github-popup-overlay');
+    if (modal) modal.classList.remove('is-visible');
+  };
+
+  window.dismissGitHubModal = function () {
+    window.closeGitHubModal();
+    try {
+      localStorage.setItem('cas_github_popup_dismissed', 'true');
+    } catch (e) {}
   };
 
   // --------------------------------------------------------------------------

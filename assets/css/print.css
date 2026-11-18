@@ -38,7 +38,13 @@
   .docket-close-btn,
   .docket-receipt-footer,
   .matchmaker-canvas-wrapper,
-  .preset-paths-strip {
+  .preset-paths-strip,
+  .reading-progress-bar,
+  .course-nav-pills,
+  .copy-snippet-btn,
+  .copy-snippet-btn-mini,
+  .back-link,
+  .gfg-link-btn {
     display: none !important;
   }
 
@@ -156,6 +162,13 @@
 @media screen {
   .print-only-header,
   .print-only {
+    display: none !important;
+  }
+}
+
+@media print {
+  .github-floating-pill,
+  .github-popup-overlay {
     display: none !important;
   }
 }

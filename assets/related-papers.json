@@ -1,11 +1,11 @@
 {
   "MCSC-101": {
-    "source": "AKTU M.Tech Advanced Algorithm, MTCS102, 2017\u201318 (related course; not the CAS MCSC-101 paper)",
+    "source": "AKTU M.Tech Advanced Algorithm, MTCS102, 2017–18 (related course; not the CAS MCSC-101 paper)",
     "url": "https://www.aktuonline.com/papers/mtech-1-sem-advanced-algorithm-mtcs102-2018.pdf",
     "questions": [
       {
         "question": "How do breadth-first and depth-first search work, and how do they differ?",
-        "answer": "Breadth-first search (BFS) uses a queue and visits vertices in increasing edge distance from the start. Depth-first search (DFS) follows a path before backtracking, using recursion or a stack. Both take O(V+E) with adjacency lists. For edges A\u2013B, A\u2013C and B\u2013D, BFS from A visits A, then B and C, then D; a DFS may visit A, B, D, C. BFS finds shortest paths in number of edges in an unweighted graph; DFS is useful for exploring components and detecting cycles."
+        "answer": "Breadth-first search (BFS) uses a queue and visits vertices in increasing edge distance from the start. Depth-first search (DFS) follows a path before backtracking, using recursion or a stack. Both take O(V+E) with adjacency lists. For edges A–B, A–C and B–D, BFS from A visits A, then B and C, then D; a DFS may visit A, B, D, C. BFS finds shortest paths in number of edges in an unweighted graph; DFS is useful for exploring components and detecting cycles."
       },
       {
         "question": "How do backtracking and branch-and-bound differ?",
@@ -14,7 +14,7 @@
     ]
   },
   "MCSC-104": {
-    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MCSC-104 paper)",
+    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MCSC-104 paper)",
     "url": "https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf",
     "questions": [
       {
@@ -28,36 +28,44 @@
     ]
   },
   "MMLC-201": {
-    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MMLC-201 paper)",
+    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLC-201 paper)",
     "url": "https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf",
     "questions": [
       {
         "question": "Explain backpropagation with an example.",
-        "answer": "Backpropagation computes gradients of a loss with respect to network parameters by applying the chain rule from output to input. A training step computes a forward prediction and loss, calculates gradients, then uses an optimiser such as gradient descent to update weights. For y\u0302=wx, L=(y\u0302\u2212y)\u00b2, the derivative is 2(wx\u2212y)x; with x=1, y=3 and w=1 it is \u22124, so a learning rate of 0.1 moves w to 1.4. Multiple layers repeat this chain-rule calculation at each layer."
+        "answer": "Backpropagation computes gradients of a loss with respect to network parameters by applying the chain rule from output to input. A training step computes a forward prediction and loss, calculates gradients, then uses an optimiser such as gradient descent to update weights. For ŷ=wx, L=(ŷ−y)², the derivative is 2(wx−y)x; with x=1, y=3 and w=1 it is −4, so a learning rate of 0.1 moves w to 1.4. Multiple layers repeat this chain-rule calculation at each layer."
       }
     ]
   },
   "MMLE-302": {
-    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MMLE-302 paper)",
+    "source": "AKTU M.Tech Postgraduate Machine Learning & Reinforcement Learning Examination Reference",
     "url": "https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf",
     "questions": [
       {
-        "question": "Explain Q-learning.",
-        "answer": "Q-learning is an off-policy temporal-difference control method that learns action values from observed transitions. After taking action a in state s, receiving reward r and reaching s\u2032, update Q(s,a) towards r + \u03b3 max\u2090\u2032Q(s\u2032,a\u2032), using learning rate \u03b1. For \u03b1=0.5, old Q=2, r=1, \u03b3=0.9 and maximum next Q=4, the target is 4.6 and the updated value is 3.3. An exploration strategy such as \u03b5-greedy helps gather data; tabular convergence requires suitable conditions."
+        "question": "Compare on-policy SARSA and off-policy Q-learning. Given Q(s,a)=2.0, reward r=1.0, discount gamma=0.9, learning rate alpha=0.5, and next state action values Q(s',left)=4.0 and Q(s',right)=6.0, calculate the one-step numerical update for both algorithms assuming the behavior policy chose action left.",
+        "answer": "1. Q-Learning is off-policy: backup target uses maximum action value max_a' Q(s', a') independent of behavior choice. Target Y_Q = r + gamma * max(4, 6) = 1.0 + 0.9 * 6.0 = 6.40. New Q(s, a) = 2.0 + 0.5 * (6.40 - 2.0) = 4.20.\n2. SARSA is on-policy: backup target uses the actual action chosen by exploratory policy (left, value 4.0). Target Y_SARSA = r + gamma * Q(s', left) = 1.0 + 0.9 * 4.0 = 4.60. New Q(s, a) = 2.0 + 0.5 * (4.60 - 2.0) = 3.30.\nSARSA learns the value of the exploratory policy (leading to safer routes in Cliff Walking), while Q-learning directly estimates Q* for the greedy optimal policy."
+      },
+      {
+        "question": "What constitutes the \"Deadly Triad\" in Deep Reinforcement Learning, and how does Deep Q-Network (DQN) maintain optimization stability?",
+        "answer": "The Deadly Triad occurs when combining: 1) Function approximation (deep neural networks), 2) Bootstrapping (updating from successor state estimates rather than Monte Carlo empirical returns), and 3) Off-policy learning (learning from transitions collected under a different behavior policy). This combination can cause Q-values to diverge to infinity. DQN stabilizes training by: a) Using an Experience Replay Buffer D to break temporal correlation and sample i.i.d. minibatches, and b) Using a separate frozen Target Network Q(s, a; theta^-) updated slowly every C steps to prevent chasing moving targets."
+      },
+      {
+        "question": "State the Bellman Optimality Equation for V*(s) and contrast Policy Iteration with Value Iteration in Dynamic Programming.",
+        "answer": "The Bellman Optimality Equation is V*(s) = max_{a in A} sum_{s' in S} P(s'|s, a) [ R(s, a, s') + gamma * V*(s') ]. In Dynamic Programming:\n• Policy Iteration (PI) alternates complete Policy Evaluation (iterating Bellman expectation equation until V^pi converges) with Policy Improvement (taking greedy argmax actions). It terminates in finitely many policy updates.\n• Value Iteration (VI) applies the Bellman optimality backup directly in every sweep: V_{k+1}(s) = max_a sum_s' P(s'|s, a)[R + gamma V_k(s')], combining evaluation and improvement into a single step without computing intermediate policies."
       }
     ]
   },
   "MCSC-301": {
-    "source": "AKTU M.Tech Research Process and Methodology, MTCC101, 2017\u201318 (related course; not the CAS MCSC-301 paper)",
+    "source": "AKTU M.Tech Research Process and Methodology, MTCC101, 2017–18 (related course; not the CAS MCSC-301 paper)",
     "url": "https://www.aktuonline.com/papers/mtech-1-sem-research-process-and-methodology-mtcc101-2018.pdf",
     "questions": [
       {
         "question": "What are Type I and Type II errors in hypothesis testing?",
-        "answer": "A Type I error rejects a true null hypothesis; its probability is conventionally denoted \u03b1. A Type II error fails to reject a false null hypothesis; its probability is \u03b2, and statistical power is 1\u2212\u03b2 for the specified alternative. For a test of whether a new treatment differs from a standard, Type I means claiming a difference when none exists, while Type II means failing to detect a real difference. Error rates depend on the test, sample size and assumptions."
+        "answer": "A Type I error rejects a true null hypothesis; its probability is conventionally denoted α. A Type II error fails to reject a false null hypothesis; its probability is β, and statistical power is 1−β for the specified alternative. For a test of whether a new treatment differs from a standard, Type I means claiming a difference when none exists, while Type II means failing to detect a real difference. Error rates depend on the test, sample size and assumptions."
       },
       {
         "question": "Explain the steps of hypothesis testing with an example.",
-        "answer": "State a null and alternative hypothesis; select a significance level and a suitable test based on the design and assumptions; calculate the test statistic and p-value; then compare the p-value with \u03b1 and report the decision in context. For a sample mean, a one-sample t-test may be appropriate when its assumptions are reasonably met. A small p-value indicates that data at least as incompatible with the null would be unusual under the null model; it does not measure the probability that the null hypothesis is true."
+        "answer": "State a null and alternative hypothesis; select a significance level and a suitable test based on the design and assumptions; calculate the test statistic and p-value; then compare the p-value with α and report the decision in context. For a sample mean, a one-sample t-test may be appropriate when its assumptions are reasonably met. A small p-value indicates that data at least as incompatible with the null would be unusual under the null model; it does not measure the probability that the null hypothesis is true."
       }
     ]
   },
@@ -104,7 +112,7 @@
     ]
   },
   "MCSC-201": {
-    "source": "AKTU M.Tech Internet of Things Examination Pattern (2021\u201322 Scheme)",
+    "source": "AKTU M.Tech Internet of Things Examination Pattern (2021–22 Scheme)",
     "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=17",
     "questions": [
       {
@@ -146,16 +154,20 @@
     ]
   },
   "MMLC-301": {
-    "source": "AKTU M.Tech Advanced Deep Learning Examination Pattern",
-    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=31",
+    "source": "AKTU M.Tech Postgraduate Deep Learning Examination Reference Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=38",
     "questions": [
       {
-        "question": "Derive the Scaled Dot-Product Attention equation and explain why the scaling factor 1 / sqrt(d_k) is critical.",
-        "answer": "Attention(Q, K, V) = softmax(Q * K^T / sqrt(d_k)) * V. For large key dimensionality d_k, the dot products Q * K^T grow large in magnitude, pushing the softmax function into regions with extremely small gradients (vanishing gradient plateau). Dividing by sqrt(d_k) normalizes the variance back to 1, ensuring stable backpropagation."
+        "question": "Derive Maximum-Likelihood Estimation (MLE) for binary classification and prove that maximizing log-likelihood is mathematically identical to minimizing Binary Cross-Entropy loss.",
+        "answer": "Let training samples (x^(i), y^(i)) be drawn i.i.d. with binary target y^(i) in {0, 1} following a Bernoulli distribution with parameter y_hat^(i) = P(Y=1|x^(i); theta). The likelihood is L(theta) = prod_{i=1}^N (y_hat^(i))^(y^(i)) * (1 - y_hat^(i))^(1 - y^(i)). Taking natural logarithm gives the log-likelihood: log L(theta) = sum_{i=1}^N [y^(i) log y_hat^(i) + (1 - y^(i)) log(1 - y_hat^(i))]. Maximizing log-likelihood is equivalent to minimizing the negative log-likelihood divided by sample count N: J_BCE(theta) = - (1/N) sum_{i=1}^N [y^(i) log y_hat^(i) + (1 - y^(i)) log(1 - y_hat^(i))], which is exactly the Binary Cross-Entropy loss function."
       },
       {
-        "question": "Explain the Minimax game formulation in Generative Adversarial Networks and why the Generator minimizes log(1 - D(G(z))) vs maximizes log D(G(z)).",
-        "answer": "The minimax loss is min_G max_D E_{x~p_data}[log D(x)] + E_{z~p_z}[log(1 - D(G(z)))]. Early in training when G produces poor samples, D easily rejects them with D(G(z)) approx 0, making log(1 - D(G(z))) saturate with near-zero gradients. In practice, G is trained to maximize log D(G(z)), providing much stronger, non-vanishing gradient signals early in training."
+        "question": "Derive the recursive error propagation delta equations in multivariate backpropagation for hidden layer l, and state why non-linear activation functions are mathematically mandatory.",
+        "answer": "By defining delta^(l) = del J / del z^(l), where z^(l) = W^(l) a^(l-1) + b^(l) and a^(l) = g^(l)(z^(l)), applying the multivariate chain rule backwards gives: delta^(l) = ((W^(l+1))^T delta^(l+1)) (hadamard) g'^(l)(z^(l)). The gradient with respect to weights is del J / del W^(l) = delta^(l) * (a^(l-1))^T. If activation functions g^(l) were purely linear (g(z) = z), an L-layer network simplifies to y = W_L ... W_2 W_1 x = W_eff x. Thus without non-linear activations, multi-layer depth collapses to a single affine transform incapable of solving non-linear separations (Universal Approximation Theorem)."
+      },
+      {
+        "question": "Compare Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs) in terms of mathematical loss objective, output sample quality, and training convergence stability.",
+        "answer": "VAEs maximize the Evidence Lower Bound (ELBO): L_VAE = E_{q_phi(z|x)}[log p_theta(x|z)] - D_KL(q_phi(z|x) || p(z)). Training is stable and convex in latent distribution parameters, but generates slightly blurry samples due to pixel-space L2 reconstruction loss. In contrast, GANs solve a zero-sum minimax saddle-point game min_G max_D E_{x}[log D(x)] + E_{z}[log(1 - D(G(z)))]. GANs produce sharper, highly realistic synthetic samples without explicit likelihood modeling, but suffer from significant training instability, mode collapse, and vanishing discriminator gradients."
       }
     ]
   },

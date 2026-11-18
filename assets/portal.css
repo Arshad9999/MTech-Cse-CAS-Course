@@ -1163,6 +1163,120 @@
   text-decoration: underline;
 }
 
+/* --------------------------------------------------------------------------
+   Interactive Self-Assessment Knowledge Check (Quiz)
+   -------------------------------------------------------------------------- */
+.quiz-section {
+  border-left: 4px solid var(--color-accent) !important;
+  background: linear-gradient(135deg, rgba(237, 245, 254, 0.4), #ffffff) !important;
+}
+
+.quiz-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.quiz-question-card {
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-question-card h3 {
+  font-size: 1.05rem;
+  margin: 0.3rem 0 1rem;
+  color: var(--color-ink);
+  line-height: 1.4;
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.quiz-option-btn {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent-border);
+  color: var(--color-accent);
+}
+
+.quiz-option-btn.is-correct {
+  background: var(--color-emerald-soft) !important;
+  border-color: var(--color-emerald) !important;
+  color: var(--color-emerald) !important;
+  font-weight: 700;
+}
+
+.quiz-option-btn.is-incorrect {
+  background: var(--color-amber-soft) !important;
+  border-color: var(--color-amber) !important;
+  color: var(--color-amber) !important;
+}
+
+.quiz-feedback {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-subtle);
+  border-left: 3px solid var(--color-accent);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+  animation: detailsFadeIn 0.2s ease-out;
+}
+
+.unit-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+}
+
+.unit-filter-pill {
+  appearance: none;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-ink-muted);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.unit-filter-pill:hover,
+.unit-filter-pill.is-active {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .portal-hero,
@@ -1191,5 +1305,171 @@
   }
   .course-hero-glass {
     padding: 1.8rem 1.4rem;
+  }
+}
+
+/* ==========================================================================
+   Official Course Download Dossier (Master Study Notes)
+   ========================================================================== */
+.download-dossier-section {
+  border: 1px solid rgba(0, 113, 227, 0.18) !important;
+  background: linear-gradient(135deg, rgba(240, 246, 255, 0.6) 0%, #ffffff 100%) !important;
+  border-radius: var(--radius-xl);
+  padding: 2.2rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 4px 20px rgba(0, 113, 227, 0.05);
+}
+
+.button-download-doc {
+  background: var(--color-accent) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.28);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.button-download-doc:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 113, 227, 0.38);
+}
+
+.dossier-preview-box {
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* ==========================================================================
+   GitHub Community & Star Modal & Floating Pill
+   ========================================================================== */
+.github-floating-pill {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+}
+
+.github-pill-btn {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #1d1d1f;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.github-pill-btn:hover {
+  background: #1d1d1f;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.github-pill-btn svg {
+  transition: transform var(--transition-fast);
+}
+
+.github-pill-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* GitHub Star Pop-up Modal */
+.github-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-out;
+}
+
+.github-popup-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.github-popup-card {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 480px;
+  width: 100%;
+  padding: 2.2rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transform: scale(0.94);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.github-popup-overlay.is-visible .github-popup-card {
+  transform: scale(1);
+}
+
+.github-popup-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #f5f5f7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.github-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  line-height: 1;
+  border-radius: 50%;
+}
+
+.github-popup-close:hover {
+  color: var(--color-ink);
+  background: #f5f5f7;
+}
+
+@media (max-width: 600px) {
+  .download-dossier-section {
+    padding: 1.5rem 1.2rem;
+  }
+  .github-floating-pill {
+    bottom: 1rem;
+    right: 1rem;
   }
 }
