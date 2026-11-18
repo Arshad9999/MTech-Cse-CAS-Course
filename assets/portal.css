@@ -258,6 +258,55 @@
 }
 
 /* --------------------------------------------------------------------------
+   See More Courses (Collapsible Extra Electives)
+   -------------------------------------------------------------------------- */
+.see-more-courses {
+  margin-top: 1.4rem;
+  background: var(--color-surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.6rem;
+  transition: all var(--transition-fast);
+}
+
+.see-more-courses[open] {
+  border-style: solid;
+  border-color: var(--color-accent-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.see-more-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.94rem;
+  color: var(--color-accent);
+  user-select: none;
+  list-style: none;
+}
+
+.see-more-summary::-webkit-details-marker {
+  display: none;
+}
+
+.see-more-summary:hover {
+  color: var(--color-accent-hover);
+}
+
+.see-more-arrow {
+  font-size: 1.1rem;
+  transition: transform var(--transition-fast);
+}
+
+.see-more-courses[open] .see-more-arrow {
+  transform: rotate(180deg);
+}
+
+/* --------------------------------------------------------------------------
    Course Page Overhaul (subject.html & Guide Views)
    -------------------------------------------------------------------------- */
 .subject-page {

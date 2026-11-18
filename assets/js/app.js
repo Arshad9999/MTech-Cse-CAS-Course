@@ -190,8 +190,8 @@
   // Sticky Filter & Search Ribbon
   // --------------------------------------------------------------------------
   function renderStickyRibbon() {
-    const semCounts = { all: featuredCourses.length, 1: 0, 2: 0, 3: 0, 4: 0 };
-    featuredCourses.forEach(c => {
+    const semCounts = { all: allCourses.length, 1: 0, 2: 0, 3: 0, 4: 0 };
+    allCourses.forEach(c => {
       if (semCounts[c.semester] !== undefined) semCounts[c.semester]++;
     });
 
@@ -200,7 +200,7 @@
         <div class="shell sticky-ribbon">
           <!-- Semester Quick Jump Pills -->
           <div class="filter-group-pills" role="tablist" aria-label="Semester selection">
-            <button class="filter-pill is-active" data-sem="all" role="tab">All Featured <span class="filter-pill-counter">${semCounts.all}</span></button>
+            <button class="filter-pill is-active" data-sem="all" role="tab">All Semesters <span class="filter-pill-counter">${semCounts.all}</span></button>
             <button class="filter-pill" data-sem="1" role="tab">Sem 01 <span class="filter-pill-counter">${semCounts[1]}</span></button>
             <button class="filter-pill" data-sem="2" role="tab">Sem 02 <span class="filter-pill-counter">${semCounts[2]}</span></button>
             <button class="filter-pill" data-sem="3" role="tab">Sem 03 <span class="filter-pill-counter">${semCounts[3]}</span></button>
@@ -209,9 +209,9 @@
 
           <!-- Status / Category Filter Pills -->
           <div class="filter-group-pills" role="radiogroup" aria-label="Course category filters">
-            <button class="filter-pill is-active" data-cat="all">All Types</button>
-            <button class="filter-pill" data-cat="core">Core Only</button>
-            <button class="filter-pill" data-cat="elective">Electives</button>
+            <button class="filter-pill is-active" data-cat="all">All Subjects</button>
+            <button class="filter-pill" data-cat="taught">University Taught</button>
+            <button class="filter-pill" data-cat="elective">Elective Choices</button>
             <button class="filter-pill" data-cat="pyq">PYQs Available</button>
           </div>
 
@@ -221,7 +221,7 @@
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="search" class="ribbon-search-input" id="ribbon-search" placeholder="Search featured subjects..." aria-label="Search featured subjects">
+            <input type="search" class="ribbon-search-input" id="ribbon-search" placeholder="Search curriculum subjects..." aria-label="Search curriculum subjects">
             <button class="ribbon-search-clear" id="ribbon-clear" aria-label="Clear search">×</button>
           </div>
         </div>
@@ -461,12 +461,12 @@
     const targetSemesters = activeSemesterFilter === 'all' ? [1, 2, 3, 4] : [parseInt(activeSemesterFilter, 10)];
 
     const html = targetSemesters.map(sem => {
-      // ONLY show featured courses
-      const semCourses = featuredCourses.filter(c => {
+      const semCourses = allCourses.filter(c => {
         if (c.semester !== sem) return false;
 
-        if (activeCategoryFilter === 'core' && !c.category.toLowerCase().includes('core')) return false;
-        if (activeCategoryFilter === 'elective' && !c.category.toLowerCase().includes('elective')) return false;
+        const isTaught = FEATURED_CODES.includes(c.code) || c.hasGuide;
+        if (activeCategoryFilter === 'taught' && !isTaught) return false;
+        if (activeCategoryFilter === 'elective' && isTaught) return false;
         if (activeCategoryFilter === 'pyq' && !c.hasPyq) return false;
 
         if (searchQuery) {
@@ -492,10 +492,33 @@
               </div>
               <span class="semester-count">0 subjects match criteria</span>
             </div>
-            <p class="empty" style="color:var(--color-ink-muted);">No featured subjects match the selected criteria in Semester ${sem}.</p>
+            <p class="empty" style="color:var(--color-ink-muted);">No subjects match the selected criteria in Semester ${sem}.</p>
           </section>
         `;
       }
+
+      // Important University Taught Subjects (Guide Ready)
+      const taughtCourses = semCourses.filter(c => FEATURED_CODES.includes(c.code) || c.hasGuide);
+      // Extra elective choices (kept in see more)
+      const otherCourses = semCourses.filter(c => !FEATURED_CODES.includes(c.code) && !c.hasGuide);
+
+      const taughtGrid = taughtCourses.length > 0
+        ? `<div class="catalog-grid">${taughtCourses.map(renderSubjectCard).join('')}</div>`
+        : '<p class="empty" style="color:var(--color-ink-muted);">No primary university taught courses match current filters.</p>';
+
+      const otherSection = otherCourses.length > 0
+        ? `
+          <details class="see-more-courses" ${searchQuery ? 'open' : ''}>
+            <summary class="see-more-summary">
+              <span>See more elective choices (${otherCourses.length} other subjects)</span>
+              <span class="see-more-arrow">↓</span>
+            </summary>
+            <div class="catalog-grid" style="margin-top:1.2rem;">
+              ${otherCourses.map(renderSubjectCard).join('')}
+            </div>
+          </details>
+        `
+        : '';
 
       return `
         <section class="semester" id="semester-${sem}">
@@ -507,11 +530,10 @@
                 <h3>${descriptions[sem - 1]}</h3>
               </div>
             </div>
-            <span class="semester-count">${semCourses.length} ${semCourses.length === 1 ? 'featured subject' : 'featured subjects'}</span>
+            <span class="semester-count">${taughtCourses.length} taught ${otherCourses.length > 0 ? `· +${otherCourses.length} other electives` : ''}</span>
           </div>
-          <div class="catalog-grid">
-            ${semCourses.map(renderSubjectCard).join('')}
-          </div>
+          ${taughtGrid}
+          ${otherSection}
         </section>
       `;
     }).join('');
@@ -520,7 +542,7 @@
 
     const statusEl = $('#search-status');
     if (statusEl) {
-      statusEl.textContent = `${totalMatches} featured subjects across selected criteria.`;
+      statusEl.textContent = `${totalMatches} subjects across selected criteria.`;
     }
   }
 
