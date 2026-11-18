@@ -1,117 +1,2681 @@
 {
   "discrete-mathematics-and-graph-theory": {
     "visuals": [
-      {"afterModule":1,"src":"../assets/generated/discrete/counting-principles.png","title":"Mind map · Counting principles","caption":"Connect the product rule, pigeonhole principle, inclusion-exclusion, recurrences, and generating functions before choosing a counting method.","alt":"Text mind map linking Counting Principles to Product Rule, Pigeonhole Principle, Inclusion-Exclusion, Recurrence Relations, and Generating Functions."},
-      {"afterModule":3,"src":"../assets/generated/discrete/logic-computation.png","title":"Mind map · Logic and computation","caption":"Use the branches to relate propositions and sets to formal languages and finite-state machines.","alt":"Text mind map linking Logic and Computation to Propositions, Set Theory, Formal Languages, and Finite State Machines."},
-      {"afterModule":5,"src":"../assets/generated/discrete/graph-structures.png","title":"Mind map · Graph structures","caption":"Compare graph direction, walks, trails, cycles, connectivity, trees, and the Eulerian–Hamiltonian distinction.","alt":"Text mind map linking Graph Structures to Directed Graph, Undirected Graph, Trail, Cycle, Connectivity, Trees, Eulerian, and Hamiltonian."},
-      {"afterModule":8,"src":"../assets/generated/discrete/graph-algorithms.png","title":"Mind map · Graph algorithms","caption":"Choose an algorithm by objective: traversal, shortest route, spanning cost, matching, assignment, or flow.","alt":"Text mind map linking Graph Algorithms to BFS, DFS, Shortest Path, Minimum Spanning Tree, Matching, Assignment, and Network Flow."}
+      {
+        "afterModule": 1,
+        "src": "../assets/generated/discrete/counting-principles.png",
+        "title": "Mind map \u00b7 Counting principles",
+        "caption": "Connect the product rule, pigeonhole principle, inclusion-exclusion, recurrences, and generating functions before choosing a counting method.",
+        "alt": "Text mind map linking Counting Principles to Product Rule, Pigeonhole Principle, Inclusion-Exclusion, Recurrence Relations, and Generating Functions."
+      },
+      {
+        "afterModule": 3,
+        "src": "../assets/generated/discrete/logic-computation.png",
+        "title": "Mind map \u00b7 Logic and computation",
+        "caption": "Use the branches to relate propositions and sets to formal languages and finite-state machines.",
+        "alt": "Text mind map linking Logic and Computation to Propositions, Set Theory, Formal Languages, and Finite State Machines."
+      },
+      {
+        "afterModule": 5,
+        "src": "../assets/generated/discrete/graph-structures.png",
+        "title": "Mind map \u00b7 Graph structures",
+        "caption": "Compare graph direction, walks, trails, cycles, connectivity, trees, and the Eulerian\u2013Hamiltonian distinction.",
+        "alt": "Text mind map linking Graph Structures to Directed Graph, Undirected Graph, Trail, Cycle, Connectivity, Trees, Eulerian, and Hamiltonian."
+      },
+      {
+        "afterModule": 8,
+        "src": "../assets/generated/discrete/graph-algorithms.png",
+        "title": "Mind map \u00b7 Graph algorithms",
+        "caption": "Choose an algorithm by objective: traversal, shortest route, spanning cost, matching, assignment, or flow.",
+        "alt": "Text mind map linking Graph Algorithms to BFS, DFS, Shortest Path, Minimum Spanning Tree, Matching, Assignment, and Network Flow."
+      }
     ],
-    "objectives": ["Translate a verbal problem into sets, logic, recurrences, finite-state machines, or graphs.","Choose and justify a counting principle without double counting.","Distinguish graph properties involving vertices, edges, reachability, and optimality.","Trace BFS, DFS, shortest-path, spanning-tree, matching, and flow algorithms.","State the assumptions, invariant, and complexity of an algorithmic solution."],
+    "objectives": [
+      "Translate a verbal problem into sets, logic, recurrences, finite-state machines, or graphs.",
+      "Choose and justify a counting principle without double counting.",
+      "Distinguish graph properties involving vertices, edges, reachability, and optimality.",
+      "Trace BFS, DFS, shortest-path, spanning-tree, matching, and flow algorithms.",
+      "State the assumptions, invariant, and complexity of an algorithmic solution."
+    ],
     "glossary": [
-      ["Proposition","A declarative statement that is either true or false."],["Predicate","A statement containing variables; it becomes a proposition when variables are assigned or quantified."],["Bijection","A function that is both one-to-one and onto; it proves two finite sets have equal size."],["Recurrence relation","An equation that defines sequence terms from earlier terms, together with base cases."],["Generating function","A formal power series whose coefficients encode a sequence."],["Alphabet and language","An alphabet is a finite symbol set; a language is any set of finite strings over it."],["Finite-state machine","A finite set of states and transitions used to recognize strings or model reactive behavior."],["Walk, trail, path","A walk may repeat vertices and edges; a trail does not repeat edges; a path does not repeat vertices."],["Connected component","A maximal set of vertices mutually reachable by paths."],["Spanning tree","A tree containing every vertex of a connected graph."],["Matching","A set of edges with no common endpoint."],["Residual network","A flow-network view showing where existing flow can be increased, decreased, or rerouted."],
-      ["Graph invariant","A property preserved during an operation or algorithm and used to prove correctness."]
+      [
+        "Proposition",
+        "A declarative statement that is either true or false."
+      ],
+      [
+        "Predicate",
+        "A statement containing variables; it becomes a proposition when variables are assigned or quantified."
+      ],
+      [
+        "Bijection",
+        "A function that is both one-to-one and onto; it proves two finite sets have equal size."
+      ],
+      [
+        "Recurrence relation",
+        "An equation that defines sequence terms from earlier terms, together with base cases."
+      ],
+      [
+        "Generating function",
+        "A formal power series whose coefficients encode a sequence."
+      ],
+      [
+        "Alphabet and language",
+        "An alphabet is a finite symbol set; a language is any set of finite strings over it."
+      ],
+      [
+        "Finite-state machine",
+        "A finite set of states and transitions used to recognize strings or model reactive behavior."
+      ],
+      [
+        "Walk, trail, path",
+        "A walk may repeat vertices and edges; a trail does not repeat edges; a path does not repeat vertices."
+      ],
+      [
+        "Connected component",
+        "A maximal set of vertices mutually reachable by paths."
+      ],
+      [
+        "Spanning tree",
+        "A tree containing every vertex of a connected graph."
+      ],
+      [
+        "Matching",
+        "A set of edges with no common endpoint."
+      ],
+      [
+        "Residual network",
+        "A flow-network view showing where existing flow can be increased, decreased, or rerouted."
+      ],
+      [
+        "Graph invariant",
+        "A property preserved during an operation or algorithm and used to prove correctness."
+      ]
     ],
     "types": [
-      ["Counting rules","Sum rule; product rule; complement counting; pigeonhole principle; inclusion-exclusion.","Use the rule that matches whether choices are exclusive, sequential, easier through a complement, forced to collide, or overlapping."],
-      ["Logic forms","Proposition, predicate, tautology, contradiction, implication, equivalence, quantification.","Truth tables suit finite propositional forms; quantified claims require a domain and careful negation."],
-      ["Set operations","Union, intersection, difference, complement, Cartesian product, power set.","The operation determines whether elements are pooled, shared, removed, paired, or collected as subsets."],
-      ["Recurrences","Linear/nonlinear; homogeneous/non-homogeneous; constant/variable coefficients; first/higher order.","Classification determines which solution techniques apply; base cases remain essential."],
-      ["Finite-state machines","Deterministic and nondeterministic finite automata.","A DFA has exactly one transition per state-symbol pair; an NFA may have several or none, yet both recognize regular languages."],
-      ["Graphs","Undirected/directed; simple/multigraph; weighted/unweighted; connected/disconnected; cyclic/acyclic; bipartite.","Choose a model from relationship direction, repeated links, costs, reachability, cycles, and vertex roles."],
-      ["Traversal","Breadth-first and depth-first search.","BFS explores distance layers; DFS follows a branch deeply before backtracking."],
-      ["Optimization structures","Shortest path, minimum spanning tree, matching, assignment, maximum flow.","They optimize different objects: a route, a connecting subgraph, disjoint pairs, one-to-one allocation, or transported quantity."]
+      [
+        "Counting rules",
+        "Sum rule; product rule; complement counting; pigeonhole principle; inclusion-exclusion.",
+        "Use the rule that matches whether choices are exclusive, sequential, easier through a complement, forced to collide, or overlapping."
+      ],
+      [
+        "Logic forms",
+        "Proposition, predicate, tautology, contradiction, implication, equivalence, quantification.",
+        "Truth tables suit finite propositional forms; quantified claims require a domain and careful negation."
+      ],
+      [
+        "Set operations",
+        "Union, intersection, difference, complement, Cartesian product, power set.",
+        "The operation determines whether elements are pooled, shared, removed, paired, or collected as subsets."
+      ],
+      [
+        "Recurrences",
+        "Linear/nonlinear; homogeneous/non-homogeneous; constant/variable coefficients; first/higher order.",
+        "Classification determines which solution techniques apply; base cases remain essential."
+      ],
+      [
+        "Finite-state machines",
+        "Deterministic and nondeterministic finite automata.",
+        "A DFA has exactly one transition per state-symbol pair; an NFA may have several or none, yet both recognize regular languages."
+      ],
+      [
+        "Graphs",
+        "Undirected/directed; simple/multigraph; weighted/unweighted; connected/disconnected; cyclic/acyclic; bipartite.",
+        "Choose a model from relationship direction, repeated links, costs, reachability, cycles, and vertex roles."
+      ],
+      [
+        "Traversal",
+        "Breadth-first and depth-first search.",
+        "BFS explores distance layers; DFS follows a branch deeply before backtracking."
+      ],
+      [
+        "Optimization structures",
+        "Shortest path, minimum spanning tree, matching, assignment, maximum flow.",
+        "They optimize different objects: a route, a connecting subgraph, disjoint pairs, one-to-one allocation, or transported quantity."
+      ]
     ],
     "formulas": [
-      ["Product rule","m x n","Count sequential independent choice stages."],["Inclusion-exclusion (two sets)","|A union B| = |A| + |B| - |A intersection B|","Correct overlap counted twice."],["Pigeonhole lower bound","ceil(n / k)","At least one of k boxes receives this many of n objects."],["Handshake lemma","sum_v deg(v) = 2|E|","Check degrees in an undirected graph."],["Tree edge count","|E| = |V| - 1","Characterize a finite tree alongside connectedness or acyclicity."],["Complete graph edges","n(n-1)/2","Count undirected edges among n distinct vertices."],["BFS/DFS complexity","O(|V| + |E|)","Adjacency-list traversal."],["Path relaxation","d[v] = min(d[v], d[u] + w(u,v))","Core operation in shortest-path algorithms."],["Flow capacity","0 <= f(u,v) <= c(u,v)","Ensure a flow does not exceed an edge capacity."],["Flow conservation","sum in-flow = sum out-flow","Required at every non-source, non-sink vertex."]
+      [
+        "Product rule",
+        "m x n",
+        "Count sequential independent choice stages."
+      ],
+      [
+        "Inclusion-exclusion (two sets)",
+        "|A union B| = |A| + |B| - |A intersection B|",
+        "Correct overlap counted twice."
+      ],
+      [
+        "Pigeonhole lower bound",
+        "ceil(n / k)",
+        "At least one of k boxes receives this many of n objects."
+      ],
+      [
+        "Handshake lemma",
+        "sum_v deg(v) = 2|E|",
+        "Check degrees in an undirected graph."
+      ],
+      [
+        "Tree edge count",
+        "|E| = |V| - 1",
+        "Characterize a finite tree alongside connectedness or acyclicity."
+      ],
+      [
+        "Complete graph edges",
+        "n(n-1)/2",
+        "Count undirected edges among n distinct vertices."
+      ],
+      [
+        "BFS/DFS complexity",
+        "O(|V| + |E|)",
+        "Adjacency-list traversal."
+      ],
+      [
+        "Path relaxation",
+        "d[v] = min(d[v], d[u] + w(u,v))",
+        "Core operation in shortest-path algorithms."
+      ],
+      [
+        "Flow capacity",
+        "0 <= f(u,v) <= c(u,v)",
+        "Ensure a flow does not exceed an edge capacity."
+      ],
+      [
+        "Flow conservation",
+        "sum in-flow = sum out-flow",
+        "Required at every non-source, non-sink vertex."
+      ]
     ],
     "comparisons": [
-      {"title":"Eulerian versus Hamiltonian","headers":["Question","Eulerian","Hamiltonian"],"rows":[["Focus","Every edge exactly once","Every vertex exactly once"],["Typical object","Trail or circuit","Path or cycle"],["Simple general test","Degree characterization exists for undirected Euler circuits","No equally simple complete criterion for arbitrary graphs"],["Common application","Street or link traversal","Visit-order or tour planning"]]},
-      {"title":"BFS versus DFS","headers":["Property","BFS","DFS"],"rows":[["Data structure","Queue","Stack or recursion"],["Exploration","Layer by layer","Branch then backtrack"],["Unweighted shortest path","Yes","Not guaranteed"],["Typical use","Distances, levels, bipartite checking","Cycle detection, components, ordering"],["Time with adjacency lists","O(V+E)","O(V+E)"]]},
-      {"title":"MST versus shortest-path tree","headers":["Property","Minimum spanning tree","Shortest-path tree"],"rows":[["Objective","Minimum total tree weight","Minimum distance from one source"],["Source required","No","Yes"],["Path between arbitrary vertices","Not necessarily shortest","Source-to-vertex paths are shortest under algorithm assumptions"],["Typical algorithms","Kruskal, Prim","BFS, Dijkstra, Bellman-Ford"]]}
+      {
+        "title": "Eulerian versus Hamiltonian",
+        "headers": [
+          "Question",
+          "Eulerian",
+          "Hamiltonian"
+        ],
+        "rows": [
+          [
+            "Focus",
+            "Every edge exactly once",
+            "Every vertex exactly once"
+          ],
+          [
+            "Typical object",
+            "Trail or circuit",
+            "Path or cycle"
+          ],
+          [
+            "Simple general test",
+            "Degree characterization exists for undirected Euler circuits",
+            "No equally simple complete criterion for arbitrary graphs"
+          ],
+          [
+            "Common application",
+            "Street or link traversal",
+            "Visit-order or tour planning"
+          ]
+        ]
+      },
+      {
+        "title": "BFS versus DFS",
+        "headers": [
+          "Property",
+          "BFS",
+          "DFS"
+        ],
+        "rows": [
+          [
+            "Data structure",
+            "Queue",
+            "Stack or recursion"
+          ],
+          [
+            "Exploration",
+            "Layer by layer",
+            "Branch then backtrack"
+          ],
+          [
+            "Unweighted shortest path",
+            "Yes",
+            "Not guaranteed"
+          ],
+          [
+            "Typical use",
+            "Distances, levels, bipartite checking",
+            "Cycle detection, components, ordering"
+          ],
+          [
+            "Time with adjacency lists",
+            "O(V+E)",
+            "O(V+E)"
+          ]
+        ]
+      },
+      {
+        "title": "MST versus shortest-path tree",
+        "headers": [
+          "Property",
+          "Minimum spanning tree",
+          "Shortest-path tree"
+        ],
+        "rows": [
+          [
+            "Objective",
+            "Minimum total tree weight",
+            "Minimum distance from one source"
+          ],
+          [
+            "Source required",
+            "No",
+            "Yes"
+          ],
+          [
+            "Path between arbitrary vertices",
+            "Not necessarily shortest",
+            "Source-to-vertex paths are shortest under algorithm assumptions"
+          ],
+          [
+            "Typical algorithms",
+            "Kruskal, Prim",
+            "BFS, Dijkstra, Bellman-Ford"
+          ]
+        ]
+      }
     ],
-    "pitfalls": ["Negating 'for every' as 'for no' instead of 'there exists a counterexample'.","Applying the product rule where cases overlap or are mutually exclusive.","Writing a recurrence without enough base cases.","Treating a directed edge as symmetric.","Calling every sequence of adjacent vertices a path even when vertices repeat.","Using Dijkstra when negative edge weights are allowed.","Assuming a minimum spanning tree minimizes every pairwise route.","Forgetting reverse residual edges while augmenting a flow."],
-    "practice": [["Use inclusion-exclusion to count integers from 1 to 100 divisible by 2 or 5.","Count each set, subtract their intersection (multiples of 10)."],["Negate: Every server responds or at least one backup is active.","Apply De Morgan's laws and switch universal to existential where required."],["Build a DFA for binary strings containing an even number of 1s.","Use two states representing parity and toggle on input 1."],["Prove that a tree with n vertices has n-1 edges.","Use induction by removing a leaf."],["Trace BFS and DFS from the same start vertex and record discovery edges.","Fix an adjacency order because valid traversals need not be unique."],["Decide whether a degree sequence can have an Euler circuit.","Check connectedness of non-isolated vertices and degree parity."],["Run one iteration of Kruskal on a weighted graph.","Sort edges and reject any edge that closes a cycle."],["Find an augmenting path and update residual capacities.","The increase equals the smallest residual capacity on the path."]],
-    "applications": [["Campus routing model","Represent buildings as vertices and walkways as weighted edges. Compare a shortest emergency route with a minimum-cost network connecting every building."],["Job allocation model","Construct a bipartite graph of candidates and jobs, attach suitability costs, and explain how matching constraints prevent duplicate assignment."],["Protocol state model","Design a finite-state machine for login attempts, success, lockout, and reset; list accepted and rejected event sequences."]]
+    "pitfalls": [
+      "Negating 'for every' as 'for no' instead of 'there exists a counterexample'.",
+      "Applying the product rule where cases overlap or are mutually exclusive.",
+      "Writing a recurrence without enough base cases.",
+      "Treating a directed edge as symmetric.",
+      "Calling every sequence of adjacent vertices a path even when vertices repeat.",
+      "Using Dijkstra when negative edge weights are allowed.",
+      "Assuming a minimum spanning tree minimizes every pairwise route.",
+      "Forgetting reverse residual edges while augmenting a flow."
+    ],
+    "practice": [
+      [
+        "Use inclusion-exclusion to count integers from 1 to 100 divisible by 2 or 5.",
+        "Count each set, subtract their intersection (multiples of 10)."
+      ],
+      [
+        "Negate: Every server responds or at least one backup is active.",
+        "Apply De Morgan's laws and switch universal to existential where required."
+      ],
+      [
+        "Build a DFA for binary strings containing an even number of 1s.",
+        "Use two states representing parity and toggle on input 1."
+      ],
+      [
+        "Prove that a tree with n vertices has n-1 edges.",
+        "Use induction by removing a leaf."
+      ],
+      [
+        "Trace BFS and DFS from the same start vertex and record discovery edges.",
+        "Fix an adjacency order because valid traversals need not be unique."
+      ],
+      [
+        "Decide whether a degree sequence can have an Euler circuit.",
+        "Check connectedness of non-isolated vertices and degree parity."
+      ],
+      [
+        "Run one iteration of Kruskal on a weighted graph.",
+        "Sort edges and reject any edge that closes a cycle."
+      ],
+      [
+        "Find an augmenting path and update residual capacities.",
+        "The increase equals the smallest residual capacity on the path."
+      ]
+    ],
+    "applications": [
+      [
+        "Campus routing model",
+        "Represent buildings as vertices and walkways as weighted edges. Compare a shortest emergency route with a minimum-cost network connecting every building."
+      ],
+      [
+        "Job allocation model",
+        "Construct a bipartite graph of candidates and jobs, attach suitability costs, and explain how matching constraints prevent duplicate assignment."
+      ],
+      [
+        "Protocol state model",
+        "Design a finite-state machine for login attempts, success, lockout, and reset; list accepted and rejected event sequences."
+      ]
+    ]
   },
   "advanced-computer-networks-and-communication": {
     "visuals": [
-      {"afterModule":2,"src":"../assets/generated/networks/transmission-media.png","title":"Mind map · Transmission and media","caption":"Relate guided and wireless media to coding, modulation, error detection, and error correction.","alt":"Text mind map linking Transmission and Media to Conducted Media, Radiated Media, Coding, Modulation, Error Detection, and Error Correction."},
-      {"afterModule":3,"src":"../assets/generated/networks/network-architecture.png","title":"Mind map · Network architecture","caption":"Place LANs, WANs, topologies, protocols, switches, and routers within the layered OSI view.","alt":"Text mind map linking Network Architecture to LAN, WAN, OSI Model, Topologies, Protocols, Switches, and Routers."},
-      {"afterModule":6,"src":"../assets/generated/networks/secure-networking.png","title":"Mind map · Secure networking","caption":"Distinguish authentication, signatures, recovery, WLAN concerns, and Mobile IP responsibilities.","alt":"Text mind map connecting secure networking topics including Communication Security, Digital Signatures, Authentication, Recovery, WLAN, and Mobile IP."},
-      {"afterModule":8,"src":"../assets/generated/networks/network-management.png","title":"Mind map · Network management","caption":"Connect SNMP, MIBs, proxies, management functions, web/XML integration, and ATM.","alt":"Text mind map linking Network Management to SNMP v1, SNMP v2, MIB, Proxy Server, Configuration, Fault, Performance, Web and XML, and ATM."}
+      {
+        "afterModule": 2,
+        "src": "../assets/generated/networks/transmission-media.png",
+        "title": "Mind map \u00b7 Transmission and media",
+        "caption": "Relate guided and wireless media to coding, modulation, error detection, and error correction.",
+        "alt": "Text mind map linking Transmission and Media to Conducted Media, Radiated Media, Coding, Modulation, Error Detection, and Error Correction."
+      },
+      {
+        "afterModule": 3,
+        "src": "../assets/generated/networks/network-architecture.png",
+        "title": "Mind map \u00b7 Network architecture",
+        "caption": "Place LANs, WANs, topologies, protocols, switches, and routers within the layered OSI view.",
+        "alt": "Text mind map linking Network Architecture to LAN, WAN, OSI Model, Topologies, Protocols, Switches, and Routers."
+      },
+      {
+        "afterModule": 6,
+        "src": "../assets/generated/networks/secure-networking.png",
+        "title": "Mind map \u00b7 Secure networking",
+        "caption": "Distinguish authentication, signatures, recovery, WLAN concerns, and Mobile IP responsibilities.",
+        "alt": "Text mind map connecting secure networking topics including Communication Security, Digital Signatures, Authentication, Recovery, WLAN, and Mobile IP."
+      },
+      {
+        "afterModule": 8,
+        "src": "../assets/generated/networks/network-management.png",
+        "title": "Mind map \u00b7 Network management",
+        "caption": "Connect SNMP, MIBs, proxies, management functions, web/XML integration, and ATM.",
+        "alt": "Text mind map linking Network Management to SNMP v1, SNMP v2, MIB, Proxy Server, Configuration, Fault, Performance, Web and XML, and ATM."
+      }
     ],
-    "objectives": ["Relate physical-media limitations to throughput, delay, errors, and protocol behavior.","Map protocols and devices to OSI responsibilities without treating layering as rigid implementation law.","Explain detection, correction, authentication, signatures, and recovery as different controls.","Interpret SNMP information, communication, functional, and organizational models.","Plan measurable network-management and laboratory investigations."],
-    "glossary": [["Bandwidth","A frequency range in hertz or, informally, a link's data-rate capacity; the units and context must be stated."],["Attenuation","Reduction of signal strength during propagation."],["Modulation","Mapping information onto a carrier by varying amplitude, frequency, phase, or a combination."],["Latency","Elapsed time for data to travel from source to destination, including processing, queueing, transmission, and propagation."],["Jitter","Variation in packet delay over time."],["Protocol","Rules for message format, ordering, meaning, and actions between communicating entities."],["Encapsulation","Wrapping higher-layer data with layer-specific control information."],["Digital signature","A private-key-generated proof that supports integrity, origin authentication, and non-repudiation claims under stated assumptions."],["WLAN","A local network using radio links, commonly coordinated through access points."],["Mobile IP","A mechanism supporting reachability while a node changes its network attachment."],["MIB","A structured collection of managed objects identified by object identifiers."],["SNMP agent","Software exposing managed objects and processing management requests on a device."],["ATM virtual circuit","A logical connection through an ATM network that carries fixed-size cells."],["Goodput","Useful application payload delivered per unit time, excluding overhead and retransmissions."]],
-    "types": [["Transmission media","Twisted pair, coaxial cable, optical fiber, terrestrial radio, microwave, satellite.","Guided media constrain the signal path; wireless media enable mobility but face shared-spectrum and propagation effects."],["Transmission direction","Simplex, half-duplex, full-duplex.","Only one direction; alternating directions; or simultaneous directions."],["Modulation families","ASK, FSK, PSK, QAM.","They vary amplitude, frequency, phase, or amplitude-plus-phase; higher symbol density demands better signal quality."],["Error control","Parity, checksum, CRC, forward-error correction, retransmission protocols.","Detection identifies likely corruption; correction recovers data directly or requests another copy."],["Topologies","Bus, star, ring, mesh, tree, hybrid.","They differ in path redundancy, wiring, fault effects, expansion, and management."],["Internetworking devices","Repeater, hub, bridge, switch, router, gateway, proxy.","Their forwarding scope ranges from raw signals to frames, packets, and application-specific translation."],["Security services","Confidentiality, integrity, authentication, authorization, availability, accountability.","Each addresses a different threat; encryption alone does not supply all services."],["Network management","Configuration, fault, performance, security, and accounting management.","The categories organize what must be controlled, diagnosed, measured, protected, and attributed."],["SNMP operations","Get, GetNext/GetBulk, Set, Response, Trap/Inform.","Polling reads data, Set changes permitted objects, and notifications report events."],["Management interfaces","CLI, desktop tools, web interfaces, APIs, XML-based structured exchange.","They differ in automation, usability, consistency, and security surface."]],
-    "formulas": [["Shannon capacity","C = B log2(1 + S/N)","Upper bound for a noisy channel under model assumptions."],["Nyquist bit rate","R = 2B log2(M)","Ideal noiseless band-limited channel with M signal levels."],["Transmission delay","packet bits / link bit rate","Time to place all packet bits onto a link."],["Propagation delay","distance / propagation speed","Time for a signal front to travel through the medium."],["Total nodal delay","processing + queueing + transmission + propagation","Break down latency sources."],["Utilization","observed traffic / capacity","Measure how much link capacity is used over an interval."],["Packet loss rate","lost packets / sent packets","Quantify delivery loss for a defined measurement window."],["Goodput","useful payload bits / elapsed time","Separate application value from protocol overhead."],["Availability","uptime / total observed time","Summarize service accessibility during a period."],["Hamming correction","floor((d_min - 1)/2)","Maximum guaranteed correctable symbol errors from minimum distance."]],
+    "objectives": [
+      "Relate physical-media limitations to throughput, delay, errors, and protocol behavior.",
+      "Map protocols and devices to OSI responsibilities without treating layering as rigid implementation law.",
+      "Explain detection, correction, authentication, signatures, and recovery as different controls.",
+      "Interpret SNMP information, communication, functional, and organizational models.",
+      "Plan measurable network-management and laboratory investigations."
+    ],
+    "glossary": [
+      [
+        "Bandwidth",
+        "A frequency range in hertz or, informally, a link's data-rate capacity; the units and context must be stated."
+      ],
+      [
+        "Attenuation",
+        "Reduction of signal strength during propagation."
+      ],
+      [
+        "Modulation",
+        "Mapping information onto a carrier by varying amplitude, frequency, phase, or a combination."
+      ],
+      [
+        "Latency",
+        "Elapsed time for data to travel from source to destination, including processing, queueing, transmission, and propagation."
+      ],
+      [
+        "Jitter",
+        "Variation in packet delay over time."
+      ],
+      [
+        "Protocol",
+        "Rules for message format, ordering, meaning, and actions between communicating entities."
+      ],
+      [
+        "Encapsulation",
+        "Wrapping higher-layer data with layer-specific control information."
+      ],
+      [
+        "Digital signature",
+        "A private-key-generated proof that supports integrity, origin authentication, and non-repudiation claims under stated assumptions."
+      ],
+      [
+        "WLAN",
+        "A local network using radio links, commonly coordinated through access points."
+      ],
+      [
+        "Mobile IP",
+        "A mechanism supporting reachability while a node changes its network attachment."
+      ],
+      [
+        "MIB",
+        "A structured collection of managed objects identified by object identifiers."
+      ],
+      [
+        "SNMP agent",
+        "Software exposing managed objects and processing management requests on a device."
+      ],
+      [
+        "ATM virtual circuit",
+        "A logical connection through an ATM network that carries fixed-size cells."
+      ],
+      [
+        "Goodput",
+        "Useful application payload delivered per unit time, excluding overhead and retransmissions."
+      ]
+    ],
+    "types": [
+      [
+        "Transmission media",
+        "Twisted pair, coaxial cable, optical fiber, terrestrial radio, microwave, satellite.",
+        "Guided media constrain the signal path; wireless media enable mobility but face shared-spectrum and propagation effects."
+      ],
+      [
+        "Transmission direction",
+        "Simplex, half-duplex, full-duplex.",
+        "Only one direction; alternating directions; or simultaneous directions."
+      ],
+      [
+        "Modulation families",
+        "ASK, FSK, PSK, QAM.",
+        "They vary amplitude, frequency, phase, or amplitude-plus-phase; higher symbol density demands better signal quality."
+      ],
+      [
+        "Error control",
+        "Parity, checksum, CRC, forward-error correction, retransmission protocols.",
+        "Detection identifies likely corruption; correction recovers data directly or requests another copy."
+      ],
+      [
+        "Topologies",
+        "Bus, star, ring, mesh, tree, hybrid.",
+        "They differ in path redundancy, wiring, fault effects, expansion, and management."
+      ],
+      [
+        "Internetworking devices",
+        "Repeater, hub, bridge, switch, router, gateway, proxy.",
+        "Their forwarding scope ranges from raw signals to frames, packets, and application-specific translation."
+      ],
+      [
+        "Security services",
+        "Confidentiality, integrity, authentication, authorization, availability, accountability.",
+        "Each addresses a different threat; encryption alone does not supply all services."
+      ],
+      [
+        "Network management",
+        "Configuration, fault, performance, security, and accounting management.",
+        "The categories organize what must be controlled, diagnosed, measured, protected, and attributed."
+      ],
+      [
+        "SNMP operations",
+        "Get, GetNext/GetBulk, Set, Response, Trap/Inform.",
+        "Polling reads data, Set changes permitted objects, and notifications report events."
+      ],
+      [
+        "Management interfaces",
+        "CLI, desktop tools, web interfaces, APIs, XML-based structured exchange.",
+        "They differ in automation, usability, consistency, and security surface."
+      ]
+    ],
+    "formulas": [
+      [
+        "Shannon capacity",
+        "C = B log2(1 + S/N)",
+        "Upper bound for a noisy channel under model assumptions."
+      ],
+      [
+        "Nyquist bit rate",
+        "R = 2B log2(M)",
+        "Ideal noiseless band-limited channel with M signal levels."
+      ],
+      [
+        "Transmission delay",
+        "packet bits / link bit rate",
+        "Time to place all packet bits onto a link."
+      ],
+      [
+        "Propagation delay",
+        "distance / propagation speed",
+        "Time for a signal front to travel through the medium."
+      ],
+      [
+        "Total nodal delay",
+        "processing + queueing + transmission + propagation",
+        "Break down latency sources."
+      ],
+      [
+        "Utilization",
+        "observed traffic / capacity",
+        "Measure how much link capacity is used over an interval."
+      ],
+      [
+        "Packet loss rate",
+        "lost packets / sent packets",
+        "Quantify delivery loss for a defined measurement window."
+      ],
+      [
+        "Goodput",
+        "useful payload bits / elapsed time",
+        "Separate application value from protocol overhead."
+      ],
+      [
+        "Availability",
+        "uptime / total observed time",
+        "Summarize service accessibility during a period."
+      ],
+      [
+        "Hamming correction",
+        "floor((d_min - 1)/2)",
+        "Maximum guaranteed correctable symbol errors from minimum distance."
+      ]
+    ],
     "comparisons": [
-      {"title":"OSI layer responsibilities","headers":["Layer","Primary concern","Examples of responsibility"],"rows":[["Application","Network services to applications","Management, naming, file or message services"],["Presentation","Representation","Encoding, compression, cryptographic transformation"],["Session","Dialog control","Session coordination and checkpoints"],["Transport","Process-to-process delivery","Segmentation, reliability, flow and congestion behavior"],["Network","Inter-network forwarding","Logical addressing and routing"],["Data link","Local-link transfer","Framing, media access, link error handling"],["Physical","Signals and media","Electrical, optical, or radio transmission"]]},
-      {"title":"Switch versus router","headers":["Property","Switch","Router"],"rows":[["Typical scope","One link-layer broadcast domain or VLAN context","Between IP networks"],["Forwarding identifier","Link-layer address","Network-layer address"],["Primary table","Forwarding/MAC table","Routing table"],["Broadcast handling","May forward within VLAN","Does not forward ordinary link broadcast between networks"],["Main role","Local connectivity","Path selection and internetworking"]]},
-      {"title":"Detection, correction, and recovery","headers":["Mechanism","Purpose","Example"],"rows":[["Detection","Recognize likely corruption","CRC"],["Forward correction","Recover limited errors without retransmission","Error-correcting code"],["Retransmission","Request missing or damaged data again","ARQ"],["Operational recovery","Restore service or state after failure","Redundancy, backup, rollback"]]}
+      {
+        "title": "OSI layer responsibilities",
+        "headers": [
+          "Layer",
+          "Primary concern",
+          "Examples of responsibility"
+        ],
+        "rows": [
+          [
+            "Application",
+            "Network services to applications",
+            "Management, naming, file or message services"
+          ],
+          [
+            "Presentation",
+            "Representation",
+            "Encoding, compression, cryptographic transformation"
+          ],
+          [
+            "Session",
+            "Dialog control",
+            "Session coordination and checkpoints"
+          ],
+          [
+            "Transport",
+            "Process-to-process delivery",
+            "Segmentation, reliability, flow and congestion behavior"
+          ],
+          [
+            "Network",
+            "Inter-network forwarding",
+            "Logical addressing and routing"
+          ],
+          [
+            "Data link",
+            "Local-link transfer",
+            "Framing, media access, link error handling"
+          ],
+          [
+            "Physical",
+            "Signals and media",
+            "Electrical, optical, or radio transmission"
+          ]
+        ]
+      },
+      {
+        "title": "Switch versus router",
+        "headers": [
+          "Property",
+          "Switch",
+          "Router"
+        ],
+        "rows": [
+          [
+            "Typical scope",
+            "One link-layer broadcast domain or VLAN context",
+            "Between IP networks"
+          ],
+          [
+            "Forwarding identifier",
+            "Link-layer address",
+            "Network-layer address"
+          ],
+          [
+            "Primary table",
+            "Forwarding/MAC table",
+            "Routing table"
+          ],
+          [
+            "Broadcast handling",
+            "May forward within VLAN",
+            "Does not forward ordinary link broadcast between networks"
+          ],
+          [
+            "Main role",
+            "Local connectivity",
+            "Path selection and internetworking"
+          ]
+        ]
+      },
+      {
+        "title": "Detection, correction, and recovery",
+        "headers": [
+          "Mechanism",
+          "Purpose",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Detection",
+            "Recognize likely corruption",
+            "CRC"
+          ],
+          [
+            "Forward correction",
+            "Recover limited errors without retransmission",
+            "Error-correcting code"
+          ],
+          [
+            "Retransmission",
+            "Request missing or damaged data again",
+            "ARQ"
+          ],
+          [
+            "Operational recovery",
+            "Restore service or state after failure",
+            "Redundancy, backup, rollback"
+          ]
+        ]
+      }
     ],
-    "pitfalls": ["Using bandwidth, bit rate, throughput, and goodput as synonyms.","Ignoring queueing delay when links are congested.","Mapping a real protocol to only one OSI layer without acknowledging cross-layer behavior.","Claiming a checksum or CRC provides malicious-tampering protection.","Confusing a digital signature with encryption.","Assuming strong WLAN signal means low interference or high throughput.","Polling counters without recording interval, wraparound, reset, or units.","Setting alerts before establishing a baseline.","Treating SNMP v1 community strings as strong modern authentication."],
-    "practice": [["Calculate transmission and propagation delay for a specified packet, rate, distance, and medium speed.","Keep bits, seconds, and meters dimensionally consistent."],["Choose fiber or radio for a campus link and defend the trade-off.","Discuss capacity, reach, mobility, interference, installation, and physical security."],["Place a switch, router, authentication protocol, and modulation scheme into the OSI model.","State the primary layer and acknowledge cross-layer effects."],["Explain how CRC detects a corrupted frame.","Describe polynomial division conceptually; do not claim it is cryptographic."],["Design a challenge-response exchange resistant to replay.","Include a fresh nonce and bind the response to identity and context."],["Estimate interface utilization from two SNMP counter readings.","Use the difference divided by elapsed time and link capacity; handle wrap/reset."],["Propose fault and performance metrics for a WAN.","Include reachability, errors, loss, latency, jitter, throughput, and change history."],["Plan a C/C++ socket lab and a MATLAB analysis.","Define topology, messages, controlled variable, timestamps, repeated trials, and plots."]],
-    "applications": [["Managed campus network","Draw access, distribution, and routed boundaries; define VLANs, failure domains, security controls, SNMP metrics, configuration backup, and recovery tests."],["Wireless performance study","Measure throughput, loss, latency, and jitter at varying distance and contention. Separate signal quality observations from end-to-end application results."],["Secure protocol laboratory","Implement a framed client-server exchange with sequence numbers and message authentication, then document attack assumptions and recovery behavior."]]
+    "pitfalls": [
+      "Using bandwidth, bit rate, throughput, and goodput as synonyms.",
+      "Ignoring queueing delay when links are congested.",
+      "Mapping a real protocol to only one OSI layer without acknowledging cross-layer behavior.",
+      "Claiming a checksum or CRC provides malicious-tampering protection.",
+      "Confusing a digital signature with encryption.",
+      "Assuming strong WLAN signal means low interference or high throughput.",
+      "Polling counters without recording interval, wraparound, reset, or units.",
+      "Setting alerts before establishing a baseline.",
+      "Treating SNMP v1 community strings as strong modern authentication."
+    ],
+    "practice": [
+      [
+        "Calculate transmission and propagation delay for a specified packet, rate, distance, and medium speed.",
+        "Keep bits, seconds, and meters dimensionally consistent."
+      ],
+      [
+        "Choose fiber or radio for a campus link and defend the trade-off.",
+        "Discuss capacity, reach, mobility, interference, installation, and physical security."
+      ],
+      [
+        "Place a switch, router, authentication protocol, and modulation scheme into the OSI model.",
+        "State the primary layer and acknowledge cross-layer effects."
+      ],
+      [
+        "Explain how CRC detects a corrupted frame.",
+        "Describe polynomial division conceptually; do not claim it is cryptographic."
+      ],
+      [
+        "Design a challenge-response exchange resistant to replay.",
+        "Include a fresh nonce and bind the response to identity and context."
+      ],
+      [
+        "Estimate interface utilization from two SNMP counter readings.",
+        "Use the difference divided by elapsed time and link capacity; handle wrap/reset."
+      ],
+      [
+        "Propose fault and performance metrics for a WAN.",
+        "Include reachability, errors, loss, latency, jitter, throughput, and change history."
+      ],
+      [
+        "Plan a C/C++ socket lab and a MATLAB analysis.",
+        "Define topology, messages, controlled variable, timestamps, repeated trials, and plots."
+      ]
+    ],
+    "applications": [
+      [
+        "Managed campus network",
+        "Draw access, distribution, and routed boundaries; define VLANs, failure domains, security controls, SNMP metrics, configuration backup, and recovery tests."
+      ],
+      [
+        "Wireless performance study",
+        "Measure throughput, loss, latency, and jitter at varying distance and contention. Separate signal quality observations from end-to-end application results."
+      ],
+      [
+        "Secure protocol laboratory",
+        "Implement a framed client-server exchange with sequence numbers and message authentication, then document attack assumptions and recovery behavior."
+      ]
+    ]
   },
   "probability-and-statistics": {
     "visuals": [
-      {"afterModule":1,"src":"../assets/generated/probability/probability-foundations.png","title":"Mind map · Probability foundations","caption":"Move from events and combinatorics to conditioning, independence, and Bayesian updating.","alt":"Text mind map linking Probability Foundations to Events, Conditional Probability, Independence, Bayes Rule, and Combinatorics."},
-      {"afterModule":2,"src":"../assets/generated/probability/discrete-distributions.png","title":"Mind map · Discrete distributions","caption":"Compare Bernoulli, binomial, geometric, negative binomial, and Poisson random variables by experiment and support.","alt":"Text mind map linking Discrete Distributions to Bernoulli, Binomial, Geometric, Negative Binomial, and Poisson."},
-      {"afterModule":5,"src":"../assets/generated/probability/continuous-simulation.png","title":"Mind map · Continuous models and simulation","caption":"Connect lifetime distributions and the normal model to the Central Limit Theorem and Monte Carlo simulation.","alt":"Text mind map linking Continuous and Simulation to Exponential, Gamma, Weibull, Hyperexponential, Normal, Central Limit Theorem, and Monte Carlo."},
-      {"afterModule":8,"src":"../assets/generated/probability/statistical-inference.png","title":"Mind map · Statistical inference","caption":"Use this map to separate estimation, interval construction, testing errors, regression, ANOVA, and nonparametric methods.","alt":"Text mind map linking Statistical Inference to Estimation, Confidence Intervals, Hypothesis Testing, Type I Error, Type II Error, Regression, ANOVA, and Nonparametric."}
+      {
+        "afterModule": 1,
+        "src": "../assets/generated/probability/probability-foundations.png",
+        "title": "Mind map \u00b7 Probability foundations",
+        "caption": "Move from events and combinatorics to conditioning, independence, and Bayesian updating.",
+        "alt": "Text mind map linking Probability Foundations to Events, Conditional Probability, Independence, Bayes Rule, and Combinatorics."
+      },
+      {
+        "afterModule": 2,
+        "src": "../assets/generated/probability/discrete-distributions.png",
+        "title": "Mind map \u00b7 Discrete distributions",
+        "caption": "Compare Bernoulli, binomial, geometric, negative binomial, and Poisson random variables by experiment and support.",
+        "alt": "Text mind map linking Discrete Distributions to Bernoulli, Binomial, Geometric, Negative Binomial, and Poisson."
+      },
+      {
+        "afterModule": 5,
+        "src": "../assets/generated/probability/continuous-simulation.png",
+        "title": "Mind map \u00b7 Continuous models and simulation",
+        "caption": "Connect lifetime distributions and the normal model to the Central Limit Theorem and Monte Carlo simulation.",
+        "alt": "Text mind map linking Continuous and Simulation to Exponential, Gamma, Weibull, Hyperexponential, Normal, Central Limit Theorem, and Monte Carlo."
+      },
+      {
+        "afterModule": 8,
+        "src": "../assets/generated/probability/statistical-inference.png",
+        "title": "Mind map \u00b7 Statistical inference",
+        "caption": "Use this map to separate estimation, interval construction, testing errors, regression, ANOVA, and nonparametric methods.",
+        "alt": "Text mind map linking Statistical Inference to Estimation, Confidence Intervals, Hypothesis Testing, Type I Error, Type II Error, Regression, ANOVA, and Nonparametric."
+      }
     ],
-    "objectives": ["Construct probability models and verify their assumptions.","Choose a distribution from the data-generating story rather than visual resemblance alone.","Simulate random variables and quantify Monte Carlo uncertainty.","Estimate parameters and interpret confidence intervals correctly.","Select, check, and communicate a statistical model or hypothesis test."],
-    "glossary": [["Outcome","One possible result of a random experiment."],["Event","A set of outcomes from a sample space."],["Conditional probability","Probability restricted to cases where a conditioning event occurred."],["Independence","A property where joint probability factorizes into marginal probabilities."],["Random variable","A numeric function of outcomes."],["PMF, PDF, CDF","Mass for discrete values; density for continuous values; cumulative probability up to a value."],["Expectation","A probability-weighted long-run average of a random variable."],["Variance","Expected squared deviation from the mean."],["Stochastic process","A collection of random variables indexed by time or another ordered set."],["Estimator","A rule computed from sample data to infer an unknown parameter."],["Standard error","Estimated standard deviation of a statistic's sampling distribution."],["Confidence interval","A procedure that captures the target parameter at a stated long-run rate under its assumptions."],["p-value","Under the null model, the probability of a result at least as incompatible as the observed result by the chosen statistic."],["Power","Probability of rejecting the null for a specified alternative when that alternative is true."],["Residual","Observed response minus fitted response in a statistical model."]],
-    "types": [["Event relations","Mutually exclusive, exhaustive, complementary, independent, conditionally independent.","Mutual exclusion concerns overlap; independence concerns probability factorization and they are generally not the same."],["Discrete distributions","Bernoulli, Binomial, Geometric, Negative Binomial, Poisson.","They model one trial, successes in fixed trials, waiting for first or r-th success, or event counts."],["Continuous distributions","Exponential, Gamma, Weibull, Hyperexponential, Normal.","They model waiting time, positive duration with shape flexibility, mixtures, or symmetric additive variation."],["Processes","Bernoulli process, Poisson process, discrete-time Markov chain, queueing process.","They differ by time scale, state, dependence, and event/service structure."],["Sampling statistics","Sample mean, proportion, variance, regression coefficient, test statistic.","Each has a sampling distribution used for uncertainty quantification."],["Estimators","Method of moments, maximum likelihood, interval estimation.","Moment matching is direct; likelihood optimization uses the full specified probability model; intervals express uncertainty."],["Tests","One- or two-sided; parametric or nonparametric; association, mean, proportion, regression, or ANOVA tests.","Choice follows the question, design, measurement scale, dependence, and assumptions."],["Regression models","Simple linear, multiple linear, logistic.","Linear regression targets a numeric conditional mean; logistic regression targets binary-event log-odds."],["Robust/nonparametric methods","Robust summaries and estimators; rank-, sign-, permutation-, or resampling-based procedures.","They reduce sensitivity to outliers or distributional assumptions but still have assumptions."],["Anomalies","Point, contextual, and collective anomalies.","Unusualness may concern one observation, its context, or a group pattern."]],
-    "formulas": [["Addition rule","P(A union B)=P(A)+P(B)-P(A intersection B)","Combine possibly overlapping events."],["Conditional probability","P(A|B)=P(A intersection B)/P(B)","Update probability within event B."],["Bayes' rule","P(A|B)=P(B|A)P(A)/P(B)","Reverse conditioning using prior and evidence."],["Binomial PMF","C(n,k)p^k(1-p)^(n-k)","Exactly k successes in n independent equal-probability trials."],["Poisson PMF","e^(-lambda) lambda^k / k!","Count events with mean rate parameter lambda under model assumptions."],["Expectation","E[X]=sum x p(x) or integral x f(x) dx","Compute a distributional mean."],["Variance","Var(X)=E[X^2]-E[X]^2","Measure squared spread."],["Standardized sample mean","Z=(Xbar-mu)/(sigma/sqrt(n))","Use in normal/CLT reasoning when conditions hold."],["Approximate mean CI","Xbar +/- critical value x SE","Estimate a population mean with stated confidence procedure."],["Chi-square statistic","sum((O-E)^2/E)","Compare observed and expected categorical counts."],["Least-squares objective","sum(y_i-yhat_i)^2","Fit linear regression coefficients."],["Logistic link","log(p/(1-p)) = beta0 + beta'x","Model a binary response probability."],["Monte Carlo standard error","sample SD of outputs / sqrt(N)","Quantify simulation estimate noise."],["Little's law","L = lambda W","Relate average number, arrival rate, and average time in a stable system."]],
+    "objectives": [
+      "Construct probability models and verify their assumptions.",
+      "Choose a distribution from the data-generating story rather than visual resemblance alone.",
+      "Simulate random variables and quantify Monte Carlo uncertainty.",
+      "Estimate parameters and interpret confidence intervals correctly.",
+      "Select, check, and communicate a statistical model or hypothesis test."
+    ],
+    "glossary": [
+      [
+        "Outcome",
+        "One possible result of a random experiment."
+      ],
+      [
+        "Event",
+        "A set of outcomes from a sample space."
+      ],
+      [
+        "Conditional probability",
+        "Probability restricted to cases where a conditioning event occurred."
+      ],
+      [
+        "Independence",
+        "A property where joint probability factorizes into marginal probabilities."
+      ],
+      [
+        "Random variable",
+        "A numeric function of outcomes."
+      ],
+      [
+        "PMF, PDF, CDF",
+        "Mass for discrete values; density for continuous values; cumulative probability up to a value."
+      ],
+      [
+        "Expectation",
+        "A probability-weighted long-run average of a random variable."
+      ],
+      [
+        "Variance",
+        "Expected squared deviation from the mean."
+      ],
+      [
+        "Stochastic process",
+        "A collection of random variables indexed by time or another ordered set."
+      ],
+      [
+        "Estimator",
+        "A rule computed from sample data to infer an unknown parameter."
+      ],
+      [
+        "Standard error",
+        "Estimated standard deviation of a statistic's sampling distribution."
+      ],
+      [
+        "Confidence interval",
+        "A procedure that captures the target parameter at a stated long-run rate under its assumptions."
+      ],
+      [
+        "p-value",
+        "Under the null model, the probability of a result at least as incompatible as the observed result by the chosen statistic."
+      ],
+      [
+        "Power",
+        "Probability of rejecting the null for a specified alternative when that alternative is true."
+      ],
+      [
+        "Residual",
+        "Observed response minus fitted response in a statistical model."
+      ]
+    ],
+    "types": [
+      [
+        "Event relations",
+        "Mutually exclusive, exhaustive, complementary, independent, conditionally independent.",
+        "Mutual exclusion concerns overlap; independence concerns probability factorization and they are generally not the same."
+      ],
+      [
+        "Discrete distributions",
+        "Bernoulli, Binomial, Geometric, Negative Binomial, Poisson.",
+        "They model one trial, successes in fixed trials, waiting for first or r-th success, or event counts."
+      ],
+      [
+        "Continuous distributions",
+        "Exponential, Gamma, Weibull, Hyperexponential, Normal.",
+        "They model waiting time, positive duration with shape flexibility, mixtures, or symmetric additive variation."
+      ],
+      [
+        "Processes",
+        "Bernoulli process, Poisson process, discrete-time Markov chain, queueing process.",
+        "They differ by time scale, state, dependence, and event/service structure."
+      ],
+      [
+        "Sampling statistics",
+        "Sample mean, proportion, variance, regression coefficient, test statistic.",
+        "Each has a sampling distribution used for uncertainty quantification."
+      ],
+      [
+        "Estimators",
+        "Method of moments, maximum likelihood, interval estimation.",
+        "Moment matching is direct; likelihood optimization uses the full specified probability model; intervals express uncertainty."
+      ],
+      [
+        "Tests",
+        "One- or two-sided; parametric or nonparametric; association, mean, proportion, regression, or ANOVA tests.",
+        "Choice follows the question, design, measurement scale, dependence, and assumptions."
+      ],
+      [
+        "Regression models",
+        "Simple linear, multiple linear, logistic.",
+        "Linear regression targets a numeric conditional mean; logistic regression targets binary-event log-odds."
+      ],
+      [
+        "Robust/nonparametric methods",
+        "Robust summaries and estimators; rank-, sign-, permutation-, or resampling-based procedures.",
+        "They reduce sensitivity to outliers or distributional assumptions but still have assumptions."
+      ],
+      [
+        "Anomalies",
+        "Point, contextual, and collective anomalies.",
+        "Unusualness may concern one observation, its context, or a group pattern."
+      ]
+    ],
+    "formulas": [
+      [
+        "Addition rule",
+        "P(A union B)=P(A)+P(B)-P(A intersection B)",
+        "Combine possibly overlapping events."
+      ],
+      [
+        "Conditional probability",
+        "P(A|B)=P(A intersection B)/P(B)",
+        "Update probability within event B."
+      ],
+      [
+        "Bayes' rule",
+        "P(A|B)=P(B|A)P(A)/P(B)",
+        "Reverse conditioning using prior and evidence."
+      ],
+      [
+        "Binomial PMF",
+        "C(n,k)p^k(1-p)^(n-k)",
+        "Exactly k successes in n independent equal-probability trials."
+      ],
+      [
+        "Poisson PMF",
+        "e^(-lambda) lambda^k / k!",
+        "Count events with mean rate parameter lambda under model assumptions."
+      ],
+      [
+        "Expectation",
+        "E[X]=sum x p(x) or integral x f(x) dx",
+        "Compute a distributional mean."
+      ],
+      [
+        "Variance",
+        "Var(X)=E[X^2]-E[X]^2",
+        "Measure squared spread."
+      ],
+      [
+        "Standardized sample mean",
+        "Z=(Xbar-mu)/(sigma/sqrt(n))",
+        "Use in normal/CLT reasoning when conditions hold."
+      ],
+      [
+        "Approximate mean CI",
+        "Xbar +/- critical value x SE",
+        "Estimate a population mean with stated confidence procedure."
+      ],
+      [
+        "Chi-square statistic",
+        "sum((O-E)^2/E)",
+        "Compare observed and expected categorical counts."
+      ],
+      [
+        "Least-squares objective",
+        "sum(y_i-yhat_i)^2",
+        "Fit linear regression coefficients."
+      ],
+      [
+        "Logistic link",
+        "log(p/(1-p)) = beta0 + beta'x",
+        "Model a binary response probability."
+      ],
+      [
+        "Monte Carlo standard error",
+        "sample SD of outputs / sqrt(N)",
+        "Quantify simulation estimate noise."
+      ],
+      [
+        "Little's law",
+        "L = lambda W",
+        "Relate average number, arrival rate, and average time in a stable system."
+      ]
+    ],
     "comparisons": [
-      {"title":"Distribution selection guide","headers":["Situation","Distribution","Key assumptions"],"rows":[["One success/failure trial","Bernoulli","Two outcomes with success probability p"],["Success count in n trials","Binomial","Fixed n, independent trials, constant p"],["Trials until first success","Geometric","Independent trials, constant p"],["Event count in interval","Poisson","Independent increments and stable rate in basic model"],["Time to Poisson event","Exponential","Memoryless constant hazard in basic model"],["Sum of exponential stages","Gamma","Positive waiting-time model"],["Flexible lifetime","Weibull","Hazard can increase, decrease, or remain constant"],["Symmetric additive variation","Normal","Continuous bell-shaped model; support is all real values"]]},
-      {"title":"Confidence interval versus hypothesis test","headers":["Aspect","Confidence interval","Hypothesis test"],"rows":[["Main output","Plausible parameter range under procedure","Evidence measure against null model"],["Uncertainty","Shows magnitude and precision","Often summarized by statistic and p-value"],["Decision threshold","Not inherently required","Often preselect alpha"],["Good report","Estimate, interval, assumptions","Effect, uncertainty, test, p-value, assumptions"],["Common error","Probability statement about fixed parameter","Treating p-value as probability null is true"]]},
-      {"title":"Linear versus logistic regression","headers":["Property","Linear","Logistic"],"rows":[["Response","Numeric","Binary"],["Modeled quantity","Conditional mean","Log-odds / probability"],["Prediction range","Unbounded","0 to 1 after inverse-logit"],["Coefficient meaning","Response-unit change","Change in log-odds; exp(coefficient) is odds ratio"],["Diagnostics","Residual form, variance, influence","Calibration, discrimination, residual/deviance behavior"]]}
+      {
+        "title": "Distribution selection guide",
+        "headers": [
+          "Situation",
+          "Distribution",
+          "Key assumptions"
+        ],
+        "rows": [
+          [
+            "One success/failure trial",
+            "Bernoulli",
+            "Two outcomes with success probability p"
+          ],
+          [
+            "Success count in n trials",
+            "Binomial",
+            "Fixed n, independent trials, constant p"
+          ],
+          [
+            "Trials until first success",
+            "Geometric",
+            "Independent trials, constant p"
+          ],
+          [
+            "Event count in interval",
+            "Poisson",
+            "Independent increments and stable rate in basic model"
+          ],
+          [
+            "Time to Poisson event",
+            "Exponential",
+            "Memoryless constant hazard in basic model"
+          ],
+          [
+            "Sum of exponential stages",
+            "Gamma",
+            "Positive waiting-time model"
+          ],
+          [
+            "Flexible lifetime",
+            "Weibull",
+            "Hazard can increase, decrease, or remain constant"
+          ],
+          [
+            "Symmetric additive variation",
+            "Normal",
+            "Continuous bell-shaped model; support is all real values"
+          ]
+        ]
+      },
+      {
+        "title": "Confidence interval versus hypothesis test",
+        "headers": [
+          "Aspect",
+          "Confidence interval",
+          "Hypothesis test"
+        ],
+        "rows": [
+          [
+            "Main output",
+            "Plausible parameter range under procedure",
+            "Evidence measure against null model"
+          ],
+          [
+            "Uncertainty",
+            "Shows magnitude and precision",
+            "Often summarized by statistic and p-value"
+          ],
+          [
+            "Decision threshold",
+            "Not inherently required",
+            "Often preselect alpha"
+          ],
+          [
+            "Good report",
+            "Estimate, interval, assumptions",
+            "Effect, uncertainty, test, p-value, assumptions"
+          ],
+          [
+            "Common error",
+            "Probability statement about fixed parameter",
+            "Treating p-value as probability null is true"
+          ]
+        ]
+      },
+      {
+        "title": "Linear versus logistic regression",
+        "headers": [
+          "Property",
+          "Linear",
+          "Logistic"
+        ],
+        "rows": [
+          [
+            "Response",
+            "Numeric",
+            "Binary"
+          ],
+          [
+            "Modeled quantity",
+            "Conditional mean",
+            "Log-odds / probability"
+          ],
+          [
+            "Prediction range",
+            "Unbounded",
+            "0 to 1 after inverse-logit"
+          ],
+          [
+            "Coefficient meaning",
+            "Response-unit change",
+            "Change in log-odds; exp(coefficient) is odds ratio"
+          ],
+          [
+            "Diagnostics",
+            "Residual form, variance, influence",
+            "Calibration, discrimination, residual/deviance behavior"
+          ]
+        ]
+      }
     ],
-    "pitfalls": ["Confusing P(A|B) with P(B|A).","Treating density height as probability.","Choosing a distribution without checking the generating assumptions.","Using the CLT as permission to ignore dependence or extreme heavy tails.","Reporting simulation output without Monte Carlo uncertainty or seed information.","Interpreting a 95% confidence interval as a 95% probability statement about a fixed parameter after observation.","Equating statistical significance with practical importance.","Failing to account for repeated testing.","Fitting regression without inspecting residuals, influence, or leakage.","Calling an unusual value erroneous without contextual evidence."],
-    "practice": [["Compute a posterior disease probability from sensitivity, specificity, and prevalence.","Use a probability tree or Bayes' rule with the base rate."],["Select a distribution for calls per minute and justify it.","Discuss event-count assumptions and possible overdispersion."],["Find the mean and variance of a Bernoulli variable.","Use values 1 and 0 directly in the expectation definitions."],["Simulate an exponential variable from a uniform draw.","Use inverse CDF transformation and check the empirical mean."],["Advance a Markov state distribution one step.","Multiply the row distribution by the transition matrix and verify probabilities sum to 1."],["Construct and interpret a large-sample confidence interval.","State the parameter, estimate, standard error, critical value, and conditions."],["Explain Type I, Type II, and power for a security detector.","Tie each to false alarms, missed attacks, and a specified alternative."],["Diagnose a regression from residual plots.","Look for curvature, unequal spread, outliers, dependence, and influential points."],["Compare bootstrap and Monte Carlo simulation.","Bootstrap resamples observed data; Monte Carlo samples from a specified model."],["Choose an anomaly threshold.","Use baseline variation and costs of false positives versus false negatives."]],
-    "applications": [["Service-system simulation","Model arrivals and service times, define queue discipline, run replications, and report waiting-time estimates with Monte Carlo uncertainty."],["Experiment analysis","Plan sample summaries, confidence intervals, effect size, hypothesis test, assumption checks, and a clear limitation statement."],["Reliability study","Select lifetime distributions, estimate parameters, compare fitted survival behavior, and explain why censoring or changing hazards matter."]]
+    "pitfalls": [
+      "Confusing P(A|B) with P(B|A).",
+      "Treating density height as probability.",
+      "Choosing a distribution without checking the generating assumptions.",
+      "Using the CLT as permission to ignore dependence or extreme heavy tails.",
+      "Reporting simulation output without Monte Carlo uncertainty or seed information.",
+      "Interpreting a 95% confidence interval as a 95% probability statement about a fixed parameter after observation.",
+      "Equating statistical significance with practical importance.",
+      "Failing to account for repeated testing.",
+      "Fitting regression without inspecting residuals, influence, or leakage.",
+      "Calling an unusual value erroneous without contextual evidence."
+    ],
+    "practice": [
+      [
+        "Compute a posterior disease probability from sensitivity, specificity, and prevalence.",
+        "Use a probability tree or Bayes' rule with the base rate."
+      ],
+      [
+        "Select a distribution for calls per minute and justify it.",
+        "Discuss event-count assumptions and possible overdispersion."
+      ],
+      [
+        "Find the mean and variance of a Bernoulli variable.",
+        "Use values 1 and 0 directly in the expectation definitions."
+      ],
+      [
+        "Simulate an exponential variable from a uniform draw.",
+        "Use inverse CDF transformation and check the empirical mean."
+      ],
+      [
+        "Advance a Markov state distribution one step.",
+        "Multiply the row distribution by the transition matrix and verify probabilities sum to 1."
+      ],
+      [
+        "Construct and interpret a large-sample confidence interval.",
+        "State the parameter, estimate, standard error, critical value, and conditions."
+      ],
+      [
+        "Explain Type I, Type II, and power for a security detector.",
+        "Tie each to false alarms, missed attacks, and a specified alternative."
+      ],
+      [
+        "Diagnose a regression from residual plots.",
+        "Look for curvature, unequal spread, outliers, dependence, and influential points."
+      ],
+      [
+        "Compare bootstrap and Monte Carlo simulation.",
+        "Bootstrap resamples observed data; Monte Carlo samples from a specified model."
+      ],
+      [
+        "Choose an anomaly threshold.",
+        "Use baseline variation and costs of false positives versus false negatives."
+      ]
+    ],
+    "applications": [
+      [
+        "Service-system simulation",
+        "Model arrivals and service times, define queue discipline, run replications, and report waiting-time estimates with Monte Carlo uncertainty."
+      ],
+      [
+        "Experiment analysis",
+        "Plan sample summaries, confidence intervals, effect size, hypothesis test, assumption checks, and a clear limitation statement."
+      ],
+      [
+        "Reliability study",
+        "Select lifetime distributions, estimate parameters, compare fitted survival behavior, and explain why censoring or changing hazards matter."
+      ]
+    ]
   },
   "pattern-recognition": {
     "visuals": [
-      {"afterModule":1,"src":"../assets/generated/pattern/learning-models.png","title":"Mind map · Learning models","caption":"Survey the syllabus model families before studying how each represents and learns patterns.","alt":"Text mind map linking Learning Models to Classifiers, Functions, Relations, Grammars, Probabilistic Models, Value Functions, Behaviors, and Programs."},
-      {"afterModule":3,"src":"../assets/generated/pattern/core-classifiers.png","title":"Mind map · Core classifiers","caption":"Compare interpretable, probabilistic, margin-based, neural, local, and ensemble classification families.","alt":"Text mind map linking Core Classifiers to Decision Trees, Neural Networks, Support Vector Machines, Bayesian Networks, Nearest Neighbour, and Ensemble Classifiers."},
-      {"afterModule":5,"src":"../assets/generated/pattern/text-sequence-models.png","title":"Mind map · Text and sequence models","caption":"Trace the progression from token counts and N-grams to Markov models, hidden states, and association rules.","alt":"Text mind map linking Text and Sequence Models to Bag of Words, N-gram Models, Markov Models, Hidden Markov Models, and Association Rules."},
-      {"afterModule":8,"src":"../assets/generated/pattern/representation-clustering.png","title":"Mind map · Representation and clustering","caption":"Relate lower-dimensional representations to visualization, clustering families, and document recognition.","alt":"Text mind map linking Representation and Clustering to Dimensionality Reduction, Feature Selection, Visualization, K-means, Hierarchical Clustering, Mixture Models, and Document Recognition."}
+      {
+        "afterModule": 1,
+        "src": "../assets/generated/pattern/learning-models.png",
+        "title": "Mind map \u00b7 Learning models",
+        "caption": "Survey the syllabus model families before studying how each represents and learns patterns.",
+        "alt": "Text mind map linking Learning Models to Classifiers, Functions, Relations, Grammars, Probabilistic Models, Value Functions, Behaviors, and Programs."
+      },
+      {
+        "afterModule": 3,
+        "src": "../assets/generated/pattern/core-classifiers.png",
+        "title": "Mind map \u00b7 Core classifiers",
+        "caption": "Compare interpretable, probabilistic, margin-based, neural, local, and ensemble classification families.",
+        "alt": "Text mind map linking Core Classifiers to Decision Trees, Neural Networks, Support Vector Machines, Bayesian Networks, Nearest Neighbour, and Ensemble Classifiers."
+      },
+      {
+        "afterModule": 5,
+        "src": "../assets/generated/pattern/text-sequence-models.png",
+        "title": "Mind map \u00b7 Text and sequence models",
+        "caption": "Trace the progression from token counts and N-grams to Markov models, hidden states, and association rules.",
+        "alt": "Text mind map linking Text and Sequence Models to Bag of Words, N-gram Models, Markov Models, Hidden Markov Models, and Association Rules."
+      },
+      {
+        "afterModule": 8,
+        "src": "../assets/generated/pattern/representation-clustering.png",
+        "title": "Mind map \u00b7 Representation and clustering",
+        "caption": "Relate lower-dimensional representations to visualization, clustering families, and document recognition.",
+        "alt": "Text mind map linking Representation and Clustering to Dimensionality Reduction, Feature Selection, Visualization, K-means, Hierarchical Clustering, Mixture Models, and Document Recognition."
+      }
     ],
-    "objectives": ["Formulate a learning task with data, representation, target, loss, and evaluation protocol.","Compare probabilistic, margin-based, tree, neural, instance-based, sequence, and ensemble models.","Estimate parameters without leaking validation or test information.","Connect sample complexity and model capacity to generalization.","Build and evaluate a document-recognition pipeline with meaningful error analysis."],
-    "glossary": [["Feature","A measurable representation supplied to a learning algorithm."],["Label","Observed target value used in supervised learning."],["Hypothesis class","The set of functions a learning algorithm may choose from."],["Loss function","A numeric penalty measuring prediction error for an example."],["Generalization","Performance on relevant unseen data from the target setting."],["Prior and likelihood","A prior represents assumptions before data; a likelihood scores observed data under parameter values."],["Sufficient statistic","A data summary retaining all model-relevant information about a parameter."],["Margin","A measure of decision-boundary separation used by support vector machines."],["Kernel","A similarity function enabling implicit feature-space computation when its mathematical conditions hold."],["Bayesian network","A directed acyclic graph representing a factorization of a joint distribution."],["N-gram","A contiguous sequence of n items used to model local context."],["Hidden state","An unobserved state inferred from emitted observations in a latent-state model."],["VC dimension","A capacity measure based on the largest point set a class can shatter."],["Cluster","A group produced from an explicit similarity, distance, or probabilistic criterion."],["Data leakage","Information from validation, test, or future data improperly influencing training."]],
-    "types": [["Learning outputs","Classifiers, functions, relations, grammars, probabilistic models, value functions, behaviors, programs.","The required output structure determines representation, loss, and evaluation."],["Learning settings","Supervised, unsupervised, semi-supervised, reinforcement-style behavioral learning.","They differ in feedback: labels, no labels, partial labels, or reward/interaction."],["Inference principles","Bayesian posterior, maximum a posteriori, maximum likelihood, minimum description length.","They differ in treatment of priors, probability, and complexity."],["Classifier families","Decision tree, neural network, SVM, Bayesian network, nearest neighbour, ensemble.","They offer different inductive biases, optimization, interpretability, and data requirements."],["Text representations","Bag of words, n-grams, probabilistic sequences.","They progressively retain counts, short order, or structured dependence."],["Sequence models","Markov model and hidden Markov model.","Markov states are observed in the basic model; HMM states are latent and emit observations."],["Ensembles","Bagging, boosting, voting/averaging.","Bagging reduces variance through resampling; boosting builds sequentially around errors; voting combines outputs."],["Reduction methods","Feature selection and feature extraction/dimensionality reduction.","Selection keeps original variables; extraction creates new lower-dimensional coordinates."],["Clustering","Partitioning, hierarchical, model-based, distributional.","They differ in output structure and definition of cluster membership."],["Evaluation","Holdout, cross-validation, confusion-matrix metrics, calibration, error analysis.","The protocol must match deployment population and prevent leakage."]],
-    "formulas": [["Empirical risk","(1/n) sum_i L(f(x_i), y_i)","Average training loss."],["Bayesian posterior","p(theta|D) proportional to p(D|theta)p(theta)","Update parameter uncertainty from data."],["MAP estimate","argmax_theta p(D|theta)p(theta)","Choose highest posterior-density parameter."],["Entropy","-sum_k p_k log p_k","Measure uncertainty; used in tree splitting and information theory."],["SVM decision","sign(w'x + b)","Classify relative to a learned hyperplane."],["k-NN prediction","majority or weighted vote among k nearest samples","Local instance-based prediction."],["N-gram factorization","product_t P(w_t | previous n-1 items)","Approximate sequence probability with limited context."],["Bayes classifier","argmax_y p(y)p(x|y)","Choose class with greatest posterior proportional score."],["VC-style principle","required samples rise with capacity and desired confidence","Reason about generalization rather than memorize one bound."],["PCA objective","maximize projected variance subject to orthonormal directions","Create linear lower-dimensional features."],["k-means objective","sum_i ||x_i - mu_cluster(i)||^2","Minimize within-cluster squared distance."],["Precision","TP/(TP+FP)","Fraction of predicted positives that are correct."],["Recall","TP/(TP+FN)","Fraction of actual positives recovered."],["F1","2PR/(P+R)","Harmonic summary of precision and recall."]],
+    "objectives": [
+      "Formulate a learning task with data, representation, target, loss, and evaluation protocol.",
+      "Compare probabilistic, margin-based, tree, neural, instance-based, sequence, and ensemble models.",
+      "Estimate parameters without leaking validation or test information.",
+      "Connect sample complexity and model capacity to generalization.",
+      "Build and evaluate a document-recognition pipeline with meaningful error analysis."
+    ],
+    "glossary": [
+      [
+        "Feature",
+        "A measurable representation supplied to a learning algorithm."
+      ],
+      [
+        "Label",
+        "Observed target value used in supervised learning."
+      ],
+      [
+        "Hypothesis class",
+        "The set of functions a learning algorithm may choose from."
+      ],
+      [
+        "Loss function",
+        "A numeric penalty measuring prediction error for an example."
+      ],
+      [
+        "Generalization",
+        "Performance on relevant unseen data from the target setting."
+      ],
+      [
+        "Prior and likelihood",
+        "A prior represents assumptions before data; a likelihood scores observed data under parameter values."
+      ],
+      [
+        "Sufficient statistic",
+        "A data summary retaining all model-relevant information about a parameter."
+      ],
+      [
+        "Margin",
+        "A measure of decision-boundary separation used by support vector machines."
+      ],
+      [
+        "Kernel",
+        "A similarity function enabling implicit feature-space computation when its mathematical conditions hold."
+      ],
+      [
+        "Bayesian network",
+        "A directed acyclic graph representing a factorization of a joint distribution."
+      ],
+      [
+        "N-gram",
+        "A contiguous sequence of n items used to model local context."
+      ],
+      [
+        "Hidden state",
+        "An unobserved state inferred from emitted observations in a latent-state model."
+      ],
+      [
+        "VC dimension",
+        "A capacity measure based on the largest point set a class can shatter."
+      ],
+      [
+        "Cluster",
+        "A group produced from an explicit similarity, distance, or probabilistic criterion."
+      ],
+      [
+        "Data leakage",
+        "Information from validation, test, or future data improperly influencing training."
+      ]
+    ],
+    "types": [
+      [
+        "Learning outputs",
+        "Classifiers, functions, relations, grammars, probabilistic models, value functions, behaviors, programs.",
+        "The required output structure determines representation, loss, and evaluation."
+      ],
+      [
+        "Learning settings",
+        "Supervised, unsupervised, semi-supervised, reinforcement-style behavioral learning.",
+        "They differ in feedback: labels, no labels, partial labels, or reward/interaction."
+      ],
+      [
+        "Inference principles",
+        "Bayesian posterior, maximum a posteriori, maximum likelihood, minimum description length.",
+        "They differ in treatment of priors, probability, and complexity."
+      ],
+      [
+        "Classifier families",
+        "Decision tree, neural network, SVM, Bayesian network, nearest neighbour, ensemble.",
+        "They offer different inductive biases, optimization, interpretability, and data requirements."
+      ],
+      [
+        "Text representations",
+        "Bag of words, n-grams, probabilistic sequences.",
+        "They progressively retain counts, short order, or structured dependence."
+      ],
+      [
+        "Sequence models",
+        "Markov model and hidden Markov model.",
+        "Markov states are observed in the basic model; HMM states are latent and emit observations."
+      ],
+      [
+        "Ensembles",
+        "Bagging, boosting, voting/averaging.",
+        "Bagging reduces variance through resampling; boosting builds sequentially around errors; voting combines outputs."
+      ],
+      [
+        "Reduction methods",
+        "Feature selection and feature extraction/dimensionality reduction.",
+        "Selection keeps original variables; extraction creates new lower-dimensional coordinates."
+      ],
+      [
+        "Clustering",
+        "Partitioning, hierarchical, model-based, distributional.",
+        "They differ in output structure and definition of cluster membership."
+      ],
+      [
+        "Evaluation",
+        "Holdout, cross-validation, confusion-matrix metrics, calibration, error analysis.",
+        "The protocol must match deployment population and prevent leakage."
+      ]
+    ],
+    "formulas": [
+      [
+        "Empirical risk",
+        "(1/n) sum_i L(f(x_i), y_i)",
+        "Average training loss."
+      ],
+      [
+        "Bayesian posterior",
+        "p(theta|D) proportional to p(D|theta)p(theta)",
+        "Update parameter uncertainty from data."
+      ],
+      [
+        "MAP estimate",
+        "argmax_theta p(D|theta)p(theta)",
+        "Choose highest posterior-density parameter."
+      ],
+      [
+        "Entropy",
+        "-sum_k p_k log p_k",
+        "Measure uncertainty; used in tree splitting and information theory."
+      ],
+      [
+        "SVM decision",
+        "sign(w'x + b)",
+        "Classify relative to a learned hyperplane."
+      ],
+      [
+        "k-NN prediction",
+        "majority or weighted vote among k nearest samples",
+        "Local instance-based prediction."
+      ],
+      [
+        "N-gram factorization",
+        "product_t P(w_t | previous n-1 items)",
+        "Approximate sequence probability with limited context."
+      ],
+      [
+        "Bayes classifier",
+        "argmax_y p(y)p(x|y)",
+        "Choose class with greatest posterior proportional score."
+      ],
+      [
+        "VC-style principle",
+        "required samples rise with capacity and desired confidence",
+        "Reason about generalization rather than memorize one bound."
+      ],
+      [
+        "PCA objective",
+        "maximize projected variance subject to orthonormal directions",
+        "Create linear lower-dimensional features."
+      ],
+      [
+        "k-means objective",
+        "sum_i ||x_i - mu_cluster(i)||^2",
+        "Minimize within-cluster squared distance."
+      ],
+      [
+        "Precision",
+        "TP/(TP+FP)",
+        "Fraction of predicted positives that are correct."
+      ],
+      [
+        "Recall",
+        "TP/(TP+FN)",
+        "Fraction of actual positives recovered."
+      ],
+      [
+        "F1",
+        "2PR/(P+R)",
+        "Harmonic summary of precision and recall."
+      ]
+    ],
     "comparisons": [
-      {"title":"Major classifier families","headers":["Model","Strength","Important limitation"],"rows":[["Decision tree","Readable nonlinear rules; mixed feature handling","Can be unstable or overfit without control"],["Neural network","Flexible learned representations","Data/compute needs and limited transparency"],["SVM","Strong margin formulation; kernels","Scaling and kernel/hyperparameter choice matter"],["Naive Bayes / Bayesian model","Probabilistic output and explicit assumptions","Dependence assumptions may be unrealistic"],["k-nearest neighbours","Simple local decision rule","Prediction cost and sensitivity to scale/distance"],["Ensemble","Often improves predictive stability/accuracy","More complexity and harder interpretation"]]},
-      {"title":"Bagging versus boosting","headers":["Property","Bagging","Boosting"],"rows":[["Training","Learners can be trained independently on resamples","Learners are built sequentially"],["Main effect","Variance reduction","Bias and/or error reduction through focused reweighting"],["Combination","Average or vote","Weighted combination"],["Noise sensitivity","Often stabilizing","Can focus excessively on noisy hard cases"],["Example idea","Bootstrap forests","Accuracy/confidence boosting"]]},
-      {"title":"K-means versus hierarchical versus mixture models","headers":["Property","K-means","Hierarchical","Mixture model"],"rows":[["Output","Hard partition","Nested dendrogram","Soft component probabilities"],["Cluster idea","Near centroid by squared distance","Merge/split under linkage rule","Generated by latent distributions"],["Shape bias","Roughly spherical/equal-scale","Depends on distance and linkage","Depends on component family"],["Need k initially","Usually yes","Can cut tree later","Usually select component count"],["Uncertainty","No membership probability","No intrinsic probability","Explicit posterior membership"]]}
+      {
+        "title": "Major classifier families",
+        "headers": [
+          "Model",
+          "Strength",
+          "Important limitation"
+        ],
+        "rows": [
+          [
+            "Decision tree",
+            "Readable nonlinear rules; mixed feature handling",
+            "Can be unstable or overfit without control"
+          ],
+          [
+            "Neural network",
+            "Flexible learned representations",
+            "Data/compute needs and limited transparency"
+          ],
+          [
+            "SVM",
+            "Strong margin formulation; kernels",
+            "Scaling and kernel/hyperparameter choice matter"
+          ],
+          [
+            "Naive Bayes / Bayesian model",
+            "Probabilistic output and explicit assumptions",
+            "Dependence assumptions may be unrealistic"
+          ],
+          [
+            "k-nearest neighbours",
+            "Simple local decision rule",
+            "Prediction cost and sensitivity to scale/distance"
+          ],
+          [
+            "Ensemble",
+            "Often improves predictive stability/accuracy",
+            "More complexity and harder interpretation"
+          ]
+        ]
+      },
+      {
+        "title": "Bagging versus boosting",
+        "headers": [
+          "Property",
+          "Bagging",
+          "Boosting"
+        ],
+        "rows": [
+          [
+            "Training",
+            "Learners can be trained independently on resamples",
+            "Learners are built sequentially"
+          ],
+          [
+            "Main effect",
+            "Variance reduction",
+            "Bias and/or error reduction through focused reweighting"
+          ],
+          [
+            "Combination",
+            "Average or vote",
+            "Weighted combination"
+          ],
+          [
+            "Noise sensitivity",
+            "Often stabilizing",
+            "Can focus excessively on noisy hard cases"
+          ],
+          [
+            "Example idea",
+            "Bootstrap forests",
+            "Accuracy/confidence boosting"
+          ]
+        ]
+      },
+      {
+        "title": "K-means versus hierarchical versus mixture models",
+        "headers": [
+          "Property",
+          "K-means",
+          "Hierarchical",
+          "Mixture model"
+        ],
+        "rows": [
+          [
+            "Output",
+            "Hard partition",
+            "Nested dendrogram",
+            "Soft component probabilities"
+          ],
+          [
+            "Cluster idea",
+            "Near centroid by squared distance",
+            "Merge/split under linkage rule",
+            "Generated by latent distributions"
+          ],
+          [
+            "Shape bias",
+            "Roughly spherical/equal-scale",
+            "Depends on distance and linkage",
+            "Depends on component family"
+          ],
+          [
+            "Need k initially",
+            "Usually yes",
+            "Can cut tree later",
+            "Usually select component count"
+          ],
+          [
+            "Uncertainty",
+            "No membership probability",
+            "No intrinsic probability",
+            "Explicit posterior membership"
+          ]
+        ]
+      }
     ],
-    "pitfalls": ["Starting model selection before defining target data and evaluation measure.","Using test data to choose features, hyperparameters, or preprocessing.","Interpreting correlation or learned importance as causality.","Applying k-NN or k-means to unscaled features without justification.","Treating probability outputs as calibrated without checking.","Confusing MAP with maximum likelihood.","Assuming a two-dimensional visualization preserves all neighbourhoods and distances.","Reporting only accuracy on imbalanced classes.","Using k-means for arbitrary non-spherical cluster structures.","Ignoring reading order and error propagation in document recognition."],
-    "practice": [["Specify inputs, labels, loss, and split strategy for document classification.","Include the deployment population and unit of splitting to prevent duplicates leaking."],["Derive MAP as likelihood times prior up to proportionality.","Start from Bayes' rule and note the evidence is constant for optimization."],["Choose a split for a decision tree.","Compare impurity before and after and weight child nodes by size."],["Explain how an SVM margin changes with ||w||.","Normalize the hyperplane representation before interpreting geometric margin."],["Classify one point with k-NN under two feature scalings.","Show that scale can change neighbour order."],["Compute a bigram sentence probability with smoothing assumptions stated.","Multiply conditional token probabilities; explain unseen bigrams."],["Estimate whether a model class can overfit from its capacity and sample size.","Discuss training error, complexity, confidence, and validation evidence."],["Run one k-means assignment/update iteration.","Assign by distance, recompute centroids, and calculate objective change."],["Read a confusion matrix for a rare class.","Calculate precision, recall, and F1; do not rely on accuracy alone."],["Design failure categories for OCR.","Separate detection, segmentation, character, word, and reading-order errors."]],
-    "applications": [["Document-recognition pipeline","Deskew and clean pages, segment regions, represent text or image features, classify or decode sequences, reconstruct reading order, and report component plus end-to-end metrics."],["Model comparison study","Create a leakage-safe split, consistent preprocessing, baseline, tuned models, calibration and error analysis, then record compute cost and limitations."],["Unsupervised exploration","Scale features, compare k-means, hierarchical, and mixture outputs, evaluate stability, and verify whether clusters correspond to meaningful external evidence."]]
+    "pitfalls": [
+      "Starting model selection before defining target data and evaluation measure.",
+      "Using test data to choose features, hyperparameters, or preprocessing.",
+      "Interpreting correlation or learned importance as causality.",
+      "Applying k-NN or k-means to unscaled features without justification.",
+      "Treating probability outputs as calibrated without checking.",
+      "Confusing MAP with maximum likelihood.",
+      "Assuming a two-dimensional visualization preserves all neighbourhoods and distances.",
+      "Reporting only accuracy on imbalanced classes.",
+      "Using k-means for arbitrary non-spherical cluster structures.",
+      "Ignoring reading order and error propagation in document recognition."
+    ],
+    "practice": [
+      [
+        "Specify inputs, labels, loss, and split strategy for document classification.",
+        "Include the deployment population and unit of splitting to prevent duplicates leaking."
+      ],
+      [
+        "Derive MAP as likelihood times prior up to proportionality.",
+        "Start from Bayes' rule and note the evidence is constant for optimization."
+      ],
+      [
+        "Choose a split for a decision tree.",
+        "Compare impurity before and after and weight child nodes by size."
+      ],
+      [
+        "Explain how an SVM margin changes with ||w||.",
+        "Normalize the hyperplane representation before interpreting geometric margin."
+      ],
+      [
+        "Classify one point with k-NN under two feature scalings.",
+        "Show that scale can change neighbour order."
+      ],
+      [
+        "Compute a bigram sentence probability with smoothing assumptions stated.",
+        "Multiply conditional token probabilities; explain unseen bigrams."
+      ],
+      [
+        "Estimate whether a model class can overfit from its capacity and sample size.",
+        "Discuss training error, complexity, confidence, and validation evidence."
+      ],
+      [
+        "Run one k-means assignment/update iteration.",
+        "Assign by distance, recompute centroids, and calculate objective change."
+      ],
+      [
+        "Read a confusion matrix for a rare class.",
+        "Calculate precision, recall, and F1; do not rely on accuracy alone."
+      ],
+      [
+        "Design failure categories for OCR.",
+        "Separate detection, segmentation, character, word, and reading-order errors."
+      ]
+    ],
+    "applications": [
+      [
+        "Document-recognition pipeline",
+        "Deskew and clean pages, segment regions, represent text or image features, classify or decode sequences, reconstruct reading order, and report component plus end-to-end metrics."
+      ],
+      [
+        "Model comparison study",
+        "Create a leakage-safe split, consistent preprocessing, baseline, tuned models, calibration and error analysis, then record compute cost and limitations."
+      ],
+      [
+        "Unsupervised exploration",
+        "Scale features, compare k-means, hierarchical, and mixture outputs, evaluate stability, and verify whether clusters correspond to meaningful external evidence."
+      ]
+    ]
   },
   "research-methodology": {
     "visuals": [
-      {"afterModule":1,"src":"../assets/generated/research/research-foundations.png","title":"Mind map · Research foundations","caption":"Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.","alt":"Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."},
-      {"afterModule":3,"src":"../assets/generated/research/problem-design.png","title":"Mind map · Problem and design","caption":"Align research questions and hypotheses with exploratory, descriptive, or experimental designs.","alt":"Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."},
-      {"afterModule":6,"src":"../assets/generated/research/measurement-sampling.png","title":"Mind map · Measurement and sampling","caption":"Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.","alt":"Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."},
-      {"afterModule":10,"src":"../assets/generated/research/analysis-publishing.png","title":"Mind map · Analysis and publishing","caption":"Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.","alt":"Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."}
+      {
+        "afterModule": 1,
+        "src": "../assets/generated/research/research-foundations.png",
+        "title": "Mind map \u00b7 Research foundations",
+        "caption": "Connect the meaning, objectives, and motivation of research with theory, evidence, reasoning, and process.",
+        "alt": "Text mind map linking Research Foundations to Meaning, Objectives, Motivation, Theory, Empiricism, Deduction, Induction, and Research Process."
+      },
+      {
+        "afterModule": 3,
+        "src": "../assets/generated/research/problem-design.png",
+        "title": "Mind map \u00b7 Problem and design",
+        "caption": "Align research questions and hypotheses with exploratory, descriptive, or experimental designs.",
+        "alt": "Text mind map linking Problem and Design to Research Question, Hypothesis, Null Hypothesis, Alternative Hypothesis, Exploratory Design, Descriptive Design, and Experimental Design."
+      },
+      {
+        "afterModule": 6,
+        "src": "../assets/generated/research/measurement-sampling.png",
+        "title": "Mind map \u00b7 Measurement and sampling",
+        "caption": "Distinguish measurement quality and scale levels, then compare four probability-sampling strategies.",
+        "alt": "Text mind map linking Measurement and Sampling to Validity, Reliability, Nominal, Ordinal, Interval, Ratio, Simple Random, Systematic, Stratified, and Multistage."
+      },
+      {
+        "afterModule": 10,
+        "src": "../assets/generated/research/analysis-publishing.png",
+        "title": "Mind map \u00b7 Analysis and publishing",
+        "caption": "Follow the evidence path from data preparation and analysis to ethical writing, referencing, databases, and research tools.",
+        "alt": "Text mind map linking Analysis and Publishing to Data Preparation, Univariate Analysis, Cross-tabulation, Chi-square Test, Research Paper, Referencing, Plagiarism, Academic Databases, Zotero, and LaTeX."
+      }
     ],
-    "objectives": ["Turn a broad topic into a feasible research problem, question, and testable hypothesis.","Choose a qualitative, quantitative, or mixed design that supports the intended inference.","Define constructs and measurements with evidence for validity and reliability.","Select and document a sampling strategy and analysis plan.","Write, cite, and publish research ethically with a reproducible evidence trail."],
-    "glossary": [["Research problem","A defensible gap, uncertainty, contradiction, or practical need that motivates systematic inquiry."],["Research question","A specific answerable question defining population or context, concepts, and intended relationship or description."],["Theory","An organized explanation connecting concepts and expected relationships."],["Construct","An abstract idea such as usability, trust, or learning that requires operational definition."],["Variable","A measured representation that can take different values."],["Operational definition","The exact procedure used to observe, classify, or calculate a concept."],["Hypothesis","A specific testable expectation linked to variables and a population or context."],["Validity","Evidence supporting the interpretation and use of a measurement or inference."],["Reliability","Consistency of measurement under defined conditions."],["Sampling frame","The operational source or list from which sample units are selected."],["Sampling error","Random difference between a sample estimate and population value caused by observing a sample."],["Non-response","Missing participation or measurements from selected units, potentially creating bias."],["Triangulation","Comparison or integration of multiple methods, sources, investigators, or theories."],["Plagiarism","Presenting another's words, ideas, or work without appropriate attribution."],["Self-plagiarism","Misleading reuse of one's prior text or results without transparent disclosure or citation."]],
-    "types": [["Reasoning","Deductive and inductive.","Deduction derives testable expectations from theory; induction develops patterns or theory from observations."],["Research purpose","Exploratory, descriptive, explanatory/experimental.","Explore an unclear problem, describe a phenomenon, or test an effect/relationship under a design."],["Approach","Qualitative, quantitative, mixed methods.","They prioritize contextual meaning, numerical measurement, or planned integration of both."],["Variables","Independent, dependent, control, confounding, mediator, moderator.","Their role concerns presumed cause/input, outcome, held conditions, alternative explanation, mechanism, or changing effect."],["Validity evidence","Construct, content, criterion-related, internal, external.","The relevant validity question depends on whether concern is measurement meaning, coverage, agreement, causal inference, or generalization."],["Reliability","Test-retest, inter-rater, internal consistency, equivalent-form.","They assess stability over time, agreement, coherence among items, or agreement across forms."],["Measurement levels","Nominal, ordinal, interval, ratio.","They allow category, order, equal differences, and finally meaningful ratios from a true zero."],["Probability sampling","Simple random, systematic, stratified random, multistage.","They select individuals directly, by interval, within strata, or across staged clusters/units."],["Non-probability sampling","Convenience, purposive, quota, snowball.","Selection probabilities are unknown; these may fit exploratory access needs but constrain population inference."],["Analysis","Univariate and bivariate in the supplied syllabus.","Univariate summarizes one variable; bivariate examines association or comparison between two."],["Research communication","Dissertation/thesis-style report, research paper, review article, short communication, conference presentation.","Formats differ in scope, novelty, depth, audience, and length; venue rules govern the final structure."],["Source tools","Encyclopedias, research guides, handbooks, academic databases.","Use orientation sources to learn vocabulary and databases to discover and trace research literature."]],
-    "formulas": [["Research alignment","question -> design -> evidence -> analysis -> inference","Audit whether every stage supports the intended claim."],["Observed score model","observed = true component + measurement error","Reason about reliability and measurement quality."],["Sampling fraction","n / N","Describe the share of a finite population selected."],["Response rate","completed eligible responses / eligible sampled cases","Report participation with a clearly defined denominator."],["Percentage","category frequency / total valid frequency x 100","Summarize categorical composition while stating missing-data handling."],["Expected cross-tab count","row total x column total / grand total","Compute the null expectation for chi-square association."],["Chi-square","sum((observed - expected)^2 / expected)","Measure departure of categorical counts from independence expectation."],["Standard error pattern","uncertainty often decreases near 1/sqrt(n)","Understand why gains diminish as sample size grows; design effects still matter."],["Margin-of-error pattern","critical value x standard error","Connect sample size, confidence, variability, and precision."],["Similarity percentage","not a plagiarism verdict","Treat software output as a screening signal requiring contextual human judgment."]],
+    "objectives": [
+      "Turn a broad topic into a feasible research problem, question, and testable hypothesis.",
+      "Choose a qualitative, quantitative, or mixed design that supports the intended inference.",
+      "Define constructs and measurements with evidence for validity and reliability.",
+      "Select and document a sampling strategy and analysis plan.",
+      "Write, cite, and publish research ethically with a reproducible evidence trail."
+    ],
+    "glossary": [
+      [
+        "Research problem",
+        "A defensible gap, uncertainty, contradiction, or practical need that motivates systematic inquiry."
+      ],
+      [
+        "Research question",
+        "A specific answerable question defining population or context, concepts, and intended relationship or description."
+      ],
+      [
+        "Theory",
+        "An organized explanation connecting concepts and expected relationships."
+      ],
+      [
+        "Construct",
+        "An abstract idea such as usability, trust, or learning that requires operational definition."
+      ],
+      [
+        "Variable",
+        "A measured representation that can take different values."
+      ],
+      [
+        "Operational definition",
+        "The exact procedure used to observe, classify, or calculate a concept."
+      ],
+      [
+        "Hypothesis",
+        "A specific testable expectation linked to variables and a population or context."
+      ],
+      [
+        "Validity",
+        "Evidence supporting the interpretation and use of a measurement or inference."
+      ],
+      [
+        "Reliability",
+        "Consistency of measurement under defined conditions."
+      ],
+      [
+        "Sampling frame",
+        "The operational source or list from which sample units are selected."
+      ],
+      [
+        "Sampling error",
+        "Random difference between a sample estimate and population value caused by observing a sample."
+      ],
+      [
+        "Non-response",
+        "Missing participation or measurements from selected units, potentially creating bias."
+      ],
+      [
+        "Triangulation",
+        "Comparison or integration of multiple methods, sources, investigators, or theories."
+      ],
+      [
+        "Plagiarism",
+        "Presenting another's words, ideas, or work without appropriate attribution."
+      ],
+      [
+        "Self-plagiarism",
+        "Misleading reuse of one's prior text or results without transparent disclosure or citation."
+      ]
+    ],
+    "types": [
+      [
+        "Reasoning",
+        "Deductive and inductive.",
+        "Deduction derives testable expectations from theory; induction develops patterns or theory from observations."
+      ],
+      [
+        "Research purpose",
+        "Exploratory, descriptive, explanatory/experimental.",
+        "Explore an unclear problem, describe a phenomenon, or test an effect/relationship under a design."
+      ],
+      [
+        "Approach",
+        "Qualitative, quantitative, mixed methods.",
+        "They prioritize contextual meaning, numerical measurement, or planned integration of both."
+      ],
+      [
+        "Variables",
+        "Independent, dependent, control, confounding, mediator, moderator.",
+        "Their role concerns presumed cause/input, outcome, held conditions, alternative explanation, mechanism, or changing effect."
+      ],
+      [
+        "Validity evidence",
+        "Construct, content, criterion-related, internal, external.",
+        "The relevant validity question depends on whether concern is measurement meaning, coverage, agreement, causal inference, or generalization."
+      ],
+      [
+        "Reliability",
+        "Test-retest, inter-rater, internal consistency, equivalent-form.",
+        "They assess stability over time, agreement, coherence among items, or agreement across forms."
+      ],
+      [
+        "Measurement levels",
+        "Nominal, ordinal, interval, ratio.",
+        "They allow category, order, equal differences, and finally meaningful ratios from a true zero."
+      ],
+      [
+        "Probability sampling",
+        "Simple random, systematic, stratified random, multistage.",
+        "They select individuals directly, by interval, within strata, or across staged clusters/units."
+      ],
+      [
+        "Non-probability sampling",
+        "Convenience, purposive, quota, snowball.",
+        "Selection probabilities are unknown; these may fit exploratory access needs but constrain population inference."
+      ],
+      [
+        "Analysis",
+        "Univariate and bivariate in the supplied syllabus.",
+        "Univariate summarizes one variable; bivariate examines association or comparison between two."
+      ],
+      [
+        "Research communication",
+        "Dissertation/thesis-style report, research paper, review article, short communication, conference presentation.",
+        "Formats differ in scope, novelty, depth, audience, and length; venue rules govern the final structure."
+      ],
+      [
+        "Source tools",
+        "Encyclopedias, research guides, handbooks, academic databases.",
+        "Use orientation sources to learn vocabulary and databases to discover and trace research literature."
+      ]
+    ],
+    "formulas": [
+      [
+        "Research alignment",
+        "question -> design -> evidence -> analysis -> inference",
+        "Audit whether every stage supports the intended claim."
+      ],
+      [
+        "Observed score model",
+        "observed = true component + measurement error",
+        "Reason about reliability and measurement quality."
+      ],
+      [
+        "Sampling fraction",
+        "n / N",
+        "Describe the share of a finite population selected."
+      ],
+      [
+        "Response rate",
+        "completed eligible responses / eligible sampled cases",
+        "Report participation with a clearly defined denominator."
+      ],
+      [
+        "Percentage",
+        "category frequency / total valid frequency x 100",
+        "Summarize categorical composition while stating missing-data handling."
+      ],
+      [
+        "Expected cross-tab count",
+        "row total x column total / grand total",
+        "Compute the null expectation for chi-square association."
+      ],
+      [
+        "Chi-square",
+        "sum((observed - expected)^2 / expected)",
+        "Measure departure of categorical counts from independence expectation."
+      ],
+      [
+        "Standard error pattern",
+        "uncertainty often decreases near 1/sqrt(n)",
+        "Understand why gains diminish as sample size grows; design effects still matter."
+      ],
+      [
+        "Margin-of-error pattern",
+        "critical value x standard error",
+        "Connect sample size, confidence, variability, and precision."
+      ],
+      [
+        "Similarity percentage",
+        "not a plagiarism verdict",
+        "Treat software output as a screening signal requiring contextual human judgment."
+      ]
+    ],
     "comparisons": [
-      {"title":"Exploratory, descriptive, and experimental designs","headers":["Aspect","Exploratory","Descriptive","Experimental"],"rows":[["Purpose","Clarify concepts and possibilities","Characterize what exists","Estimate effect of manipulated condition"],["Typical question","What may be happening and why?","How much, who, where, or when?","What changes because of intervention?"],["Structure","Flexible and iterative","Predefined measurement plan","Manipulation, comparison, and control"],["Strength","Depth and discovery","Population or phenomenon description","Stronger causal inference when well executed"],["Main caution","Limited generalization","Association is not causation","Ethics, compliance, and implementation validity"]]},
-      {"title":"Qualitative versus quantitative versus mixed","headers":["Aspect","Qualitative","Quantitative","Mixed"],"rows":[["Evidence","Words, observations, artifacts","Numeric variables","Integrated textual and numeric evidence"],["Primary value","Meaning and context","Magnitude, comparison, modeling","Complementarity or explanation across forms"],["Sampling logic","Information-rich cases","Often probability or design-based","Depends on each component and integration plan"],["Analysis","Coding, themes, interpretation","Statistical summaries and models","Separate analyses plus explicit integration"],["Quality focus","Credibility, reflexivity, transparency","Validity, reliability, assumptions, precision","Quality of components and integration"]]},
-      {"title":"Measurement levels","headers":["Level","Permitted meaning","Suitable summaries/examples"],"rows":[["Nominal","Equality and difference of categories","Counts, proportions, mode"],["Ordinal","Category order","Median, ranks, ordered proportions"],["Interval","Equal differences, arbitrary zero","Mean and standard deviation when justified"],["Ratio","Equal differences and meaningful zero","All common arithmetic summaries when justified"]]},
-      {"title":"Probability sampling methods","headers":["Method","How selected","Key advantage / caution"],"rows":[["Simple random","Equal-probability draw from frame","Conceptually clear; requires adequate frame"],["Systematic","Random start then fixed interval","Operationally simple; periodic frame patterns can bias"],["Stratified","Random samples inside defined subgroups","Ensures subgroup representation; weighting may be needed"],["Multistage","Sample larger units, then smaller units","Practical for dispersed populations; clustering affects precision"]]}
+      {
+        "title": "Exploratory, descriptive, and experimental designs",
+        "headers": [
+          "Aspect",
+          "Exploratory",
+          "Descriptive",
+          "Experimental"
+        ],
+        "rows": [
+          [
+            "Purpose",
+            "Clarify concepts and possibilities",
+            "Characterize what exists",
+            "Estimate effect of manipulated condition"
+          ],
+          [
+            "Typical question",
+            "What may be happening and why?",
+            "How much, who, where, or when?",
+            "What changes because of intervention?"
+          ],
+          [
+            "Structure",
+            "Flexible and iterative",
+            "Predefined measurement plan",
+            "Manipulation, comparison, and control"
+          ],
+          [
+            "Strength",
+            "Depth and discovery",
+            "Population or phenomenon description",
+            "Stronger causal inference when well executed"
+          ],
+          [
+            "Main caution",
+            "Limited generalization",
+            "Association is not causation",
+            "Ethics, compliance, and implementation validity"
+          ]
+        ]
+      },
+      {
+        "title": "Qualitative versus quantitative versus mixed",
+        "headers": [
+          "Aspect",
+          "Qualitative",
+          "Quantitative",
+          "Mixed"
+        ],
+        "rows": [
+          [
+            "Evidence",
+            "Words, observations, artifacts",
+            "Numeric variables",
+            "Integrated textual and numeric evidence"
+          ],
+          [
+            "Primary value",
+            "Meaning and context",
+            "Magnitude, comparison, modeling",
+            "Complementarity or explanation across forms"
+          ],
+          [
+            "Sampling logic",
+            "Information-rich cases",
+            "Often probability or design-based",
+            "Depends on each component and integration plan"
+          ],
+          [
+            "Analysis",
+            "Coding, themes, interpretation",
+            "Statistical summaries and models",
+            "Separate analyses plus explicit integration"
+          ],
+          [
+            "Quality focus",
+            "Credibility, reflexivity, transparency",
+            "Validity, reliability, assumptions, precision",
+            "Quality of components and integration"
+          ]
+        ]
+      },
+      {
+        "title": "Measurement levels",
+        "headers": [
+          "Level",
+          "Permitted meaning",
+          "Suitable summaries/examples"
+        ],
+        "rows": [
+          [
+            "Nominal",
+            "Equality and difference of categories",
+            "Counts, proportions, mode"
+          ],
+          [
+            "Ordinal",
+            "Category order",
+            "Median, ranks, ordered proportions"
+          ],
+          [
+            "Interval",
+            "Equal differences, arbitrary zero",
+            "Mean and standard deviation when justified"
+          ],
+          [
+            "Ratio",
+            "Equal differences and meaningful zero",
+            "All common arithmetic summaries when justified"
+          ]
+        ]
+      },
+      {
+        "title": "Probability sampling methods",
+        "headers": [
+          "Method",
+          "How selected",
+          "Key advantage / caution"
+        ],
+        "rows": [
+          [
+            "Simple random",
+            "Equal-probability draw from frame",
+            "Conceptually clear; requires adequate frame"
+          ],
+          [
+            "Systematic",
+            "Random start then fixed interval",
+            "Operationally simple; periodic frame patterns can bias"
+          ],
+          [
+            "Stratified",
+            "Random samples inside defined subgroups",
+            "Ensures subgroup representation; weighting may be needed"
+          ],
+          [
+            "Multistage",
+            "Sample larger units, then smaller units",
+            "Practical for dispersed populations; clustering affects precision"
+          ]
+        ]
+      }
     ],
-    "pitfalls": ["Beginning data collection before fixing the research question and analysis plan.","Using a broad topic as if it were an answerable research problem.","Writing hypotheses that contain undefined constructs.","Claiming causality from a descriptive or uncontrolled observational design.","Equating reliability with validity.","Increasing sample size while ignoring frame coverage and non-response bias.","Choosing a statistical test only from software menus.","Reporting percentages without denominators or missing-data rules.","Using journal impact factor as a paper-quality score.","Treating plagiarism-software similarity as proof of misconduct.","Letting a reference manager propagate incorrect metadata.","Changing hypotheses after seeing results without transparent exploratory labeling."],
-    "practice": [["Convert 'AI in education' into a research problem and question.","Specify context, population, construct, gap, and feasible evidence."],["Write conceptual and operational definitions for usability.","Separate the abstract meaning from the instrument, task, or calculation."],["Create H0 and H1 for an interface-comparison study.","Define the population parameter and whether direction is justified in advance."],["Choose exploratory, descriptive, or experimental design for three scenarios.","Match the design to discovery, characterization, or causal effect."],["Evaluate validity and reliability of a five-item scale.","Ask what construct the scores support and how consistency will be assessed."],["Choose a sampling strategy for students across programs.","Consider strata, frame coverage, subgroup precision, non-response, and weighting."],["Prepare a codebook for three categorical and two numeric variables.","Include names, definitions, types, allowed values, units, missing codes, and derivation."],["Calculate expected cross-tab counts and assess chi-square suitability.","Use marginal totals and inspect sparse expected cells."],["Critique a causal claim from a survey association.","Identify confounding, timing, measurement, selection, and alternative explanations."],["Design a reproducible literature search.","Record database, query blocks, dates, filters, duplicates, and screening criteria."],["Audit a paper paragraph for attribution.","Mark quotation, paraphrase, common knowledge, prior work, and original contribution."],["Select a publication venue ethically.","Check scope, audience, review process, indexing claims, fees, policies, and recent relevant work."]],
-    "applications": [["Research protocol","Produce a one-page alignment matrix linking problem, question, construct, variable, instrument, sample, analysis, inference, and validity threat."],["Literature evidence map","Build database queries, screening criteria, a study matrix, citation trail, and a transparent account of exclusions."],["Survey study","Define target population and frame, pilot items, document sampling and non-response, prepare data reproducibly, analyze univariate and bivariate patterns, and limit claims to the design."],["Ethical paper workflow","Track sources in Zotero/Mendeley, write in LaTeX or Office with version control, verify every citation, disclose reuse, and interpret similarity reports manually."]]
+    "pitfalls": [
+      "Beginning data collection before fixing the research question and analysis plan.",
+      "Using a broad topic as if it were an answerable research problem.",
+      "Writing hypotheses that contain undefined constructs.",
+      "Claiming causality from a descriptive or uncontrolled observational design.",
+      "Equating reliability with validity.",
+      "Increasing sample size while ignoring frame coverage and non-response bias.",
+      "Choosing a statistical test only from software menus.",
+      "Reporting percentages without denominators or missing-data rules.",
+      "Using journal impact factor as a paper-quality score.",
+      "Treating plagiarism-software similarity as proof of misconduct.",
+      "Letting a reference manager propagate incorrect metadata.",
+      "Changing hypotheses after seeing results without transparent exploratory labeling."
+    ],
+    "practice": [
+      [
+        "Convert 'AI in education' into a research problem and question.",
+        "Specify context, population, construct, gap, and feasible evidence."
+      ],
+      [
+        "Write conceptual and operational definitions for usability.",
+        "Separate the abstract meaning from the instrument, task, or calculation."
+      ],
+      [
+        "Create H0 and H1 for an interface-comparison study.",
+        "Define the population parameter and whether direction is justified in advance."
+      ],
+      [
+        "Choose exploratory, descriptive, or experimental design for three scenarios.",
+        "Match the design to discovery, characterization, or causal effect."
+      ],
+      [
+        "Evaluate validity and reliability of a five-item scale.",
+        "Ask what construct the scores support and how consistency will be assessed."
+      ],
+      [
+        "Choose a sampling strategy for students across programs.",
+        "Consider strata, frame coverage, subgroup precision, non-response, and weighting."
+      ],
+      [
+        "Prepare a codebook for three categorical and two numeric variables.",
+        "Include names, definitions, types, allowed values, units, missing codes, and derivation."
+      ],
+      [
+        "Calculate expected cross-tab counts and assess chi-square suitability.",
+        "Use marginal totals and inspect sparse expected cells."
+      ],
+      [
+        "Critique a causal claim from a survey association.",
+        "Identify confounding, timing, measurement, selection, and alternative explanations."
+      ],
+      [
+        "Design a reproducible literature search.",
+        "Record database, query blocks, dates, filters, duplicates, and screening criteria."
+      ],
+      [
+        "Audit a paper paragraph for attribution.",
+        "Mark quotation, paraphrase, common knowledge, prior work, and original contribution."
+      ],
+      [
+        "Select a publication venue ethically.",
+        "Check scope, audience, review process, indexing claims, fees, policies, and recent relevant work."
+      ]
+    ],
+    "applications": [
+      [
+        "Research protocol",
+        "Produce a one-page alignment matrix linking problem, question, construct, variable, instrument, sample, analysis, inference, and validity threat."
+      ],
+      [
+        "Literature evidence map",
+        "Build database queries, screening criteria, a study matrix, citation trail, and a transparent account of exclusions."
+      ],
+      [
+        "Survey study",
+        "Define target population and frame, pilot items, document sampling and non-response, prepare data reproducibly, analyze univariate and bivariate patterns, and limit claims to the design."
+      ],
+      [
+        "Ethical paper workflow",
+        "Track sources in Zotero/Mendeley, write in LaTeX or Office with version control, verify every citation, disclose reuse, and interpret similarity reports manually."
+      ]
+    ]
+  },
+  "MCSC-101": {
+    "objectives": [
+      "Formulate and solve maximum flow and minimum cut problems using augmenting paths in residual graphs.",
+      "Analyze amortized time complexity of dynamic data structures including splay trees and Fibonacci heaps using the potential method.",
+      "Formulate linear and semidefinite programming relaxations for NP-hard combinatorial optimization problems.",
+      "Prove approximation ratios for NP-hard problems including vertex cover, set cover, and metric TSP."
+    ],
+    "glossary": [
+      [
+        "Augmenting Path",
+        "A directed path from source to sink in the residual graph along which additional flow can be pushed without violating capacity constraints."
+      ],
+      [
+        "Residual Capacity",
+        "The remaining available capacity on a directed edge after subtracting the current flow, or the flow itself along a reverse edge."
+      ],
+      [
+        "Amortized Analysis",
+        "A worst-case analysis technique that averages the running time of a sequence of operations over all operations in the sequence without assuming random inputs."
+      ],
+      [
+        "Splay Tree",
+        "A self-adjusting binary search tree where recently accessed elements are rotated to the root via splay steps (zig, zig-zag, zig-zig)."
+      ],
+      [
+        "Fibonacci Heap",
+        "A priority queue data structure with O(1) amortized insertion, find-min, and decrease-key, and O(log n) extract-min."
+      ],
+      [
+        "NP-Completeness",
+        "The class of decision problems in NP to which every other problem in NP can be reduced in polynomial time (Cook-Levin theorem)."
+      ]
+    ],
+    "types": [
+      [
+        "Flow Formulations",
+        "Maximum Flow, Minimum Cost Flow, Multi-Commodity Flow",
+        "Vary in objective function, edge cost functions, and commodity independence constraints."
+      ],
+      [
+        "Algorithm Paradigms",
+        "Greedy, Dynamic Programming, Linear Programming Relaxation",
+        "Trade locally optimal decisions for global subproblem composition and continuous approximations."
+      ],
+      [
+        "Approximation Schemes",
+        "Constant-Factor (APX), PTAS, FPTAS",
+        "Vary in whether error epsilon can be chosen arbitrarily and the polynomial dependence on 1/epsilon."
+      ]
+    ],
+    "formulas": [
+      [
+        "Flow Conservation",
+        "sum(f(u, v) for v in V) = 0 for all u not in {s, t}",
+        "Net flow at intermediate vertices must be zero."
+      ],
+      [
+        "Max-Flow Min-Cut Theorem",
+        "max |f| = min c(S, T) where s in S, t in T",
+        "Maximum source-to-sink flow equals the capacity of a minimum s-t cut."
+      ],
+      [
+        "Potential Method (Amortized Cost)",
+        "a_i = c_i + Phi(D_i) - Phi(D_{i-1})",
+        "Amortized cost equals actual cost plus net change in data structure potential."
+      ],
+      [
+        "Vertex Cover 2-Approximation",
+        "|C| <= 2 * |C*|",
+        "Selecting both endpoints of maximal matching edges yields at most twice the optimal cover size."
+      ]
+    ],
+    "comparisons": [
+      {
+        "title": "Maximum Flow vs Minimum Cost Flow",
+        "headers": [
+          "Property",
+          "Maximum Flow",
+          "Minimum Cost Flow"
+        ],
+        "rows": [
+          [
+            "Primary Objective",
+            "Maximize total flow from source to sink",
+            "Minimize total cost for a required flow amount"
+          ],
+          [
+            "Edge Parameters",
+            "Capacity c(u, v)",
+            "Capacity c(u, v) and cost a(u, v) per unit flow"
+          ],
+          [
+            "Key Algorithm",
+            "Ford-Fulkerson, Edmonds-Karp O(VE^2)",
+            "Successive Shortest Path, Cycle Canceling"
+          ],
+          [
+            "Optimality Condition",
+            "No augmenting paths in residual network",
+            "No negative-cost cycles in residual network"
+          ]
+        ]
+      },
+      {
+        "title": "Binary Heap vs Fibonacci Heap",
+        "headers": [
+          "Operation",
+          "Binary Heap (Worst-Case)",
+          "Fibonacci Heap (Amortized)"
+        ],
+        "rows": [
+          [
+            "Find-Min",
+            "O(1)",
+            "O(1)"
+          ],
+          [
+            "Insert",
+            "O(log n)",
+            "O(1)"
+          ],
+          [
+            "Decrease-Key",
+            "O(log n)",
+            "O(1) amortized"
+          ],
+          [
+            "Extract-Min",
+            "O(log n)",
+            "O(log n) amortized"
+          ],
+          [
+            "Merge / Union",
+            "O(n)",
+            "O(1)"
+          ]
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Assuming greedy heuristics are optimal without proving the matroid or greedy-choice property.",
+      "Confusing worst-case per-operation bound with amortized bound over a sequence of operations.",
+      "Forgetting residual backward edges when finding augmenting paths in flow networks.",
+      "Reversing the direction of a polynomial-time reduction when proving NP-hardness."
+    ],
+    "practice": [
+      [
+        "Trace Edmonds-Karp on a flow network",
+        "Always use BFS to find the shortest augmenting path in terms of edge count to avoid infinite loops and guarantee O(V E^2) convergence."
+      ],
+      [
+        "Prove that fractional knapsack has the greedy-choice property while 0/1 knapsack does not",
+        "Consider value-to-weight density and counterexamples with capacity leftovers."
+      ]
+    ],
+    "applications": [
+      [
+        "Bipartite Matching in Job Allocation",
+        "Formulate maximum matching as a max-flow problem with unit capacities from source to candidates and jobs to sink."
+      ],
+      [
+        "Image Segmentation via Graph Cuts",
+        "Model pixel similarity and foreground/background penalties as a min-cut problem solved in polynomial time."
+      ]
+    ]
+  },
+  "MMLC-201": {
+    "objectives": [
+      "Derive backpropagation equations for multilayer perceptrons using vector calculus and chain rule.",
+      "Formulate convolutional layers with receptive fields, strides, and dilation parameters for image feature extraction.",
+      "Analyze vanishing and exploding gradients in deep networks and implement normalization and residual remedies.",
+      "Design recurrent networks and LSTM gated cells for sequential time-series prediction."
+    ],
+    "glossary": [
+      [
+        "Backpropagation",
+        "Automatic differentiation method based on the reverse accumulation chain rule to compute gradients of the loss function with respect to weights."
+      ],
+      [
+        "Receptive Field",
+        "The spatial region in the input volume that produces a single activation in a convolutional layer."
+      ],
+      [
+        "Vanishing Gradient",
+        "The exponential decrease of gradient magnitude through successive layers during backpropagation with saturating activation functions."
+      ],
+      [
+        "Residual Connection",
+        "An identity skip-connection that bypasses one or more layers to allow gradients to flow directly during backpropagation."
+      ],
+      [
+        "LSTM Cell",
+        "A recurrent neural network unit with input, forget, and output gates that regulates the flow of information across long sequences."
+      ]
+    ],
+    "types": [
+      [
+        "Activation Functions",
+        "Sigmoid, Tanh, ReLU, Leaky ReLU, GELU",
+        "Differ in saturation behavior, zero-centeredness, and gradient preservation properties."
+      ],
+      [
+        "Network Topologies",
+        "Feedforward MLP, Convolutional (CNN), Recurrent (RNN/LSTM/GRU), Transformer",
+        "Tailored for tabular, spatial grid, sequential, and set-to-set attention modalities."
+      ]
+    ],
+    "formulas": [
+      [
+        "Chain Rule for Layer l",
+        "delta_l = (W_{l+1}^T * delta_{l+1}) dot sigma prime(z_l)",
+        "Backpropagated error vector at layer l."
+      ],
+      [
+        "Weight Gradient",
+        "dLoss/dW_l = delta_l * a_{l-1}^T",
+        "Gradient matrix for weight matrix update at layer l."
+      ],
+      [
+        "Convolution Output Size",
+        "O = floor((W - K + 2P)/S) + 1",
+        "Spatial output dimension for input width W, kernel K, padding P, stride S."
+      ]
+    ],
+    "comparisons": [
+      {
+        "title": "Standard RNN vs LSTM vs GRU",
+        "headers": [
+          "Feature",
+          "Standard RNN",
+          "LSTM",
+          "GRU"
+        ],
+        "rows": [
+          [
+            "Gating Units",
+            "None",
+            "Forget, Input, Output gates",
+            "Reset and Update gates"
+          ],
+          [
+            "Internal States",
+            "Hidden state h_t",
+            "Cell state c_t and Hidden state h_t",
+            "Hidden state h_t"
+          ],
+          [
+            "Vanishing Gradient",
+            "Severe over long sequences",
+            "Robust due to additive cell state",
+            "Robust with fewer parameters than LSTM"
+          ],
+          [
+            "Parameter Count",
+            "Fewest",
+            "4x weights of RNN",
+            "3x weights of RNN"
+          ]
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Using Sigmoid in deep hidden layers causing vanishing gradients.",
+      "Applying batch normalization with different training and inference statistics.",
+      "Evaluating performance solely on training accuracy without checking validation loss divergence."
+    ],
+    "practice": [
+      [
+        "Calculate output shape and parameter count of Conv2D(32, (3,3)) on 64x64x3 image",
+        "Formula: (3*3*3 + 1)*32 parameters = 896 weights."
+      ],
+      [
+        "Derive the derivative of Binary Cross-Entropy with Sigmoid output",
+        "dLoss/dz = a - y, a remarkably clean gradient without saturation penalties."
+      ]
+    ],
+    "applications": [
+      [
+        "Object Detection Pipelines",
+        "YOLO and Faster R-CNN using convolutional feature maps and bounding box anchor regression."
+      ],
+      [
+        "Medical Image Segmentation",
+        "U-Net architectures with skip connections preserving fine spatial boundaries for tumor identification."
+      ]
+    ]
+  },
+  "MCSC-104": {
+    "visuals": [
+      {
+        "afterModule": 1,
+        "src": "../assets/generated/pattern/learning-models.png",
+        "title": "Mind map \u00b7 Learning models",
+        "caption": "Survey the syllabus model families before studying how each represents and learns patterns.",
+        "alt": "Text mind map linking Learning Models to Classifiers, Functions, Relations, Grammars, Probabilistic Models, Value Functions, Behaviors, and Programs."
+      },
+      {
+        "afterModule": 3,
+        "src": "../assets/generated/pattern/core-classifiers.png",
+        "title": "Mind map \u00b7 Core classifiers",
+        "caption": "Compare interpretable, probabilistic, margin-based, neural, local, and ensemble classification families.",
+        "alt": "Text mind map linking Core Classifiers to Decision Trees, Neural Networks, Support Vector Machines, Bayesian Networks, Nearest Neighbour, and Ensemble Classifiers."
+      },
+      {
+        "afterModule": 5,
+        "src": "../assets/generated/pattern/text-sequence-models.png",
+        "title": "Mind map \u00b7 Text and sequence models",
+        "caption": "Trace the progression from token counts and N-grams to Markov models, hidden states, and association rules.",
+        "alt": "Text mind map linking Text and Sequence Models to Bag of Words, N-gram Models, Markov Models, Hidden Markov Models, and Association Rules."
+      },
+      {
+        "afterModule": 8,
+        "src": "../assets/generated/pattern/representation-clustering.png",
+        "title": "Mind map \u00b7 Representation and clustering",
+        "caption": "Relate lower-dimensional representations to visualization, clustering families, and document recognition.",
+        "alt": "Text mind map linking Representation and Clustering to Dimensionality Reduction, Feature Selection, Visualization, K-means, Hierarchical Clustering, Mixture Models, and Document Recognition."
+      }
+    ],
+    "objectives": [
+      "Formulate a learning task with data, representation, target, loss, and evaluation protocol.",
+      "Compare probabilistic, margin-based, tree, neural, instance-based, sequence, and ensemble models.",
+      "Estimate parameters without leaking validation or test information.",
+      "Connect sample complexity and model capacity to generalization.",
+      "Build and evaluate a document-recognition pipeline with meaningful error analysis."
+    ],
+    "glossary": [
+      [
+        "Feature",
+        "A measurable representation supplied to a learning algorithm."
+      ],
+      [
+        "Label",
+        "Observed target value used in supervised learning."
+      ],
+      [
+        "Hypothesis class",
+        "The set of functions a learning algorithm may choose from."
+      ],
+      [
+        "Loss function",
+        "A numeric penalty measuring prediction error for an example."
+      ],
+      [
+        "Generalization",
+        "Performance on relevant unseen data from the target setting."
+      ],
+      [
+        "Prior and likelihood",
+        "A prior represents assumptions before data; a likelihood scores observed data under parameter values."
+      ],
+      [
+        "Sufficient statistic",
+        "A data summary retaining all model-relevant information about a parameter."
+      ],
+      [
+        "Margin",
+        "A measure of decision-boundary separation used by support vector machines."
+      ],
+      [
+        "Kernel",
+        "A similarity function enabling implicit feature-space computation when its mathematical conditions hold."
+      ],
+      [
+        "Bayesian network",
+        "A directed acyclic graph representing a factorization of a joint distribution."
+      ],
+      [
+        "N-gram",
+        "A contiguous sequence of n items used to model local context."
+      ],
+      [
+        "Hidden state",
+        "An unobserved state inferred from emitted observations in a latent-state model."
+      ],
+      [
+        "VC dimension",
+        "A capacity measure based on the largest point set a class can shatter."
+      ],
+      [
+        "Cluster",
+        "A group produced from an explicit similarity, distance, or probabilistic criterion."
+      ],
+      [
+        "Data leakage",
+        "Information from validation, test, or future data improperly influencing training."
+      ]
+    ],
+    "types": [
+      [
+        "Learning outputs",
+        "Classifiers, functions, relations, grammars, probabilistic models, value functions, behaviors, programs.",
+        "The required output structure determines representation, loss, and evaluation."
+      ],
+      [
+        "Learning settings",
+        "Supervised, unsupervised, semi-supervised, reinforcement-style behavioral learning.",
+        "They differ in feedback: labels, no labels, partial labels, or reward/interaction."
+      ],
+      [
+        "Inference principles",
+        "Bayesian posterior, maximum a posteriori, maximum likelihood, minimum description length.",
+        "They differ in treatment of priors, probability, and complexity."
+      ],
+      [
+        "Classifier families",
+        "Decision tree, neural network, SVM, Bayesian network, nearest neighbour, ensemble.",
+        "They offer different inductive biases, optimization, interpretability, and data requirements."
+      ],
+      [
+        "Text representations",
+        "Bag of words, n-grams, probabilistic sequences.",
+        "They progressively retain counts, short order, or structured dependence."
+      ],
+      [
+        "Sequence models",
+        "Markov model and hidden Markov model.",
+        "Markov states are observed in the basic model; HMM states are latent and emit observations."
+      ],
+      [
+        "Ensembles",
+        "Bagging, boosting, voting/averaging.",
+        "Bagging reduces variance through resampling; boosting builds sequentially around errors; voting combines outputs."
+      ],
+      [
+        "Reduction methods",
+        "Feature selection and feature extraction/dimensionality reduction.",
+        "Selection keeps original variables; extraction creates new lower-dimensional coordinates."
+      ],
+      [
+        "Clustering",
+        "Partitioning, hierarchical, model-based, distributional.",
+        "They differ in output structure and definition of cluster membership."
+      ],
+      [
+        "Evaluation",
+        "Holdout, cross-validation, confusion-matrix metrics, calibration, error analysis.",
+        "The protocol must match deployment population and prevent leakage."
+      ]
+    ],
+    "formulas": [
+      [
+        "Empirical risk",
+        "(1/n) sum_i L(f(x_i), y_i)",
+        "Average training loss."
+      ],
+      [
+        "Bayesian posterior",
+        "p(theta|D) proportional to p(D|theta)p(theta)",
+        "Update parameter uncertainty from data."
+      ],
+      [
+        "MAP estimate",
+        "argmax_theta p(D|theta)p(theta)",
+        "Choose highest posterior-density parameter."
+      ],
+      [
+        "Entropy",
+        "-sum_k p_k log p_k",
+        "Measure uncertainty; used in tree splitting and information theory."
+      ],
+      [
+        "SVM decision",
+        "sign(w'x + b)",
+        "Classify relative to a learned hyperplane."
+      ],
+      [
+        "k-NN prediction",
+        "majority or weighted vote among k nearest samples",
+        "Local instance-based prediction."
+      ],
+      [
+        "N-gram factorization",
+        "product_t P(w_t | previous n-1 items)",
+        "Approximate sequence probability with limited context."
+      ],
+      [
+        "Bayes classifier",
+        "argmax_y p(y)p(x|y)",
+        "Choose class with greatest posterior proportional score."
+      ],
+      [
+        "VC-style principle",
+        "required samples rise with capacity and desired confidence",
+        "Reason about generalization rather than memorize one bound."
+      ],
+      [
+        "PCA objective",
+        "maximize projected variance subject to orthonormal directions",
+        "Create linear lower-dimensional features."
+      ],
+      [
+        "k-means objective",
+        "sum_i ||x_i - mu_cluster(i)||^2",
+        "Minimize within-cluster squared distance."
+      ],
+      [
+        "Precision",
+        "TP/(TP+FP)",
+        "Fraction of predicted positives that are correct."
+      ],
+      [
+        "Recall",
+        "TP/(TP+FN)",
+        "Fraction of actual positives recovered."
+      ],
+      [
+        "F1",
+        "2PR/(P+R)",
+        "Harmonic summary of precision and recall."
+      ]
+    ],
+    "comparisons": [
+      {
+        "title": "Major classifier families",
+        "headers": [
+          "Model",
+          "Strength",
+          "Important limitation"
+        ],
+        "rows": [
+          [
+            "Decision tree",
+            "Readable nonlinear rules; mixed feature handling",
+            "Can be unstable or overfit without control"
+          ],
+          [
+            "Neural network",
+            "Flexible learned representations",
+            "Data/compute needs and limited transparency"
+          ],
+          [
+            "SVM",
+            "Strong margin formulation; kernels",
+            "Scaling and kernel/hyperparameter choice matter"
+          ],
+          [
+            "Naive Bayes / Bayesian model",
+            "Probabilistic output and explicit assumptions",
+            "Dependence assumptions may be unrealistic"
+          ],
+          [
+            "k-nearest neighbours",
+            "Simple local decision rule",
+            "Prediction cost and sensitivity to scale/distance"
+          ],
+          [
+            "Ensemble",
+            "Often improves predictive stability/accuracy",
+            "More complexity and harder interpretation"
+          ]
+        ]
+      },
+      {
+        "title": "Bagging versus boosting",
+        "headers": [
+          "Property",
+          "Bagging",
+          "Boosting"
+        ],
+        "rows": [
+          [
+            "Training",
+            "Learners can be trained independently on resamples",
+            "Learners are built sequentially"
+          ],
+          [
+            "Main effect",
+            "Variance reduction",
+            "Bias and/or error reduction through focused reweighting"
+          ],
+          [
+            "Combination",
+            "Average or vote",
+            "Weighted combination"
+          ],
+          [
+            "Noise sensitivity",
+            "Often stabilizing",
+            "Can focus excessively on noisy hard cases"
+          ],
+          [
+            "Example idea",
+            "Bootstrap forests",
+            "Accuracy/confidence boosting"
+          ]
+        ]
+      },
+      {
+        "title": "K-means versus hierarchical versus mixture models",
+        "headers": [
+          "Property",
+          "K-means",
+          "Hierarchical",
+          "Mixture model"
+        ],
+        "rows": [
+          [
+            "Output",
+            "Hard partition",
+            "Nested dendrogram",
+            "Soft component probabilities"
+          ],
+          [
+            "Cluster idea",
+            "Near centroid by squared distance",
+            "Merge/split under linkage rule",
+            "Generated by latent distributions"
+          ],
+          [
+            "Shape bias",
+            "Roughly spherical/equal-scale",
+            "Depends on distance and linkage",
+            "Depends on component family"
+          ],
+          [
+            "Need k initially",
+            "Usually yes",
+            "Can cut tree later",
+            "Usually select component count"
+          ],
+          [
+            "Uncertainty",
+            "No membership probability",
+            "No intrinsic probability",
+            "Explicit posterior membership"
+          ]
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Starting model selection before defining target data and evaluation measure.",
+      "Using test data to choose features, hyperparameters, or preprocessing.",
+      "Interpreting correlation or learned importance as causality.",
+      "Applying k-NN or k-means to unscaled features without justification.",
+      "Treating probability outputs as calibrated without checking.",
+      "Confusing MAP with maximum likelihood.",
+      "Assuming a two-dimensional visualization preserves all neighbourhoods and distances.",
+      "Reporting only accuracy on imbalanced classes.",
+      "Using k-means for arbitrary non-spherical cluster structures.",
+      "Ignoring reading order and error propagation in document recognition."
+    ],
+    "practice": [
+      [
+        "Specify inputs, labels, loss, and split strategy for document classification.",
+        "Include the deployment population and unit of splitting to prevent duplicates leaking."
+      ],
+      [
+        "Derive MAP as likelihood times prior up to proportionality.",
+        "Start from Bayes' rule and note the evidence is constant for optimization."
+      ],
+      [
+        "Choose a split for a decision tree.",
+        "Compare impurity before and after and weight child nodes by size."
+      ],
+      [
+        "Explain how an SVM margin changes with ||w||.",
+        "Normalize the hyperplane representation before interpreting geometric margin."
+      ],
+      [
+        "Classify one point with k-NN under two feature scalings.",
+        "Show that scale can change neighbour order."
+      ],
+      [
+        "Compute a bigram sentence probability with smoothing assumptions stated.",
+        "Multiply conditional token probabilities; explain unseen bigrams."
+      ],
+      [
+        "Estimate whether a model class can overfit from its capacity and sample size.",
+        "Discuss training error, complexity, confidence, and validation evidence."
+      ],
+      [
+        "Run one k-means assignment/update iteration.",
+        "Assign by distance, recompute centroids, and calculate objective change."
+      ],
+      [
+        "Read a confusion matrix for a rare class.",
+        "Calculate precision, recall, and F1; do not rely on accuracy alone."
+      ],
+      [
+        "Design failure categories for OCR.",
+        "Separate detection, segmentation, character, word, and reading-order errors."
+      ]
+    ],
+    "applications": [
+      [
+        "Document-recognition pipeline",
+        "Deskew and clean pages, segment regions, represent text or image features, classify or decode sequences, reconstruct reading order, and report component plus end-to-end metrics."
+      ],
+      [
+        "Model comparison study",
+        "Create a leakage-safe split, consistent preprocessing, baseline, tuned models, calibration and error analysis, then record compute cost and limitations."
+      ],
+      [
+        "Unsupervised exploration",
+        "Scale features, compare k-means, hierarchical, and mixture outputs, evaluate stability, and verify whether clusters correspond to meaningful external evidence."
+      ]
+    ]
   }
 }

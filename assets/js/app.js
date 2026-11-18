@@ -294,7 +294,7 @@
     panel.className = 'hero-panel-upgraded';
     panel.innerHTML = `
       <div>
-        <span class="panel-label">FEATURED CURRICULUM COMPANION · CAS</span>
+        <span class="panel-label">Postgraduate Curriculum Companion</span>
         <div class="panel-mark" style="margin: 0.4rem 0;">01 <span>—</span> 04</div>
         <p style="font-size:1.1rem; margin:0 0 1.2rem; color: var(--color-ink); font-weight:600;">
           Four Semesters. 17 Core Subjects.<br>Mastery Hubs, Visuals & Past Papers.
@@ -1081,16 +1081,17 @@
       window.StudyDocket.setLastCourse(selected.code, selected.title);
     }
 
-    // Fetch all study resources: guides, visuals, supplements, papers, readings
-    let guides = {}, visuals = {}, supplements = {}, papers = {}, readings = {}, legacy = { courses: [] };
+    // Fetch all study resources: guides, visuals, supplements, papers, readings, and GeeksforGeeks vault
+    let guides = {}, visuals = {}, supplements = {}, papers = {}, readings = {}, legacy = { courses: [] }, gfgData = {};
     try {
-      const [g, v, s, p, r, l] = await Promise.all([
+      const [g, v, s, p, r, l, gfg] = await Promise.all([
         fetch('assets/featured-guides.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-visuals.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-supplements.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/related-papers.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-reading.json').then(res => res.json()).catch(() => ({})),
-        fetch('assets/course-data.json').then(res => res.json()).catch(() => ({ courses: [] }))
+        fetch('assets/course-data.json').then(res => res.json()).catch(() => ({ courses: [] })),
+        fetch('assets/course-gfg.json').then(res => res.json()).catch(() => ({}))
       ]);
       guides = g;
       visuals = v;
@@ -1098,6 +1099,7 @@
       papers = p;
       readings = r;
       legacy = l;
+      gfgData = gfg;
     } catch (e) {}
 
     const isQueued = window.StudyDocket && window.StudyDocket.isInDocket(selected.code);
@@ -1108,12 +1110,15 @@
       : domainKey === 'theory' ? 'Theory & Discrete'
       : 'Systems & ICT';
 
+    const courseGfgList = gfgData[selected.code] || [];
+    const unitsList = selected.units || [];
+
     // 1. Apple Course Hero Art
-    const diagramInfo = courseDiagramVisuals[selected.code] || (selected.guide ? [`assets/${selected.guide}.svg`, selected.title, 'CAS AKTU', '#'] : null);
+    const diagramInfo = courseDiagramVisuals[selected.code] || (selected.guide ? [`assets/${selected.guide}.svg`, selected.title, 'Curriculum Reference Model', '#'] : null);
     const heroArtHtml = diagramInfo ? `
       <div class="course-hero-art">
         <a href="${esc(diagramInfo[0])}" target="_blank" rel="noopener">
-          <img src="${esc(diagramInfo[0])}" alt="${esc(diagramInfo[1])}">
+          <img src="${esc(diagramInfo[0])}" alt="${esc(diagramInfo[1])}" loading="lazy" decoding="async" width="560" height="340" style="object-fit:contain; aspect-ratio:16/9; width:100%; height:auto;">
         </a>
         <div style="font-size:0.75rem; color:var(--color-ink-muted); margin-top:0.6rem;">
           ${esc(diagramInfo[2])} ${diagramInfo[3] ? `· <a href="${esc(diagramInfo[3])}" target="_blank" rel="noopener" style="color:var(--color-accent);">Source</a>` : ''}
@@ -1124,7 +1129,9 @@
     // 2. Quick Jump Navigation Pills
     const navPillsHtml = `
       <nav class="course-nav-pills" aria-label="Course Sections">
+        ${unitsList.length > 0 ? '<a class="course-nav-pill" href="#syllabus-units">Syllabus Units</a>' : ''}
         <a class="course-nav-pill" href="#lessons">Topic Lessons</a>
+        ${courseGfgList.length > 0 ? '<a class="course-nav-pill" href="#gfg-vault" style="color:var(--color-emerald); font-weight:700;">GFG References</a>' : ''}
         <a class="course-nav-pill" href="#mastery">Mastery Hub</a>
         <a class="course-nav-pill" href="#objectives">Objectives</a>
         <a class="course-nav-pill" href="#glossary">Definitions</a>
@@ -1133,19 +1140,49 @@
         <a class="course-nav-pill" href="#comparisons">Comparison Tables</a>
         <a class="course-nav-pill" href="#pitfalls">Mistakes to Avoid</a>
         <a class="course-nav-pill" href="#practice">Retrieval Practice</a>
-        ${papers[selected.code] ? '<a class="course-nav-pill" href="#pyqs">Past Exam Papers</a>' : ''}
+        ${papers[selected.code] ? '<a class="course-nav-pill" href="#pyqs" style="color:var(--color-amber); font-weight:700;">Past Exam Papers</a>' : ''}
         ${readings[selected.code] ? '<a class="course-nav-pill" href="#readings">Further Reading</a>' : ''}
       </nav>
     `;
 
-    // 3. Topic Lessons & User Figures
+    // 3. Syllabus Units Blueprint Section
+    const syllabusUnitsHtml = unitsList.length > 0 ? `
+      <section class="reference-section" id="syllabus-units">
+        <div class="section-kicker">Curriculum Blueprint</div>
+        <h2>Prescribed Syllabus Breakdown (${unitsList.length} Units)</h2>
+        <p style="color:var(--color-ink-muted); margin-bottom:1.4rem;">
+          Official syllabus units, mathematical foundations, and key checkpoints formulated for postgraduate preparation.
+        </p>
+        <div class="syllabus-units-grid">
+          ${unitsList.map(u => `
+            <article class="unit-card">
+              <div class="unit-card-header">
+                <span class="unit-badge">Unit 0${u.unitNumber}</span>
+                <span class="unit-hours">~${u.estimatedHours || 8} hrs</span>
+              </div>
+              <h3>${esc(u.title)}</h3>
+              <ul class="unit-topics-list">
+                ${(u.topics || []).map(t => `<li>${esc(t)}</li>`).join('')}
+              </ul>
+              ${u.checkpoint ? `
+                <div class="unit-checkpoint">
+                  <strong>Key Checkpoint:</strong> ${esc(u.checkpoint)}
+                </div>
+              ` : ''}
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    ` : '';
+
+    // 4. Topic Lessons & User Figures with GeeksforGeeks Deep-Dive Handoffs
     const courseLessons = guides[selected.code] || [];
     const courseVisualList = visuals[selected.code] || [];
 
     const userFigureHtml = item => `
       <figure class="user-visual">
         <a href="${esc(item.src)}" target="_blank" rel="noopener" aria-label="Open full-size illustration: ${esc(item.alt)}">
-          <img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy">
+          <img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy" decoding="async" style="width:100%; height:auto;">
         </a>
         <figcaption>
           <strong>Curriculum Figure:</strong> ${esc(item.alt)}
@@ -1156,6 +1193,11 @@
 
     const lessonsHtml = courseLessons.map((item, index) => {
       const matchingVisuals = courseVisualList.filter(img => img.after === item.title);
+      const matchingGfg = courseGfgList.find(g => 
+        (g.topic && item.title.toLowerCase().includes(g.topic.toLowerCase())) || 
+        (g.title && item.title.toLowerCase().split(' ').some(w => w.length > 4 && g.title.toLowerCase().includes(w)))
+      ) || (courseGfgList.length > 0 ? courseGfgList[index % courseGfgList.length] : null);
+
       return `
         <article class="module" id="lesson-${index + 1}">
           <span class="eyebrow">Study Block ${String(index + 1).padStart(2, '0')}</span>
@@ -1171,16 +1213,59 @@
             ✓ <strong>Distinction / Invariant:</strong> ${esc(item.distinction)}
           </div>
 
+          ${matchingGfg ? `
+            <div class="gfg-lesson-handoff">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="gfg-pill-mini">GeeksforGeeks</span>
+                <span><strong>Deep Dive & Code:</strong> ${esc(matchingGfg.title)}</span>
+              </div>
+              <a href="${esc(matchingGfg.url)}" target="_blank" rel="noopener" class="gfg-inline-link">
+                Read on GFG ↗
+              </a>
+            </div>
+          ` : ''}
+
           ${matchingVisuals.map(userFigureHtml).join('')}
         </article>
       `;
     }).join('');
 
-    // 4. Mastery Hub Layer
+    // 5. GeeksforGeeks (GFG) Reference Vault Section
+    const gfgVaultHtml = courseGfgList.length > 0 ? `
+      <section class="reference-section gfg-vault-section" id="gfg-vault">
+        <div class="section-kicker" style="color:var(--color-emerald); display:inline-flex; align-items:center; gap:0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Curated GeeksforGeeks Academic Track
+        </div>
+        <h2>GeeksforGeeks (GFG) Reference Library</h2>
+        <p style="color:var(--color-ink-muted); margin-bottom:1.5rem; max-width:68ch;">
+          Authoritative GeeksforGeeks tutorials, algorithmic implementations, and complexity analyses mapped directly to this subject's syllabus units for deep conceptual and practical interview readiness.
+        </p>
+        <div class="gfg-cards-grid">
+          ${courseGfgList.map(item => `
+            <article class="gfg-resource-card">
+              <div class="gfg-card-top">
+                <span class="gfg-badge">${esc(item.badge || 'GFG Track')}</span>
+                <span class="gfg-topic">${esc(item.topic || 'Syllabus Topic')}</span>
+              </div>
+              <h3>${esc(item.title)}</h3>
+              <a class="gfg-link-btn" href="${esc(item.url)}" target="_blank" rel="noopener">
+                <span>Read on GeeksforGeeks</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    ` : '';
+
+    // 6. Mastery Hub Layer
     // Check if this subject has a supplement in course-supplements.json
-    const legacyCourse = legacy.courses.find(l => l.code === selected.code || l.slug === selected.guide);
-    const supplementKey = legacyCourse ? legacyCourse.slug : (selected.guide || '');
-    const supplement = supplements[supplementKey] || null;
+    const legacyCourse = legacy.courses.find(l => l.code === selected.code || (selected.guide && l.slug === selected.guide));
+    const supplementKey = (selected.code in supplements) ? selected.code 
+      : ((selected.guide && selected.guide in supplements) ? selected.guide
+      : (legacyCourse ? legacyCourse.slug : (selected.folder || '')));
+    const supplement = supplements[supplementKey] || supplements[selected.code] || supplements[selected.guide] || null;
 
     let masteryHtml = '';
     if (supplement) {
@@ -1398,7 +1483,7 @@
 
           <h1>${esc(selected.title)}</h1>
           <p style="font-family:var(--font-mono); font-size:0.95rem; font-weight:700; color:var(--color-accent); margin:0.2rem 0 1rem;">
-            ${esc(selected.code)} · CAS AKTU 2021–22 SCHEME
+            ${esc(selected.code)} · 2021–22 CURRICULUM SCHEME
           </p>
           <p style="color:var(--color-ink-muted); font-size:1.05rem; line-height:1.5; max-width:54ch;">
             ${esc(selected.tagline || 'Postgraduate study block combining algorithmic rigor, formal proofs, and examination preparation.')}
@@ -1429,6 +1514,9 @@
       <!-- Sticky Quick-Jump Navigation Pills -->
       ${navPillsHtml}
 
+      <!-- Syllabus Units Blueprint -->
+      ${syllabusUnitsHtml}
+
       <!-- Topic Lessons Section -->
       <section id="lessons">
         <div style="margin-bottom:1.5rem;">
@@ -1440,6 +1528,9 @@
         </div>
         ${lessonsHtml}
       </section>
+
+      <!-- GeeksforGeeks (GFG) Curated Reference Vault -->
+      ${gfgVaultHtml}
 
       <!-- Deep Study Layer / Mastery Hub -->
       ${masteryHtml}

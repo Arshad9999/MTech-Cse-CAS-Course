@@ -4,7 +4,7 @@
  * with resilient offline cache fallback.
  */
 
-const CACHE_NAME = 'cas-mtech-cse-v2026.11.18-light';
+const CACHE_NAME = 'cas-mtech-cse-v2026.11.18-gfg';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -19,6 +19,7 @@ const STATIC_ASSETS = [
   './assets/course-visuals.json',
   './assets/course-reading.json',
   './assets/course-supplements.json',
+  './assets/course-gfg.json',
   './assets/styles.css',
   './assets/portal.css',
   './assets/mastery.css',

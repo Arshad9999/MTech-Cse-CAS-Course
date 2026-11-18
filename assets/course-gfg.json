@@ -1,0 +1,818 @@
+{
+  "MCSC-101": [
+    {
+      "title": "Ford-Fulkerson Algorithm for Maximum Flow Problem",
+      "url": "https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/",
+      "topic": "Network flows",
+      "badge": "Core Algorithm"
+    },
+    {
+      "title": "Max-Flow Min-Cut Theorem & Proof Formulation",
+      "url": "https://www.geeksforgeeks.org/max-flow-min-cut-theorem/",
+      "topic": "Network flows",
+      "badge": "Theory & Theorem"
+    },
+    {
+      "title": "Splay Tree \u2014 Insertion, Zig-Zag Rotations & Amortized Bound",
+      "url": "https://www.geeksforgeeks.org/splay-tree-set-1-insert/",
+      "topic": "Asymptotic analysis and structures",
+      "badge": "Data Structure"
+    },
+    {
+      "title": "Fibonacci Heap \u2014 Decrease-Key & Amortized O(1) Operations",
+      "url": "https://www.geeksforgeeks.org/fibonacci-heap-set-1-introduction/",
+      "topic": "Asymptotic analysis and structures",
+      "badge": "Amortized Analysis"
+    },
+    {
+      "title": "Simplex Algorithm \u2014 Tabular Method for Linear Programming",
+      "url": "https://www.geeksforgeeks.org/simplex-algorithm-tabular-method/",
+      "topic": "Linear and semidefinite programming",
+      "badge": "Optimization"
+    },
+    {
+      "title": "Vertex Cover Problem \u2014 2-Approximation Algorithm",
+      "url": "https://www.geeksforgeeks.org/approximate-algorithm-for-vertex-cover-problem/",
+      "topic": "Approximation and intractability",
+      "badge": "Approximation"
+    },
+    {
+      "title": "NP-Completeness Formulation & Polynomial Time Reductions",
+      "url": "https://www.geeksforgeeks.org/np-completeness-set-1/",
+      "topic": "Complexity and reductions",
+      "badge": "Complexity Theory"
+    },
+    {
+      "title": "Greedy Strategy vs Dynamic Programming Paradigms",
+      "url": "https://www.geeksforgeeks.org/greedy-approach-vs-dynamic-programming/",
+      "topic": "Dynamic programming and greedy strategies",
+      "badge": "Algorithm Design"
+    }
+  ],
+  "MCSC-102": [
+    {
+      "title": "Normal Distribution & Probability Density Function (PDF)",
+      "url": "https://www.geeksforgeeks.org/normal-distribution/",
+      "topic": "Probability distributions",
+      "badge": "Statistical Theory"
+    },
+    {
+      "title": "Hypothesis Testing \u2014 Null, Alternative, p-value & z/t-tests",
+      "url": "https://www.geeksforgeeks.org/hypothesis-testing/",
+      "topic": "Inference and testing",
+      "badge": "Inference"
+    },
+    {
+      "title": "Bayes Theorem \u2014 Conditional Probability & Posterior Formulation",
+      "url": "https://www.geeksforgeeks.org/bayes-theorem-in-probability/",
+      "topic": "Bayesian models",
+      "badge": "Bayesian Model"
+    },
+    {
+      "title": "Maximum Likelihood Estimation (MLE) \u2014 Derivation & Parameters",
+      "url": "https://www.geeksforgeeks.org/maximum-likelihood-estimation-mle/",
+      "topic": "Parameter estimation",
+      "badge": "Estimation"
+    },
+    {
+      "title": "Markov Chains \u2014 Transition Probability Matrix & Stationary State",
+      "url": "https://www.geeksforgeeks.org/markov-chain/",
+      "topic": "Stochastic processes",
+      "badge": "Stochastic"
+    }
+  ],
+  "MCSC-103": [
+    {
+      "title": "TCP 3-Way Handshake Connection Establishment & Teardown",
+      "url": "https://www.geeksforgeeks.org/tcp-3-way-handshake-process/",
+      "topic": "Transport protocols",
+      "badge": "Core Protocol"
+    },
+    {
+      "title": "TCP Congestion Control \u2014 Slow Start, Congestion Avoidance, Fast Recovery",
+      "url": "https://www.geeksforgeeks.org/tcp-congestion-control/",
+      "topic": "Congestion control",
+      "badge": "Congestion"
+    },
+    {
+      "title": "BGP (Border Gateway Protocol) \u2014 Autonomous Systems & Path Vector",
+      "url": "https://www.geeksforgeeks.org/border-gateway-protocol-bgp/",
+      "topic": "Inter-domain routing",
+      "badge": "Routing Protocol"
+    },
+    {
+      "title": "Software Defined Networking (SDN) \u2014 OpenFlow & Control Planes",
+      "url": "https://www.geeksforgeeks.org/software-defined-networking-sdn/",
+      "topic": "Modern networking",
+      "badge": "SDN Architecture"
+    },
+    {
+      "title": "Leaky Bucket & Token Bucket Traffic Shaping Algorithms",
+      "url": "https://www.geeksforgeeks.org/leaky-bucket-algorithm/",
+      "topic": "Quality of service",
+      "badge": "Traffic Shaping"
+    }
+  ],
+  "MCSC-104": [
+    {
+      "title": "Support Vector Machine (SVM) \u2014 Hyperplanes & Kernel Trick",
+      "url": "https://www.geeksforgeeks.org/support-vector-machine-algorithm/",
+      "topic": "Classifiers and margins",
+      "badge": "Supervised ML"
+    },
+    {
+      "title": "Principal Component Analysis (PCA) \u2014 Dimensionality Reduction",
+      "url": "https://www.geeksforgeeks.org/principal-component-analysis-pca/",
+      "topic": "Feature extraction",
+      "badge": "Feature Space"
+    },
+    {
+      "title": "Decision Tree Classifier \u2014 Information Gain & Gini Impurity",
+      "url": "https://www.geeksforgeeks.org/decision-tree/",
+      "topic": "Tree based models",
+      "badge": "Classification"
+    },
+    {
+      "title": "Bias-Variance Tradeoff \u2014 Underfitting vs Overfitting in ML",
+      "url": "https://www.geeksforgeeks.org/bias-variance-trade-off-machine-learning/",
+      "topic": "Model assessment",
+      "badge": "Generalization"
+    },
+    {
+      "title": "Backpropagation Algorithm in Artificial Neural Networks",
+      "url": "https://www.geeksforgeeks.org/backpropagation-in-neural-network/",
+      "topic": "Neural architectures",
+      "badge": "Deep Learning"
+    },
+    {
+      "title": "K-Means Clustering Algorithm \u2014 Convergence & Centroid Assignment",
+      "url": "https://www.geeksforgeeks.org/k-means-clustering-introduction/",
+      "topic": "Unsupervised learning",
+      "badge": "Clustering"
+    }
+  ],
+  "MCSC-105": [
+    {
+      "title": "Breadth First Search (BFS) & Depth First Search (DFS) for Graphs",
+      "url": "https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/",
+      "topic": "Graph traversal",
+      "badge": "Graph Algorithms"
+    },
+    {
+      "title": "Eulerian Path and Circuit \u2014 Hierholzer Algorithm & Conditions",
+      "url": "https://www.geeksforgeeks.org/eulerian-path-and-circuit/",
+      "topic": "Paths and cycles",
+      "badge": "Graph Theory"
+    },
+    {
+      "title": "Graph Colouring Problem \u2014 Vertex Colouring & Four Colour Theorem",
+      "url": "https://www.geeksforgeeks.org/graph-coloring-applications/",
+      "topic": "Colouring and planarity",
+      "badge": "Structural Graph"
+    },
+    {
+      "title": "Advanced Master Theorem for Divide-and-Conquer Recurrences",
+      "url": "https://www.geeksforgeeks.org/advanced-master-theorem-for-divide-and-conquer-recurrences/",
+      "topic": "Recurrence relations",
+      "badge": "Discrete Math"
+    },
+    {
+      "title": "Pigeonhole Principle and Proof by Contradiction",
+      "url": "https://www.geeksforgeeks.org/pigeonhole-principle/",
+      "topic": "Combinatorics",
+      "badge": "Combinatorics"
+    }
+  ],
+  "MCSC-106": [
+    {
+      "title": "Literature Review Process in Academic Research Methodology",
+      "url": "https://www.geeksforgeeks.org/literature-review-in-research-methodology/",
+      "topic": "Literature synthesis",
+      "badge": "Research Method"
+    },
+    {
+      "title": "Hypothesis Formulation & Testing in Quantitative Research",
+      "url": "https://www.geeksforgeeks.org/types-of-hypothesis-with-examples/",
+      "topic": "Experimental design",
+      "badge": "Experimental Design"
+    },
+    {
+      "title": "Intellectual Property Rights (IPR) \u2014 Patents, Copyright & Trademarks",
+      "url": "https://www.geeksforgeeks.org/intellectual-property-rights-ipr/",
+      "topic": "IPR & Patents",
+      "badge": "Ethics & IPR"
+    },
+    {
+      "title": "Research Ethics, Citation Norms & Plagiarism Prevention",
+      "url": "https://www.geeksforgeeks.org/plagiarism-types-prevention-examples/",
+      "topic": "Academic integrity",
+      "badge": "Publication Ethics"
+    }
+  ],
+  "MCSC-201": [
+    {
+      "title": "Architecture of Internet of Things (IoT) \u2014 Layers and Protocols",
+      "url": "https://www.geeksforgeeks.org/architecture-of-internet-of-things-iot/",
+      "topic": "IoT Architecture",
+      "badge": "Architecture"
+    },
+    {
+      "title": "MQTT Protocol in IoT \u2014 Publish-Subscribe Architecture & QoS",
+      "url": "https://www.geeksforgeeks.org/mqtt-protocol-in-iot/",
+      "topic": "Application protocols",
+      "badge": "Messaging Protocol"
+    },
+    {
+      "title": "CoAP (Constrained Application Protocol) Architecture & Header Format",
+      "url": "https://www.geeksforgeeks.org/constrained-application-protocol-coap/",
+      "topic": "Constrained protocols",
+      "badge": "RESTful IoT"
+    },
+    {
+      "title": "Sensors and Actuators in IoT Systems \u2014 Transducers & Interfacing",
+      "url": "https://www.geeksforgeeks.org/sensors-and-actuators-in-iot/",
+      "topic": "Hardware sensors",
+      "badge": "Hardware"
+    },
+    {
+      "title": "Security Challenges and Solutions in IoT Ecosystems",
+      "url": "https://www.geeksforgeeks.org/security-challenges-in-iot/",
+      "topic": "Security and privacy",
+      "badge": "Device Security"
+    }
+  ],
+  "MCSC-202": [
+    {
+      "title": "Research Problem Formulation and Objective Scoping",
+      "url": "https://www.geeksforgeeks.org/how-to-write-a-research-paper/",
+      "topic": "Problem definition",
+      "badge": "Methodology"
+    },
+    {
+      "title": "ANOVA (Analysis of Variance) \u2014 One-Way and Two-Way Testing",
+      "url": "https://www.geeksforgeeks.org/one-way-anova-test-in-python/",
+      "topic": "Statistical validation",
+      "badge": "Statistical Validation"
+    },
+    {
+      "title": "Citation Standards & Reference Indexing (IEEE, ACM, Springer)",
+      "url": "https://www.geeksforgeeks.org/citation-styles-in-research-paper/",
+      "topic": "Academic publishing",
+      "badge": "Publishing"
+    }
+  ],
+  "MMLC-201": [
+    {
+      "title": "Multilayer Perceptron (MLP) \u2014 Forward & Backpropagation",
+      "url": "https://www.geeksforgeeks.org/multi-layer-perceptron-learning-in-tensorflow/",
+      "topic": "Neural foundations",
+      "badge": "Deep Learning"
+    },
+    {
+      "title": "Convolutional Neural Networks (CNN) Architecture & Pooling Layers",
+      "url": "https://www.geeksforgeeks.org/introduction-convolution-neural-network/",
+      "topic": "Computer vision",
+      "badge": "CNN Architecture"
+    },
+    {
+      "title": "Recurrent Neural Networks (RNN) and LSTM Architecture",
+      "url": "https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/",
+      "topic": "Sequence models",
+      "badge": "Sequential Models"
+    },
+    {
+      "title": "Vanishing and Exploding Gradient Problems \u2014 Mathematical Causes",
+      "url": "https://www.geeksforgeeks.org/vanishing-gradient-problem/",
+      "topic": "Optimization dynamics",
+      "badge": "Optimization"
+    },
+    {
+      "title": "Dropout Regularization Technique to Prevent Overfitting",
+      "url": "https://www.geeksforgeeks.org/dropout-regularization-in-deep-learning/",
+      "topic": "Regularization",
+      "badge": "Regularization"
+    }
+  ],
+  "MMLC-202": [
+    {
+      "title": "Bayes Decision Rule for Minimum Risk Classification",
+      "url": "https://www.geeksforgeeks.org/bayes-decision-rule-for-minimum-risk/",
+      "topic": "Decision boundaries",
+      "badge": "Statistical PR"
+    },
+    {
+      "title": "Linear Discriminant Analysis (LDA) for Multiclass Classification",
+      "url": "https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/",
+      "topic": "Discriminant functions",
+      "badge": "Feature Space"
+    },
+    {
+      "title": "Expectation-Maximization (EM) Algorithm for Gaussian Mixture Models",
+      "url": "https://www.geeksforgeeks.org/expectation-maximization-algorithm/",
+      "topic": "Density estimation",
+      "badge": "Unsupervised PR"
+    },
+    {
+      "title": "Hidden Markov Model (HMM) \u2014 Viterbi and Baum-Welch Algorithms",
+      "url": "https://www.geeksforgeeks.org/hidden-markov-model-in-machine-learning/",
+      "topic": "Sequential pattern recognition",
+      "badge": "HMM"
+    }
+  ],
+  "MCSE-202": [
+    {
+      "title": "Data Wrangling and Cleaning Pipeline in Python",
+      "url": "https://www.geeksforgeeks.org/data-wrangling-in-python/",
+      "topic": "Data preparation",
+      "badge": "Data Engineering"
+    },
+    {
+      "title": "Exploratory Data Analysis (EDA) Techniques & Visualization",
+      "url": "https://www.geeksforgeeks.org/what-is-exploratory-data-analysis/",
+      "topic": "EDA",
+      "badge": "Analytics"
+    },
+    {
+      "title": "Random Forest Classifier & Ensemble Methods",
+      "url": "https://www.geeksforgeeks.org/random-forest-algorithm-in-machine-learning/",
+      "topic": "Ensemble learning",
+      "badge": "Ensemble Models"
+    },
+    {
+      "title": "ROC Curve and AUC (Area Under Curve) Evaluation Metrics",
+      "url": "https://www.geeksforgeeks.org/auc-roc-curve-in-machine-learning/",
+      "topic": "Model evaluation",
+      "badge": "Evaluation Metric"
+    }
+  ],
+  "MMLE-201": [
+    {
+      "title": "Hadoop MapReduce Architecture \u2014 Map, Shuffle, and Reduce Phases",
+      "url": "https://www.geeksforgeeks.org/hadoop-mapreduce/",
+      "topic": "Distributed compute",
+      "badge": "Distributed Systems"
+    },
+    {
+      "title": "Apache Spark Introduction \u2014 RDD, DataFrames and Spark SQL",
+      "url": "https://www.geeksforgeeks.org/apache-spark-introduction/",
+      "topic": "In-memory big data",
+      "badge": "Big Data Engine"
+    },
+    {
+      "title": "HDFS (Hadoop Distributed File System) Architecture & NameNode Federation",
+      "url": "https://www.geeksforgeeks.org/hdfs-architecture/",
+      "topic": "Distributed storage",
+      "badge": "Storage Layer"
+    },
+    {
+      "title": "CAP Theorem in Distributed Systems \u2014 Consistency, Availability, Partitioning",
+      "url": "https://www.geeksforgeeks.org/the-cap-theorem-in-dbms/",
+      "topic": "Distributed guarantees",
+      "badge": "System Design"
+    }
+  ],
+  "MCSC-301": [
+    {
+      "title": "How to Write a High-Impact Research Paper for Scopus/SCI Conferences",
+      "url": "https://www.geeksforgeeks.org/how-to-write-a-research-paper/",
+      "topic": "Research methodology",
+      "badge": "Research Design"
+    },
+    {
+      "title": "How to Choose Benchmark Datasets for Postgraduate Engineering Projects",
+      "url": "https://www.geeksforgeeks.org/how-to-choose-a-dataset-for-machine-learning/",
+      "topic": "Empirical validation",
+      "badge": "Dataset Strategy"
+    }
+  ],
+  "MCSC-302": [
+    {
+      "title": "Design of Experiments (DOE) and Empirical Hypothesis Validation",
+      "url": "https://www.geeksforgeeks.org/types-of-hypothesis-with-examples/",
+      "topic": "Thesis phase I",
+      "badge": "Thesis Methodology"
+    }
+  ],
+  "MMLC-301": [
+    {
+      "title": "Transformer Architecture & Self-Attention Mechanism Explained",
+      "url": "https://www.geeksforgeeks.org/the-transformer-model/",
+      "topic": "Attention models",
+      "badge": "Transformers"
+    },
+    {
+      "title": "Generative Adversarial Networks (GANs) \u2014 Generator & Discriminator",
+      "url": "https://www.geeksforgeeks.org/generative-adversarial-networks-gans-an-introduction/",
+      "topic": "Generative models",
+      "badge": "GANs"
+    },
+    {
+      "title": "Transfer Learning & Fine-Tuning Pretrained Foundation Models",
+      "url": "https://www.geeksforgeeks.org/transfer-learning-for-deep-learning/",
+      "topic": "Foundation models",
+      "badge": "Transfer Learning"
+    }
+  ],
+  "MMLE-302": [
+    {
+      "title": "Markov Decision Process (MDP) \u2014 States, Actions, Transitions & Rewards",
+      "url": "https://www.geeksforgeeks.org/markov-decision-process/",
+      "topic": "MDP formulation",
+      "badge": "RL Foundation"
+    },
+    {
+      "title": "Bellman Equation for Value Functions in Dynamic Programming",
+      "url": "https://www.geeksforgeeks.org/bellman-equation/",
+      "topic": "Dynamic programming in RL",
+      "badge": "Mathematical Bound"
+    },
+    {
+      "title": "Q-Learning Algorithm in Python \u2014 Exploration vs Exploitation",
+      "url": "https://www.geeksforgeeks.org/q-learning-in-python/",
+      "topic": "Model-free RL",
+      "badge": "Q-Learning"
+    },
+    {
+      "title": "Policy Gradient Methods in Reinforcement Learning (REINFORCE Algorithm)",
+      "url": "https://www.geeksforgeeks.org/policy-gradient-methods-in-reinforcement-learning/",
+      "topic": "Policy optimization",
+      "badge": "Policy Gradients"
+    }
+  ],
+  "MCSC-401": [
+    {
+      "title": "Structuring a Postgraduate Master Thesis and Defense Presentation",
+      "url": "https://www.geeksforgeeks.org/how-to-write-a-research-paper/",
+      "topic": "Dissertation synthesis",
+      "badge": "Dissertation"
+    }
+  ],
+  "MCySC-201": [
+    {
+      "title": "RSA Encryption Algorithm \u2014 Key Generation, Encryption & Decryption",
+      "url": "https://www.geeksforgeeks.org/rsa-algorithm-cryptography/",
+      "topic": "Asymmetric cryptography",
+      "badge": "Cryptography"
+    },
+    {
+      "title": "Diffie-Hellman Key Exchange Algorithm & Discrete Logarithm Problem",
+      "url": "https://www.geeksforgeeks.org/diffie-hellman-key-exchange-algorithm/",
+      "topic": "Key agreement",
+      "badge": "Key Exchange"
+    },
+    {
+      "title": "AES (Advanced Encryption Standard) \u2014 Rounds, S-Box & MixColumns",
+      "url": "https://www.geeksforgeeks.org/advanced-encryption-standard-aes/",
+      "topic": "Symmetric encryption",
+      "badge": "Block Cipher"
+    },
+    {
+      "title": "IPSec (IP Security) Architecture \u2014 AH, ESP, and Tunnel vs Transport Mode",
+      "url": "https://www.geeksforgeeks.org/ip-security-ipsec/",
+      "topic": "Network security",
+      "badge": "IPSec"
+    }
+  ],
+  "MICTC-201": [
+    {
+      "title": "Virtualization in Cloud Computing \u2014 Type 1 vs Type 2 Hypervisors",
+      "url": "https://www.geeksforgeeks.org/virtualization-in-cloud-computing-and-types/",
+      "topic": "Virtualization",
+      "badge": "Cloud Infrastructure"
+    },
+    {
+      "title": "Difference Between Docker Containers and Virtual Machines",
+      "url": "https://www.geeksforgeeks.org/difference-between-docker-and-virtual-machine/",
+      "topic": "Containerization",
+      "badge": "Containers"
+    },
+    {
+      "title": "Raft Consensus Algorithm \u2014 Leader Election & Log Replication",
+      "url": "https://www.geeksforgeeks.org/raft-consensus-algorithm/",
+      "topic": "Distributed consensus",
+      "badge": "Consensus"
+    }
+  ],
+  "MCySC-202": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MICTC-202": [
+    {
+      "title": "Cloud Computing Tutorial \u2014 Architecture, Services & Deployment",
+      "url": "https://www.geeksforgeeks.org/cloud-computing/",
+      "topic": "Cloud Systems",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Operating Systems Tutorial \u2014 Concurrency, Scheduling & Memory",
+      "url": "https://www.geeksforgeeks.org/operating-systems/",
+      "topic": "Operating Systems",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCSE-201": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCySE-204": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCySE-201": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCySE-202": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCySE-203": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MICTE-202": [
+    {
+      "title": "Cloud Computing Tutorial \u2014 Architecture, Services & Deployment",
+      "url": "https://www.geeksforgeeks.org/cloud-computing/",
+      "topic": "Cloud Systems",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Operating Systems Tutorial \u2014 Concurrency, Scheduling & Memory",
+      "url": "https://www.geeksforgeeks.org/operating-systems/",
+      "topic": "Operating Systems",
+      "badge": "GFG Track"
+    }
+  ],
+  "MICTE-201": [
+    {
+      "title": "Design and Analysis of Algorithms \u2014 GeeksforGeeks Complete Guide",
+      "url": "https://www.geeksforgeeks.org/fundamentals-of-algorithms/",
+      "topic": "Algorithms",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Advanced Data Structures Tutorial \u2014 Trees, Heaps & Graphs",
+      "url": "https://www.geeksforgeeks.org/advanced-data-structures/",
+      "topic": "Data Structures",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCSE-203": [
+    {
+      "title": "Machine Learning Tutorial \u2014 GeeksforGeeks Comprehensive Course",
+      "url": "https://www.geeksforgeeks.org/machine-learning/",
+      "topic": "Machine Learning",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Deep Learning Tutorial \u2014 Neural Networks to Transformers",
+      "url": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "topic": "Deep Learning",
+      "badge": "GFG Track"
+    }
+  ],
+  "MMLE-202": [
+    {
+      "title": "Machine Learning Tutorial \u2014 GeeksforGeeks Comprehensive Course",
+      "url": "https://www.geeksforgeeks.org/machine-learning/",
+      "topic": "Machine Learning",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Deep Learning Tutorial \u2014 Neural Networks to Transformers",
+      "url": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "topic": "Deep Learning",
+      "badge": "GFG Track"
+    }
+  ],
+  "MMLE-203": [
+    {
+      "title": "Machine Learning Tutorial \u2014 GeeksforGeeks Comprehensive Course",
+      "url": "https://www.geeksforgeeks.org/machine-learning/",
+      "topic": "Machine Learning",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Deep Learning Tutorial \u2014 Neural Networks to Transformers",
+      "url": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "topic": "Deep Learning",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCySC-301": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MICTC-301": [
+    {
+      "title": "Cloud Computing Tutorial \u2014 Architecture, Services & Deployment",
+      "url": "https://www.geeksforgeeks.org/cloud-computing/",
+      "topic": "Cloud Systems",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Operating Systems Tutorial \u2014 Concurrency, Scheduling & Memory",
+      "url": "https://www.geeksforgeeks.org/operating-systems/",
+      "topic": "Operating Systems",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCSE-301": [
+    {
+      "title": "Machine Learning Tutorial \u2014 GeeksforGeeks Comprehensive Course",
+      "url": "https://www.geeksforgeeks.org/machine-learning/",
+      "topic": "Machine Learning",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Deep Learning Tutorial \u2014 Neural Networks to Transformers",
+      "url": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "topic": "Deep Learning",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCySE-301": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCSE-302": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCSE-304": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MCSE-303": [
+    {
+      "title": "Computer Network Tutorial \u2014 Protocols, Routing & Layers",
+      "url": "https://www.geeksforgeeks.org/computer-network-tutorials/",
+      "topic": "Networking",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Cryptography and Network Security \u2014 Concepts & Algorithms",
+      "url": "https://www.geeksforgeeks.org/cryptography-and-network-security/",
+      "topic": "Security",
+      "badge": "GFG Track"
+    }
+  ],
+  "MICTE-301": [
+    {
+      "title": "Cloud Computing Tutorial \u2014 Architecture, Services & Deployment",
+      "url": "https://www.geeksforgeeks.org/cloud-computing/",
+      "topic": "Cloud Systems",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Operating Systems Tutorial \u2014 Concurrency, Scheduling & Memory",
+      "url": "https://www.geeksforgeeks.org/operating-systems/",
+      "topic": "Operating Systems",
+      "badge": "GFG Track"
+    }
+  ],
+  "MMLE-301": [
+    {
+      "title": "Machine Learning Tutorial \u2014 GeeksforGeeks Comprehensive Course",
+      "url": "https://www.geeksforgeeks.org/machine-learning/",
+      "topic": "Machine Learning",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Deep Learning Tutorial \u2014 Neural Networks to Transformers",
+      "url": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "topic": "Deep Learning",
+      "badge": "GFG Track"
+    }
+  ],
+  "MMLE-303": [
+    {
+      "title": "Machine Learning Tutorial \u2014 GeeksforGeeks Comprehensive Course",
+      "url": "https://www.geeksforgeeks.org/machine-learning/",
+      "topic": "Machine Learning",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Deep Learning Tutorial \u2014 Neural Networks to Transformers",
+      "url": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "topic": "Deep Learning",
+      "badge": "GFG Track"
+    }
+  ],
+  "MMLE-304": [
+    {
+      "title": "Machine Learning Tutorial \u2014 GeeksforGeeks Comprehensive Course",
+      "url": "https://www.geeksforgeeks.org/machine-learning/",
+      "topic": "Machine Learning",
+      "badge": "GFG Track"
+    },
+    {
+      "title": "Deep Learning Tutorial \u2014 Neural Networks to Transformers",
+      "url": "https://www.geeksforgeeks.org/deep-learning-tutorial/",
+      "topic": "Deep Learning",
+      "badge": "GFG Track"
+    }
+  ]
+}
