@@ -24,6 +24,8 @@ const STATIC_ASSETS = [
   './assets/js/study-docket.js',
   './assets/js/matchmaker.js',
   './assets/js/command-palette.js',
+  './assets/js/theme.js',
+  './assets/js/3d-hero.js',
   './assets/js/app.js',
   './assets/app.js'
 ];

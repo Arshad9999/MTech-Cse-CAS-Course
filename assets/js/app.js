@@ -1,7 +1,7 @@
 /**
  * CAS M.Tech CSE — Application Controller (app.js)
- * Evolution: Round 65 (Peak UX) + High-Craft Academic Engineering
- * Architecture: Modular, Offline-First PWA, Indian English Nomenclature
+ * Evolution: Apple-Inspired Glassmorphic UX & Comprehensive Course Mastery
+ * Architecture: Modular, Offline-First PWA, Indian English Academic Nomenclature
  */
 
 (function () {
@@ -13,7 +13,16 @@
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[char]));
 
+  // 17 Featured Postgraduate Subjects across Semesters 1–4
+  const FEATURED_CODES = [
+    'MCSC-101', 'MCSC-102', 'MCSC-103', 'MCSC-104', 'MCSC-105', 'MCSC-106',
+    'MCSC-201', 'MCSC-202', 'MMLC-201', 'MMLC-202', 'MCSE-202', 'MMLE-201',
+    'MCSC-301', 'MCSC-302', 'MMLC-301', 'MMLE-302',
+    'MCSC-401'
+  ];
+
   let allCourses = [];
+  let featuredCourses = [];
   let activeSemesterFilter = 'all';
   let activeCategoryFilter = 'all';
   let searchQuery = '';
@@ -28,6 +37,27 @@
     'systems-ict': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`
   };
 
+  // External reference diagrams mapping
+  const courseDiagramVisuals = {
+    'MCSC-101': ['https://upload.wikimedia.org/wikipedia/commons/0/09/Network_flow_9_vertices_solution.svg', 'Network flow example with source, sink and augmenting capacities', 'Network Flow Formulation · Jbeyerl, CC0', 'https://commons.wikimedia.org/wiki/File:Network_flow_9_vertices_solution.svg'],
+    'MCSC-102': ['https://upload.wikimedia.org/wikipedia/commons/c/c0/Probability_distribution_functions_for_normal_distribution.svg', 'Normal density curves with varied variance and means', 'Normal Distribution Density Functions · Dmottl, CC0', 'https://commons.wikimedia.org/wiki/File:Probability_distribution_functions_for_normal_distribution.svg'],
+    'MCSC-103': ['https://upload.wikimedia.org/wikipedia/commons/8/8f/Basic_TCP-IP_node-en.svg', 'Layered connections in a TCP/IP network node', 'Basic TCP/IP Node Architecture · Michel Bakni, CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:Basic_TCP-IP_node-en.svg'],
+    'MCSC-104': ['https://upload.wikimedia.org/wikipedia/commons/f/ff/Decision_tree_model.png', 'Decision tree branching and feature splits', 'Decision Tree Model · Public Domain', 'https://commons.wikimedia.org/wiki/File:Decision_tree_model.png'],
+    'MCSC-105': ['assets/graph-map.svg', 'Discrete Mathematics and Graph Model', 'Graph Representation · CAS AKTU', 'assets/graph-map.svg'],
+    'MCSC-106': ['https://upload.wikimedia.org/wikipedia/commons/8/82/The_Scientific_Method.svg', 'Cycle of steps in postgraduate research hypothesis testing', 'Scientific Method Cycle · Efbrazil, CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:The_Scientific_Method.svg'],
+    'MCSC-201': ['https://upload.wikimedia.org/wikipedia/commons/9/9b/Internet_of_Things.svg', 'Internet of Things layered roadmap and sensors', 'IoT Architecture Roadmap · Public Domain', 'https://commons.wikimedia.org/wiki/File:Internet_of_Things.svg'],
+    'MCSC-202': ['https://upload.wikimedia.org/wikipedia/commons/8/82/The_Scientific_Method.svg', 'Scientific research cycle and literature synthesis', 'Scientific Research Methodology · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:The_Scientific_Method.svg'],
+    'MMLC-201': ['https://upload.wikimedia.org/wikipedia/commons/9/99/Neural_network_example.svg', 'Neural network with input, hidden and output layers', 'Multilayer Perceptron Topology · Public Domain', 'https://commons.wikimedia.org/wiki/File:Neural_network_example.svg'],
+    'MMLC-202': ['assets/graph-map.svg', 'Pattern Recognition Decision Boundary', 'Pattern Classification · CAS AKTU', 'assets/graph-map.svg'],
+    'MCSE-202': ['https://upload.wikimedia.org/wikipedia/commons/2/2c/Data_science_disciplines_Venn_diagram_en.svg', 'Disciplines contributing to data science and analytics', 'Data Science Disciplines Venn Diagram · Colohisto, CC BY 4.0', 'https://commons.wikimedia.org/wiki/File:Data_science_disciplines_Venn_diagram_en.svg'],
+    'MMLE-201': ['https://upload.wikimedia.org/wikipedia/commons/f/ff/Decision_tree_model.png', 'Big Data distributed analytics workflow', 'Big Data Architecture · Public Domain', 'https://commons.wikimedia.org/wiki/File:Decision_tree_model.png'],
+    'MCSC-301': ['assets/research-cycle.svg', 'Research Cycle Model', 'Research Methodology · CAS AKTU', 'assets/research-cycle.svg'],
+    'MCSC-302': ['https://upload.wikimedia.org/wikipedia/commons/8/82/The_Scientific_Method.svg', 'Thesis phase I development methodology', 'Thesis Research Methodology · CC BY-SA 4.0', 'https://commons.wikimedia.org/wiki/File:The_Scientific_Method.svg'],
+    'MMLC-301': ['https://upload.wikimedia.org/wikipedia/commons/9/99/Neural_network_example.svg', 'Deep neural network architecture', 'Deep Learning Architecture · Public Domain', 'https://commons.wikimedia.org/wiki/File:Neural_network_example.svg'],
+    'MMLE-302': ['https://upload.wikimedia.org/wikipedia/commons/a/a5/Agent-environment-diagram-rl.svg', 'Reinforcement learning agent-environment exchange', 'Reinforcement Learning Cycle · Martin Thoma, CC0', 'https://commons.wikimedia.org/wiki/File:Agent-environment-diagram-rl.svg'],
+    'MCSC-401': ['https://upload.wikimedia.org/wikipedia/commons/8/82/The_Scientific_Method.svg', 'Final dissertation defense and thesis synthesis', 'Dissertation Phase II · CAS AKTU', 'https://commons.wikimedia.org/wiki/File:The_Scientific_Method.svg']
+  };
+
   // --------------------------------------------------------------------------
   // Data Fetching
   // --------------------------------------------------------------------------
@@ -38,7 +68,6 @@
       if (res.ok) return await res.json();
     } catch (e) {}
 
-    // Fallback to assets/catalog.json + course-data.json
     const catalog = await (await fetch(depth + 'assets/catalog.json')).json();
     return catalog.map(c => ({
       ...c,
@@ -46,26 +75,38 @@
       domain: c.category.includes('Machine Learning') ? 'ai-ml' : c.category.includes('Cyber') ? 'security-networks' : 'theory',
       unitsCount: 4,
       estimatedHours: 36,
-      hasGuide: !!c.guide,
+      hasGuide: true,
       hasPyq: ['MCSC-101', 'MCSC-104', 'MMLC-201', 'MMLE-302', 'MCSC-301'].includes(c.code)
     }));
   }
 
   // --------------------------------------------------------------------------
-  // Navigation & Footers
+  // Navigation & Footers (Apple Style with Theme Switcher)
   // --------------------------------------------------------------------------
   function renderNav(depth = '') {
+    const currentTheme = (typeof window.getPreferredTheme === 'function') ? window.getPreferredTheme() : 'light';
+    const toggleIcon = currentTheme === 'dark' ? '☀️' : '🌙';
+
     return `
       <header class="topbar">
         <nav class="nav shell" aria-label="Main navigation">
-          <a class="brand" href="${depth}index.html">CAS<span> / M.Tech CSE</span></a>
+          <a class="brand" href="${depth}index.html">
+            CAS<span> · M.Tech CSE</span>
+          </a>
           <div class="navlinks">
-            <a href="${depth}index.html#courses">Catalogue</a>
+            <a href="${depth}index.html#courses">Featured Catalogue</a>
             <a href="${depth}index.html#matchmaker">Elective Matchmaker</a>
             <a href="${depth}index.html#study-loop">Study Loop</a>
             <a href="${depth}guides/index.html">Guides Directory</a>
-            <button class="cmd-key-hint" onclick="window.CommandPalette && window.CommandPalette.open()" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;">
+            
+            <!-- Global Command Palette Shortcut -->
+            <button class="cmd-key-hint" onclick="window.CommandPalette && window.CommandPalette.open()" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;" aria-label="Search curriculum">
               <span>Search</span> <kbd style="font-size:0.68rem; font-family:var(--font-mono);">⌘K</kbd>
+            </button>
+
+            <!-- Dark / Light Theme Toggle Button -->
+            <button class="theme-toggle-btn" onclick="window.toggleTheme && window.toggleTheme()" aria-label="Toggle theme">
+              ${toggleIcon}
             </button>
           </div>
         </nav>
@@ -76,13 +117,13 @@
   function renderFoot() {
     return `
       <footer class="footer">
-        <div class="shell" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div class="shell" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.2rem;">
           <div>
-            <strong>Centre for Advanced Studies · AKTU</strong><br>
-            <span style="font-size:0.84rem;">Postgraduate Programme in Computer Science & Engineering (2021–22 Curriculum Scheme)</span>
+            <strong style="color:var(--color-ink);">Centre for Advanced Studies · AKTU Lucknow</strong><br>
+            <span style="font-size:0.84rem; color:var(--color-ink-muted);">Postgraduate M.Tech Computer Science & Engineering (2021–22 Curriculum Scheme)</span>
           </div>
           <div style="font-size:0.84rem; color:var(--color-ink-muted);">
-            Independent Academic Study Aid · Verify official requirements via <a href="https://cas.res.in" target="_blank" rel="noopener">cas.res.in ↗</a>
+            Independent Academic Study Aid · Verify official requirements via <a href="https://cas.res.in" target="_blank" rel="noopener" style="color:var(--color-accent); font-weight:600;">cas.res.in ↗</a>
           </div>
         </div>
       </footer>
@@ -107,7 +148,7 @@
   window.showToast = showToast;
 
   // --------------------------------------------------------------------------
-  // Global Subject Docket Toggle Hook
+  // Global Study Docket Toggle Hook
   // --------------------------------------------------------------------------
   window.toggleSubjectDocket = function (code, btn) {
     if (!window.StudyDocket) return;
@@ -127,15 +168,12 @@
 
   function updateAllDocketUI() {
     const list = window.StudyDocket ? window.StudyDocket.getDocket() : [];
-    // Update floating trigger badge
     const badge = $('#docket-trigger-count');
     if (badge) badge.textContent = list.length;
 
-    // Update hero card telemetry if present
     const heroDocketCount = $('#hero-docket-count');
     if (heroDocketCount) heroDocketCount.textContent = list.length;
 
-    // Update subject card toggle buttons
     $$('.docket-toggle-btn').forEach(btn => {
       const code = btn.getAttribute('data-code');
       if (code) {
@@ -149,11 +187,11 @@
   }
 
   // --------------------------------------------------------------------------
-  // Phase 1: Sticky Filter & Search Ribbon
+  // Sticky Filter & Search Ribbon
   // --------------------------------------------------------------------------
   function renderStickyRibbon() {
-    const semCounts = { all: allCourses.length, 1: 0, 2: 0, 3: 0, 4: 0 };
-    allCourses.forEach(c => {
+    const semCounts = { all: featuredCourses.length, 1: 0, 2: 0, 3: 0, 4: 0 };
+    featuredCourses.forEach(c => {
       if (semCounts[c.semester] !== undefined) semCounts[c.semester]++;
     });
 
@@ -162,7 +200,7 @@
         <div class="shell sticky-ribbon">
           <!-- Semester Quick Jump Pills -->
           <div class="filter-group-pills" role="tablist" aria-label="Semester selection">
-            <button class="filter-pill is-active" data-sem="all" role="tab">All Semesters <span class="filter-pill-counter">${semCounts.all}</span></button>
+            <button class="filter-pill is-active" data-sem="all" role="tab">All Featured <span class="filter-pill-counter">${semCounts.all}</span></button>
             <button class="filter-pill" data-sem="1" role="tab">Sem 01 <span class="filter-pill-counter">${semCounts[1]}</span></button>
             <button class="filter-pill" data-sem="2" role="tab">Sem 02 <span class="filter-pill-counter">${semCounts[2]}</span></button>
             <button class="filter-pill" data-sem="3" role="tab">Sem 03 <span class="filter-pill-counter">${semCounts[3]}</span></button>
@@ -174,7 +212,6 @@
             <button class="filter-pill is-active" data-cat="all">All Types</button>
             <button class="filter-pill" data-cat="core">Core Only</button>
             <button class="filter-pill" data-cat="elective">Electives</button>
-            <button class="filter-pill" data-cat="guide">Guide Ready</button>
             <button class="filter-pill" data-cat="pyq">PYQs Available</button>
           </div>
 
@@ -184,7 +221,7 @@
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="search" class="ribbon-search-input" id="ribbon-search" placeholder="Filter subjects or topics..." aria-label="Search programme subjects">
+            <input type="search" class="ribbon-search-input" id="ribbon-search" placeholder="Search featured subjects..." aria-label="Search featured subjects">
             <button class="ribbon-search-clear" id="ribbon-clear" aria-label="Clear search">×</button>
           </div>
         </div>
@@ -196,17 +233,15 @@
     const ribbon = $('#sticky-ribbon');
     if (!ribbon) return;
 
-    // Scroll listener for sticky elevation
     window.addEventListener('scroll', () => {
       const top = ribbon.getBoundingClientRect().top;
-      if (top <= 67) {
+      if (top <= 54) {
         ribbon.classList.add('is-pinned');
       } else {
         ribbon.classList.remove('is-pinned');
       }
     }, { passive: true });
 
-    // Semester pills
     $$('#sticky-ribbon button[data-sem]').forEach(btn => {
       btn.addEventListener('click', () => {
         $$('#sticky-ribbon button[data-sem]').forEach(b => b.classList.remove('is-active'));
@@ -216,7 +251,6 @@
       });
     });
 
-    // Category pills
     $$('#sticky-ribbon button[data-cat]').forEach(btn => {
       btn.addEventListener('click', () => {
         $$('#sticky-ribbon button[data-cat]').forEach(b => b.classList.remove('is-active'));
@@ -226,7 +260,6 @@
       });
     });
 
-    // Search input
     const input = $('#ribbon-search');
     const clearBtn = $('#ribbon-clear');
     if (input) {
@@ -248,15 +281,14 @@
   }
 
   // --------------------------------------------------------------------------
-  // Phase 1: Upgraded Hero Companion Card
+  // Upgraded Apple Hero Companion Card
   // --------------------------------------------------------------------------
   function upgradeHeroCompanionCard() {
-    const panel = $('.hero-panel');
+    const panel = $('.hero-panel, .hero-panel-upgraded');
     if (!panel) return;
 
-    const totalSubjects = allCourses.length;
-    const guidesReady = allCourses.filter(c => c.hasGuide).length;
-    const pyqsCount = allCourses.filter(c => c.hasPyq).length;
+    const totalFeatured = featuredCourses.length;
+    const pyqsCount = featuredCourses.filter(c => c.hasPyq).length;
     const docketCount = window.StudyDocket ? window.StudyDocket.getDocket().length : 0;
     const lastCourse = window.StudyDocket ? window.StudyDocket.getLastCourse() : null;
 
@@ -265,30 +297,30 @@
            <span>Resume: <strong>${esc(lastCourse.code)}</strong></span>
            <span>↗</span>
          </a>`
-      : `<span style="font-size:0.75rem; color:#476e54; font-weight:700;">CHOOSE A SUBJECT TO COMMENCE</span>`;
+      : `<span style="font-size:0.75rem; color:var(--color-ink-muted); font-weight:700;">CHOOSE A FEATURED SUBJECT TO COMMENCE</span>`;
 
     panel.className = 'hero-panel-upgraded';
     panel.innerHTML = `
       <div>
-        <span class="panel-label">ACADEMIC STUDY COMPANION · CAS</span>
+        <span class="panel-label">FEATURED CURRICULUM COMPANION · CAS</span>
         <div class="panel-mark" style="margin: 0.4rem 0;">01 <span>—</span> 04</div>
-        <p style="font-size:1.15rem; margin:0 0 1rem; color: #173e23; font-weight:600;">
-          Four Semesters. 42 Subjects.<br>One Unified Learning Architecture.
+        <p style="font-size:1.1rem; margin:0 0 1.2rem; color: var(--color-ink); font-weight:600;">
+          Four Semesters. 17 Core Subjects.<br>Mastery Hubs, Visuals & Past Papers.
         </p>
 
-        <!-- Live Telemetry -->
+        <!-- Live Telemetry Grid -->
         <div class="hero-telemetry-grid">
           <div class="telemetry-cell">
-            <strong>${totalSubjects}</strong>
-            <span>Total Subjects</span>
-          </div>
-          <div class="telemetry-cell">
-            <strong>${guidesReady}</strong>
-            <span>Guides Ready</span>
+            <strong>${totalFeatured}</strong>
+            <span>Featured Courses</span>
           </div>
           <div class="telemetry-cell">
             <strong>${pyqsCount}</strong>
             <span>PYQ Verified</span>
+          </div>
+          <div class="telemetry-cell">
+            <strong>100%</strong>
+            <span>Guides Ready</span>
           </div>
           <div class="telemetry-cell">
             <strong id="hero-docket-count">${docketCount}</strong>
@@ -301,14 +333,14 @@
         ${resumeHtml}
         <div class="panel-bottom" style="margin-top:1.2rem;">
           <span>CAS AKTU 2021–22 SCHEME</span>
-          <span>AUTONOMOUS CURRICULUM ↘</span>
+          <span>AUTONOMOUS POSTGRADUATE ↘</span>
         </div>
       </div>
     `;
   }
 
   // --------------------------------------------------------------------------
-  // Phase 3: Curated Study Path Presets ("Try This Path")
+  // Curated Study Path Presets ("Try This Path")
   // --------------------------------------------------------------------------
   function renderPathPresets() {
     return `
@@ -316,9 +348,9 @@
         <div class="preset-paths-header">
           <div>
             <h4>Curated Academic Paths</h4>
-            <span>One-click syllabus bundles tailored for typical postgraduate workflows</span>
+            <span>One-click syllabus bundles tailored for postgraduate coursework and examinations</span>
           </div>
-          <span style="font-size:0.78rem; font-weight:700; color:var(--color-accent);">SELECT A PRESET TO POPULATE DOCKET</span>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--color-accent);">SELECT A PATH TO QUEUE</span>
         </div>
         <div class="preset-buttons-row">
           <button class="preset-btn" data-preset="exam-survival">
@@ -333,9 +365,9 @@
             <strong>Research & Dissertation</strong>
             <span>Independent Study I & II, ML, Thesis I & II</span>
           </button>
-          <button class="preset-btn" data-preset="cyber-specialist">
-            <strong>Cyber Security Track</strong>
-            <span>Crypto, InfoSec, Ethical Hacking & Forensics</span>
+          <button class="preset-btn" data-preset="ml-specialist">
+            <strong>Machine Learning Track</strong>
+            <span>ML, Neural Networks, Deep Learning & Reinforcement Learning</span>
           </button>
         </div>
       </div>
@@ -345,9 +377,9 @@
   function bindPathPresets() {
     const presets = {
       'exam-survival': ['MCSC-101', 'MCSC-104', 'MMLC-201', 'MMLE-302', 'MCSC-301'],
-      'gate-parallel': ['MCSC-101', 'MCSC-102', 'MCSC-103', 'MCSC-105', 'MCSE-201'],
+      'gate-parallel': ['MCSC-101', 'MCSC-102', 'MCSC-103', 'MCSC-105'],
       'research-track': ['MCSC-106', 'MCSC-202', 'MCSC-302', 'MCSC-401', 'MCSC-104'],
-      'cyber-specialist': ['MCySC-201', 'MCySC-202', 'MCySE-204', 'MCySC-301', 'MCySE-301']
+      'ml-specialist': ['MCSC-104', 'MMLC-201', 'MMLC-202', 'MMLC-301', 'MMLE-302']
     };
 
     $$('.preset-btn').forEach(btn => {
@@ -365,7 +397,7 @@
   }
 
   // --------------------------------------------------------------------------
-  // Catalogue Rendering with Rich Telemetry
+  // Catalogue Rendering: Strictly Featured Courses Only
   // --------------------------------------------------------------------------
   function renderSubjectCard(c) {
     const isQueued = window.StudyDocket && window.StudyDocket.isInDocket(c.code);
@@ -377,7 +409,7 @@
       : 'Systems & ICT';
 
     return `
-      <article class="catalog-card" style="border-top: 3px solid ${domainKey === 'ai-ml' ? '#0284c7' : domainKey === 'security-networks' ? '#b91c1c' : domainKey === 'theory' ? '#6d28d9' : '#047857'};">
+      <article class="catalog-card">
         <div class="catalog-card-header">
           <span class="catalog-code">${esc(c.code)}</span>
           <span class="domain-badge domain-${domainKey}">
@@ -386,7 +418,7 @@
           </span>
         </div>
 
-        <strong><a href="subject.html?code=${encodeURIComponent(c.code)}" style="text-decoration:none; color:inherit;">${esc(c.title)}</a></strong>
+        <strong><a href="subject.html?code=${encodeURIComponent(c.code)}">${esc(c.title)}</a></strong>
         <span class="catalog-category">${esc(c.category)}</span>
 
         <!-- Telemetry Row -->
@@ -395,7 +427,7 @@
           <span class="telemetry-pill">${c.unitsCount || 4} Units</span>
           <span class="telemetry-pill">~${c.estimatedHours || 36} hrs prep</span>
           ${c.hasPyq ? '<span class="telemetry-pill has-pyq">PYQ Papers</span>' : ''}
-          ${c.hasGuide ? '<span class="telemetry-pill has-guide">Guide Ready</span>' : ''}
+          <span class="telemetry-pill has-guide">Detailed Guide ↗</span>
         </div>
 
         <!-- Action Bar -->
@@ -407,7 +439,7 @@
             ${isQueued ? '✓ Queued' : '+ Add to Docket'}
           </button>
           <a class="card-view-link" href="subject.html?code=${encodeURIComponent(c.code)}">
-            View Syllabus ↗
+            Open Course Guide ↗
           </a>
         </div>
       </article>
@@ -429,16 +461,14 @@
     const targetSemesters = activeSemesterFilter === 'all' ? [1, 2, 3, 4] : [parseInt(activeSemesterFilter, 10)];
 
     const html = targetSemesters.map(sem => {
-      const semCourses = allCourses.filter(c => {
+      // ONLY show featured courses
+      const semCourses = featuredCourses.filter(c => {
         if (c.semester !== sem) return false;
 
-        // Category filter
         if (activeCategoryFilter === 'core' && !c.category.toLowerCase().includes('core')) return false;
         if (activeCategoryFilter === 'elective' && !c.category.toLowerCase().includes('elective')) return false;
-        if (activeCategoryFilter === 'guide' && !c.hasGuide) return false;
         if (activeCategoryFilter === 'pyq' && !c.hasPyq) return false;
 
-        // Search query
         if (searchQuery) {
           const matchTarget = `${c.code} ${c.title} ${c.category} ${(c.units || []).map(u => u.title).join(' ')}`.toLowerCase();
           if (!matchTarget.includes(searchQuery)) return false;
@@ -462,7 +492,7 @@
               </div>
               <span class="semester-count">0 subjects match criteria</span>
             </div>
-            <p class="empty">No matching subjects found in Semester ${sem} with current filters.</p>
+            <p class="empty" style="color:var(--color-ink-muted);">No featured subjects match the selected criteria in Semester ${sem}.</p>
           </section>
         `;
       }
@@ -477,7 +507,7 @@
                 <h3>${descriptions[sem - 1]}</h3>
               </div>
             </div>
-            <span class="semester-count">${semCourses.length} ${semCourses.length === 1 ? 'subject' : 'subjects'}</span>
+            <span class="semester-count">${semCourses.length} ${semCourses.length === 1 ? 'featured subject' : 'featured subjects'}</span>
           </div>
           <div class="catalog-grid">
             ${semCourses.map(renderSubjectCard).join('')}
@@ -490,12 +520,12 @@
 
     const statusEl = $('#search-status');
     if (statusEl) {
-      statusEl.textContent = `${totalMatches} matching subjects across selected criteria.`;
+      statusEl.textContent = `${totalMatches} featured subjects across selected criteria.`;
     }
   }
 
   // --------------------------------------------------------------------------
-  // Phase 1: High-Contrast Study Loop Section
+  // Study Loop High-Contrast Section
   // --------------------------------------------------------------------------
   function renderStudyLoop() {
     return `
@@ -549,10 +579,9 @@
   }
 
   // --------------------------------------------------------------------------
-  // Phase 2: Tactile Study Docket Drawer & Actions
+  // Tactile Study Docket Drawer & Actions
   // --------------------------------------------------------------------------
   function setupStudyDocketUI() {
-    // 1. Floating Trigger Button
     const trigger = document.createElement('button');
     trigger.className = 'docket-floating-trigger';
     trigger.id = 'docket-floating-trigger';
@@ -563,7 +592,6 @@
     `;
     document.body.appendChild(trigger);
 
-    // 2. Drawer Overlay & Panel
     const drawerOverlay = document.createElement('div');
     drawerOverlay.className = 'docket-drawer-overlay';
     drawerOverlay.id = 'docket-drawer-overlay';
@@ -608,14 +636,12 @@
     `;
     document.body.appendChild(drawerOverlay);
 
-    // Bind triggers
     trigger.addEventListener('click', openDocketDrawer);
     $('#docket-close-btn').addEventListener('click', closeDocketDrawer);
     drawerOverlay.addEventListener('click', e => {
       if (e.target === drawerOverlay) closeDocketDrawer();
     });
 
-    // Action button bindings
     $('#docket-download-ics').addEventListener('click', () => {
       if (window.StudyDocket) window.StudyDocket.downloadStudyTimetable(allCourses);
     });
@@ -710,7 +736,6 @@
             ${c.credits} Credits · ~${c.estimatedHours || 36} hrs prep
           </div>
 
-          <!-- Unit Checkboxes -->
           <div class="docket-unit-checklist">
             ${units.map(u => {
               const isChecked = window.StudyDocket ? window.StudyDocket.isUnitChecked(c.code, u.unitNumber) : false;
@@ -737,7 +762,7 @@
   };
 
   // --------------------------------------------------------------------------
-  // Phase 2: Examination Countdown & Weekly Planner Modal
+  // Examination Countdown & Weekly Planner Modal
   // --------------------------------------------------------------------------
   function setupExamPlannerModal() {
     const modal = document.createElement('div');
@@ -802,7 +827,6 @@
     `;
     document.body.appendChild(modal);
 
-    // Default target date: 45 days from now (or next upcoming AKTU exam session)
     const defDate = new Date();
     defDate.setDate(defDate.getDate() + 45);
     const dateInput = $('#planner-exam-date');
@@ -872,7 +896,7 @@
   }
 
   // --------------------------------------------------------------------------
-  // Phase 2: Mobile QR Revision Handoff Modal
+  // Mobile QR Revision Modal
   // --------------------------------------------------------------------------
   function setupMobileQRModal() {
     const modal = document.createElement('div');
@@ -911,7 +935,6 @@
     const target = $('#qr-svg-target');
     if (!modal || !target || !window.StudyDocket) return;
 
-    // Generate QR using current window location or curated URL
     const url = window.location.href;
     target.innerHTML = window.StudyDocket.generateQRCodeSVG(url, 220);
     modal.classList.add('is-open');
@@ -927,23 +950,29 @@
   // --------------------------------------------------------------------------
   async function initHomePage() {
     allCourses = await loadData();
+    featuredCourses = allCourses.filter(c => FEATURED_CODES.includes(c.code));
     if (window.StudyDocket) window.StudyDocket.setCourses(allCourses);
 
-    // 1. Navigation & Sticky Ribbon
+    // 1. Navigation with Theme Switcher
     $('#nav').innerHTML = renderNav();
     $('#foot').innerHTML = renderFoot();
 
-    // 2. Insert Sticky Ribbon directly under Hero
-    const heroSection = $('.portal-hero');
-    if (heroSection) {
-      heroSection.insertAdjacentHTML('afterend', renderStickyRibbon());
-      bindStickyRibbon();
+    // 2. Initialize 3D Hero Canvas
+    if (window.init3DHero) {
+      window.init3DHero('hero-3d-canvas');
     }
 
     // 3. Upgrade Hero Companion Card
     upgradeHeroCompanionCard();
 
-    // 4. Insert Curated Study Path Presets right before #courses
+    // 4. Insert Sticky Ribbon directly under Hero Wrap
+    const heroWrap = $('.portal-hero-wrap') || $('.portal-hero');
+    if (heroWrap) {
+      heroWrap.insertAdjacentHTML('afterend', renderStickyRibbon());
+      bindStickyRibbon();
+    }
+
+    // 5. Insert Curated Study Path Presets right before #courses
     const coursesSection = $('#courses');
     if (coursesSection) {
       const heading = coursesSection.querySelector('.section-head');
@@ -953,10 +982,10 @@
       }
     }
 
-    // 5. Render Catalogue
+    // 6. Render Catalogue (Strictly Featured Courses)
     renderFilteredCatalogue();
 
-    // 6. Insert Interactive Track Matchmaker right before #study-path
+    // 7. Insert Interactive Track Matchmaker
     const studyPathSection = $('#study-path');
     if (studyPathSection) {
       const matchmakerHtml = `
@@ -980,25 +1009,25 @@
       }
     }
 
-    // 7. Upgrade Study Loop Section
+    // 8. Upgrade Study Loop Section
     if (studyPathSection) {
       studyPathSection.innerHTML = renderStudyLoop();
     }
 
-    // 8. Setup Interactive Docket Drawer, Planner Modal & QR Modal
+    // 9. Setup Interactive Docket Drawer, Planner Modal & QR Modal
     setupStudyDocketUI();
     setupExamPlannerModal();
     setupMobileQRModal();
 
-    // 9. Initialize Command Palette
+    // 10. Initialize Command Palette
     if (window.CommandPalette) {
       window.CommandPalette.init(allCourses);
     }
 
-    // 10. Update UI states from localStorage
+    // 11. Update UI states from localStorage
     updateAllDocketUI();
 
-    // 11. Register Service Worker for Offline Campus Use
+    // 12. Register Service Worker
     if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
       navigator.serviceWorker.register('sw.js').catch(err => {
         console.warn('Service worker registration failed:', err);
@@ -1007,10 +1036,11 @@
   }
 
   // --------------------------------------------------------------------------
-  // Subject Page Controller (subject.html)
+  // Course Page Controller (subject.html) — Apple Aesthetics & Complete Mastery
   // --------------------------------------------------------------------------
   async function initSubjectPage() {
     allCourses = await loadData();
+    featuredCourses = allCourses.filter(c => FEATURED_CODES.includes(c.code));
     if (window.StudyDocket) window.StudyDocket.setCourses(allCourses);
 
     $('#nav').innerHTML = renderNav();
@@ -1024,7 +1054,7 @@
         <div style="padding:4rem 0;">
           <h1>Subject not found</h1>
           <p>The requested course code was not located in the 2021–22 curriculum catalogue.</p>
-          <a class="button" href="index.html#courses">Explore subjects</a>
+          <a class="button" href="index.html#courses">Explore Featured Subjects</a>
         </div>
       `;
       return;
@@ -1037,115 +1067,407 @@
       window.StudyDocket.setLastCourse(selected.code, selected.title);
     }
 
-    // Load additional study assets
-    let guides = {}, papers = {}, topics = {};
+    // Fetch all study resources: guides, visuals, supplements, papers, readings
+    let guides = {}, visuals = {}, supplements = {}, papers = {}, readings = {}, legacy = { courses: [] };
     try {
-      const [g, p, t] = await Promise.all([
-        fetch('assets/featured-guides.json').then(r => r.json()).catch(() => ({})),
-        fetch('assets/related-papers.json').then(r => r.json()).catch(() => ({})),
-        fetch('assets/subject-topics.json').then(r => r.json()).catch(() => ({}))
+      const [g, v, s, p, r, l] = await Promise.all([
+        fetch('assets/featured-guides.json').then(res => res.json()).catch(() => ({})),
+        fetch('assets/course-visuals.json').then(res => res.json()).catch(() => ({})),
+        fetch('assets/course-supplements.json').then(res => res.json()).catch(() => ({})),
+        fetch('assets/related-papers.json').then(res => res.json()).catch(() => ({})),
+        fetch('assets/course-reading.json').then(res => res.json()).catch(() => ({})),
+        fetch('assets/course-data.json').then(res => res.json()).catch(() => ({ courses: [] }))
       ]);
       guides = g;
+      visuals = v;
+      supplements = s;
       papers = p;
-      topics = t;
+      readings = r;
+      legacy = l;
     } catch (e) {}
 
     const isQueued = window.StudyDocket && window.StudyDocket.isInDocket(selected.code);
     const domainKey = selected.domain || 'theory';
     const domainSvg = domainIcons[domainKey] || domainIcons['theory'];
+    const domainLabel = domainKey === 'ai-ml' ? 'AI & Machine Learning'
+      : domainKey === 'security-networks' ? 'Security & Networks'
+      : domainKey === 'theory' ? 'Theory & Discrete'
+      : 'Systems & ICT';
 
-    const notes = guides[code] || [];
-    const paper = papers[code];
-    const rawTopics = topics[code] || [];
-
-    // Render structured units
-    const unitsHtml = (selected.units || []).map(u => `
-      <article class="module">
-        <span class="eyebrow">Unit 0${u.unitNumber}</span>
-        <h3 style="margin:0.3rem 0 0.6rem;">${esc(u.title)}</h3>
-        <p style="color:var(--color-ink-muted); margin-bottom:0.6rem;">${esc(u.checkpoint)}</p>
-        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
-          ${(u.topics || []).map(t => `<span class="telemetry-pill">${esc(t)}</span>`).join('')}
+    // 1. Apple Course Hero Art
+    const diagramInfo = courseDiagramVisuals[selected.code] || (selected.guide ? [`assets/${selected.guide}.svg`, selected.title, 'CAS AKTU', '#'] : null);
+    const heroArtHtml = diagramInfo ? `
+      <div class="course-hero-art">
+        <a href="${esc(diagramInfo[0])}" target="_blank" rel="noopener">
+          <img src="${esc(diagramInfo[0])}" alt="${esc(diagramInfo[1])}">
+        </a>
+        <div style="font-size:0.75rem; color:var(--color-ink-muted); margin-top:0.6rem;">
+          ${esc(diagramInfo[2])} ${diagramInfo[3] ? `· <a href="${esc(diagramInfo[3])}" target="_blank" rel="noopener" style="color:var(--color-accent);">Source</a>` : ''}
         </div>
-      </article>
-    `).join('');
+      </div>
+    ` : '';
 
-    // Previous year examination questions
+    // 2. Quick Jump Navigation Pills
+    const navPillsHtml = `
+      <nav class="course-nav-pills" aria-label="Course Sections">
+        <a class="course-nav-pill" href="#lessons">Topic Lessons</a>
+        <a class="course-nav-pill" href="#mastery">Mastery Hub</a>
+        <a class="course-nav-pill" href="#objectives">Objectives</a>
+        <a class="course-nav-pill" href="#glossary">Definitions</a>
+        <a class="course-nav-pill" href="#types">Classifications</a>
+        <a class="course-nav-pill" href="#formulas">Formula Sheet</a>
+        <a class="course-nav-pill" href="#comparisons">Comparison Tables</a>
+        <a class="course-nav-pill" href="#pitfalls">Mistakes to Avoid</a>
+        <a class="course-nav-pill" href="#practice">Retrieval Practice</a>
+        ${papers[selected.code] ? '<a class="course-nav-pill" href="#pyqs">Past Exam Papers</a>' : ''}
+        ${readings[selected.code] ? '<a class="course-nav-pill" href="#readings">Further Reading</a>' : ''}
+      </nav>
+    `;
+
+    // 3. Topic Lessons & User Figures
+    const courseLessons = guides[selected.code] || [];
+    const courseVisualList = visuals[selected.code] || [];
+
+    const userFigureHtml = item => `
+      <figure class="user-visual">
+        <a href="${esc(item.src)}" target="_blank" rel="noopener" aria-label="Open full-size illustration: ${esc(item.alt)}">
+          <img src="${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy">
+        </a>
+        <figcaption>
+          <strong>Curriculum Figure:</strong> ${esc(item.alt)}
+          ${item.note ? `<p><strong>Reading Note:</strong> ${esc(item.note)}</p>` : ''}
+        </figcaption>
+      </figure>
+    `;
+
+    const lessonsHtml = courseLessons.map((item, index) => {
+      const matchingVisuals = courseVisualList.filter(img => img.after === item.title);
+      return `
+        <article class="module" id="lesson-${index + 1}">
+          <span class="eyebrow">Study Block ${String(index + 1).padStart(2, '0')}</span>
+          <h3>${esc(item.title)}</h3>
+          <p>${esc(item.explanation)}</p>
+          
+          <div class="worked">
+            <strong>Step-by-Step Worked Example</strong><br>
+            ${esc(item.example)}
+          </div>
+
+          <div class="check">
+            ✓ <strong>Distinction / Invariant:</strong> ${esc(item.distinction)}
+          </div>
+
+          ${matchingVisuals.map(userFigureHtml).join('')}
+        </article>
+      `;
+    }).join('');
+
+    // 4. Mastery Hub Layer
+    // Check if this subject has a supplement in course-supplements.json
+    const legacyCourse = legacy.courses.find(l => l.code === selected.code || l.slug === selected.guide);
+    const supplementKey = legacyCourse ? legacyCourse.slug : (selected.guide || '');
+    const supplement = supplements[supplementKey] || null;
+
+    let masteryHtml = '';
+    if (supplement) {
+      masteryHtml = `
+        <section class="mastery-intro" id="mastery">
+          <div class="eyebrow" style="color:var(--color-accent);">Deep Academic Study Layer</div>
+          <h2 style="font-size:clamp(2rem, 4vw, 2.8rem); margin:0.3rem 0 0.8rem;">Course Mastery Hub</h2>
+          <p style="color:var(--color-ink-muted); max-width:62ch; margin:0;">
+            This reference layer turns the postgraduate syllabus into revision-ready definitions, classifications, formula sheets, comparison tables, error checks, and self-testing retrieval practice.
+          </p>
+          <div class="mastery-nav">
+            <a href="#objectives">01 · Objectives</a>
+            <a href="#glossary">02 · Definitions</a>
+            <a href="#types">03 · Types & Taxonomies</a>
+            <a href="#formulas">04 · Formula Sheet</a>
+            <a href="#comparisons">05 · Difference Tables</a>
+            <a href="#pitfalls">06 · Error Prevention</a>
+            <a href="#practice">07 · Practice with Hints</a>
+            <a href="#applications">08 · Applied Exercises</a>
+          </div>
+        </section>
+
+        <!-- 01 Objectives -->
+        <section class="reference-section" id="objectives">
+          <div class="section-kicker">01 · Academic Direction</div>
+          <h2>What You Should Be Able to Do</h2>
+          <div class="objective-grid">
+            ${supplement.objectives.map((text, idx) => `
+              <article>
+                <span>${String(idx + 1).padStart(2, '0')}</span>
+                <p>${esc(text)}</p>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- 02 Definitions Glossary -->
+        <section class="reference-section" id="glossary">
+          <div class="section-kicker">02 · Essential Definitions</div>
+          <h2>Postgraduate Terminology Glossary</h2>
+          <p style="color:var(--color-ink-muted); font-size:0.88rem; margin:0.4rem 0 1.2rem;">
+            Click to expand each definition. Attempt to define the concept before checking your recall.
+          </p>
+          <div class="accordion-grid">
+            ${supplement.glossary.map((item, idx) => `
+              <details ${idx === 0 ? 'open' : ''}>
+                <summary>${esc(item[0])}</summary>
+                <p>${esc(item[1])}</p>
+              </details>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- 03 Types & Taxonomies -->
+        <section class="reference-section" id="types">
+          <div class="section-kicker">03 · Classification</div>
+          <h2>Types, Taxonomies & Differences</h2>
+          <div class="type-grid">
+            ${supplement.types.map(item => `
+              <article class="type-card">
+                <h3>${esc(item[0])}</h3>
+                <div class="members">${esc(item[1])}</div>
+                <p>${esc(item[2])}</p>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- 04 Formula Sheet -->
+        <section class="reference-section" id="formulas">
+          <div class="section-kicker">04 · Active Recall</div>
+          <h2>Mathematical Formulations & Equations</h2>
+          <p style="color:var(--color-ink-muted); font-size:0.88rem; margin:0.4rem 0 1.2rem;">
+            A formulation is valid only under its explicit assumptions. Verify symbols and edge constraints.
+          </p>
+          <div class="formula-grid">
+            ${supplement.formulas.map(item => `
+              <article class="formula-card">
+                <h3>${esc(item[0])}</h3>
+                <code>${esc(item[1])}</code>
+                <p>${esc(item[2])}</p>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- 05 Difference & Comparison Tables -->
+        <section class="reference-section" id="comparisons">
+          <div class="section-kicker">05 · Conceptual Distinctions</div>
+          <h2>Side-by-Side Comparison Tables</h2>
+          ${supplement.comparisons.map(tbl => `
+            <article class="comparison-card">
+              <h3>${esc(tbl.title)}</h3>
+              <div class="table-scroll">
+                <table>
+                  <thead>
+                    <tr>${tbl.headers.map(h => `<th>${esc(h)}</th>`).join('')}</tr>
+                  </thead>
+                  <tbody>
+                    ${tbl.rows.map(r => `<tr>${r.map(v => `<td>${esc(v)}</td>`).join('')}</tr>`).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          `).join('')}
+        </section>
+
+        <!-- 06 Pitfalls & Common Mistakes -->
+        <section class="reference-section" id="pitfalls">
+          <div class="section-kicker">06 · Error Prevention</div>
+          <h2>Common Mistakes & Examination Traps</h2>
+          <div class="pitfall-list">
+            ${supplement.pitfalls.map((text, idx) => `
+              <article>
+                <strong>0${idx + 1} · Conceptual Pitfall</strong>
+                <p>${esc(text)}</p>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- 07 Retrieval Practice with Hints -->
+        <section class="reference-section" id="practice">
+          <div class="section-kicker">07 · Retrieval Practice</div>
+          <h2>Practice Prompts with Progressive Hints</h2>
+          <div class="practice-list">
+            ${supplement.practice.map((item, idx) => `
+              <details>
+                <summary><span>Q${idx + 1}</span> ${esc(item[0])}</summary>
+                <p><strong>Guidance / Hint:</strong> ${esc(item[1])}</p>
+              </details>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- 08 Applied Exercises -->
+        <section class="reference-section" id="applications">
+          <div class="section-kicker">08 · Application</div>
+          <h2>Applied Engineering & Research Exercises</h2>
+          <div class="application-grid">
+            ${supplement.applications.map((item, idx) => `
+              <article>
+                <div class="app-number">0${idx + 1}</div>
+                <h3>${esc(item[0])}</h3>
+                <p>${esc(item[1])}</p>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+      `;
+    }
+
+    // 5. Previous Year Examination Questions (PYQ)
+    const paper = papers[selected.code];
     const pyqHtml = paper ? `
-      <section class="subject-box papers" style="margin-top:1.5rem;">
-        <span class="eyebrow" style="color:var(--color-gold);">Verified Examination Preparation</span>
-        <h2>Questions from Related AKTU M.Tech Examination</h2>
-        <p>${esc(paper.source)}. Paraphrased study explanations for end-semester preparation.</p>
-        <a class="source-link" href="${esc(paper.url)}" target="_blank" rel="noopener">View Source Examination Paper ↗</a>
-        <div class="question-list" style="margin-top:1rem;">
-          ${paper.questions.map(q => `
-            <details>
-              <summary>${esc(q.question)}</summary>
-              <p style="padding-top:0.6rem;">${esc(q.answer)}</p>
+      <section class="reference-section" id="pyqs" style="border-left:4px solid var(--color-amber);">
+        <div class="section-kicker" style="color:var(--color-amber);">Verified Examination Pattern</div>
+        <h2>Previous Year Questions & Worked Solutions</h2>
+        <p style="color:var(--color-ink-muted); margin-bottom:1.2rem;">
+          ${esc(paper.source)}. Paraphrased academic questions and detailed step-by-step study explanations.
+        </p>
+        <a class="source-link" href="${esc(paper.url)}" target="_blank" rel="noopener" style="margin-bottom:1.4rem; display:inline-block;">
+          View Source Examination Paper ↗
+        </a>
+        <div class="accordion-grid">
+          ${paper.questions.map((q, idx) => `
+            <details ${idx === 0 ? 'open' : ''}>
+              <summary><strong>Q${idx + 1}:</strong> ${esc(q.question)}</summary>
+              <div style="padding-top:0.8rem; line-height:1.6; color:var(--color-ink);">
+                <strong>Worked Explanation:</strong><br>${esc(q.answer)}
+              </div>
             </details>
           `).join('')}
         </div>
       </section>
     ` : '';
 
+    // 6. Further Reading Links
+    const courseReadings = readings[selected.code] || [];
+    const readingsHtml = courseReadings.length > 0 ? `
+      <section class="reference-section" id="readings">
+        <div class="section-kicker">09 · Academic Citations</div>
+        <h2>Prescribed References & Further Reading</h2>
+        <ul style="padding-left:1.4rem; line-height:1.8; color:var(--color-ink);">
+          ${courseReadings.map(r => `
+            <li>
+              <a href="${esc(r.url)}" target="_blank" rel="noopener" style="color:var(--color-accent); font-weight:600;">
+                ${esc(r.title)} ↗
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+    ` : '';
+
+    // 7. Render Complete Page
     $('#subject').innerHTML = `
-      <a class="back-link" href="index.html#semester-${selected.semester}">← Back to Semester ${selected.semester}</a>
-      
-      <div class="subject-intro" style="padding-bottom:1.5rem;">
-        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem;">
-          <span class="domain-badge domain-${domainKey}">
-            ${domainSvg}
-            ${selected.category}
-          </span>
-          <span class="telemetry-pill">${selected.credits} Credits</span>
-          <span class="telemetry-pill">~${selected.estimatedHours || 36} hrs</span>
-        </div>
-        <h1>${esc(selected.title)}</h1>
-        <p class="subject-code" style="margin-top:0.5rem;">${esc(selected.code)} <span>·</span> Centre for Advanced Studies, AKTU 2021–22 Scheme</p>
-        
-        <div style="display:flex; gap:0.8rem; margin-top:1.2rem; align-items:center; flex-wrap:wrap;">
-          <button class="docket-toggle-btn ${isQueued ? 'is-queued' : ''}" 
-                  data-code="${selected.code}" 
-                  onclick="window.toggleSubjectDocket('${selected.code}', this)" 
-                  style="font-size:0.85rem; padding:0.55rem 1rem;">
-            ${isQueued ? '✓ Queued in Study Docket' : '+ Add to Study Docket'}
-          </button>
-          <a class="button" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=${selected.page}" target="_blank" rel="noopener" style="font-size:0.85rem; padding:0.55rem 1rem;">
-            Open Syllabus Page ${selected.page} ↗
-          </a>
-          <button class="docket-btn docket-btn-secondary" onclick="window.openMobileQRModal && window.openMobileQRModal()" style="font-size:0.85rem; padding:0.55rem 1rem;">
-            📱 Mobile QR
-          </button>
-        </div>
-      </div>
+      <a class="back-link" href="index.html#semester-${selected.semester}">
+        ← Return to Semester 0${selected.semester} Featured Catalogue
+      </a>
 
-      <div class="subject-grid">
-        <div class="subject-box">
-          <span class="eyebrow">Academic Objectives</span>
-          <h2>Course Overview</h2>
-          <p>${esc(selected.tagline || 'Postgraduate rigorous study block with algorithmic analysis and proofs.')}</p>
-        </div>
-        <div class="subject-box source-box">
-          <span class="eyebrow">Curriculum Scheme</span>
-          <h2>AKTU CAS Scheme Details</h2>
-          <p>Semester 0${selected.semester} · Page ${selected.page} in the university syllabus document.</p>
-        </div>
-      </div>
+      <!-- Apple Glass Course Hero -->
+      <section class="course-hero-glass">
+        <div>
+          <div class="course-hero-meta">
+            <span class="domain-badge domain-${domainKey}">
+              ${domainSvg}
+              ${domainLabel}
+            </span>
+            <span class="telemetry-pill">${selected.credits} Credits</span>
+            <span class="telemetry-pill">Sem 0${selected.semester}</span>
+            <span class="telemetry-pill">~${selected.estimatedHours || 36} hrs prep</span>
+            ${selected.hasPyq ? '<span class="telemetry-pill has-pyq">PYQ Papers Available</span>' : ''}
+          </div>
 
-      <div style="margin-top:2.5rem;">
-        <span class="eyebrow">Syllabus Breakdown</span>
-        <h2 style="font-size:2rem; margin:0.3rem 0 1.2rem;">Unit-by-Unit Study Plan</h2>
-        ${unitsHtml}
-      </div>
+          <h1>${esc(selected.title)}</h1>
+          <p style="font-family:var(--font-mono); font-size:0.95rem; font-weight:700; color:var(--color-accent); margin:0.2rem 0 1rem;">
+            ${esc(selected.code)} · CAS AKTU 2021–22 SCHEME
+          </p>
+          <p style="color:var(--color-ink-muted); font-size:1.05rem; line-height:1.5; max-width:54ch;">
+            ${esc(selected.tagline || 'Postgraduate study block combining algorithmic rigor, formal proofs, and examination preparation.')}
+          </p>
 
+          <div class="hero-actions" style="margin-top:2rem;">
+            <button class="docket-toggle-btn ${isQueued ? 'is-queued' : ''}" 
+                    data-code="${selected.code}" 
+                    onclick="window.toggleSubjectDocket('${selected.code}', this)" 
+                    style="font-size:0.88rem; padding:0.6rem 1.2rem;">
+              ${isQueued ? '✓ Queued in Study Docket' : '+ Add to Study Docket'}
+            </button>
+            <a class="button" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=${selected.page}" target="_blank" rel="noopener">
+              View Syllabus PDF (Page ${selected.page}) ↗
+            </a>
+            <button class="docket-btn docket-btn-secondary" onclick="window.openMobileQRModal && window.openMobileQRModal()" style="font-size:0.88rem; padding:0.6rem 1.1rem;">
+              📱 Mobile QR
+            </button>
+            <button class="docket-btn docket-btn-secondary" onclick="window.print()" style="font-size:0.88rem; padding:0.6rem 1.1rem;">
+              🖨 Print Dossier
+            </button>
+          </div>
+        </div>
+
+        ${heroArtHtml}
+      </section>
+
+      <!-- Sticky Quick-Jump Navigation Pills -->
+      ${navPillsHtml}
+
+      <!-- Topic Lessons Section -->
+      <section id="lessons">
+        <div style="margin-bottom:1.5rem;">
+          <div class="eyebrow">Comprehensive Syllabus Exploration</div>
+          <h2 style="font-size:2.2rem; margin:0.3rem 0;">Topic-by-Topic Lessons</h2>
+          <p style="color:var(--color-ink-muted); margin:0;">
+            Deconstruct each module with mathematical formulations, worked examples, and key invariants.
+          </p>
+        </div>
+        ${lessonsHtml}
+      </section>
+
+      <!-- Deep Study Layer / Mastery Hub -->
+      ${masteryHtml}
+
+      <!-- Past Exam Papers (PYQs) -->
       ${pyqHtml}
+
+      <!-- Further Reading References -->
+      ${readingsHtml}
     `;
 
+    // 8. Attach Modals and Palette
     setupStudyDocketUI();
     setupExamPlannerModal();
     setupMobileQRModal();
     if (window.CommandPalette) window.CommandPalette.init(allCourses);
     updateAllDocketUI();
+  }
+
+  // --------------------------------------------------------------------------
+  // Legacy Course Sub-page support (e.g. discrete-mathematics-and-graph-theory/index.html)
+  // --------------------------------------------------------------------------
+  async function initLegacyCoursePage() {
+    const depth = document.body.dataset.depth || '../';
+    const slug = document.body.dataset.course;
+    const [data, supplements] = await Promise.all([
+      fetch(depth + 'assets/course-data.json').then(r => r.json()),
+      fetch(depth + 'assets/course-supplements.json').then(r => r.json())
+    ]);
+
+    const selected = data.courses.find(c => c.slug === slug);
+    const supplement = supplements[slug];
+    if (!selected || !supplement) throw new Error('Course guide not found');
+
+    $('#nav').innerHTML = renderNav(depth);
+    $('#foot').innerHTML = renderFoot();
+    document.title = `${selected.code} · ${selected.title}`;
+
+    if (window.CommandPalette) {
+      const catalog = await (await fetch(depth + 'data/courses.json')).json();
+      window.CommandPalette.init(catalog);
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -1157,6 +1479,8 @@
       initHomePage().catch(err => console.error('Error initializing home page:', err));
     } else if (page === 'subject') {
       initSubjectPage().catch(err => console.error('Error initializing subject page:', err));
+    } else if (page === 'course') {
+      initLegacyCoursePage().catch(err => console.error('Error initializing legacy course page:', err));
     }
   });
 

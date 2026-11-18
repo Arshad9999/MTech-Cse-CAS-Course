@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore the CAS M.Tech CSE programme, semester by semester. Postgraduate academic study companion with syllabus guides, elective matchmaker, and revision timetables.">
+  <meta name="description" content="Explore the CAS M.Tech CSE programme, semester by semester. Apple-inspired postgraduate academic study companion with 3D knowledge visualizer, detailed course mastery hubs, and examination revision sheets.">
   <title>M.Tech CSE · Study Companion | Centre for Advanced Studies AKTU</title>
   
   <!-- PWA & Identity -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#174e37">
+  <meta name="theme-color" content="#f5f5f7">
   <link rel="icon" href="assets/semester-map.svg" type="image/svg+xml">
+
+  <!-- Immediate Theme Application Script (Zero Flash) -->
+  <script src="assets/js/theme.js"></script>
 
   <!-- Core & Component Stylesheets -->
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -25,57 +28,64 @@
   <!-- Global Header Navigation -->
   <div id="nav"></div>
 
-  <!-- Print-Only Header -->
+  <!-- Print-Only Academic Header -->
   <header class="print-only-header">
     <h1>Centre for Advanced Studies · AKTU Lucknow</h1>
     <p>Postgraduate M.Tech Computer Science & Engineering (2021–22 Curriculum Scheme) — Academic Study Companion</p>
   </header>
 
   <main id="main">
-    <!-- Hero Portal Section -->
-    <section class="portal-hero shell">
-      <div>
-        <div class="eyebrow">Centre for Advanced Studies · AKTU</div>
-        <h1>Your path through <em>M.Tech CSE.</em></h1>
-        <p class="lede">
-          A clearer way to navigate the programme, find your subjects, and build understanding one idea at a time.
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="#courses">Explore the semesters <span aria-hidden="true">↗</span></a>
-          <span id="syllabus-link">
-            <a class="source-link" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf" target="_blank" rel="noopener">
-              View the 2021–22 syllabus ↗
-            </a>
-          </span>
-        </div>
+    <!-- Apple-Style Hero Portal with 3D Knowledge Canvas -->
+    <div class="portal-hero-wrap">
+      <!-- Interactive 3D Background Canvas -->
+      <div class="portal-hero-3d-bg" aria-hidden="true">
+        <canvas id="hero-3d-canvas"></canvas>
       </div>
 
-      <!-- Hero Companion Card (Dynamic Telemetry & Resume) -->
-      <aside class="hero-panel" aria-label="Programme Overview and Progress">
-        <span class="panel-label">THE STUDY COMPANION</span>
-        <div class="panel-mark">01 <span>—</span> 04</div>
-        <p>Four semesters.<br>One place to begin.</p>
-        <div class="panel-bottom">
-          <span>EXPLORE AT YOUR PACE</span>
-          <span>↘</span>
+      <section class="portal-hero shell">
+        <!-- Floating Frosted Glass Hero Card -->
+        <div class="hero-glass-card">
+          <div class="eyebrow">Centre for Advanced Studies · AKTU</div>
+          <h1>Your path through <em>M.Tech CSE.</em></h1>
+          <p class="lede">
+            A clearer way to navigate the programme, find your subjects, and build understanding one idea at a time.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#courses">Explore the semesters <span aria-hidden="true">↗</span></a>
+            <span id="syllabus-link">
+              <a class="source-link" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf" target="_blank" rel="noopener">
+                View the 2021–22 syllabus ↗
+              </a>
+            </span>
+          </div>
         </div>
-      </aside>
-    </section>
 
-    <!-- Master Catalogue Section (#courses) -->
+        <!-- Translucent Hero Companion Card (Dynamic Telemetry & Resume) -->
+        <aside class="hero-panel" aria-label="Programme Overview and Progress">
+          <span class="panel-label">THE STUDY COMPANION</span>
+          <div class="panel-mark">01 <span>—</span> 04</div>
+          <p>Four semesters.<br>One place to begin.</p>
+          <div class="panel-bottom">
+            <span>EXPLORE AT YOUR PACE</span>
+            <span>↘</span>
+          </div>
+        </aside>
+      </section>
+    </div>
+
+    <!-- Featured Master Catalogue Section (#courses) -->
     <section class="section shell" id="courses">
       <div class="section-head">
         <div>
           <div class="eyebrow">Your programme / 2021–22 scheme</div>
-          <h2>Find your next subject.</h2>
+          <h2>Featured Core Subjects.</h2>
         </div>
         <p>
-          Explore core and elective subjects across all four semesters. Curriculum parameters strictly follow the autonomous CAS AKTU PG scheme.
+          Showing the 17 core curriculum courses across all four semesters. Each course features topic notes, worked examples, visual illustrations, and mastery hubs.
         </p>
       </div>
 
       <div class="catalog-tools" style="display:none;" aria-hidden="true">
-        <!-- Replaced by Sticky Ribbon -->
         <label for="q">Search the programme</label>
         <input class="search" id="q" type="search" placeholder="Try a subject, code or specialisation…">
         <p id="search-status" role="status"></p>
@@ -106,6 +116,7 @@
   <div id="foot"></div>
 
   <!-- Interactive JavaScript Modules -->
+  <script src="assets/js/3d-hero.js"></script>
   <script src="assets/js/study-docket.js"></script>
   <script src="assets/js/matchmaker.js"></script>
   <script src="assets/js/command-palette.js"></script>
