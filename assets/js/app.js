@@ -81,12 +81,9 @@
   }
 
   // --------------------------------------------------------------------------
-  // Navigation & Footers (Apple Style with Theme Switcher)
+  // Navigation & Footers (Apple Light Theme)
   // --------------------------------------------------------------------------
   function renderNav(depth = '') {
-    const currentTheme = (typeof window.getPreferredTheme === 'function') ? window.getPreferredTheme() : 'light';
-    const toggleIcon = currentTheme === 'dark' ? '☀️' : '🌙';
-
     return `
       <header class="topbar">
         <nav class="nav shell" aria-label="Main navigation">
@@ -102,11 +99,6 @@
             <!-- Global Command Palette Shortcut -->
             <button class="cmd-key-hint" onclick="window.CommandPalette && window.CommandPalette.open()" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;" aria-label="Search curriculum">
               <span>Search</span> <kbd style="font-size:0.68rem; font-family:var(--font-mono);">⌘K</kbd>
-            </button>
-
-            <!-- Dark / Light Theme Toggle Button -->
-            <button class="theme-toggle-btn" onclick="window.toggleTheme && window.toggleTheme()" aria-label="Toggle theme">
-              ${toggleIcon}
             </button>
           </div>
         </nav>
@@ -554,7 +546,7 @@
       <section class="study-loop-container" id="study-loop">
         <div class="study-loop-header">
           <div>
-            <div class="eyebrow" style="color:var(--color-loop-accent);">Postgraduate Learning Methodology</div>
+            <div class="eyebrow" style="color:var(--color-accent);">Postgraduate Learning Methodology</div>
             <h2>Understand. Apply. Recall.</h2>
           </div>
           <p>
@@ -592,7 +584,7 @@
           <p class="notice">
             Independent postgraduate study portal conforming to the Centre for Advanced Studies, AKTU 2021–22 curriculum scheme.
           </p>
-          <a class="button" href="https://cas.res.in/Mtechcse.html" target="_blank" rel="noopener" style="background:var(--color-loop-accent); color:var(--color-loop-bg); font-weight:800;">
+          <a class="button primary" href="https://cas.res.in/Mtechcse.html" target="_blank" rel="noopener" style="font-weight:700;">
             About CAS Faculty & Research ↗
           </a>
         </div>

@@ -11,7 +11,7 @@
   top: var(--nav-height, 66px);
   z-index: 35;
   width: 100%;
-  background: rgba(247, 248, 242, 0.94);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-line);
@@ -19,7 +19,7 @@
 }
 
 .sticky-ribbon-container.is-pinned {
-  box-shadow: 0 4px 20px rgba(23, 40, 33, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .sticky-ribbon {
@@ -63,7 +63,7 @@
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(23, 78, 55, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25);
 }
 
 .filter-pill-counter {
@@ -105,7 +105,7 @@
 .ribbon-search-input:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(23, 78, 55, 0.12);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.16);
 }
 
 .ribbon-search-clear {
@@ -138,30 +138,16 @@
    -------------------------------------------------------------------------- */
 .hero-panel-upgraded {
   min-height: 380px;
-  background: linear-gradient(145deg, #dbe8d4, #c9dfc0);
-  border: 1px solid #b7d1ad;
-  border-radius: var(--radius-lg);
-  padding: 2.2rem;
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  padding: 2.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(23, 62, 35, 0.08);
-}
-
-.hero-panel-upgraded::before {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border: 1px solid #94b890;
-  border-radius: 50%;
-  right: -60px;
-  top: 50px;
-  box-shadow: 0 0 0 35px #d4e5cc, 0 0 0 36px #9cbfa0, 0 0 0 70px #d4e5cc, 0 0 0 71px #a8c8aa;
-  pointer-events: none;
-  opacity: 0.75;
+  box-shadow: var(--shadow-floating);
 }
 
 .hero-telemetry-grid {
@@ -174,16 +160,15 @@
 }
 
 .telemetry-cell {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(148, 184, 144, 0.5);
+  background: #fbfbfd;
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  padding: 0.75rem 0.9rem;
+  padding: 0.85rem 1rem;
 }
 
 .telemetry-cell strong {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-family: var(--font-serif);
   color: var(--color-accent);
   line-height: 1.1;
@@ -195,7 +180,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #3b6045;
+  color: var(--color-ink-muted);
 }
 
 .resume-subject-chip {
@@ -212,7 +197,7 @@
   text-decoration: none !important;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 12px rgba(23, 78, 55, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
   transition: transform var(--transition-fast), background var(--transition-fast);
 }
 
@@ -361,17 +346,18 @@
 }
 
 /* --------------------------------------------------------------------------
-   Study Loop High-Contrast Section
+   Study Loop Apple Light Mode Section (Zero Color Overlap)
    -------------------------------------------------------------------------- */
 .study-loop-container {
-  background: var(--color-loop-bg);
-  color: var(--color-loop-text);
+  background: #ffffff;
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-xl);
   padding: 3.5rem 3rem;
   margin: 3.5rem 0;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(10, 26, 18, 0.4);
+  box-shadow: var(--shadow-floating);
 }
 
 .study-loop-container::after {
@@ -381,7 +367,7 @@
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(110, 231, 183, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -396,13 +382,13 @@
 
 .study-loop-header h2 {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
-  color: #ffffff;
+  color: var(--color-ink);
   margin: 0.4rem 0 0;
   letter-spacing: -0.04em;
 }
 
 .study-loop-header p {
-  color: var(--color-loop-muted);
+  color: var(--color-ink-muted);
   max-width: 54ch;
   margin: 0;
   font-size: 1.05rem;
@@ -416,8 +402,8 @@
 }
 
 .study-loop-step {
-  background: var(--color-loop-surface);
-  border: 1px solid var(--color-loop-border);
+  background: #fbfbfd;
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
   padding: 1.8rem;
   display: flex;
@@ -428,24 +414,25 @@
 
 .study-loop-step:hover {
   transform: translateY(-4px);
-  border-color: var(--color-loop-accent);
+  border-color: var(--color-accent-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .study-loop-step-num {
   font-family: var(--font-serif);
   font-size: 1.8rem;
-  color: var(--color-loop-accent);
+  color: var(--color-accent);
   margin-bottom: 0.8rem;
 }
 
 .study-loop-step h3 {
   font-size: 1.3rem;
-  color: #ffffff;
+  color: var(--color-ink);
   margin: 0 0 0.6rem;
 }
 
 .study-loop-step p {
-  color: var(--color-loop-muted);
+  color: var(--color-ink-muted);
   font-size: 0.92rem;
   line-height: 1.55;
   margin: 0;
@@ -457,16 +444,18 @@
   justify-content: space-between;
   gap: 1.5rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--color-loop-border);
+  border-top: 1px solid var(--color-line);
   flex-wrap: wrap;
 }
 
 .study-loop-footer .notice {
-  background: rgba(254, 243, 199, 0.1);
-  border: 1px solid rgba(253, 230, 138, 0.25);
-  color: #fde68a;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink-muted);
   margin: 0;
   font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -486,7 +475,7 @@
   font-size: 0.92rem;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(23, 78, 55, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -496,7 +485,7 @@
 .docket-floating-trigger:hover {
   background: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(23, 78, 55, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 113, 227, 0.4);
 }
 
 .docket-badge-count {
@@ -512,7 +501,7 @@
 .docket-drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(16, 39, 28, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   z-index: 100;
   opacity: 0;
@@ -791,7 +780,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(16, 39, 28, 0.65);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   z-index: 120;
   opacity: 0;
@@ -955,7 +944,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #fbfcf8;
+  background: #ffffff;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   cursor: crosshair;
@@ -968,7 +957,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: #cfdacb;
+  background: var(--color-line);
   pointer-events: none;
 }
 
@@ -978,7 +967,7 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background: #cfdacb;
+  background: var(--color-line);
   pointer-events: none;
 }
 
@@ -988,7 +977,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #8eaa8d;
+  color: var(--color-ink-light);
   pointer-events: none;
   padding: 0.5rem;
 }
@@ -1005,7 +994,7 @@
   border-radius: 50%;
   background: var(--color-accent);
   border: 3px solid #ffffff;
-  box-shadow: 0 0 0 3px rgba(23, 78, 55, 0.35), 0 4px 12px rgba(23, 78, 55, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.25), 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: transform 0.05s ease-out;
@@ -1177,7 +1166,7 @@
 .cmd-palette-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(16, 39, 28, 0.65);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   z-index: 200;
   display: flex;
@@ -1199,7 +1188,7 @@
   background: #ffffff;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
-  box-shadow: 0 24px 70px rgba(16, 39, 28, 0.25);
+  box-shadow: var(--shadow-floating);
   overflow: hidden;
   display: flex;
   flex-direction: column;
