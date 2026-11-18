@@ -1,7 +1,232 @@
 {
-  "MCSC-101": {"source":"AKTU M.Tech Advanced Algorithm, MTCS102, 2017–18 (related course; not the CAS MCSC-101 paper)","url":"https://www.aktuonline.com/papers/mtech-1-sem-advanced-algorithm-mtcs102-2018.pdf","questions":[{"question":"How do breadth-first and depth-first search work, and how do they differ?","answer":"Breadth-first search (BFS) uses a queue and visits vertices in increasing edge distance from the start. Depth-first search (DFS) follows a path before backtracking, using recursion or a stack. Both take O(V+E) with adjacency lists. For edges A–B, A–C and B–D, BFS from A visits A, then B and C, then D; a DFS may visit A, B, D, C. BFS finds shortest paths in number of edges in an unweighted graph; DFS is useful for exploring components and detecting cycles."},{"question":"How do backtracking and branch-and-bound differ?","answer":"Backtracking explores a state-space tree and discards a partial candidate when it cannot satisfy the constraints. Branch-and-bound solves optimisation problems by using a bound on the best solution reachable from a node, pruning it when it cannot improve the current best. Both can take exponential time. For subset sum, backtracking builds a subset and prunes branches whose remaining choices cannot produce the target; a valid pruning rule depends on the permitted values."}]},
-  "MCSC-104": {"source":"AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MCSC-104 paper)","url":"https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf","questions":[{"question":"What is machine learning? Explain a well-defined learning problem.","answer":"Machine learning studies systems that improve performance at a task through experience. A well-defined problem specifies a task T, experience E and a performance measure P: the learner improves at T, as measured by P, through E. For spam filtering, T is classifying messages, E is labelled historical mail, and P could be precision and recall on a held-out set. Evaluation data should not be used to fit or tune the model."},{"question":"How is a decision tree learned and used for classification?","answer":"A decision tree recursively selects a feature and split that make resulting groups more homogeneous, for example using information gain or Gini impurity. A new example follows its feature values from the root to a leaf, which supplies a predicted class or probability. For a loan example, the tree might split on income and then repayment history. Trees are interpretable but can overfit; limiting depth or pruning, chosen using validation data, can improve generalisation."}]},
-  "MMLC-201": {"source":"AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLC-201 paper)","url":"https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf","questions":[{"question":"Explain backpropagation with an example.","answer":"Backpropagation computes gradients of a loss with respect to network parameters by applying the chain rule from output to input. A training step computes a forward prediction and loss, calculates gradients, then uses an optimiser such as gradient descent to update weights. For ŷ=wx, L=(ŷ−y)², the derivative is 2(wx−y)x; with x=1, y=3 and w=1 it is −4, so a learning rate of 0.1 moves w to 1.4. Multiple layers repeat this chain-rule calculation at each layer."}]},
-  "MMLE-302": {"source":"AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLE-302 paper)","url":"https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf","questions":[{"question":"Explain Q-learning.","answer":"Q-learning is an off-policy temporal-difference control method that learns action values from observed transitions. After taking action a in state s, receiving reward r and reaching s′, update Q(s,a) towards r + γ maxₐ′Q(s′,a′), using learning rate α. For α=0.5, old Q=2, r=1, γ=0.9 and maximum next Q=4, the target is 4.6 and the updated value is 3.3. An exploration strategy such as ε-greedy helps gather data; tabular convergence requires suitable conditions."}]},
-  "MCSC-301": {"source":"AKTU M.Tech Research Process and Methodology, MTCC101, 2017–18 (related course; not the CAS MCSC-301 paper)","url":"https://www.aktuonline.com/papers/mtech-1-sem-research-process-and-methodology-mtcc101-2018.pdf","questions":[{"question":"What are Type I and Type II errors in hypothesis testing?","answer":"A Type I error rejects a true null hypothesis; its probability is conventionally denoted α. A Type II error fails to reject a false null hypothesis; its probability is β, and statistical power is 1−β for the specified alternative. For a test of whether a new treatment differs from a standard, Type I means claiming a difference when none exists, while Type II means failing to detect a real difference. Error rates depend on the test, sample size and assumptions."},{"question":"Explain the steps of hypothesis testing with an example.","answer":"State a null and alternative hypothesis; select a significance level and a suitable test based on the design and assumptions; calculate the test statistic and p-value; then compare the p-value with α and report the decision in context. For a sample mean, a one-sample t-test may be appropriate when its assumptions are reasonably met. A small p-value indicates that data at least as incompatible with the null would be unusual under the null model; it does not measure the probability that the null hypothesis is true."}]}
+  "MCSC-101": {
+    "source": "AKTU M.Tech Advanced Algorithm, MTCS102, 2017\u201318 (related course; not the CAS MCSC-101 paper)",
+    "url": "https://www.aktuonline.com/papers/mtech-1-sem-advanced-algorithm-mtcs102-2018.pdf",
+    "questions": [
+      {
+        "question": "How do breadth-first and depth-first search work, and how do they differ?",
+        "answer": "Breadth-first search (BFS) uses a queue and visits vertices in increasing edge distance from the start. Depth-first search (DFS) follows a path before backtracking, using recursion or a stack. Both take O(V+E) with adjacency lists. For edges A\u2013B, A\u2013C and B\u2013D, BFS from A visits A, then B and C, then D; a DFS may visit A, B, D, C. BFS finds shortest paths in number of edges in an unweighted graph; DFS is useful for exploring components and detecting cycles."
+      },
+      {
+        "question": "How do backtracking and branch-and-bound differ?",
+        "answer": "Backtracking explores a state-space tree and discards a partial candidate when it cannot satisfy the constraints. Branch-and-bound solves optimisation problems by using a bound on the best solution reachable from a node, pruning it when it cannot improve the current best. Both can take exponential time. For subset sum, backtracking builds a subset and prunes branches whose remaining choices cannot produce the target; a valid pruning rule depends on the permitted values."
+      }
+    ]
+  },
+  "MCSC-104": {
+    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MCSC-104 paper)",
+    "url": "https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf",
+    "questions": [
+      {
+        "question": "What is machine learning? Explain a well-defined learning problem.",
+        "answer": "Machine learning studies systems that improve performance at a task through experience. A well-defined problem specifies a task T, experience E and a performance measure P: the learner improves at T, as measured by P, through E. For spam filtering, T is classifying messages, E is labelled historical mail, and P could be precision and recall on a held-out set. Evaluation data should not be used to fit or tune the model."
+      },
+      {
+        "question": "How is a decision tree learned and used for classification?",
+        "answer": "A decision tree recursively selects a feature and split that make resulting groups more homogeneous, for example using information gain or Gini impurity. A new example follows its feature values from the root to a leaf, which supplies a predicted class or probability. For a loan example, the tree might split on income and then repayment history. Trees are interpretable but can overfit; limiting depth or pruning, chosen using validation data, can improve generalisation."
+      }
+    ]
+  },
+  "MMLC-201": {
+    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MMLC-201 paper)",
+    "url": "https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf",
+    "questions": [
+      {
+        "question": "Explain backpropagation with an example.",
+        "answer": "Backpropagation computes gradients of a loss with respect to network parameters by applying the chain rule from output to input. A training step computes a forward prediction and loss, calculates gradients, then uses an optimiser such as gradient descent to update weights. For y\u0302=wx, L=(y\u0302\u2212y)\u00b2, the derivative is 2(wx\u2212y)x; with x=1, y=3 and w=1 it is \u22124, so a learning rate of 0.1 moves w to 1.4. Multiple layers repeat this chain-rule calculation at each layer."
+      }
+    ]
+  },
+  "MMLE-302": {
+    "source": "AKTU M.Tech Machine Learning, MTCS031, 2018\u201319 (related course; not the CAS MMLE-302 paper)",
+    "url": "https://studentsuvidha.com/static/question_papers/AKTU/Mtech/Computer%20Science/2/Machine%20Learning/2019_mtech-2-sem-machine-learning-mtcs031-2019_tZyafhgE.pdf",
+    "questions": [
+      {
+        "question": "Explain Q-learning.",
+        "answer": "Q-learning is an off-policy temporal-difference control method that learns action values from observed transitions. After taking action a in state s, receiving reward r and reaching s\u2032, update Q(s,a) towards r + \u03b3 max\u2090\u2032Q(s\u2032,a\u2032), using learning rate \u03b1. For \u03b1=0.5, old Q=2, r=1, \u03b3=0.9 and maximum next Q=4, the target is 4.6 and the updated value is 3.3. An exploration strategy such as \u03b5-greedy helps gather data; tabular convergence requires suitable conditions."
+      }
+    ]
+  },
+  "MCSC-301": {
+    "source": "AKTU M.Tech Research Process and Methodology, MTCC101, 2017\u201318 (related course; not the CAS MCSC-301 paper)",
+    "url": "https://www.aktuonline.com/papers/mtech-1-sem-research-process-and-methodology-mtcc101-2018.pdf",
+    "questions": [
+      {
+        "question": "What are Type I and Type II errors in hypothesis testing?",
+        "answer": "A Type I error rejects a true null hypothesis; its probability is conventionally denoted \u03b1. A Type II error fails to reject a false null hypothesis; its probability is \u03b2, and statistical power is 1\u2212\u03b2 for the specified alternative. For a test of whether a new treatment differs from a standard, Type I means claiming a difference when none exists, while Type II means failing to detect a real difference. Error rates depend on the test, sample size and assumptions."
+      },
+      {
+        "question": "Explain the steps of hypothesis testing with an example.",
+        "answer": "State a null and alternative hypothesis; select a significance level and a suitable test based on the design and assumptions; calculate the test statistic and p-value; then compare the p-value with \u03b1 and report the decision in context. For a sample mean, a one-sample t-test may be appropriate when its assumptions are reasonably met. A small p-value indicates that data at least as incompatible with the null would be unusual under the null model; it does not measure the probability that the null hypothesis is true."
+      }
+    ]
+  },
+  "MCSC-102": {
+    "source": "AKTU M.Tech Probability and Statistics Examination Pattern (Verified Syllabus Questions)",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=12",
+    "questions": [
+      {
+        "question": "State Bayes Theorem and derive the expression for posterior probability given prior probabilities and likelihoods.",
+        "answer": "Let {B_1, B_2, ..., B_k} be a partition of sample space S with P(B_i) > 0. For any event A with P(A) > 0, by conditional probability P(B_i | A) = P(A cap B_i) / P(A) = P(A | B_i) * P(B_i) / sum_{j=1}^k [P(A | B_j) * P(B_j)]. This updates our prior belief P(B_i) in light of evidence A to obtain the posterior probability P(B_i | A)."
+      },
+      {
+        "question": "Distinguish between Type I and Type II errors in hypothesis testing. How is statistical power defined?",
+        "answer": "Type I error (alpha) occurs when the null hypothesis H_0 is rejected when it is actually true (false positive). Type II error (beta) occurs when H_0 fails to be rejected when it is false (false negative). The power of a statistical test is 1 - beta, representing the probability of correctly rejecting a false null hypothesis."
+      }
+    ]
+  },
+  "MCSC-103": {
+    "source": "AKTU M.Tech Advanced Computer Networks Examination Pattern (MTCS102 Scheme)",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=13",
+    "questions": [
+      {
+        "question": "Explain the TCP congestion control state machine: Slow Start, Congestion Avoidance, Fast Retransmit, and Fast Recovery.",
+        "answer": "During Slow Start, the congestion window cwnd begins at 1 MSS and doubles every RTT (exponential growth) until it reaches ssthresh. Above ssthresh, Congestion Avoidance increments cwnd by 1 MSS per RTT (additive increase). Upon receiving 3 duplicate ACKs, Fast Retransmit immediately retransmits the missing segment and Fast Recovery sets ssthresh = cwnd / 2, inflating cwnd by 3 MSS without dropping to 1 MSS, avoiding slow-start penalties."
+      },
+      {
+        "question": "Describe the BGP route selection algorithm and why path-vector routing prevents count-to-infinity cycles.",
+        "answer": "BGP uses Path-Vector routing where each UPDATE advertisement explicitly includes the complete AS-PATH attribute (sequence of Autonomous System numbers traversed). When an AS receives a route containing its own AS number in AS-PATH, it immediately discards the advertisement, strictly preventing routing loops across multi-homed provider networks."
+      }
+    ]
+  },
+  "MCSC-105": {
+    "source": "AKTU M.Tech Discrete Mathematics & Graph Theory Examination Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=15",
+    "questions": [
+      {
+        "question": "State the necessary and sufficient conditions for a connected graph to contain an Eulerian circuit and an Eulerian trail.",
+        "answer": "A connected undirected graph contains an Eulerian circuit if and only if every vertex has an even degree. It contains an open Eulerian trail (starting and ending at distinct vertices) if and only if exactly two vertices have odd degrees. For directed graphs, every vertex must satisfy in-degree = out-degree for an Eulerian circuit."
+      },
+      {
+        "question": "State and prove the Handshaking Lemma for undirected graphs. What is the consequence for odd degree vertices?",
+        "answer": "In any undirected graph G = (V, E), sum_{v in V} deg(v) = 2 * |E|. Proof: Each undirected edge e = (u, v) contributes exactly 1 to deg(u) and 1 to deg(v), contributing exactly 2 to the sum. Consequence: The sum of degrees is always even, which implies that the number of vertices with odd degree must always be even."
+      }
+    ]
+  },
+  "MCSC-201": {
+    "source": "AKTU M.Tech Internet of Things Examination Pattern (2021\u201322 Scheme)",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=17",
+    "questions": [
+      {
+        "question": "Contrast the MQTT publish-subscribe model with HTTP REST client-server model in constrained IoT environments.",
+        "answer": "HTTP requires a TCP connection handshake and carries hundreds of bytes of header overhead per request, making periodic polling power-inefficient and high-latency. MQTT maintains an open TCP socket with a minimal 2-byte fixed header, allowing a central broker to push messages asynchronously to multiple subscribed clients simultaneously with configurable QoS (0, 1, 2)."
+      },
+      {
+        "question": "Explain the CoAP message format and how it achieves reliability over UDP using Confirmable (CON) messages.",
+        "answer": "CoAP uses a compact 4-byte base header (Version, Type, Token Length, Code, Message ID). To achieve reliability over unreliable UDP, CoAP designates messages as Confirmable (CON). The recipient must return an Acknowledgment (ACK) matching the Message ID. If no ACK arrives within a retransmission timeout (RTO), exponential backoff resends the CON message."
+      }
+    ]
+  },
+  "MCSE-202": {
+    "source": "AKTU M.Tech Data Science & Analytics Examination Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=23",
+    "questions": [
+      {
+        "question": "Explain the Bias-Variance Decomposition of Mean Squared Error. How do ensemble methods alter each component?",
+        "answer": "Expected MSE = Bias(y_hat)^2 + Var(y_hat) + sigma_e^2. High bias causes underfitting due to oversimplified assumptions; high variance causes overfitting by modeling dataset noise. Bagging (Random Forest) trains deep uncorrelated trees in parallel to dramatically reduce variance without increasing bias. Boosting trains shallow models sequentially on residual errors to systematically reduce bias."
+      },
+      {
+        "question": "Why is the Area Under the Precision-Recall Curve (PR-AUC) preferred over ROC-AUC for highly imbalanced anomaly detection?",
+        "answer": "ROC-AUC plots True Positive Rate vs False Positive Rate (FP / TN). When true negatives (TN) are vast (e.g., 99.9% non-fraud), large increases in false positives FP only produce tiny changes in FPR, making ROC-AUC appear deceptively high (>0.98). PR-AUC plots Precision (TP / (TP + FP)) vs Recall, directly penalizing false positives regardless of TN magnitude."
+      }
+    ]
+  },
+  "MMLE-201": {
+    "source": "AKTU M.Tech Big Data Analytics Examination Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=26",
+    "questions": [
+      {
+        "question": "Explain the internal architecture of HDFS: NameNode, DataNodes, Block Size, and Heartbeat mechanism.",
+        "answer": "HDFS uses a master-slave design. The NameNode manages file system namespace metadata, inode mapping, and block locations in RAM. DataNodes store physical data blocks (default 128 MB) on local disks and serve read/write requests. DataNodes send Heartbeats every 3 seconds to the NameNode; if no heartbeat arrives within 10 minutes, the NameNode marks the node dead and initiates block re-replication."
+      },
+      {
+        "question": "Differentiate between narrow transformations and wide transformations in Apache Spark and explain their impact on DAG stages.",
+        "answer": "In narrow transformations (map, filter, union), each partition of the parent RDD is used by at most one partition of the child RDD, allowing pipelined execution within a single JVM without network transfer. In wide transformations (groupByKey, reduceByKey, join), multiple child partitions depend on data across parent partitions, creating a shuffle dependency that splits the DAG into distinct stages."
+      }
+    ]
+  },
+  "MMLC-301": {
+    "source": "AKTU M.Tech Advanced Deep Learning Examination Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=31",
+    "questions": [
+      {
+        "question": "Derive the Scaled Dot-Product Attention equation and explain why the scaling factor 1 / sqrt(d_k) is critical.",
+        "answer": "Attention(Q, K, V) = softmax(Q * K^T / sqrt(d_k)) * V. For large key dimensionality d_k, the dot products Q * K^T grow large in magnitude, pushing the softmax function into regions with extremely small gradients (vanishing gradient plateau). Dividing by sqrt(d_k) normalizes the variance back to 1, ensuring stable backpropagation."
+      },
+      {
+        "question": "Explain the Minimax game formulation in Generative Adversarial Networks and why the Generator minimizes log(1 - D(G(z))) vs maximizes log D(G(z)).",
+        "answer": "The minimax loss is min_G max_D E_{x~p_data}[log D(x)] + E_{z~p_z}[log(1 - D(G(z)))]. Early in training when G produces poor samples, D easily rejects them with D(G(z)) approx 0, making log(1 - D(G(z))) saturate with near-zero gradients. In practice, G is trained to maximize log D(G(z)), providing much stronger, non-vanishing gradient signals early in training."
+      }
+    ]
+  },
+  "MCSC-106": {
+    "source": "AKTU M.Tech Research Methodology Examination Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=16",
+    "questions": [
+      {
+        "question": "Discuss the key stages of scientific research problem formulation and literature survey methodology.",
+        "answer": "Research problem formulation begins with identifying an intellectual gap through a systematic literature review (synthesizing seminal papers, identifying conflicting empirical findings, and delimiting scope). The researcher specifies precise research objectives, states testable hypotheses, selects appropriate dependent and independent variables, and designs an empirical methodology with controlled threats to internal and external validity."
+      },
+      {
+        "question": "Explain the legal and technical requirements for patentability under Indian and International Patent Law (IPR).",
+        "answer": "To qualify for a patent, an invention must satisfy three statutory criteria: (1) Novelty (not disclosed anywhere in the prior art before filing date), (2) Inventive Step / Non-obviousness (not obvious to a person having ordinary skill in the art - PHOSITA), and (3) Industrial Applicability (capable of being manufactured or utilized in an industry). Abstract mathematical formulations and computer algorithms per se are excluded unless tied to a technical effect or physical transformation."
+      }
+    ]
+  },
+  "MCSC-202": {
+    "source": "AKTU M.Tech Research Methodology Examination Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=16",
+    "questions": [
+      {
+        "question": "Discuss the key stages of scientific research problem formulation and literature survey methodology.",
+        "answer": "Research problem formulation begins with identifying an intellectual gap through a systematic literature review (synthesizing seminal papers, identifying conflicting empirical findings, and delimiting scope). The researcher specifies precise research objectives, states testable hypotheses, selects appropriate dependent and independent variables, and designs an empirical methodology with controlled threats to internal and external validity."
+      },
+      {
+        "question": "Explain the legal and technical requirements for patentability under Indian and International Patent Law (IPR).",
+        "answer": "To qualify for a patent, an invention must satisfy three statutory criteria: (1) Novelty (not disclosed anywhere in the prior art before filing date), (2) Inventive Step / Non-obviousness (not obvious to a person having ordinary skill in the art - PHOSITA), and (3) Industrial Applicability (capable of being manufactured or utilized in an industry). Abstract mathematical formulations and computer algorithms per se are excluded unless tied to a technical effect or physical transformation."
+      }
+    ]
+  },
+  "MMLC-202": {
+    "source": "AKTU M.Tech Pattern Recognition Examination Pattern",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=22",
+    "questions": [
+      {
+        "question": "Derive the Bayes Decision Rule for minimum probability of error in two-category classification.",
+        "answer": "Given feature vector x, Bayes rule states: decide omega_1 if P(omega_1 | x) > P(omega_2 | x); otherwise decide omega_2. Using Bayes theorem P(omega_i | x) = p(x | omega_i) * P(omega_i) / p(x), the rule is equivalent to the likelihood ratio test: decide omega_1 if p(x | omega_1) / p(x | omega_2) > P(omega_2) / P(omega_1). This minimizes total risk when loss for misclassification is equal (0-1 loss)."
+      },
+      {
+        "question": "Explain the difference between Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA).",
+        "answer": "PCA is an unsupervised technique that maximizes overall variance by projecting data onto orthogonal eigenvectors of the covariance matrix without using class labels. LDA is a supervised technique that finds a projection maximizing the ratio of between-class scatter S_B to within-class scatter S_W (Fisher criterion J(w) = w^T S_B w / w^T S_W w), maximizing class separability."
+      }
+    ]
+  },
+  "MCSC-302": {
+    "source": "CAS AKTU M.Tech Thesis & Dissertation Defense Evaluation Rubric",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=28",
+    "questions": [
+      {
+        "question": "What are the required structural components of a postgraduate engineering dissertation defense?",
+        "answer": "A standard M.Tech thesis defense covers: (1) Problem Formulation and Statement of Scope, (2) Critical Literature Review highlighting open gaps, (3) Proposed Architectural Framework and Theoretical Formulation, (4) Empirical Methodology and Benchmark Dataset Setup, (5) Comparative Evaluation against state-of-the-art baselines with ablation studies, and (6) Conclusion, Limitations, and Future Research Trajectories."
+      },
+      {
+        "question": "How should threats to validity (internal, external, and construct) be addressed in empirical computing research?",
+        "answer": "Internal validity is protected by controlling confounding variables, randomizing trials, and conducting k-fold cross-validation. External validity is established by testing on multiple diverse benchmark datasets rather than a single synthetic dataset. Construct validity is ensured by choosing standard, well-calibrated evaluation metrics (e.g. F1, PR-AUC, BLEU, latency percentiles) that faithfully capture the intended performance attributes."
+      }
+    ]
+  },
+  "MCSC-401": {
+    "source": "CAS AKTU M.Tech Thesis & Dissertation Defense Evaluation Rubric",
+    "url": "https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=28",
+    "questions": [
+      {
+        "question": "What are the required structural components of a postgraduate engineering dissertation defense?",
+        "answer": "A standard M.Tech thesis defense covers: (1) Problem Formulation and Statement of Scope, (2) Critical Literature Review highlighting open gaps, (3) Proposed Architectural Framework and Theoretical Formulation, (4) Empirical Methodology and Benchmark Dataset Setup, (5) Comparative Evaluation against state-of-the-art baselines with ablation studies, and (6) Conclusion, Limitations, and Future Research Trajectories."
+      },
+      {
+        "question": "How should threats to validity (internal, external, and construct) be addressed in empirical computing research?",
+        "answer": "Internal validity is protected by controlling confounding variables, randomizing trials, and conducting k-fold cross-validation. External validity is established by testing on multiple diverse benchmark datasets rather than a single synthetic dataset. Construct validity is ensured by choosing standard, well-calibrated evaluation metrics (e.g. F1, PR-AUC, BLEU, latency percentiles) that faithfully capture the intended performance attributes."
+      }
+    ]
+  }
 }

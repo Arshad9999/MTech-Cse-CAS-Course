@@ -1205,8 +1205,15 @@
           <p>${esc(item.explanation)}</p>
           
           <div class="worked">
-            <strong>Step-by-Step Worked Example</strong><br>
-            ${esc(item.example)}
+            <div class="worked-header">
+              <strong>Step-by-Step Worked Example</strong>
+              <button class="copy-snippet-btn" onclick="window.copyLessonExample(this)" data-lesson="${index + 1}" aria-label="Copy worked example">
+                <span>Copy Proof</span>
+              </button>
+            </div>
+            <div id="lesson-example-body-${index + 1}">
+              ${esc(item.example)}
+            </div>
           </div>
 
           <div class="check">
@@ -1344,7 +1351,10 @@
           <div class="formula-grid">
             ${supplement.formulas.map(item => `
               <article class="formula-card">
-                <h3>${esc(item[0])}</h3>
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
+                  <h3 style="margin:0 0 0.5rem;">${esc(item[0])}</h3>
+                  <button class="copy-snippet-btn-mini" onclick="window.copyFormula(this)" aria-label="Copy formula">Copy</button>
+                </div>
                 <code>${esc(item[1])}</code>
                 <p>${esc(item[2])}</p>
               </article>
@@ -1461,7 +1471,29 @@
       </section>
     ` : '';
 
-    // 7. Render Complete Page
+    // 7. Exam Readiness Telemetry Metrics
+    const examReadinessBannerHtml = `
+      <div class="exam-readiness-banner" aria-label="Curriculum metrics and pacing">
+        <div class="readiness-item">
+          <span class="readiness-label">Core Modules</span>
+          <strong>${unitsList.length} Units</strong>
+        </div>
+        <div class="readiness-item">
+          <span class="readiness-label">Study Blocks</span>
+          <strong>${courseLessons.length} Detailed Lessons</strong>
+        </div>
+        <div class="readiness-item">
+          <span class="readiness-label">GeeksforGeeks Mappings</span>
+          <strong>${courseGfgList.length} Topic Guides</strong>
+        </div>
+        <div class="readiness-item">
+          <span class="readiness-label">Estimated Pacing</span>
+          <strong>${selected.estimatedHours || 36} Hours Total</strong>
+        </div>
+      </div>
+    `;
+
+    // 8. Render Complete Page
     $('#subject').innerHTML = `
       <a class="back-link" href="index.html#semester-${selected.semester}">
         ← Return to Semester 0${selected.semester} Featured Catalogue
@@ -1511,6 +1543,9 @@
         ${heroArtHtml}
       </section>
 
+      <!-- Exam Readiness Telemetry Banner -->
+      ${examReadinessBannerHtml}
+
       <!-- Sticky Quick-Jump Navigation Pills -->
       ${navPillsHtml}
 
@@ -1548,7 +1583,42 @@
     setupMobileQRModal();
     if (window.CommandPalette) window.CommandPalette.init(allCourses);
     updateAllDocketUI();
+    setupReadingProgressBar();
   }
+
+  function setupReadingProgressBar() {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+      bar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    }, { passive: true });
+  }
+
+  window.copyLessonExample = function (btn) {
+    const lessonId = btn.getAttribute('data-lesson');
+    const body = document.getElementById(`lesson-example-body-${lessonId}`);
+    if (body && navigator.clipboard) {
+      navigator.clipboard.writeText(body.innerText.trim()).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<span>✓ Copied</span>';
+        setTimeout(() => { btn.innerHTML = orig; }, 1800);
+      }).catch(() => {});
+    }
+  };
+
+  window.copyFormula = function (btn) {
+    const card = btn.closest('.formula-card');
+    const code = card ? card.querySelector('code') : null;
+    if (code && navigator.clipboard) {
+      navigator.clipboard.writeText(code.innerText.trim()).then(() => {
+        const orig = btn.innerText;
+        btn.innerText = '✓ Copied';
+        setTimeout(() => { btn.innerText = orig; }, 1800);
+      }).catch(() => {});
+    }
+  };
 
   // --------------------------------------------------------------------------
   // Legacy Course Sub-page support (e.g. discrete-mathematics-and-graph-theory/index.html)
