@@ -4,7 +4,7 @@
  * with resilient offline cache fallback.
  */
 
-const CACHE_NAME = 'cas-mtech-cse-v2026.11.19-luxury-complete';
+const CACHE_NAME = 'cas-mtech-cse-v2026.11.19-density-refine';
 const STATIC_ASSETS = [
   './',
   './index.html',

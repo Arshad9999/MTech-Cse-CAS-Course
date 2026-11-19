@@ -1417,14 +1417,14 @@
 
 .github-popup-card {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 18px;
   max-width: 480px;
   width: 100%;
-  padding: 2.2rem 2rem;
-  text-align: center;
+  padding: 0;
+  overflow: hidden;
   position: relative;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 64px -12px rgba(74, 14, 23, 0.22), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid var(--color-gold-border);
   transform: scale(0.94);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1433,35 +1433,172 @@
   transform: scale(1);
 }
 
-.github-popup-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #f5f5f7;
-  display: inline-flex;
+.github-popup-content {
+  padding: 1.8rem 1.8rem 1.5rem;
+}
+
+.github-popup-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.github-logo-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #1d1d1f;
+  color: #ffffff;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.2rem;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
-.github-popup-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: var(--color-ink-muted);
-  cursor: pointer;
-  padding: 0.3rem 0.5rem;
-  line-height: 1;
-  border-radius: 50%;
+.github-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-burgundy);
+  display: block;
 }
 
-.github-popup-close:hover {
+.github-popup-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
   color: var(--color-ink);
-  background: #f5f5f7;
+  margin: 0.1rem 0 0;
+  line-height: 1.2;
+}
+
+.github-popup-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-ink-muted);
+  margin: 0 0 1.2rem;
+}
+
+.github-popup-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.github-stat strong {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-burgundy);
+  font-family: var(--font-serif);
+  line-height: 1.1;
+}
+
+.github-stat span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-muted);
+}
+
+.github-star-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(74, 14, 23, 0.25);
+}
+
+.github-sub-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  font-size: 0.78rem;
+  color: var(--color-ink-light);
+}
+
+.github-sub-link {
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.github-sub-link:hover {
+  color: var(--color-burgundy);
+  text-decoration: underline;
+}
+
+/* Compact Mathematical Derivation Box (Zero Space Bloat) */
+.compact-worked-box {
+  margin: 1.1rem 0;
+  border: 1px solid var(--color-line);
+  border-left: 3.5px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.compact-worked-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.95rem;
+  background: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.compact-worked-title {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-burgundy);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.compact-worked-code {
+  padding: 0.95rem 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: #ffffff;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.copy-snippet-btn-mini {
+  appearance: none;
+  border: 1px solid var(--color-line);
+  background: #ffffff;
+  color: var(--color-ink-muted);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copy-snippet-btn-mini:hover {
+  border-color: var(--color-gold);
+  color: var(--color-burgundy);
+  background: var(--color-gold-soft);
 }
 
 @media (max-width: 600px) {
@@ -1866,166 +2003,6 @@ body[data-page="subject"] h1 {
   background: #fee2e2;
   color: #dc2626;
   border-color: #fca5a5;
-}
-
-/* Study Session / Academic Appointment Scheduling Form */
-.study-scheduling-section {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1.5px solid var(--color-gold-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin: 2.5rem 0;
-  box-shadow: 0 16px 40px -12px rgba(74, 14, 23, 0.08);
-}
-
-.scheduling-body {
-  padding: 2.2rem;
-}
-
-.scheduling-body h3 {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  color: var(--color-burgundy-deep);
-  margin: 0.2rem 0 0.5rem;
-}
-
-.scheduling-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.4rem;
-  margin-top: 1.6rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.form-group label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--color-ink);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.form-control {
-  appearance: none;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-md);
-  padding: 0.8rem 1rem;
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  color: var(--color-ink);
-  background: #ffffff;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px var(--color-gold-subtle);
-}
-
-.study-mode-toggle {
-  display: flex;
-  background: var(--color-surface-subtle);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-pill);
-  padding: 3px;
-  gap: 4px;
-}
-
-.mode-btn {
-  flex: 1;
-  appearance: none;
-  border: none;
-  background: transparent;
-  color: var(--color-ink-muted);
-  padding: 0.55rem 0.8rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  text-align: center;
-}
-
-.mode-btn.is-selected {
-  background: #ffffff;
-  color: var(--color-burgundy);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  font-weight: 700;
-}
-
-/* Scholar Review / Testimonial Cards */
-.testimonials-section {
-  margin: 3rem 0;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1.4rem;
-  margin-top: 1.5rem;
-}
-
-.testimonial-card {
-  background: #ffffff;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
-  padding: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
-}
-
-.testimonial-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-gold);
-}
-
-.testimonial-quote {
-  font-size: 0.94rem;
-  line-height: 1.6;
-  color: var(--color-ink);
-  font-style: italic;
-  margin-bottom: 1.2rem;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.author-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.author-info strong {
-  display: block;
-  font-size: 0.88rem;
-  color: var(--color-ink);
-}
-
-.author-info span {
-  font-size: 0.75rem;
-  color: var(--color-ink-muted);
 }
 
 /* Brand Trust Pillars */

@@ -1213,8 +1213,6 @@
         <a class="course-nav-pill" href="#pitfalls">Mistakes to Avoid</a>
         <a class="course-nav-pill" href="#practice">Retrieval Practice</a>
         ${papers[selected.code] ? '<a class="course-nav-pill" href="#pyqs" style="color:var(--color-amber); font-weight:700;">Past Exam Papers</a>' : ''}
-        <a class="course-nav-pill" href="#study-scheduler" style="color:var(--color-burgundy); font-weight:700;">Schedule Session</a>
-        <a class="course-nav-pill" href="#scholar-reviews">Scholar Reviews</a>
         ${readings[selected.code] ? '<a class="course-nav-pill" href="#readings">Further Reading</a>' : ''}
       </nav>
     `;
@@ -1287,12 +1285,8 @@
         ? Math.min(unitsList.length, Math.floor(index / Math.max(1, Math.ceil(courseLessons.length / unitsList.length))) + 1)
         : 1;
 
-      return `
-        <article class="module" id="lesson-${index + 1}" data-unit="${assignedUnit}">
-          <span class="eyebrow">Study Block ${String(index + 1).padStart(2, '0')}</span>
-          <h3>${esc(item.title)}</h3>
-          <p>${esc(item.explanation)}</p>
-          
+      const useMacWindow = index < 3;
+      const workedHtml = useMacWindow ? `
           <div class="worked" style="padding:0; overflow:hidden; border-radius:var(--radius-md); border:1px solid var(--color-gold-border); background:#ffffff; box-shadow:var(--shadow-sm);">
             <div class="mac-window-bar">
               <div class="mac-window-controls">
@@ -1309,6 +1303,27 @@
               ${esc(item.example)}
             </div>
           </div>
+      ` : `
+          <div class="compact-worked-box">
+            <div class="compact-worked-header">
+              <span class="compact-worked-title">⚡ Worked Derivation / Mathematical Proof</span>
+              <button class="copy-snippet-btn-mini" onclick="window.copyLessonExample(this)" data-lesson="${index + 1}" aria-label="Copy worked example">
+                <span>Copy Proof</span>
+              </button>
+            </div>
+            <div id="lesson-example-body-${index + 1}" class="compact-worked-code">
+              ${esc(item.example)}
+            </div>
+          </div>
+      `;
+
+      return `
+        <article class="module" id="lesson-${index + 1}" data-unit="${assignedUnit}">
+          <span class="eyebrow">Study Block ${String(index + 1).padStart(2, '0')}</span>
+          <h3>${esc(item.title)}</h3>
+          <p>${esc(item.explanation)}</p>
+          
+          ${workedHtml}
 
           <div class="check">
             ✓ <strong>Distinction / Invariant:</strong> ${esc(item.distinction)}
@@ -1397,7 +1412,8 @@
 
     // 6. Mastery Hub Layer
     // Check if this subject has a supplement in course-supplements.json
-    const legacyCourse = legacy.courses.find(l => l.code === selected.code || (selected.guide && l.slug === selected.guide));
+    const legacyList = (legacy && Array.isArray(legacy.courses)) ? legacy.courses : [];
+    const legacyCourse = legacyList.find(l => l.code === selected.code || (selected.guide && l.slug === selected.guide));
     const supplementKey = (selected.code in supplements) ? selected.code 
       : ((selected.guide && selected.guide in supplements) ? selected.guide
       : (legacyCourse ? legacyCourse.slug : (selected.folder || '')));
@@ -1479,20 +1495,13 @@
           </p>
           <div class="formula-grid">
             ${supplement.formulas.map(item => `
-              <article class="formula-card" style="padding:0; overflow:hidden; border-radius:var(--radius-md); border:1px solid var(--color-gold-border); background:#ffffff; box-shadow:var(--shadow-sm);">
-                <div class="mac-window-bar">
-                  <div class="mac-window-controls">
-                    <span class="mac-dot mac-close"></span>
-                    <span class="mac-dot mac-minimize"></span>
-                    <span class="mac-dot mac-expand"></span>
-                  </div>
-                  <div class="mac-window-title">${esc(item[0])}</div>
+              <article class="formula-card">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+                  <h3 style="margin:0; font-size:0.98rem; font-weight:700; color:var(--color-ink);">${esc(item[0])}</h3>
                   <button class="copy-snippet-btn-mini" onclick="window.copyFormula(this)" aria-label="Copy formula">Copy</button>
                 </div>
-                <div style="padding:1.2rem 1.4rem;">
-                  <code style="display:block; margin-bottom:0.75rem;">${esc(item[1])}</code>
-                  <p style="margin:0; font-size:0.86rem; color:var(--color-ink-muted); line-height:1.5;">${esc(item[2])}</p>
-                </div>
+                <code>${esc(item[1])}</code>
+                <p>${esc(item[2])}</p>
               </article>
             `).join('')}
           </div>
@@ -1690,17 +1699,26 @@
           High-fidelity structural schematics, algorithmic state transitions, and dimensional calculations formulated for deep conceptual clarity. Click any diagram to inspect full-screen.
         </p>
         <div class="lookbook-grid">
-          ${courseVisualList.map((vis, vIdx) => `
+          ${courseVisualList.map((vis, vIdx) => {
+            const useMacBar = vIdx < 3;
+            return `
             <article class="lookbook-card" onclick="window.openImageZoomModal('${esc(vis.src)}', '${esc(vis.alt)}', '${esc(vis.note || '')}')">
-              <div class="mac-window-bar">
-                <div class="mac-window-controls">
-                  <span class="mac-dot mac-close"></span>
-                  <span class="mac-dot mac-minimize"></span>
-                  <span class="mac-dot mac-expand"></span>
+              ${useMacBar ? `
+                <div class="mac-window-bar">
+                  <div class="mac-window-controls">
+                    <span class="mac-dot mac-close"></span>
+                    <span class="mac-dot mac-minimize"></span>
+                    <span class="mac-dot mac-expand"></span>
+                  </div>
+                  <div class="mac-window-title">Figure 0${vIdx + 1} · Schematic</div>
+                  <span style="font-size:0.7rem; color:var(--color-gold-deep); font-weight:700;">ZOOM 🔍</span>
                 </div>
-                <div class="mac-window-title">Figure 0${vIdx + 1} · Schematic</div>
-                <span style="font-size:0.7rem; color:var(--color-gold-deep); font-weight:700;">ZOOM 🔍</span>
-              </div>
+              ` : `
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0.9rem; background:var(--color-surface-subtle); border-bottom:1px solid var(--color-line); font-size:0.75rem; font-weight:700; color:var(--color-ink);">
+                  <span>Figure 0${vIdx + 1} · Schematic</span>
+                  <span style="font-size:0.7rem; color:var(--color-gold-deep);">ZOOM 🔍</span>
+                </div>
+              `}
               <div class="lookbook-img-wrap">
                 <img src="${esc(vis.src)}" alt="${esc(vis.alt)}" loading="lazy" decoding="async">
               </div>
@@ -1709,7 +1727,8 @@
                 ${vis.note ? `<p><strong>Reading Note:</strong> ${esc(vis.note)}</p>` : ''}
               </div>
             </article>
-          `).join('')}
+          `;
+          }).join('')}
         </div>
       </section>
     ` : '';
@@ -1730,55 +1749,6 @@
           <p id="zoom-dialog-note" style="margin-top:1rem; font-size:0.86rem; color:var(--color-ink-muted); line-height:1.5; text-align:left;"></p>
         </div>
       </dialog>
-    `;
-
-    // Scholar Testimonials / Review Cards
-    const testimonialsHtml = `
-      <section class="reference-section testimonials-section" id="scholar-reviews">
-        <div class="section-kicker" style="color:var(--color-burgundy);">Scholar Community Feedback</div>
-        <h2 class="editorial-title" style="font-size:2rem; margin:0.3rem 0 0.5rem;">Academic Reviews & Endorsements</h2>
-        <p style="color:var(--color-ink-muted); margin:0 0 1.2rem; max-width:65ch;">
-          How postgraduate scholars at the Centre for Advanced Studies (CAS) and AKTU affiliated institutes prepare using these course dossiers.
-        </p>
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <p class="testimonial-quote">
-              "The step-by-step derivations and worked numerical problems gave me the exact rigor required for the 10-mark end-semester theory questions. Scored 92% in my theory paper."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">${courseMonogram}</div>
-              <div class="author-info">
-                <strong>Aditya Sharma</strong>
-                <span>M.Tech CSE Scholar · AIR 48 GATE</span>
-              </div>
-            </div>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-quote">
-              "Having the comparison matrices, error traps, and downloadable master PDF dossiers on my iPad made revision effortless during traveling and lab hours."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" style="background:linear-gradient(135deg, var(--color-burgundy), #7f1d1d);">PM</div>
-              <div class="author-info">
-                <strong>Priyanka Mishra</strong>
-                <span>Ph.D. Candidate · Research Scholar CAS</span>
-              </div>
-            </div>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-quote">
-              "The GeeksforGeeks code mappings combined with the interactive self-assessment quiz helped me prepare for both university finals and technical interview rounds."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" style="background:linear-gradient(135deg, var(--color-emerald), #047857);">RV</div>
-              <div class="author-info">
-                <strong>Rohan Verma</strong>
-                <span>Senior Systems Engineer · Batch of 2023</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
     `;
 
     // Interactive Multi-Topic Checkbox Picker Data
@@ -1820,7 +1790,7 @@
           <span class="eyebrow" style="color:var(--color-gold-deep);">Interactive Revision Builder</span>
           <h3>Customise Your Study Pacing & Modules</h3>
           <p style="color:var(--color-ink-muted); font-size:0.92rem; margin:0;">
-            Select the specific syllabus blocks, derivations, and exam questions you want to review. Selected topics dynamically populate your revision session scheduler and mobile handoff payload.
+            Select the specific syllabus blocks, derivations, and exam questions you want to review. Selected topics dynamically populate your revision docket.
           </p>
         </div>
 
@@ -1857,7 +1827,7 @@
             <span>Current Study Queue</span>
           </div>
           <div class="live-topics-string" id="live-topics-string">
-            No topics selected yet. Check the boxes above to curate your personalised revision session.
+            No topics selected yet. Check the boxes above to curate your personalised revision queue.
           </div>
         </div>
         <div class="live-topics-actions">
@@ -1865,136 +1835,11 @@
           <button type="button" class="button btn-burgundy" style="font-size:0.82rem; padding:0.55rem 1.1rem;" onclick="window.queueSelectedInDocket('${selected.code}')">
             + Queue in Study Docket
           </button>
-          <a class="button btn-gold-outline" href="#study-scheduler" style="font-size:0.82rem; padding:0.55rem 1.1rem;">
-            📅 Schedule Session ↘
+          <a class="button btn-gold-outline" href="#lessons" style="font-size:0.82rem; padding:0.55rem 1.1rem;">
+            Explore Lessons ↘
           </a>
         </div>
       </div>
-    `;
-
-    // Study Session / Academic Appointment Scheduling Form & Live QR Code Frame
-    const schedulingSectionHtml = `
-      <section class="study-scheduling-section" id="study-scheduler">
-        <div class="mac-window-bar">
-          <div class="mac-window-controls">
-            <span class="mac-dot mac-close"></span>
-            <span class="mac-dot mac-minimize"></span>
-            <span class="mac-dot mac-expand"></span>
-          </div>
-          <div class="mac-window-title">${esc(selected.code)} · Study Session & Calendar Scheduler</div>
-          <div style="font-size:0.7rem; font-weight:700; color:var(--color-gold-deep);">ACADEMIC BOOKING</div>
-        </div>
-        <div class="scheduling-body">
-          <span class="eyebrow" style="color:var(--color-burgundy);">Time-Block & Handoff</span>
-          <h3>Schedule Your ${esc(selected.title)} Revision Session</h3>
-          <p style="color:var(--color-ink-muted); font-size:0.94rem; margin:0 0 1.2rem; max-width:68ch;">
-            Lock in your focused study block, set milestone calendar alerts, and generate a dynamic mobile QR / WhatsApp study handoff payload.
-          </p>
-
-          <form id="study-session-form" onsubmit="window.handleStudySessionSubmit(event, '${selected.code}', '${esc(selected.title)}')">
-            <div class="scheduling-grid">
-              <div class="form-group">
-                <label for="sched-name">Student / Scholar Name</label>
-                <input type="text" id="sched-name" class="form-control" placeholder="e.g. Scholar Name" required>
-              </div>
-
-              <div class="form-group">
-                <label for="sched-date">Target Revision Date</label>
-                <input type="date" id="sched-date" class="form-control" required>
-              </div>
-
-              <div class="form-group">
-                <label for="sched-slot">Preferred Study Time Slot</label>
-                <select id="sched-slot" class="form-control">
-                  <option value="09:00 - 12:00">Morning Deep Focus (09:00 — 12:00)</option>
-                  <option value="14:00 - 17:00">Afternoon Lab & Proofs (14:00 — 17:00)</option>
-                  <option value="19:00 - 22:00">Evening Revision & PYQs (19:00 — 22:00)</option>
-                  <option value="22:00 - 01:00">Late Night Intensive (22:00 — 01:00)</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>Study Mode Environment</label>
-                <div class="study-mode-toggle">
-                  <button type="button" class="mode-btn is-selected" id="mode-btn-solo" onclick="window.setStudyMode('solo')">
-                    🎧 Solo Deep Focus
-                  </button>
-                  <button type="button" class="mode-btn" id="mode-btn-peer" onclick="window.setStudyMode('peer')">
-                    👥 Peer / Group Session
-                  </button>
-                </div>
-              </div>
-
-              <div class="form-group" style="grid-column: 1 / -1;">
-                <label for="sched-topics">Selected Syllabus Modules (Auto-Linked)</label>
-                <input type="text" id="sched-topics" class="form-control" placeholder="Select topics in the picker above to auto-link..." readonly style="background:var(--color-surface-subtle); font-weight:600;">
-              </div>
-
-              <div class="form-group" style="grid-column: 1 / -1;">
-                <label for="sched-notes">Special Study Goals & Revision Invariants</label>
-                <textarea id="sched-notes" class="form-control" rows="2" placeholder="e.g. Master the core derivations, solve 2 past paper questions, and check formula parameter bounds."></textarea>
-              </div>
-            </div>
-
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.2rem; margin-top:1.8rem; padding-top:1.4rem; border-top:1px solid rgba(0,0,0,0.06);">
-              <button type="submit" class="button btn-burgundy" style="font-size:0.92rem; padding:0.75rem 1.6rem;">
-                📅 Confirm Revision Schedule & Handoff ↗
-              </button>
-              <span style="font-size:0.78rem; color:var(--color-ink-muted);">
-                Generates instant iCalendar (.ics) appointment + Mobile WhatsApp QR Handoff
-              </span>
-            </div>
-          </form>
-
-          <!-- Live QR Code Display Frame -->
-          <div class="live-qr-frame" id="live-qr-frame" style="margin-top:2rem; display:none;">
-            <span class="eyebrow" style="color:var(--color-burgundy);">Desktop-to-Mobile Continuity</span>
-            <h4 style="font-size:1.15rem; margin:0.3rem 0 0.6rem; color:var(--color-burgundy-deep);">Scan for Mobile Revision & WhatsApp Sync</h4>
-            <p style="font-size:0.86rem; color:var(--color-ink-muted); margin:0 0 1rem; max-width:54ch;">
-              Scan this QR code with your mobile camera to take your revision queue, calendar reminders, and study notes on the go.
-            </p>
-            <div class="qr-container-target" id="live-qr-target"></div>
-            <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.6rem;">
-              <a class="button btn-burgundy" id="whatsapp-share-btn" href="#" target="_blank" rel="noopener" style="font-size:0.8rem; padding:0.45rem 1rem;">
-                Share via WhatsApp ↗
-              </a>
-              <button type="button" class="button btn-gold-outline" onclick="window.copyRevisionPayload()" style="font-size:0.8rem; padding:0.45rem 1rem;">
-                Copy Study Payload
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    `;
-
-    // Native HTML5 Confirmation Dialog
-    const nativeDialogHtml = `
-      <dialog id="study-session-dialog" class="academic-dialog">
-        <div class="mac-window-bar">
-          <div class="mac-window-controls">
-            <span class="mac-dot mac-close" onclick="document.getElementById('study-session-dialog').close()"></span>
-            <span class="mac-dot mac-minimize"></span>
-            <span class="mac-dot mac-expand"></span>
-          </div>
-          <div class="mac-window-title">Schedule Confirmed · CAS M.Tech CSE</div>
-          <button type="button" onclick="document.getElementById('study-session-dialog').close()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--color-ink-muted);">×</button>
-        </div>
-        <div style="padding:2rem; text-align:center;">
-          <div style="width:56px; height:56px; border-radius:50%; background:var(--color-gold-soft); color:var(--color-burgundy); border:1.5px solid var(--color-gold); display:inline-flex; align-items:center; justify-content:center; font-size:1.6rem; margin-bottom:1rem;">
-            ✓
-          </div>
-          <h3 style="font-family:var(--font-serif); font-size:1.6rem; color:var(--color-burgundy-deep); margin:0 0 0.5rem;">Revision Session Booked</h3>
-          <p id="dialog-confirm-summary" style="font-size:0.92rem; color:var(--color-ink); line-height:1.5; margin-bottom:1.5rem;"></p>
-          <div style="display:flex; flex-direction:column; gap:0.6rem;">
-            <button type="button" class="button btn-burgundy" id="dialog-ics-btn" style="justify-content:center;">
-              📥 Add to Calendar (.ics)
-            </button>
-            <button type="button" class="button btn-gold-outline" onclick="document.getElementById('study-session-dialog').close()" style="justify-content:center;">
-              Return to Subject Study Block
-            </button>
-          </div>
-        </div>
-      </dialog>
     `;
 
     // Sticky Mobile Floating Action Bar
@@ -2021,10 +1866,10 @@
             <span>Quiz</span>
           </a>
         ` : ''}
-        <a class="mobile-bar-action" href="#study-scheduler">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          <span>Schedule</span>
-        </a>
+        <button type="button" class="mobile-bar-action" onclick="window.openGitHubModal()">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Star Repo</span>
+        </button>
       </div>
     `;
 
@@ -2069,9 +1914,6 @@
               </button>
               <a class="button btn-gold-outline" href="#interactive-picker">
                 ⚡ Select Study Modules
-              </a>
-              <a class="button" href="#study-scheduler" style="background:#ffffff; color:var(--color-ink); border:1px solid var(--color-line);">
-                📅 Schedule Session
               </a>
               <button class="docket-btn docket-btn-secondary" onclick="window.print()" style="font-size:0.88rem; padding:0.6rem 1.1rem;">
                 🖨 Print Dossier
@@ -2129,17 +1971,10 @@
       <!-- Past Exam Papers (PYQs) -->
       ${pyqHtml}
 
-      <!-- Study Session / Academic Appointment Scheduling Form -->
-      ${schedulingSectionHtml}
-
-      <!-- Scholar Testimonials & Endorsements -->
-      ${testimonialsHtml}
-
       <!-- Further Reading References -->
       ${readingsHtml}
 
-      <!-- Native Dialog Modal -->
-      ${nativeDialogHtml}
+      <!-- Image Zoom Dialog Modal -->
       ${imageZoomDialogHtml}
 
       <!-- Sticky Mobile Action Bar -->
@@ -2277,26 +2112,53 @@
       modal.setAttribute('aria-modal', 'true');
       modal.setAttribute('aria-label', 'Support M.Tech CSE Academic Repository on GitHub');
       modal.innerHTML = `
-        <div class="github-popup-card" onclick="event.stopPropagation()">
-          <button type="button" class="github-popup-close" onclick="window.closeGitHubModal()" aria-label="Close dialog">×</button>
-          <div class="github-popup-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="#1d1d1f"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <div class="github-popup-card mac-window" onclick="event.stopPropagation()">
+          <div class="mac-window-bar">
+            <div class="mac-window-controls">
+              <span class="mac-dot mac-close" onclick="window.closeGitHubModal()" aria-label="Close dialog"></span>
+              <span class="mac-dot mac-minimize"></span>
+              <span class="mac-dot mac-expand"></span>
+            </div>
+            <div class="mac-window-title">github.com · Arshad9999/MTech-Cse-CAS-Course</div>
+            <button type="button" onclick="window.closeGitHubModal()" style="background:none; border:none; font-size:1.1rem; cursor:pointer; color:var(--color-ink-muted);" aria-label="Close dialog">×</button>
           </div>
-          <span class="eyebrow" style="color:var(--color-accent); font-weight:700;">Open-Source Academic Companion</span>
-          <h2 style="font-size:1.55rem; margin:0.3rem 0 0.8rem; line-height:1.25;">Support the M.Tech CSE Companion on GitHub</h2>
-          <p style="color:var(--color-ink-muted); font-size:0.92rem; line-height:1.6; margin-bottom:1.5rem;">
-            If this study companion, solved past examination papers, and downloadable master course notes help your preparation, please consider giving the repository a Star on GitHub!
-          </p>
-          <div style="display:flex; flex-direction:column; gap:0.75rem;">
-            <a class="button" href="https://github.com/Arshad9999/MTech-Cse-CAS-Course" target="_blank" rel="noopener" style="background:#1d1d1f; color:#ffffff; font-weight:700; border-color:#1d1d1f; padding:0.8rem 1.4rem; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.2);">
-              ⭐ Star Repository on GitHub ↗
+          <div class="github-popup-content">
+            <div class="github-popup-brand">
+              <div class="github-logo-wrap">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div>
+                <span class="github-eyebrow">Open-Source Academic Archive</span>
+                <h2 class="github-popup-title">Star the M.Tech Companion</h2>
+              </div>
+            </div>
+            <p class="github-popup-desc">
+              Curated for postgraduate scholars at CAS AKTU. Access verified lecture dossiers, complete LaTeX derivations, and 100% solved past examination questions.
+            </p>
+            <div class="github-popup-stats">
+              <div class="github-stat">
+                <strong>17</strong>
+                <span>Master Dossiers</span>
+              </div>
+              <div class="github-stat">
+                <strong>100%</strong>
+                <span>Solved PYQs</span>
+              </div>
+              <div class="github-stat">
+                <strong>4</strong>
+                <span>Semesters</span>
+              </div>
+            </div>
+            <a class="button btn-burgundy github-star-btn" href="https://github.com/Arshad9999/MTech-Cse-CAS-Course" target="_blank" rel="noopener">
+              ⭐ Star on GitHub ↗
             </a>
-            <a class="button" href="https://github.com/Arshad9999/MTech-Cse-CAS-Course/issues" target="_blank" rel="noopener" style="background:#ffffff; color:var(--color-ink); border:1px solid var(--color-line); padding:0.7rem 1.4rem; justify-content:center; font-weight:600;">
-              🤝 Contribute Notes or Past Papers ↗
-            </a>
-            <button type="button" class="button" onclick="window.dismissGitHubModal()" style="background:transparent; color:var(--color-ink-muted); border:none; padding:0.4rem; font-size:0.82rem; text-decoration:underline; cursor:pointer;">
-              Maybe Later
-            </button>
+            <div class="github-sub-actions">
+              <a class="github-sub-link" href="https://github.com/Arshad9999/MTech-Cse-CAS-Course/fork" target="_blank" rel="noopener">Fork Repo</a>
+              <span>•</span>
+              <a class="github-sub-link" href="https://github.com/Arshad9999/MTech-Cse-CAS-Course/issues" target="_blank" rel="noopener">Contribute PYQ</a>
+              <span>•</span>
+              <button type="button" class="github-sub-link" onclick="window.dismissGitHubModal()" style="background:none; border:none; cursor:pointer; font-size:inherit; padding:0;">Dismiss</button>
+            </div>
           </div>
         </div>
       `;
@@ -2383,11 +2245,9 @@
   }
 
   // --------------------------------------------------------------------------
-  // Interactive Module Picker & Scheduling Handlers
+  // Interactive Module Picker Handlers
   // --------------------------------------------------------------------------
   let currentCourseCode = '';
-  let activeStudyMode = 'solo';
-  let latestPayloadText = '';
 
   window.handleTopicPickerChange = function () {
     const checkboxes = document.querySelectorAll('.topic-checkbox:checked');
@@ -2448,103 +2308,6 @@
         window.StudyDocket.addToDocket(code);
       }
       window.StudyDocket.open();
-    }
-  };
-
-  window.setStudyMode = function (mode) {
-    activeStudyMode = mode;
-    const soloBtn = document.getElementById('mode-btn-solo');
-    const peerBtn = document.getElementById('mode-btn-peer');
-    if (soloBtn && peerBtn) {
-      if (mode === 'solo') {
-        soloBtn.classList.add('is-selected');
-        peerBtn.classList.remove('is-selected');
-      } else {
-        peerBtn.classList.add('is-selected');
-        soloBtn.classList.remove('is-selected');
-      }
-    }
-  };
-
-  window.handleStudySessionSubmit = function (event, code, title) {
-    event.preventDefault();
-    const name = document.getElementById('sched-name')?.value || 'M.Tech Scholar';
-    const date = document.getElementById('sched-date')?.value || new Date().toISOString().split('T')[0];
-    const slot = document.getElementById('sched-slot')?.value || 'Morning Deep Focus (09:00 — 12:00)';
-    const topics = document.getElementById('sched-topics')?.value || 'Comprehensive Syllabus Revision';
-    const notes = document.getElementById('sched-notes')?.value || 'Focus on step-by-step derivations and examination questions.';
-
-    // Construct study payload
-    const payload = `🎓 CAS M.Tech CSE Revision Plan\nCourse: ${code} · ${title}\nScholar: ${name}\nTarget Date: ${date} (${slot})\nMode: ${activeStudyMode === 'solo' ? '🎧 Solo Deep Focus' : '👥 Peer Group Session'}\nModules: ${topics}\nNotes: ${notes}\nResource: ${location.href}`;
-    latestPayloadText = payload;
-
-    // Single QR Rendering Guarantee (Purge previous QR before re-rendering)
-    const qrFrame = document.getElementById('live-qr-frame');
-    const qrTarget = document.getElementById('live-qr-target');
-    const waBtn = document.getElementById('whatsapp-share-btn');
-
-    if (qrFrame && qrTarget && window.StudyDocket) {
-      qrTarget.innerHTML = '';
-      const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(payload)}`;
-      qrTarget.innerHTML = window.StudyDocket.generateQRCodeSVG(waUrl, 190);
-      if (waBtn) waBtn.href = waUrl;
-      qrFrame.style.display = 'flex';
-      qrFrame.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    // Open Native HTML5 Dialog
-    const dialog = document.getElementById('study-session-dialog');
-    const summary = document.getElementById('dialog-confirm-summary');
-    const icsBtn = document.getElementById('dialog-ics-btn');
-
-    if (dialog) {
-      if (summary) {
-        summary.innerHTML = `<strong>${name}</strong>, your revision block for <strong>${code}</strong> is locked for <strong>${date}</strong> (${slot}). Your mobile QR code is ready.`;
-      }
-      if (icsBtn) {
-        icsBtn.onclick = function () {
-          downloadRevisionICS(code, title, date, slot, topics);
-        };
-      }
-      if (typeof dialog.showModal === 'function') {
-        dialog.showModal();
-      } else {
-        dialog.setAttribute('open', '');
-      }
-    }
-  };
-
-  function downloadRevisionICS(code, title, dateStr, slot, topics) {
-    const cleanDate = dateStr.replace(/-/g, '');
-    const icsData = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//CAS AKTU//MTech CSE Study Companion//EN',
-      'BEGIN:VEVENT',
-      `UID:cas-study-${code}-${Date.now()}@cas.res.in`,
-      `DTSTAMP:${cleanDate}T090000Z`,
-      `DTSTART:${cleanDate}T090000Z`,
-      `DTEND:${cleanDate}T120000Z`,
-      `SUMMARY:M.Tech Study: ${code} (${title})`,
-      `DESCRIPTION:Revision Slot: ${slot}\\nModules: ${topics}\\nCurriculum: ${location.href}`,
-      'STATUS:CONFIRMED',
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ].join('\r\n');
-
-    const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = `Study-Session-${code}-${dateStr}.ics`;
-    link.click();
-    URL.revokeObjectURL(link.href);
-  }
-
-  window.copyRevisionPayload = function () {
-    if (latestPayloadText && navigator.clipboard) {
-      navigator.clipboard.writeText(latestPayloadText).then(() => {
-        alert('✓ Revision payload copied to clipboard!');
-      }).catch(() => {});
     }
   };
 
