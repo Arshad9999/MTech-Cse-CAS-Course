@@ -176,7 +176,7 @@ h3 {
   border-radius: var(--radius-pill);
   font-weight: 700;
   font-size: 0.88rem;
-  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.25);
+  box-shadow: 0 4px 14px rgba(74, 14, 23, 0.25);
   transition: all var(--transition-fast);
   border: none;
   cursor: pointer;
@@ -185,7 +185,7 @@ h3 {
 .button:hover {
   background: var(--color-accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.35);
+  box-shadow: 0 6px 20px rgba(74, 14, 23, 0.35);
 }
 
 .section {

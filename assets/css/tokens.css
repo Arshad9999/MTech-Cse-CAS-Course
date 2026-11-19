@@ -51,12 +51,12 @@
   --color-line-subtle: #ececef;
   --color-glass-border: rgba(0, 0, 0, 0.08);
 
-  /* Accents */
-  --color-accent: #0071e3;
-  --color-accent-hover: #0077ed;
-  --color-accent-soft: #edf5fe;
-  --color-accent-border: #b3d7fc;
-  --color-accent-text: #005bb5;
+  /* Accents — Primary Luxury Velvet Burgundy & Soft Rose-Gold Highlights */
+  --color-accent: #4a0e17;
+  --color-accent-hover: #61131f;
+  --color-accent-soft: #fdf6f7;
+  --color-accent-border: #edd5d9;
+  --color-accent-text: #4a0e17;
 
   --color-emerald: #0d7a3e;
   --color-emerald-soft: #edfcf2;
