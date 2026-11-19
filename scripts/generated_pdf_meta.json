@@ -1,0 +1,146 @@
+{
+  "MCSC-101": {
+    "title": "Analysis and Design of Algorithms Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MCSC-101-mcsc-101.pdf",
+    "path": "assets/docs/MCSC-101-mcsc-101.pdf",
+    "pages": 5,
+    "size": "6.6 KB",
+    "modules": [
+      "Unit 1: Network flows",
+      "Unit 2: Algorithm design",
+      "Unit 3: Intractability and approximation"
+    ]
+  },
+  "MCSC-102": {
+    "title": "Probability and Statistics Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MCSC-102-mcsc-102.pdf",
+    "path": "assets/docs/MCSC-102-mcsc-102.pdf",
+    "pages": 5,
+    "size": "7.1 KB",
+    "modules": [
+      "Unit 1: Events and probability rules",
+      "Unit 2: Random variables and discrete distributions",
+      "Unit 3: Continuous distributions, expectation and CLT",
+      "Unit 4: Simulation and Monte Carlo",
+      "Unit 5: Stochastic processes",
+      "Unit 6: Sampling, estimation and confidence intervals"
+    ]
+  },
+  "MCSC-104": {
+    "title": "Foundation of Machine Learning Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MCSC-104-mcsc-104.pdf",
+    "path": "assets/docs/MCSC-104-mcsc-104.pdf",
+    "pages": 5,
+    "size": "6.6 KB",
+    "modules": [
+      "Unit 1: Learning and validation",
+      "Unit 2: Regression and dimensionality reduction",
+      "Unit 3: Clustering and classification"
+    ]
+  },
+  "MMLC-201": {
+    "title": "Neural Networks and Evolutionary Algorithms Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MMLC-201-mmlc-201.pdf",
+    "path": "assets/docs/MMLC-201-mmlc-201.pdf",
+    "pages": 5,
+    "size": "6.4 KB",
+    "modules": [
+      "Unit 1: Neural networks",
+      "Unit 2: Evolutionary algorithms"
+    ]
+  },
+  "MMLC-202": {
+    "title": "Pattern Recognition Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MMLC-202-mmlc-202.pdf",
+    "path": "assets/docs/MMLC-202-mmlc-202.pdf",
+    "pages": 5,
+    "size": "7.1 KB",
+    "modules": [
+      "Unit 1: Learning problems and models",
+      "Unit 2: Bayesian, MAP and MDL frameworks",
+      "Unit 3: Parameter estimation and model families",
+      "Unit 4: Text and sequence models",
+      "Unit 5: Instance, rule and ensemble methods",
+      "Unit 6: Computational learning theory"
+    ]
+  },
+  "MCSE-202": {
+    "title": "Data Science Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MCSE-202-mcse-202.pdf",
+    "path": "assets/docs/MCSE-202-mcse-202.pdf",
+    "pages": 5,
+    "size": "6.3 KB",
+    "modules": [
+      "Unit 1: Data preparation",
+      "Unit 2: Modelling and evaluation"
+    ]
+  },
+  "MMLE-201": {
+    "title": "Big Data Analytics Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MMLE-201-mmle-201.pdf",
+    "path": "assets/docs/MMLE-201-mmle-201.pdf",
+    "pages": 5,
+    "size": "6.3 KB",
+    "modules": [
+      "Unit 1: Big-data processing",
+      "Unit 2: Analytics workflow"
+    ]
+  },
+  "MCSC-301": {
+    "title": "Research Methodology Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MCSC-301-mcsc-301.pdf",
+    "path": "assets/docs/MCSC-301-mcsc-301.pdf",
+    "pages": 5,
+    "size": "7.0 KB",
+    "modules": [
+      "Unit 1: Foundations and language of research",
+      "Unit 2: Problem identification and hypotheses",
+      "Unit 3: Research design",
+      "Unit 4: Qualitative and quantitative approaches",
+      "Unit 5: Measurement quality and levels",
+      "Unit 6: Sampling"
+    ]
+  },
+  "MCSC-302": {
+    "title": "Thesis / Dissertation I Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MCSC-302-mcsc-302.pdf",
+    "path": "assets/docs/MCSC-302-mcsc-302.pdf",
+    "pages": 5,
+    "size": "6.3 KB",
+    "modules": [
+      "Unit 1: Dissertation work",
+      "Unit 2: Supervision and assessment"
+    ]
+  },
+  "MCSC-401": {
+    "title": "Thesis / Dissertation II Master Study Notes",
+    "badge": "Official Master Study Notes",
+    "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+    "filename": "MCSC-401-mcsc-401.pdf",
+    "path": "assets/docs/MCSC-401-mcsc-401.pdf",
+    "pages": 5,
+    "size": "6.3 KB",
+    "modules": [
+      "Unit 1: Dissertation work",
+      "Unit 2: Supervision and assessment"
+    ]
+  }
+}

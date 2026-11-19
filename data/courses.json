@@ -43,7 +43,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Advanced Algorithm, MTCS102, 2017–18 (related course; not the CAS MCSC-101 paper)"
     },
     "estimatedHours": 27,
@@ -53,6 +53,20 @@
     "coordinates": {
       "x": -0.75,
       "y": 0.2
+    },
+    "downloadDoc": {
+      "title": "Analysis and Design of Algorithms Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MCSC-101-mcsc-101.pdf",
+      "path": "assets/docs/MCSC-101-mcsc-101.pdf",
+      "pages": 5,
+      "size": "6.6 KB",
+      "modules": [
+        "Unit 1: Network flows",
+        "Unit 2: Algorithm design",
+        "Unit 3: Intractability and approximation"
+      ]
     }
   },
   {
@@ -185,7 +199,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Probability and Statistics Examination Pattern (Verified Syllabus Questions)"
     },
     "estimatedHours": 72,
@@ -193,6 +207,23 @@
     "coordinates": {
       "x": -0.8,
       "y": 0.4
+    },
+    "downloadDoc": {
+      "title": "Probability and Statistics Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MCSC-102-mcsc-102.pdf",
+      "path": "assets/docs/MCSC-102-mcsc-102.pdf",
+      "pages": 5,
+      "size": "7.1 KB",
+      "modules": [
+        "Unit 1: Events and probability rules",
+        "Unit 2: Random variables and discrete distributions",
+        "Unit 3: Continuous distributions, expectation and CLT",
+        "Unit 4: Simulation and Monte Carlo",
+        "Unit 5: Stochastic processes",
+        "Unit 6: Sampling, estimation and confidence intervals"
+      ]
     }
   },
   {
@@ -325,7 +356,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Advanced Computer Networks Examination Pattern (MTCS102 Scheme)"
     },
     "estimatedHours": 81,
@@ -333,6 +364,22 @@
     "coordinates": {
       "x": 0.5,
       "y": -0.6
+    },
+    "downloadDoc": {
+      "title": "Advanced Computer Networks Master Study Dossier",
+      "badge": "Official 11-Page Master Dossier",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual · Network Protocols & Congestion Control",
+      "filename": "MCSC-103-Advanced-Computer-Networks.pdf",
+      "path": "assets/docs/MCSC-103-Advanced-Computer-Networks.pdf",
+      "pages": 11,
+      "size": "20 KB",
+      "modules": [
+        "Unit 1: Introduction to Network Architecture & Layering Principles",
+        "Unit 2: Congestion Control, TCP Reno vs BBR, and Queue Management",
+        "Unit 3: Routing Protocols, Link-State, BGP Path Vector & Software-Defined Networking",
+        "Unit 4: Quality of Service (QoS), IntServ, DiffServ, and Leaky/Token Bucket",
+        "Unit 5: Datacenter Networks (Fat-Tree, Clos), Multipath TCP & Exam Derivations"
+      ]
     }
   },
   {
@@ -379,7 +426,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MCSC-104 paper)"
     },
     "estimatedHours": 27,
@@ -389,6 +436,20 @@
     "coordinates": {
       "x": -0.3,
       "y": 0.7
+    },
+    "downloadDoc": {
+      "title": "Foundation of Machine Learning Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MCSC-104-mcsc-104.pdf",
+      "path": "assets/docs/MCSC-104-mcsc-104.pdf",
+      "pages": 5,
+      "size": "6.6 KB",
+      "modules": [
+        "Unit 1: Learning and validation",
+        "Unit 2: Regression and dimensionality reduction",
+        "Unit 3: Clustering and classification"
+      ]
     }
   },
   {
@@ -495,7 +556,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Discrete Mathematics & Graph Theory Examination Pattern"
     },
     "estimatedHours": 72,
@@ -503,6 +564,22 @@
     "coordinates": {
       "x": -0.85,
       "y": 0.1
+    },
+    "downloadDoc": {
+      "title": "Discrete Mathematics & Graph Theory Master Study Dossier",
+      "badge": "Official 10-Page Master Dossier",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual · Proofs, Combinatorics & Graph Invariants",
+      "filename": "MCSC-105-Discrete-Mathematics.pdf",
+      "path": "assets/docs/MCSC-105-Discrete-Mathematics.pdf",
+      "pages": 10,
+      "size": "17 KB",
+      "modules": [
+        "Unit 1: Propositional Logic, Quantifiers, and First-Order Predicates",
+        "Unit 2: Set Theory, Relations, Equivalence Classes & Posets",
+        "Unit 3: Algebraic Structures, Groups, Subgroups, Rings & Fields",
+        "Unit 4: Generating Functions, Recurrence Relations & Counting Techniques",
+        "Unit 5: Graph Theory, Eulerian/Hamiltonian Cycles, Planarity, Coloring & Trees"
+      ]
     }
   },
   {
@@ -636,7 +713,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Research Methodology Examination Pattern"
     },
     "estimatedHours": 30,
@@ -644,6 +721,22 @@
     "coordinates": {
       "x": 0.8473395616558455,
       "y": -0.14365001014258405
+    },
+    "downloadDoc": {
+      "title": "Pattern Recognition Master Study Dossier",
+      "badge": "Official 11-Page Master Dossier",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual · Statistical Classifiers & Dimensionality",
+      "filename": "MCSC-106-Pattern-Recognition.pdf",
+      "path": "assets/docs/MCSC-106-Pattern-Recognition.pdf",
+      "pages": 11,
+      "size": "20 KB",
+      "modules": [
+        "Unit 1: Bayesian Decision Theory, Discriminant Functions & Minimum Error Rate",
+        "Unit 2: Maximum Likelihood Estimation (MLE) & Bayesian Parameter Estimation",
+        "Unit 3: Non-Parametric Density Estimation (Parzen Windows, k-NN Classifiers)",
+        "Unit 4: Linear Discriminant Functions, Perceptron & Support Vector Machines (SVM)",
+        "Unit 5: Feature Extraction, PCA, Fisher Linear Discriminant (FLD) & Clustering"
+      ]
     }
   },
   {
@@ -807,7 +900,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Internet of Things Examination Pattern (2021–22 Scheme)"
     },
     "estimatedHours": 90,
@@ -817,6 +910,22 @@
     "coordinates": {
       "x": 0.7,
       "y": -0.3
+    },
+    "downloadDoc": {
+      "title": "Research Methodology Master Study Dossier",
+      "badge": "Official 12-Page Master Dossier",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual · Experimental Design & Literature Synthesis",
+      "filename": "MCSC-201-Research-Methodology.pdf",
+      "path": "assets/docs/MCSC-201-Research-Methodology.pdf",
+      "pages": 12,
+      "size": "22 KB",
+      "modules": [
+        "Unit 1: Research Objectives, Epistemological Foundations & Problem Formulation",
+        "Unit 2: Literature Review, Critical Analysis & Identification of Research Gaps",
+        "Unit 3: Research Design, Quantitative vs Qualitative Methods & Sampling Techniques",
+        "Unit 4: Data Collection, Hypothesis Testing, p-Values & Confidence Intervals",
+        "Unit 5: Scientific Ethics, Plagiarism Guidelines, IPR, Patents & Thesis Writing"
+      ]
     }
   },
   {
@@ -949,7 +1058,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Research Methodology Examination Pattern"
     },
     "estimatedHours": 30,
@@ -959,6 +1068,22 @@
     "coordinates": {
       "x": 0.8473395616558455,
       "y": -0.14365001014258405
+    },
+    "downloadDoc": {
+      "title": "Probability and Statistics Master Study Dossier",
+      "badge": "Official 10-Page Master Dossier",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual · Random Variables & Statistical Inference",
+      "filename": "MCSC-202-Probability-and-Statistics.pdf",
+      "path": "assets/docs/MCSC-202-Probability-and-Statistics.pdf",
+      "pages": 10,
+      "size": "18 KB",
+      "modules": [
+        "Unit 1: Sample Spaces, Axioms of Probability & Conditional Independence",
+        "Unit 2: Discrete & Continuous Random Variables, PMF, PDF & CDF",
+        "Unit 3: Expectation, Variance, Covariance & Moment Generating Functions",
+        "Unit 4: Central Limit Theorem (CLT), Chebyshev Inequality & Law of Large Numbers",
+        "Unit 5: Statistical Inference, Maximum Likelihood, Confidence Intervals & Hypothesis Testing"
+      ]
     }
   },
   {
@@ -1186,7 +1311,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 1,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Machine Learning, MTCS031, 2018–19 (related course; not the CAS MMLC-201 paper)"
     },
     "estimatedHours": 18,
@@ -1197,6 +1322,19 @@
     "coordinates": {
       "x": -0.2,
       "y": 0.85
+    },
+    "downloadDoc": {
+      "title": "Neural Networks and Evolutionary Algorithms Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MMLC-201-mmlc-201.pdf",
+      "path": "assets/docs/MMLC-201-mmlc-201.pdf",
+      "pages": 5,
+      "size": "6.4 KB",
+      "modules": [
+        "Unit 1: Neural networks",
+        "Unit 2: Evolutionary algorithms"
+      ]
     }
   },
   {
@@ -1330,7 +1468,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Pattern Recognition Examination Pattern"
     },
     "estimatedHours": 81,
@@ -1340,6 +1478,23 @@
     "coordinates": {
       "x": 0.19574329864935275,
       "y": 0.44907498816698527
+    },
+    "downloadDoc": {
+      "title": "Pattern Recognition Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MMLC-202-mmlc-202.pdf",
+      "path": "assets/docs/MMLC-202-mmlc-202.pdf",
+      "pages": 5,
+      "size": "7.1 KB",
+      "modules": [
+        "Unit 1: Learning problems and models",
+        "Unit 2: Bayesian, MAP and MDL frameworks",
+        "Unit 3: Parameter estimation and model families",
+        "Unit 4: Text and sequence models",
+        "Unit 5: Instance, rule and ensemble methods",
+        "Unit 6: Computational learning theory"
+      ]
     }
   },
   {
@@ -1632,7 +1787,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Data Science & Analytics Examination Pattern"
     },
     "estimatedHours": 18,
@@ -1643,6 +1798,19 @@
     "coordinates": {
       "x": 0,
       "y": 0.65
+    },
+    "downloadDoc": {
+      "title": "Data Science Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MCSE-202-mcse-202.pdf",
+      "path": "assets/docs/MCSE-202-mcse-202.pdf",
+      "pages": 5,
+      "size": "6.3 KB",
+      "modules": [
+        "Unit 1: Data preparation",
+        "Unit 2: Modelling and evaluation"
+      ]
     }
   },
   {
@@ -1766,7 +1934,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Big Data Analytics Examination Pattern"
     },
     "estimatedHours": 18,
@@ -1776,6 +1944,19 @@
     "coordinates": {
       "x": 0.19574329864935275,
       "y": 0.44907498816698527
+    },
+    "downloadDoc": {
+      "title": "Big Data Analytics Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MMLE-201-mmle-201.pdf",
+      "path": "assets/docs/MMLE-201-mmle-201.pdf",
+      "pages": 5,
+      "size": "6.3 KB",
+      "modules": [
+        "Unit 1: Big-data processing",
+        "Unit 2: Analytics workflow"
+      ]
     }
   },
   {
@@ -2026,7 +2207,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "AKTU M.Tech Research Process and Methodology, MTCC101, 2017–18 (related course; not the CAS MCSC-301 paper)"
     },
     "estimatedHours": 90,
@@ -2034,6 +2215,23 @@
     "coordinates": {
       "x": 0.8473395616558455,
       "y": -0.14365001014258405
+    },
+    "downloadDoc": {
+      "title": "Research Methodology Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MCSC-301-mcsc-301.pdf",
+      "path": "assets/docs/MCSC-301-mcsc-301.pdf",
+      "pages": 5,
+      "size": "7.0 KB",
+      "modules": [
+        "Unit 1: Foundations and language of research",
+        "Unit 2: Problem identification and hypotheses",
+        "Unit 3: Research design",
+        "Unit 4: Qualitative and quantitative approaches",
+        "Unit 5: Measurement quality and levels",
+        "Unit 6: Sampling"
+      ]
     }
   },
   {
@@ -2071,7 +2269,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "CAS AKTU M.Tech Thesis & Dissertation Defense Evaluation Rubric"
     },
     "estimatedHours": 90,
@@ -2081,6 +2279,19 @@
     "coordinates": {
       "x": 0.8473395616558455,
       "y": -0.14365001014258405
+    },
+    "downloadDoc": {
+      "title": "Thesis / Dissertation I Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MCSC-302-mcsc-302.pdf",
+      "path": "assets/docs/MCSC-302-mcsc-302.pdf",
+      "pages": 5,
+      "size": "6.3 KB",
+      "modules": [
+        "Unit 1: Dissertation work",
+        "Unit 2: Supervision and assessment"
+      ]
     }
   },
   {
@@ -2718,7 +2929,7 @@
     "hasGuide": true,
     "hasPyq": true,
     "pyqDetails": {
-      "questionsCount": 2,
+      "questionsCount": 3,
       "source": "CAS AKTU M.Tech Thesis & Dissertation Defense Evaluation Rubric"
     },
     "estimatedHours": 180,
@@ -2728,6 +2939,19 @@
     "coordinates": {
       "x": 0.8473395616558455,
       "y": -0.14365001014258405
+    },
+    "downloadDoc": {
+      "title": "Thesis / Dissertation II Master Study Notes",
+      "badge": "Official Master Study Notes",
+      "subtitle": "Complete Curriculum Guide & Academic Reference Manual * Postgraduate Scheme 2021-22",
+      "filename": "MCSC-401-mcsc-401.pdf",
+      "path": "assets/docs/MCSC-401-mcsc-401.pdf",
+      "pages": 5,
+      "size": "6.3 KB",
+      "modules": [
+        "Unit 1: Dissertation work",
+        "Unit 2: Supervision and assessment"
+      ]
     }
   }
 ]

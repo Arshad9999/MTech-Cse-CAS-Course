@@ -1,207 +1,328 @@
 {
   "MCSC-101": [
     {
-      "question": "What is the theoretical amortized time complexity of the Decrease-Key operation in a Fibonacci Heap?",
+      "question": "In the Max-Flow Min-Cut Theorem, what is the fundamental relationship between the maximum flow value from source s to sink t and the capacities of s-t cuts in a directed flow network?",
       "options": [
-        "O(1) amortized",
-        "O(log n) worst-case",
-        "O(n) worst-case",
-        "O(log log n)"
+        "The maximum flow value strictly exceeds the capacity of every s-t cut.",
+        "The maximum flow value is equal to the minimum capacity among all s-t cuts separating s and t.",
+        "The maximum flow is equal to the average capacity of all directed edges.",
+        "The minimum cut capacity is half of the maximum flow due to conservation constraints."
       ],
-      "answer": 0,
-      "explanation": "Fibonacci Heaps achieve O(1) amortized time for Decrease-Key using cascading cuts, which is crucial for speeding up Dijkstra and Prim algorithms to O(E + V log V)."
+      "correctIndex": 1,
+      "explanation": "The Max-Flow Min-Cut theorem states that the maximum amount of flow passing from source s to sink t is exactly equal to the minimum capacity among all cuts in the network that separate s from t."
     },
     {
-      "question": "In the Ford-Fulkerson method, what condition guarantees that maximum source-to-sink flow has been achieved?",
+      "question": "What is the tightest worst-case time complexity of the Edmonds-Karp algorithm for computing maximum network flow on a graph with V vertices and E edges?",
       "options": [
-        "All forward edges are saturated",
-        "No augmenting path exists from source to sink in the residual graph",
-        "The source has zero residual capacity",
-        "Flow equals sum of edge capacities"
+        "O(V * E^2)",
+        "O(V^2 * E)",
+        "O(V^3)",
+        "O(E * log V)"
       ],
-      "answer": 1,
-      "explanation": "By the Max-Flow Min-Cut theorem, a flow is maximum if and only if there are no directed augmenting paths in the residual network from source s to sink t."
+      "correctIndex": 0,
+      "explanation": "The Edmonds-Karp algorithm implements the Ford-Fulkerson method using Breadth-First Search (BFS) to select the shortest augmenting path. In the worst case, each augmenting step takes O(E) time and the number of augmentations is at most O(V * E), yielding a total runtime of O(V * E^2)."
     },
     {
-      "question": "What is the approximation ratio achieved by taking both endpoints of edges in a maximal matching for Vertex Cover?",
+      "question": "When solving the 0/1 Knapsack Problem with capacity W and N items, why is the dynamic programming algorithm with running time O(N * W) classified as pseudo-polynomial rather than polynomial?",
       "options": [
-        "1.5",
-        "2.0",
-        "log n",
-        "1 + epsilon"
+        "Because the algorithm relies on probabilistic random choices during table fill.",
+        "Because the input size depends on the number of bits required to represent W (log2 W), making the running time exponential in the input length of W.",
+        "Because it only works when weights are fractional numbers.",
+        "Because the space complexity cannot be reduced below O(N^2)."
       ],
-      "answer": 1,
-      "explanation": "Since any valid vertex cover must select at least one endpoint from each disjoint matching edge, selecting both endpoints yields at most 2 * |OPT|, giving a 2-approximation."
+      "correctIndex": 1,
+      "explanation": "The parameter W is an integer value whose bit-length representation is L = floor(log2 W) + 1. An algorithm running in time O(N * 2^L) is exponential in the input size L, which defines a pseudo-polynomial time complexity."
+    },
+    {
+      "question": "In randomized algorithm analysis, how do Las Vegas algorithms differ fundamentally from Monte Carlo algorithms?",
+      "options": [
+        "Las Vegas algorithms always return the correct answer but have randomized runtime; Monte Carlo algorithms run in deterministic time but have a bounded probability of producing an incorrect answer.",
+        "Monte Carlo algorithms are always deterministic, whereas Las Vegas algorithms use quantum random seeds.",
+        "Las Vegas algorithms only apply to graph theory, while Monte Carlo applies to sorting.",
+        "Monte Carlo algorithms guarantee zero error probability at the expense of infinite loops."
+      ],
+      "correctIndex": 0,
+      "explanation": "A Las Vegas algorithm always produces a correct result (e.g., Randomized QuickSort), but its running time is a random variable. A Monte Carlo algorithm runs within a deterministic time bound, but has a bounded probability of error (e.g., Miller-Rabin Primality Test)."
     }
   ],
   "MCSC-102": [
     {
-      "question": "What happens to the power of a hypothesis test (1 - beta) as sample size n increases while keeping significance level alpha constant?",
+      "question": "For two continuous random variables X and Y with joint probability density function f(x, y), under what condition are X and Y statistically independent?",
       "options": [
-        "Decreases",
-        "Increases",
-        "Remains unchanged",
-        "Fluctuates randomly"
+        "Cov(X, Y) = 0 and Var(X) = Var(Y).",
+        "f(x, y) = f_X(x) * f_Y(y) for all values of x and y, where f_X and f_Y are the marginal densities.",
+        "E[X + Y] = E[X] + E[Y].",
+        "P(X > Y) = 0.5."
       ],
-      "answer": 1,
-      "explanation": "Increasing sample size reduces the standard error of the estimator, narrowing the sampling distribution and increasing the probability of correctly rejecting a false null hypothesis."
+      "correctIndex": 1,
+      "explanation": "Statistical independence requires that the joint density factorizes completely into the product of the marginal densities for all points (x, y): f(x, y) = f_X(x) * f_Y(y). Zero covariance is a necessary but not sufficient condition for independence (unless variables are jointly Gaussian)."
     },
     {
-      "question": "Under Bayes Theorem, which term represents the updated probability of a hypothesis after observing empirical evidence?",
+      "question": "In statistical hypothesis testing, what constitutes a Type I error (alpha) versus a Type II error (beta)?",
       "options": [
-        "Likelihood",
-        "Prior probability",
-        "Posterior probability",
-        "Marginal evidence"
+        "Type I error is rejecting a true null hypothesis (false alarm); Type II error is failing to reject a false null hypothesis (missed detection).",
+        "Type I error is calculating wrong variance; Type II error is sample bias.",
+        "Type I error occurs in continuous distributions; Type II error occurs in discrete distributions.",
+        "Type I error is accepting the alternative hypothesis when it is true."
       ],
-      "answer": 2,
-      "explanation": "Posterior probability P(H | E) = P(E | H) * P(H) / P(E) represents the revised belief in hypothesis H after observing evidence E."
+      "correctIndex": 0,
+      "explanation": "A Type I error (significance level alpha) occurs when a true null hypothesis H0 is incorrectly rejected. A Type II error (beta) occurs when a false null hypothesis H0 is not rejected. The statistical power is 1 - beta."
+    },
+    {
+      "question": "According to the Central Limit Theorem (CLT), what happens to the sampling distribution of the sample mean X_bar as sample size n grows large, assuming independent samples with mean mu and finite variance sigma^2?",
+      "options": [
+        "The sample mean becomes uniformly distributed between 0 and 1.",
+        "The distribution of sqrt(n) * (X_bar - mu) / sigma converges in distribution to a standard Normal distribution N(0, 1), regardless of the original population shape.",
+        "The variance of the sample mean increases proportionally to sqrt(n).",
+        "The distribution collapses to a Dirac delta function at zero."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Central Limit Theorem guarantees that the normalized sum of independent and identically distributed (i.i.d.) random variables with finite mean mu and variance sigma^2 approaches a standard normal distribution N(0, 1) as n -> infinity."
     }
   ],
   "MCSC-103": [
     {
-      "question": "In TCP Congestion Control, what action does the sender take immediately upon receiving 3 duplicate ACKs?",
+      "question": "In Software-Defined Networking (SDN), how does the architecture fundamentally differ from traditional routing architectures?",
       "options": [
-        "Drop cwnd to 1 MSS and enter Slow Start",
-        "Fast Retransmit the missing packet and enter Fast Recovery",
-        "Double ssthresh",
-        "Terminate connection"
+        "SDN replaces physical Ethernet cables with wireless optical links.",
+        "SDN completely decouples the control plane (routing intelligence and policy) from the data plane (packet forwarding engines), centralizing control in a programmable controller.",
+        "SDN eliminates the need for IP addressing by using MAC-only switching.",
+        "SDN restricts all network traffic strictly to TCP port 80."
       ],
-      "answer": 1,
-      "explanation": "Three duplicate ACKs indicate segment loss without full timeout. Fast Retransmit retransmits the missing packet immediately and Fast Recovery sets ssthresh = cwnd / 2 without restarting from 1 MSS."
+      "correctIndex": 1,
+      "explanation": "SDN separates the network control plane (deciding where traffic is sent) from the underlying data plane (forwarding traffic to the specified destination), allowing network operators to manage traffic programmatically via protocols such as OpenFlow."
     },
     {
-      "question": "How does BGP (Border Gateway Protocol) fundamentally prevent routing loops between Autonomous Systems (AS)?",
+      "question": "What is the primary operational mechanism of the Token Bucket algorithm compared to the Leaky Bucket algorithm in network traffic shaping?",
       "options": [
-        "Split horizon with poison reverse",
-        "AS-PATH attribute checking",
-        "Dijkstra shortest path calculation",
-        "Hop count limit of 15"
+        "Token Bucket allows bursty transmissions up to the bucket capacity if tokens are accumulated; Leaky Bucket forces traffic out at a strictly uniform constant rate.",
+        "Token Bucket discards all packets exceeding average bandwidth immediately.",
+        "Leaky Bucket requires quantum encryption for each packet header.",
+        "Token Bucket only operates at Layer 2 (Data Link Layer)."
       ],
-      "answer": 1,
-      "explanation": "BGP is a path-vector protocol where route advertisements include the entire AS-PATH sequence. If a router sees its own AS number in AS-PATH, it discards the advertisement."
+      "correctIndex": 0,
+      "explanation": "The Token Bucket algorithm accumulates tokens at a constant rate, allowing sudden traffic bursts up to the capacity of the bucket when tokens are available. The Leaky Bucket outputs packets at a fixed constant rate, smoothing out all bursts."
+    },
+    {
+      "question": "In TCP congestion control, how does TCP BBR (Bottleneck Bandwidth and RTT) differ from traditional loss-based algorithms like TCP Reno or Cubic?",
+      "options": [
+        "BBR deliberately injects random drops to probe link buffers.",
+        "BBR models the physical network by measuring bottleneck bandwidth (BtlBw) and minimum round-trip time (RTprop) simultaneously, preventing bufferbloat rather than relying on packet loss as a congestion indicator.",
+        "BBR disables acknowledgments (ACKs) to boost streaming speed.",
+        "BBR only operates over satellite links with latency exceeding 500ms."
+      ],
+      "correctIndex": 1,
+      "explanation": "Loss-based algorithms (Reno, Cubic) fill router queues until packet loss occurs, causing latency bufferbloat. BBR dynamically measures both the bottleneck link rate and propagation delay, keeping queues near empty for optimal throughput and low latency."
     }
   ],
   "MCSC-104": [
     {
-      "question": "In Support Vector Machines (SVM), what mathematical principle determines the optimal separating hyperplane?",
+      "question": "In Support Vector Machines (SVM), what is the geometric definition and mathematical significance of the \"Support Vectors\"?",
       "options": [
-        "Minimizing training cross-entropy",
-        "Maximizing the geometric margin 2 / ||w||",
-        "Maximizing feature variance",
-        "Minimizing number of support vectors"
+        "Support vectors are all training samples classified incorrectly by the hyperplane.",
+        "Support vectors are the critical data points that lie exactly on the marginal hyperplanes (w^T x + b = +-1); the optimal decision boundary depends exclusively upon these points.",
+        "Support vectors are the centroid vectors of each class cluster.",
+        "Support vectors represent the dimensions dropped during PCA dimensionality reduction."
       ],
-      "answer": 1,
-      "explanation": "The optimal hyperplane maximizes the functional margin between nearest data points of opposing classes, equivalent to minimizing (1/2) ||w||^2 subject to margin constraints."
+      "correctIndex": 1,
+      "explanation": "Support vectors are the closest points to the separating hyperplane lying on the margins. Removing non-support vector data points does not alter the resulting maximum-margin decision boundary."
     },
     {
-      "question": "How does high model complexity affect the Bias and Variance components of generalization error?",
+      "question": "When deriving the Bias-Variance decomposition of Mean Squared Error, what does the variance term specifically represent?",
       "options": [
-        "High Bias, Low Variance",
-        "Low Bias, High Variance",
-        "Both Bias and Variance increase",
-        "Both Bias and Variance decrease"
+        "The intrinsic stochastic noise present in the true data generation process.",
+        "The sensitivity of the learned hypothesis to the specific random training dataset sampled from the population.",
+        "The systematic error caused by overly restrictive model assumptions.",
+        "The computational time required for gradient descent convergence."
       ],
-      "answer": 1,
-      "explanation": "Complex models fit training data closely (low bias) but become sensitive to small fluctuations in training samples (high variance / overfitting)."
+      "correctIndex": 1,
+      "explanation": "Variance measures how much the predicted function f_hat(x; D) fluctuates when trained across different hypothetical training sets D drawn from the underlying distribution. High variance leads to overfitting."
+    },
+    {
+      "question": "Why does applying the \"Kernel Trick\" in Support Vector Machines allow linear algorithms to discover non-linear decision boundaries efficiently?",
+      "options": [
+        "It computes the inner product in a high-dimensional feature space K(x, z) = <phi(x), phi(z)> directly without explicitly mapping data points into the expensive high-dimensional space.",
+        "It reduces the number of training samples by 50% using random sampling.",
+        "It transforms non-convex loss surfaces into strictly convex quadratic programs.",
+        "It replaces matrix inversions with scalar divisions."
+      ],
+      "correctIndex": 0,
+      "explanation": "Mercer's theorem enables SVMs to evaluate inner products in an implicit, potentially infinite-dimensional Hilbert space through kernel functions (such as RBF/Gaussian), bypassing the computational cost of explicit transformation phi(x)."
     }
   ],
   "MCSC-105": [
     {
-      "question": "According to the Handshaking Lemma, what must be true about the number of vertices with odd degree in any undirected graph?",
+      "question": "What is Euler's Formula for any connected planar graph with V vertices, E edges, and F faces (regions including the infinite exterior face)?",
       "options": [
-        "Must be zero",
-        "Must be even",
-        "Must be odd",
-        "Equal to number of edges"
+        "V - E + F = 2",
+        "V + E - F = 2",
+        "V * F = 2 * E",
+        "E = 3V - 6 for all graphs"
       ],
-      "answer": 1,
-      "explanation": "Since the sum of all vertex degrees is 2 * |E| (an even number), the sum of odd degrees must also be even, meaning there must always be an even number of odd-degree vertices."
+      "correctIndex": 0,
+      "explanation": "Euler's formula for connected planar graphs states that V - E + F = 2. A direct corollary shows that for simple planar graphs with V >= 3, E <= 3V - 6."
     },
     {
-      "question": "What is the necessary and sufficient condition for a connected undirected graph to have an Eulerian circuit?",
+      "question": "What is the necessary and sufficient condition for a connected undirected graph G to contain an Eulerian Circuit (a closed walk visiting every edge exactly once)?",
       "options": [
-        "Every vertex has odd degree",
-        "Every vertex has even degree",
-        "Graph is a tree",
-        "Graph is bipartite"
+        "The graph must be a tree with no cycles.",
+        "Every vertex in the graph must have an even degree.",
+        "The graph must be 3-colorable.",
+        "The number of vertices must be a prime number."
       ],
-      "answer": 1,
-      "explanation": "Euler proved that a connected graph has a closed Eulerian circuit traversing every edge exactly once if and only if every single vertex has an even degree."
+      "correctIndex": 1,
+      "explanation": "Euler proved that a connected undirected graph has an Eulerian circuit if and only if every vertex has an even degree. If exactly two vertices have odd degree, it contains an Eulerian path but not a circuit."
+    },
+    {
+      "question": "By the Handshaking Lemma, what is the exact relationship between the sum of degrees of all vertices in any finite undirected graph and its total number of edges E?",
+      "options": [
+        "sum_{v in V} deg(v) = E",
+        "sum_{v in V} deg(v) = 2 * E",
+        "sum_{v in V} deg(v) = E^2",
+        "sum_{v in V} deg(v) = V * E"
+      ],
+      "correctIndex": 1,
+      "explanation": "Every edge has two endpoints, contributing exactly 1 to the degree of each incident vertex. Thus, sum_{v in V} deg(v) = 2E. A direct consequence is that every graph contains an even number of vertices with odd degree."
     }
   ],
   "MCSC-201": [
     {
-      "question": "Which MQTT Quality of Service (QoS) level guarantees that a message is delivered exactly once without duplicates?",
+      "question": "In IoT communication architectures, why is MQTT (Message Queuing Telemetry Transport) preferred over HTTP for resource-constrained sensor nodes?",
       "options": [
-        "QoS 0",
-        "QoS 1",
-        "QoS 2",
-        "QoS 3"
+        "MQTT uses XML formatting for maximum payload verbosity.",
+        "MQTT utilizes a lightweight publish-subscribe model with a tiny 2-byte fixed header, persistent TCP connections, and configurable Quality of Service (QoS 0, 1, 2) levels.",
+        "HTTP cannot transmit numeric sensor telemetry.",
+        "MQTT eliminates the need for IP networking."
       ],
-      "answer": 2,
-      "explanation": "QoS 2 uses a 4-step two-level handshake (PUBLISH, PUBREC, PUBREL, PUBCOMP) to ensure that the message is received exactly once without duplication."
+      "correctIndex": 1,
+      "explanation": "MQTT is designed for constrained networks with limited bandwidth and battery life. Its binary 2-byte header and pub-sub broker architecture drastically reduce communication overhead compared to bulky HTTP request/response headers."
     },
     {
-      "question": "Why is UDP preferred over TCP as the underlying transport layer for CoAP in constrained sensor networks?",
+      "question": "What is the role of 6LoWPAN in the IoT networking stack?",
       "options": [
-        "UDP supports automatic routing",
-        "Lower protocol header overhead and zero connection handshake latency",
-        "UDP has built-in encryption",
-        "UDP supports flow control natively"
+        "It encrypts web passwords using biometric scanning.",
+        "It enables standard IPv6 packets to be encapsulated and transmitted over low-power wireless personal area networks (IEEE 802.15.4) using header compression and fragmentation.",
+        "It converts analog sensor voltages into audio frequencies.",
+        "It provides cloud database storage for sensor readings."
       ],
-      "answer": 1,
-      "explanation": "CoAP runs over UDP with a compact 4-byte header to eliminate TCP connection setup packets and SYN/ACK handshakes, preserving sensor battery and memory."
+      "correctIndex": 1,
+      "explanation": "6LoWPAN (IPv6 over Low-Power Wireless Personal Area Networks) defines header compression and adaptation mechanisms so that 128-bit IPv6 packets can fit into the small 127-byte frame limit of IEEE 802.15.4 radio links."
+    },
+    {
+      "question": "In edge computing architectures for IoT, what is the primary technical rationale for performing inference at the gateway rather than forwarding all raw data to the cloud?",
+      "options": [
+        "Edge gateways have infinite processing power compared to data centers.",
+        "Edge processing minimizes network uplink bandwidth consumption, reduces latency for real-time actuation, and preserves local privacy.",
+        "Cloud providers prohibit the transmission of camera feeds.",
+        "Edge devices do not require electricity."
+      ],
+      "correctIndex": 1,
+      "explanation": "Edge computing filters and processes high-frequency sensor streams locally, avoiding massive cellular/uplink bandwidth costs, achieving sub-millisecond control loop response, and keeping sensitive telemetry on-premise."
     }
   ],
   "MMLC-201": [
     {
-      "question": "What causes the vanishing gradient problem when using Sigmoid activation functions in deep neural networks?",
+      "question": "In Genetic Algorithms (GAs), what is the function of the \"Crossover\" operator versus the \"Mutation\" operator?",
       "options": [
-        "Maximum derivative of sigmoid is only 0.25",
-        "Weights are initialized too small",
-        "Learning rate is too large",
-        "Dead neuron saturation"
+        "Crossover exploits existing high-fitness building blocks by combining parental genomes; Mutation explores new regions of the search space and prevents premature genetic convergence.",
+        "Crossover deletes invalid chromosomes; Mutation calculates the objective function.",
+        "Mutation is only applied in binary strings, while Crossover is applied in real numbers.",
+        "Crossover prevents gradient vanishing in deep neural networks."
       ],
-      "answer": 0,
-      "explanation": "The derivative of sigmoid is sigma(z) * (1 - sigma(z)), which peaks at 0.25. When multiplying many gradients across deep layers by values <= 0.25, the backpropagated gradient shrinks exponentially toward zero."
+      "correctIndex": 0,
+      "explanation": "Crossover (recombination) is an exploitation operator that combines sub-solutions from fit parents. Mutation is an exploration operator that randomly perturbs alleles, maintaining diversity and preventing the population from trapping in local optima."
     },
     {
-      "question": "How do Residual Connections (Skip Connections) in ResNets resolve vanishing gradients in networks with 50+ layers?",
+      "question": "What is the Schema Theorem (Holland's Fundamental Theorem of Genetic Algorithms)?",
       "options": [
-        "They scale down network weights",
-        "They provide an identity path allowing gradients to flow back unaltered",
-        "They eliminate activation functions",
-        "They replace backpropagation with genetic algorithms"
+        "It states that genetic algorithms always converge in exactly 100 generations.",
+        "Short, low-order schemata with above-average fitness receive exponentially increasing trials in subsequent generations.",
+        "Every chromosome must contain an equal number of zeros and ones.",
+        "Mutations must occur with probability 1.0."
       ],
-      "answer": 1,
-      "explanation": "By computing F(x) + x, the gradient dLoss/dx = dLoss/dF * dF/dx + dLoss/dF * 1. The additive +1 term ensures gradient signals can flow directly to early layers without decay."
+      "correctIndex": 1,
+      "explanation": "Holland's Schema Theorem proves that short, low-order schemata with above-average observed fitness grow exponentially in the population under reproduction, crossover, and mutation."
+    },
+    {
+      "question": "In Radial Basis Function (RBF) neural networks, how does the hidden layer processing fundamentally differ from a standard Multi-Layer Perceptron (MLP)?",
+      "options": [
+        "RBF hidden units compute Euclidean distance from a center vector ||x - c_i|| passed through a localized Gaussian kernel, rather than an affine projection w^T x + b.",
+        "RBF networks require backpropagation through time.",
+        "MLPs only work for binary inputs, while RBF only works for image data.",
+        "RBF networks cannot perform regression."
+      ],
+      "correctIndex": 0,
+      "explanation": "MLP neurons construct global hyperplanes via inner products w^T x + b. RBF hidden units measure distance to local prototypes phi(||x - c_i||), producing localized receptive fields with fast linear output layer training."
     }
   ],
   "MCSE-202": [
     {
-      "question": "Why does L1 Lasso regularization lead to sparse models while L2 Ridge regularization does not?",
+      "question": "In exploratory data analysis and predictive modeling, what is the consequence of Multi-collinearity among predictor variables in Linear Regression?",
       "options": [
-        "L1 penalty has sharp corners at parameter axes where optimal contours intersect",
-        "L1 uses quadratic optimization",
-        "L2 eliminates multi-collinearity completely",
-        "L1 is non-convex"
+        "The R^2 score automatically drops to zero.",
+        "The matrix (X^T X) becomes ill-conditioned or non-invertible, causing coefficient estimates to become unstable with inflated standard errors.",
+        "Gradient descent converges in a single iteration.",
+        "Residuals are guaranteed to follow a uniform distribution."
       ],
-      "answer": 0,
-      "explanation": "The L1 diamond-shaped constraint region has sharp corners on the coordinate axes. The elliptical contours of the error function are likely to hit these corners first, setting coefficients strictly to zero."
+      "correctIndex": 1,
+      "explanation": "High multi-collinearity means predictor columns are linearly dependent. This causes (X^T X) to have near-zero eigenvalues, making matrix inversion numerically unstable and parameter estimates sensitive to small data perturbations."
+    },
+    {
+      "question": "What is the primary operational distinction between Bagging (e.g., Random Forests) and Boosting (e.g., Gradient Boosting / XGBoost)?",
+      "options": [
+        "Bagging trains multiple base models independently in parallel on bootstrap samples to reduce variance; Boosting trains base models sequentially where each new model focuses on residuals of prior models to reduce bias.",
+        "Boosting can only use linear models, whereas Bagging only uses neural networks.",
+        "Bagging is supervised, while Boosting is completely unsupervised.",
+        "Boosting does not use loss functions."
+      ],
+      "correctIndex": 0,
+      "explanation": "Bagging reduces variance by averaging independent trees trained on bootstrap samples. Boosting reduces bias and variance sequentially by fitting weak learners to pseudo-residuals via gradient descent."
+    },
+    {
+      "question": "Why is the Area Under the Receiver Operating Characteristic curve (ROC-AUC) preferred over Accuracy when evaluating classification on heavily imbalanced datasets?",
+      "options": [
+        "Accuracy can be deceptively high (e.g., 99%) simply by predicting the majority class for all instances, whereas ROC-AUC evaluates the true positive rate versus false positive rate across all decision thresholds.",
+        "ROC-AUC only applies when data is completely missing.",
+        "Accuracy cannot be calculated on binary predictions.",
+        "ROC-AUC requires no test labels."
+      ],
+      "correctIndex": 0,
+      "explanation": "In heavily skewed datasets (e.g., 1% positive cases in fraud detection), a naive majority classifier achieves 99% accuracy but 0.50 AUC. ROC-AUC evaluates discriminative ranking capacity independent of prior class distribution."
     }
   ],
   "MMLE-201": [
     {
-      "question": "In Apache Spark, which of the following operations is considered a Wide Transformation that triggers a shuffle stage boundary?",
+      "question": "In distributed computing frameworks such as Apache Spark, what is a Resilient Distributed Dataset (RDD) and how does it achieve fault tolerance without full data replication?",
       "options": [
-        "map()",
-        "filter()",
-        "flatMap()",
-        "groupByKey()"
+        "RDDs store copies of every partition on all worker nodes simultaneously.",
+        "RDDs maintain a deterministic Lineage Graph (DAG of transformations); if a partition is lost, it is recomputed on another worker from the source data.",
+        "RDDs write all intermediate shuffle operations directly to tape drives.",
+        "RDDs are mutable tables that support SQL transactions."
       ],
-      "answer": 3,
-      "explanation": "groupByKey() requires data with the same key from multiple partitions across the entire cluster to be redistributed over the network, creating a shuffle dependency and new stage boundary."
+      "correctIndex": 1,
+      "explanation": "RDD fault tolerance relies on lineage rather than replication: each RDD remembers the graph of deterministic transformations used to build it. If a partition fails, Spark recomputes only the lost partition from parent RDDs."
+    },
+    {
+      "question": "In MapReduce computation, what occurs during the \"Shuffle and Sort\" phase between the Map phase and the Reduce phase?",
+      "options": [
+        "Input files are randomly renamed in HDFS.",
+        "Framework partitions intermediate key-value pairs produced by mappers, transfers them across the network, and groups all values associated with each unique key before invoking the reducer.",
+        "Worker nodes are rebooted to free up memory.",
+        "Data is compressed using JPEG encoding."
+      ],
+      "correctIndex": 1,
+      "explanation": "The Shuffle and Sort phase is the communication backbone of MapReduce: it hashes intermediate keys to partition them across reducers, transfers data over the network, and sorts values by key so that each reducer receives (key, list(values))."
+    },
+    {
+      "question": "According to the CAP Theorem for distributed data stores, what three properties cannot all be simultaneously guaranteed in the presence of a network partition?",
+      "options": [
+        "Capacity, Architecture, and Performance.",
+        "Consistency, Availability, and Partition Tolerance.",
+        "Concurrency, Atomicity, and Persistence.",
+        "Cost, Accuracy, and Privacy."
+      ],
+      "correctIndex": 1,
+      "explanation": "Brewer's CAP theorem proves that in an asynchronous distributed data store with potential network partitions (P), a system must trade off between returning the most recent write (Consistency - C) or returning non-error responses (Availability - A)."
     }
   ],
   "MMLC-301": [
@@ -298,28 +419,72 @@
   ],
   "MCSC-106": [
     {
-      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "question": "In academic postgraduate research methodology, what is the primary purpose of conducting a systematic literature review prior to proposing a technical contribution?",
       "options": [
-        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
-        "Clusters always prioritize Consistency over Availability",
-        "Partition tolerance is optional",
-        "Latency scales logarithmically with node count"
+        "To copy experimental baselines without attribution.",
+        "To identify unresolved research gaps, benchmark state-of-the-art limitations, and ground the technical problem statement in established academic literature.",
+        "To increase the word count of the final thesis dossier.",
+        "To avoid having to implement mathematical algorithms."
       ],
-      "answer": 0,
-      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+      "correctIndex": 1,
+      "explanation": "A systematic literature review maps existing methodologies, reveals open challenges, prevents redundant rediscovery, and establishes the baseline comparisons needed to evaluate new research contributions."
+    },
+    {
+      "question": "What distinguishes a genuine research problem statement from an ordinary software engineering implementation task?",
+      "options": [
+        "Research problems require writing code strictly in C++.",
+        "A research problem addresses an unknown question involving open theoretical or empirical uncertainty, requiring hypothesis formulation, rigorous validation, and generalizable insight.",
+        "Software engineering tasks never require performance testing.",
+        "Research problems do not require empirical results."
+      ],
+      "correctIndex": 1,
+      "explanation": "A research problem formulates a scientific question whose answer is not already documented, requiring structured inquiry, hypothesis testing, and rigorous proof or benchmark evaluation."
+    },
+    {
+      "question": "In empirical computer science research, why is statistical significance testing (e.g., p-value < 0.05 or confidence intervals) essential when comparing algorithm performance?",
+      "options": [
+        "It proves that the algorithm will never run out of memory.",
+        "It ensures that observed performance improvements are not mere artifacts of random seed variations, hardware jitter, or dataset sample bias.",
+        "It satisfies arbitrary journal formatting requirements.",
+        "It automatically optimizes hyperparameter selection."
+      ],
+      "correctIndex": 1,
+      "explanation": "Statistical testing across multiple random seeds and benchmark folds verifies that improvements over baseline methods are statistically robust and reproducible rather than random chance."
     }
   ],
   "MCSC-202": [
     {
-      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "question": "During Phase II of Independent Study and Research, what is the core objective when formulating an experimental ablation study?",
       "options": [
-        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
-        "Clusters always prioritize Consistency over Availability",
-        "Partition tolerance is optional",
-        "Latency scales logarithmically with node count"
+        "To remove all mathematical formulas from the thesis draft.",
+        "To isolate and measure the individual performance contribution of each architectural component or loss term by systematically disabling them one at a time.",
+        "To decrease the training speed of neural network baselines.",
+        "To eliminate the need for baseline comparisons."
       ],
-      "answer": 0,
-      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+      "correctIndex": 1,
+      "explanation": "Ablation studies systematically disable or substitute individual modules to prove that each claimed technical contribution genuinely improves empirical outcomes rather than acting as dead weight."
+    },
+    {
+      "question": "What constitutes scientific reproducibility in computing research publications?",
+      "options": [
+        "Publishing only cherry-picked best-case evaluation curves.",
+        "Providing full algorithmic specifications, code repositories, verified dataset seeds, hyperparameter tables, and hardware execution environments so external peers can replicate findings.",
+        "Restricting access to model weights and training logs.",
+        "Using only private closed-source datasets."
+      ],
+      "correctIndex": 1,
+      "explanation": "Reproducibility requires that independent researchers can follow the described methodology, execute the provided codebase or formal algorithms with specified seeds, and obtain consistent results."
+    },
+    {
+      "question": "In research paper writing (IEEE/ACM format), what is the specific role of the \"Threats to Validity\" section?",
+      "options": [
+        "To list security vulnerabilities found in the department server.",
+        "To transparently acknowledge experimental assumptions, potential confounding variables, and limitations in generalizability.",
+        "To criticize competitor publications.",
+        "To explain why the author could not run experiments."
+      ],
+      "correctIndex": 1,
+      "explanation": "Threats to validity critically evaluate internal validity (correctness of findings within the study), external validity (generalizability to other datasets/domains), and construct validity."
     }
   ],
   "MCySC-201": [
@@ -376,15 +541,37 @@
   ],
   "MMLC-202": [
     {
-      "question": "What is the primary role of validation data in the machine learning training pipeline?",
+      "question": "In Bayesian Decision Theory, what is the Bayes Decision Rule that minimizes total probability of classification error for classes omega_1 and omega_2?",
       "options": [
-        "To compute final test accuracy for publication",
-        "To tune hyperparameters and prevent overfitting on training data",
-        "To replace missing values",
-        "To augment training samples"
+        "Choose omega_1 if P(x|omega_1) = 0.",
+        "Choose omega_1 if the posterior probability P(omega_1|x) > P(omega_2|x); otherwise choose omega_2.",
+        "Always choose the class with the highest prior probability regardless of feature vector x.",
+        "Choose the class with the largest eigenvalue."
       ],
-      "answer": 1,
-      "explanation": "Validation data evaluates model generalization during training to guide early stopping and hyperparameter optimization without contaminating the unseen test set."
+      "correctIndex": 1,
+      "explanation": "The optimal Bayes classifier assigns observation x to the class with the maximum posterior probability P(omega_i|x) = p(x|omega_i)P(omega_i) / p(x), which provably minimizes classification error rate (Bayes Risk under 0-1 loss)."
+    },
+    {
+      "question": "In Principal Component Analysis (PCA), how are the principal directions mathematically determined from data covariance matrix Sigma?",
+      "options": [
+        "They are the eigenvectors of Sigma sorted in descending order of their corresponding eigenvalues lambda_i.",
+        "They are the diagonal elements of the inverse covariance matrix.",
+        "They are the gradient vectors of the Cross-Entropy loss.",
+        "They are randomly generated orthogonal vectors."
+      ],
+      "correctIndex": 0,
+      "explanation": "The first principal component corresponds to the eigenvector of Sigma with the largest eigenvalue (maximizing variance projection). Subsequent components correspond to orthogonal eigenvectors in descending order of eigenvalues."
+    },
+    {
+      "question": "How does Linear Discriminant Analysis (LDA) differ fundamentally from Principal Component Analysis (PCA)?",
+      "options": [
+        "PCA is an unsupervised technique that maximizes overall variance without considering class labels; LDA is a supervised technique that maximizes the ratio of between-class scatter S_B to within-class scatter S_W.",
+        "LDA is non-linear, whereas PCA is always linear.",
+        "PCA only works for 2D datasets, whereas LDA scales to infinite dimensions.",
+        "LDA requires neural network training."
+      ],
+      "correctIndex": 0,
+      "explanation": "PCA identifies orthogonal axes of maximum variance across all data points regardless of class. Fisher's LDA utilizes class labels to find projections that separate class centroids while minimizing within-class variance: argmax w^T S_B w / w^T S_W w."
     }
   ],
   "MCSE-201": [
@@ -519,28 +706,72 @@
   ],
   "MCSC-301": [
     {
-      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "question": "In scientific research ethics and publication integrity, what constitutes \"Plagiarism\" according to international academic standards?",
       "options": [
-        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
-        "Clusters always prioritize Consistency over Availability",
-        "Partition tolerance is optional",
-        "Latency scales logarithmically with node count"
+        "Citing previous papers using the IEEE style format.",
+        "Using the ideas, text, formulas, or figures of others without proper attribution or permission, presenting them as one's own original work.",
+        "Collaborating with co-authors from different universities.",
+        "Publishing open-source code under the MIT license."
       ],
-      "answer": 0,
-      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+      "correctIndex": 1,
+      "explanation": "Plagiarism is the appropriation of another author's text, ideas, algorithms, or results without explicit citation and acknowledgment, violating fundamental research integrity."
+    },
+    {
+      "question": "What is the function of a \"Double-Blind\" peer review process in prestigious computer science conferences and journals?",
+      "options": [
+        "Both reviewers and authors are unaware of each other's identities to minimize institutional, gender, and geographical bias.",
+        "Papers are reviewed twice by the same committee member.",
+        "Reviews are hidden from the editor.",
+        "Authors cannot read the review feedback."
+      ],
+      "correctIndex": 0,
+      "explanation": "In double-blind peer review, the identities of the authors are concealed from reviewers, and the identities of reviewers are concealed from authors, ensuring evaluation is based strictly on technical merit."
+    },
+    {
+      "question": "What is an \"h-index\" and how is it calculated for an academic researcher?",
+      "options": [
+        "The number of hours spent teaching per week.",
+        "A researcher has index h if h of their N papers have at least h citations each, and the remaining (N - h) papers have at most h citations each.",
+        "The total number of papers divided by total citations.",
+        "The percentage of accepted journal papers."
+      ],
+      "correctIndex": 1,
+      "explanation": "Jorge Hirsch introduced the h-index to quantify both the scientific productivity and citation impact of a researcher. An h-index of 20 means the scholar has published 20 papers with at least 20 citations each."
     }
   ],
   "MCSC-302": [
     {
-      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "question": "In M.Tech Thesis Phase I, what constitutes the mandatory output expected during the mid-term dissertation review committee?",
       "options": [
-        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
-        "Clusters always prioritize Consistency over Availability",
-        "Partition tolerance is optional",
-        "Latency scales logarithmically with node count"
+        "Final bound printed book with 300 pages.",
+        "Comprehensive problem formulation, critical literature survey, proposed technical architecture, baseline benchmark selection, and initial feasibility simulation.",
+        "A signed job offer letter from an IT company.",
+        "A presentation explaining basic Python syntax."
       ],
-      "answer": 0,
-      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+      "correctIndex": 1,
+      "explanation": "Thesis I validates the scientific foundation of the master's dissertation: clear problem statement, literature taxonomy, mathematical formulation of proposed approach, and preliminary proof-of-concept experimental results."
+    },
+    {
+      "question": "Why is defining clear, quantifiable performance metrics (e.g., latency, F1-score, throughput) mandatory in the early stages of dissertation planning?",
+      "options": [
+        "To prevent external reviewers from evaluating the work.",
+        "To establish unambiguous objective criteria for measuring whether the proposed technical approach succeeded compared to established baseline methods.",
+        "To reduce the number of dissertation chapters.",
+        "Metrics are optional in computer science research."
+      ],
+      "correctIndex": 1,
+      "explanation": "Without pre-defined, standardized benchmark metrics, objective empirical evaluation of proposed contributions against published state-of-the-art baselines is impossible."
+    },
+    {
+      "question": "What is the role of an Institutional Ethical Review or Compliance Check in thesis data collection?",
+      "options": [
+        "Ensuring that experimental datasets involving human subjects, privacy-sensitive logs, or proprietary benchmarks adhere to legal compliance, privacy standards, and ethical guidelines.",
+        "Checking that students use university letterhead.",
+        "Verifying the font size of references.",
+        "Approving the purchase of laptop hardware."
+      ],
+      "correctIndex": 0,
+      "explanation": "Ethical review ensures that datasets (such as medical imagery, user telemetry, or social networks) respect privacy rights, consent agreements, and anonymization protocols."
     }
   ],
   "MCySC-301": [
@@ -688,15 +919,37 @@
   ],
   "MCSC-401": [
     {
-      "question": "What does the CAP theorem state regarding distributed data systems?",
+      "question": "In the final defense of M.Tech Thesis Phase II (MCSC-401), what is the primary purpose of the external viva-voce examination?",
       "options": [
-        "Consistency, Availability, and Partition Tolerance cannot all be simultaneously guaranteed in the presence of network partitions",
-        "Clusters always prioritize Consistency over Availability",
-        "Partition tolerance is optional",
-        "Latency scales logarithmically with node count"
+        "To check whether the student attended all campus placement drives.",
+        "To defend the originality, mathematical correctness, experimental rigor, and practical significance of the dissertation contributions before an external subject-matter expert.",
+        "To verify the binding color of the hardbound copies.",
+        "To re-take semester 1 classroom examinations."
       ],
-      "answer": 0,
-      "explanation": "In the event of a network partition, a distributed system must choose between remaining Available (serving stale data) or remaining Consistent (returning errors or waiting)."
+      "correctIndex": 1,
+      "explanation": "The external viva-voce is the formal academic defense where the candidate proves mastery over the dissertation domain, defends methodological choices, justifies experimental outcomes, and demonstrates original scholarship."
+    },
+    {
+      "question": "What is the difference between the \"Conclusions\" chapter and the \"Future Work\" section in an M.Tech dissertation?",
+      "options": [
+        "Conclusions summarize validated findings and achieved objectives; Future Work identifies unresolved open questions, architectural extensions, and theoretical horizons revealed by the research.",
+        "They are identical and repeated for length.",
+        "Future Work contains code listings, while Conclusions contains tables.",
+        "Conclusions are written by the supervisor, Future Work by the student."
+      ],
+      "correctIndex": 0,
+      "explanation": "Conclusions synthesize what was accomplished and validated against the original problem statement. Future Work outlines natural next steps, limitations to overcome, and broader implications for future scholars."
+    },
+    {
+      "question": "Before submitting the final dissertation dossier for external evaluation, what anti-plagiarism threshold is mandated by university academic integrity guidelines (e.g., UGC / AKTU)?",
+      "options": [
+        "Similarity index below 10% (excluding bibliography, generic terminology, and candidate's own published papers).",
+        "Similarity index up to 80% is acceptable.",
+        "Plagiarism software is only run on the dedication page.",
+        "Zero citations are allowed in the entire text."
+      ],
+      "correctIndex": 0,
+      "explanation": "National postgraduate regulations (UGC Level 0 threshold) mandate that dissertation similarity indices must remain below 10% (excluding citations and published research papers of the candidate), guaranteeing authentic scholarship."
     }
   ]
 }

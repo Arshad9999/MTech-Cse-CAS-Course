@@ -4,7 +4,7 @@
  * with resilient offline cache fallback.
  */
 
-const CACHE_NAME = 'cas-mtech-cse-v2026.11.19-luxury-mac';
+const CACHE_NAME = 'cas-mtech-cse-v2026.11.19-all-courses-dossiers';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -23,6 +23,21 @@ const STATIC_ASSETS = [
   './assets/course-quizzes.json',
   './assets/docs/Deep-Learning-Master-Study-Notes.pdf',
   './assets/docs/Reinforcement-Learning-Complete-Study-Guide.pdf',
+  './assets/docs/MCSC-101-mcsc-101.pdf',
+  './assets/docs/MCSC-102-mcsc-102.pdf',
+  './assets/docs/MCSC-103-Advanced-Computer-Networks.pdf',
+  './assets/docs/MCSC-104-mcsc-104.pdf',
+  './assets/docs/MCSC-105-Discrete-Mathematics.pdf',
+  './assets/docs/MCSC-106-Pattern-Recognition.pdf',
+  './assets/docs/MCSC-201-Research-Methodology.pdf',
+  './assets/docs/MCSC-202-Probability-and-Statistics.pdf',
+  './assets/docs/MCSC-301-mcsc-301.pdf',
+  './assets/docs/MCSC-302-mcsc-302.pdf',
+  './assets/docs/MCSC-401-mcsc-401.pdf',
+  './assets/docs/MCSE-202-mcse-202.pdf',
+  './assets/docs/MMLC-201-mmlc-201.pdf',
+  './assets/docs/MMLC-202-mmlc-202.pdf',
+  './assets/docs/MMLE-201-mmle-201.pdf',
   './assets/styles.css',
   './assets/portal.css',
   './assets/mastery.css',
