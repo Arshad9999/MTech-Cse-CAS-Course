@@ -44,7 +44,15 @@
   .copy-snippet-btn,
   .copy-snippet-btn-mini,
   .back-link,
-  .gfg-link-btn {
+  .gfg-link-btn,
+  .sticky-mobile-action-bar,
+  .mac-window-controls,
+  .academic-dialog,
+  dialog,
+  .qr-code-frame,
+  .interactive-module-picker input[type="checkbox"],
+  .theme-toggle-btn,
+  .schedule-submit-btn {
     display: none !important;
   }
 
