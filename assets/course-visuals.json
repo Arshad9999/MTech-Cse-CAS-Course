@@ -3,7 +3,7 @@
     {
       "src": "assets/course-visuals/mcsc-101-01.jpg",
       "after": "Network flows",
-      "alt": "Network flow diagram with an s\u2013t cut across four edges",
+      "alt": "Network flow diagram with an s–t cut across four edges",
       "note": "The shown cut has capacity 27, but it is not the minimum cut: for this network the minimum-cut capacity and maximum flow are 18."
     },
     {
@@ -16,7 +16,7 @@
   "MCSC-102": [
     {
       "src": "assets/course-visuals/mcsc-102-01.jpg",
-      "after": "Conditional probability and Bayes\u2019 rule",
+      "after": "Conditional probability and Bayes’ rule",
       "alt": "Bayes theorem with a probability tree and a numerical example",
       "note": ""
     },
@@ -60,7 +60,7 @@
       "src": "assets/course-visuals/mcsc-105-01.jpg",
       "after": "Trees, connectivity and spanning structures",
       "alt": "Breadth-first and depth-first traversal of a five-node graph",
-      "note": "For the pictured graph and ascending neighbour order, recursive DFS visits 1 \u2192 2 \u2192 3 \u2192 4 \u2192 5; the displayed DFS order and stack steps are inconsistent."
+      "note": "For the pictured graph and ascending neighbour order, recursive DFS visits 1 → 2 → 3 → 4 → 5; the displayed DFS order and stack steps are inconsistent."
     },
     {
       "src": "assets/course-visuals/mcsc-105-02.jpg",
@@ -120,8 +120,8 @@
     },
     {
       "src": "assets/course-visuals/mcse-202-02.jpg",
-      "after": "Simpson\u2019s paradox and group composition",
-      "alt": "Numerical example of Simpson\u2019s paradox across two treatment groups",
+      "after": "Simpson’s paradox and group composition",
+      "alt": "Numerical example of Simpson’s paradox across two treatment groups",
       "note": "The displayed fractions are correct, but the coloured icons do not consistently represent their stated counts. Compare the numerical rates, not the number of icons."
     }
   ],
@@ -197,38 +197,30 @@
   ],
   "MMLC-301": [
     {
+      "after": "Convolutional Neural Networks: Receptive Fields and Spatial Dimensions",
       "src": "assets/course-visuals/mmlc-301-01.jpg",
-      "after": "Convolution dimensions and receptive fields",
-      "alt": "Convolution output size calculation for a 32 by 32 input and 3 by 3 kernel",
-      "note": "The numerical output-size calculation is correct for unit dilation, but the kernel drawn in the figure has two visible rows rather than a complete 3 \u00d7 3 grid; the large grids are schematic."
+      "alt": "Convolutional arithmetic, receptive fields and feature map dimensions",
+      "note": "Layer-by-layer spatial dimension transformation through convolution, padding, and stride."
     },
     {
+      "after": "Generalisation, Regularisation and Bias-Variance Mechanics",
       "src": "assets/course-visuals/mmlc-301-02.jpg",
-      "after": "Regularisation and evaluation",
-      "alt": "Conceptual training and validation loss curves with early-stopping checkpoint",
-      "note": "The figure is illustrative and contains a small typo. Early stopping uses a validation-based rule, often with patience; overfitting is not always identifiable at one exact epoch."
+      "alt": "Training vs validation curves showing over-fitting, dropout, and early stopping",
+      "note": "Diagnostic loss curves demonstrating divergence, generalization gap, and early stopping."
     }
   ],
   "MMLE-302": [
     {
+      "after": "The RL Interaction Loop, Return and Discounting Mechanics",
       "src": "assets/course-visuals/mmle-302-01.jpg",
-      "after": "Agent, environment and return",
-      "alt": "Agent\u2013environment loop with reward and discounted return",
-      "note": "The standard timing convention shown in the return formula uses R\u209c\u208a\u2081 for the reward following action A\u209c; the immediate-reward panel labels it R\u209c."
+      "alt": "Agent-Environment interaction loop with action, state, reward, and discount factor",
+      "note": "Markov decision loop illustrating state transitions and immediate vs discounted return."
     },
     {
+      "after": "Model-Free Control: SARSA vs Q-Learning with Worked Numerical Update",
       "src": "assets/course-visuals/mmle-302-02.jpg",
-      "after": "Q-learning and SARSA updates",
-      "alt": "Comparison of Q-learning and SARSA temporal-difference targets",
-      "note": "Q-learning selects the maximum estimated next-action value, not a guaranteed objectively best action. SARSA is not always safer; behaviour depends on the policy, environment and learning conditions."
-    }
-  ],
-  "MCSC-401": [
-    {
-      "after": "Scientific Method and Literature Review",
-      "src": "https://upload.wikimedia.org/wikipedia/commons/8/82/The_Scientific_Method.svg",
-      "alt": "Scientific Method Cycle in Postgraduate Dissertation Defense",
-      "note": "Iterative cycle of hypothesis formulation, empirical validation, peer defense, and dissertation synthesis."
+      "alt": "SARSA on-policy update vs Q-learning off-policy update comparison diagram",
+      "note": "Backup diagrams highlighting the max-operator in Q-learning versus action choice in SARSA."
     }
   ]
 }
