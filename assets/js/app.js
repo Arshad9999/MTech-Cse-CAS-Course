@@ -1197,8 +1197,10 @@
     const navPillsHtml = `
       <nav class="course-nav-pills" aria-label="Course Sections">
         ${downloadDoc ? '<a class="course-nav-pill" href="#download-dossier" style="color:var(--color-accent); font-weight:700;">Official Master PDF</a>' : ''}
+        <a class="course-nav-pill" href="#interactive-picker">Topic Picker</a>
         ${unitsList.length > 0 ? '<a class="course-nav-pill" href="#syllabus-units">Syllabus Units</a>' : ''}
         <a class="course-nav-pill" href="#lessons">Topic Lessons</a>
+        ${courseVisualList.length > 0 ? '<a class="course-nav-pill" href="#visual-lookbook" style="color:var(--color-gold-deep); font-weight:700;">Diagrams Lookbook</a>' : ''}
         ${courseGfgList.length > 0 ? '<a class="course-nav-pill" href="#gfg-vault" style="color:var(--color-emerald); font-weight:700;">GFG References</a>' : ''}
         ${courseQuizList.length > 0 ? '<a class="course-nav-pill" href="#quick-quiz" style="color:var(--color-accent); font-weight:700;">Self-Assessment Quiz</a>' : ''}
         <a class="course-nav-pill" href="#mastery">Mastery Hub</a>
@@ -1210,6 +1212,8 @@
         <a class="course-nav-pill" href="#pitfalls">Mistakes to Avoid</a>
         <a class="course-nav-pill" href="#practice">Retrieval Practice</a>
         ${papers[selected.code] ? '<a class="course-nav-pill" href="#pyqs" style="color:var(--color-amber); font-weight:700;">Past Exam Papers</a>' : ''}
+        <a class="course-nav-pill" href="#study-scheduler" style="color:var(--color-burgundy); font-weight:700;">Schedule Session</a>
+        <a class="course-nav-pill" href="#scholar-reviews">Scholar Reviews</a>
         ${readings[selected.code] ? '<a class="course-nav-pill" href="#readings">Further Reading</a>' : ''}
       </nav>
     `;
@@ -1675,6 +1679,61 @@
       </section>
     `;
 
+    
+    // Visual Lookbook Grid Section
+    const lookbookHtml = courseVisualList.length > 0 ? `
+      <section class="reference-section visual-lookbook-section" id="visual-lookbook">
+        <div class="section-kicker" style="color:var(--color-burgundy); display:inline-flex; align-items:center; gap:0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          Curriculum Architecture Lookbook
+        </div>
+        <h2 class="editorial-title" style="font-size:2.2rem; margin:0.3rem 0 0.5rem;">Visual Diagrams & Systems Topology</h2>
+        <p style="color:var(--color-ink-muted); margin-bottom:1.6rem; max-width:68ch;">
+          High-fidelity structural schematics, algorithmic state transitions, and dimensional calculations formulated for deep conceptual clarity. Click any diagram to inspect full-screen.
+        </p>
+        <div class="lookbook-grid">
+          ${courseVisualList.map((vis, vIdx) => `
+            <article class="lookbook-card" onclick="window.openImageZoomModal('${esc(vis.src)}', '${esc(vis.alt)}', '${esc(vis.note || '')}')">
+              <div class="mac-window-bar">
+                <div class="mac-window-controls">
+                  <span class="mac-dot mac-close"></span>
+                  <span class="mac-dot mac-minimize"></span>
+                  <span class="mac-dot mac-expand"></span>
+                </div>
+                <div class="mac-window-title">Figure 0${vIdx + 1} · Schematic</div>
+                <span style="font-size:0.7rem; color:var(--color-gold-deep); font-weight:700;">ZOOM 🔍</span>
+              </div>
+              <div class="lookbook-img-wrap">
+                <img src="${esc(vis.src)}" alt="${esc(vis.alt)}" loading="lazy" decoding="async">
+              </div>
+              <div class="lookbook-info">
+                <h4>${esc(vis.alt)}</h4>
+                ${vis.note ? `<p><strong>Reading Note:</strong> ${esc(vis.note)}</p>` : ''}
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      </section>
+    ` : '';
+
+    const imageZoomDialogHtml = `
+      <dialog id="image-zoom-dialog" class="academic-dialog" onclick="if(event.target===this)this.close()">
+        <div class="mac-window-bar">
+          <div class="mac-window-controls">
+            <span class="mac-dot mac-close" onclick="document.getElementById('image-zoom-dialog').close()"></span>
+            <span class="mac-dot mac-minimize"></span>
+            <span class="mac-dot mac-expand"></span>
+          </div>
+          <div class="mac-window-title" id="zoom-dialog-title">Curriculum Diagram Preview</div>
+          <button type="button" onclick="document.getElementById('image-zoom-dialog').close()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--color-ink-muted);">×</button>
+        </div>
+        <div class="zoom-img-body" style="padding:1.5rem; text-align:center;">
+          <img id="zoom-dialog-img" src="" alt="" style="max-width:100%; max-height:68vh; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.12); object-fit:contain;">
+          <p id="zoom-dialog-note" style="margin-top:1rem; font-size:0.86rem; color:var(--color-ink-muted); line-height:1.5; text-align:left;"></p>
+        </div>
+      </dialog>
+    `;
+
     // Scholar Testimonials / Review Cards
     const testimonialsHtml = `
       <section class="reference-section testimonials-section" id="scholar-reviews">
@@ -2057,6 +2116,9 @@
         ${lessonsHtml}
       </section>
 
+      <!-- Architectural Lookbook & Visual Diagrams Grid -->
+      ${lookbookHtml}
+
       <!-- GeeksforGeeks (GFG) Curated Reference Vault -->
       ${gfgVaultHtml}
 
@@ -2080,6 +2142,7 @@
 
       <!-- Native Dialog Modal -->
       ${nativeDialogHtml}
+      ${imageZoomDialogHtml}
 
       <!-- Sticky Mobile Action Bar -->
       ${stickyMobileBarHtml}
@@ -2104,7 +2167,7 @@
     updateAllDocketUI();
     setupGitHubEngagement();
     setupReadingProgressBar();
-    setupGitHubEngagement();
+    setupScrollSpy();
   }
 
   function setupReadingProgressBar() {
@@ -2272,6 +2335,54 @@
       localStorage.setItem('cas_github_popup_dismissed', 'true');
     } catch (e) {}
   };
+
+  
+  // Image Zoom Modal Handler
+  window.openImageZoomModal = function (src, alt, note) {
+    const dialog = document.getElementById('image-zoom-dialog');
+    const img = document.getElementById('zoom-dialog-img');
+    const title = document.getElementById('zoom-dialog-title');
+    const noteEl = document.getElementById('zoom-dialog-note');
+    if (dialog && img) {
+      img.src = src;
+      img.alt = alt;
+      if (title) title.innerText = alt.length > 38 ? alt.slice(0, 38) + '...' : alt;
+      if (noteEl) noteEl.innerHTML = note ? `<strong>Reading Note:</strong> ${note}` : '';
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute('open', '');
+      }
+    }
+  };
+
+  // Scroll-Spy for Course Navigation Pills
+  function setupScrollSpy() {
+    const pills = document.querySelectorAll('.course-nav-pill');
+    if (!pills.length) return;
+    const targetMap = [];
+    pills.forEach(p => {
+      const href = p.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const el = document.querySelector(href);
+        if (el) targetMap.push({ pill: p, el: el });
+      }
+    });
+
+    if (!targetMap.length) return;
+
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 130;
+      let activePill = null;
+      for (let i = 0; i < targetMap.length; i++) {
+        if (targetMap[i].el.offsetTop <= scrollPos) {
+          activePill = targetMap[i].pill;
+        }
+      }
+      pills.forEach(p => p.classList.remove('is-active'));
+      if (activePill) activePill.classList.add('is-active');
+    }, { passive: true });
+  }
 
   // --------------------------------------------------------------------------
   // Interactive Module Picker & Scheduling Handlers
