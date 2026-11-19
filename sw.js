@@ -4,7 +4,7 @@
  * with resilient offline cache fallback.
  */
 
-const CACHE_NAME = 'cas-mtech-cse-v2026.11.18-dl-rl-docs';
+const CACHE_NAME = 'cas-mtech-cse-v2026.11.19-luxury-mac';
 const STATIC_ASSETS = [
   './',
   './index.html',

@@ -5,9 +5,9 @@
 
 :root {
   /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: Georgia, "New York", Cambria, "Times New Roman", Times, serif;
-  --font-mono: "SF Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", Courier, monospace;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro", Inter, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "New York", Cambria, serif;
+  --font-mono: "Fira Code", "SF Mono", Menlo, Monaco, Consolas, monospace;
 
   /* Layout & Sizing */
   --max-width: 1240px;
@@ -65,6 +65,32 @@
   --color-amber: #b45309;
   --color-amber-soft: #fef3c7;
   --color-amber-border: #fde68a;
+
+  
+  /* Luxury Velvet Burgundy & Champagne Gold Academic Palette */
+  --color-burgundy: #4a0e17;
+  --color-burgundy-deep: #2c080d;
+  --color-burgundy-soft: #fcf6f7;
+  --color-burgundy-border: rgba(74, 14, 23, 0.16);
+  --color-burgundy-glow: rgba(74, 14, 23, 0.08);
+
+  --color-gold: #c5a059;
+  --color-gold-light: #dfc882;
+  --color-gold-deep: #96742e;
+  --color-gold-soft: #fdfaf2;
+  --color-gold-border: rgba(197, 160, 89, 0.35);
+  --color-gold-glow: rgba(197, 160, 89, 0.15);
+
+  /* macOS Traffic Light Window Controls */
+  --mac-dot-close: #ff5f56;
+  --mac-dot-minimize: #ffbd2e;
+  --mac-dot-expand: #27c93f;
+
+  /* High-Intensity Frosted Glassmorphism (28px Blur, 190% Saturation) */
+  --glass-blur-heavy: blur(28px) saturate(190%);
+  --mac-glass-surface: rgba(255, 255, 255, 0.86);
+  --mac-glass-border: rgba(255, 255, 255, 0.75);
+  --mac-glass-shadow: 0 24px 48px -12px rgba(74, 14, 23, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
 
   /* Shadows */
   --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.04);

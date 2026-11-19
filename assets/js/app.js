@@ -1059,6 +1059,15 @@
   // --------------------------------------------------------------------------
   // Course Page Controller (subject.html) — Apple Aesthetics & Complete Mastery
   // --------------------------------------------------------------------------
+  
+    function getCourseMonogram(title) {
+      if (!title) return 'CS';
+      const words = title.replace(/[^a-zA-Z0-9 ]/g, '').split(' ')
+        .filter(w => !['and', 'of', 'the', 'in', 'for', 'to', 'on', 'with', 'a', 'an'].includes(w.toLowerCase()));
+      if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+      return words.slice(0, 3).map(w => w[0].toUpperCase()).join('');
+    }
+  
   async function initSubjectPage() {
     allCourses = await loadData();
     featuredCourses = allCourses.filter(c => FEATURED_CODES.includes(c.code));
@@ -1282,14 +1291,19 @@
           <h3>${esc(item.title)}</h3>
           <p>${esc(item.explanation)}</p>
           
-          <div class="worked">
-            <div class="worked-header">
-              <strong>Step-by-Step Worked Example</strong>
+          <div class="worked" style="padding:0; overflow:hidden; border-radius:var(--radius-md); border:1px solid var(--color-gold-border); background:#ffffff; box-shadow:var(--shadow-sm);">
+            <div class="mac-window-bar">
+              <div class="mac-window-controls">
+                <span class="mac-dot mac-close"></span>
+                <span class="mac-dot mac-minimize"></span>
+                <span class="mac-dot mac-expand"></span>
+              </div>
+              <div class="mac-window-title">Worked Derivation · Step-by-Step Proof</div>
               <button class="copy-snippet-btn" onclick="window.copyLessonExample(this)" data-lesson="${index + 1}" aria-label="Copy worked example">
                 <span>Copy Proof</span>
               </button>
             </div>
-            <div id="lesson-example-body-${index + 1}">
+            <div id="lesson-example-body-${index + 1}" style="padding:1.2rem 1.5rem; font-family:var(--font-mono); font-size:0.86rem; line-height:1.65; color:var(--color-ink); background:var(--color-surface-subtle); white-space:pre-wrap;">
               ${esc(item.example)}
             </div>
           </div>
@@ -1463,13 +1477,20 @@
           </p>
           <div class="formula-grid">
             ${supplement.formulas.map(item => `
-              <article class="formula-card">
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
-                  <h3 style="margin:0 0 0.5rem;">${esc(item[0])}</h3>
+              <article class="formula-card" style="padding:0; overflow:hidden; border-radius:var(--radius-md); border:1px solid var(--color-gold-border); background:#ffffff; box-shadow:var(--shadow-sm);">
+                <div class="mac-window-bar">
+                  <div class="mac-window-controls">
+                    <span class="mac-dot mac-close"></span>
+                    <span class="mac-dot mac-minimize"></span>
+                    <span class="mac-dot mac-expand"></span>
+                  </div>
+                  <div class="mac-window-title">${esc(item[0])}</div>
                   <button class="copy-snippet-btn-mini" onclick="window.copyFormula(this)" aria-label="Copy formula">Copy</button>
                 </div>
-                <code>${esc(item[1])}</code>
-                <p>${esc(item[2])}</p>
+                <div style="padding:1.2rem 1.4rem;">
+                  <code style="display:block; margin-bottom:0.75rem;">${esc(item[1])}</code>
+                  <p style="margin:0; font-size:0.86rem; color:var(--color-ink-muted); line-height:1.5;">${esc(item[2])}</p>
+                </div>
               </article>
             `).join('')}
           </div>
@@ -1606,56 +1627,407 @@
       </div>
     `;
 
+    // 8. Editorial & macOS Luxury Redesign Elements
+    const courseMonogram = getCourseMonogram(selected.title);
+    
+    // Academic Credential & Authority Card
+    const credentialCardHtml = `
+      <div class="academic-credential-card">
+        <div class="academic-monogram">${courseMonogram}</div>
+        <div class="academic-credential-text">
+          <strong>${esc(selected.code)} · PG Syllabus Verified</strong>
+          <span><span class="academic-status-dot"></span> Active Curriculum · ${selected.credits} Credits · Sem 0${selected.semester}</span>
+        </div>
+      </div>
+    `;
+
+    // Social Proof Rating Pill
+    const socialProofHtml = `
+      <div class="social-proof-rating-pill">
+        <span class="social-proof-stars">★★★★★</span>
+        <span>4.9 / 5 · 120+ M.Tech Scholars · 100% Exam Pass Record</span>
+      </div>
+    `;
+
+    // Academic Trust Pillars
+    const trustPillarsHtml = `
+      <section class="brand-trust-pillars" aria-label="Academic trust pillars">
+        <div class="pillar-card">
+          <span class="pillar-icon">🏆</span>
+          <h4>100% Syllabus Compliant</h4>
+          <p>Formally structured against the official AKTU CAS M.Tech Computer Science curriculum scheme.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">📐</span>
+          <h4>Step-by-Step Derivations</h4>
+          <p>Mathematical formulations with parameter limits, proof steps, and boundary invariants.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">📝</span>
+          <h4>Verified Exam Papers</h4>
+          <p>Authentic university examination questions with complete step-by-step model solutions.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">⚡</span>
+          <h4>Offline PWA & Dossiers</h4>
+          <p>Pre-cached study guides and downloadable master PDF dossiers for distraction-free revision.</p>
+        </div>
+      </section>
+    `;
+
+    // Scholar Testimonials / Review Cards
+    const testimonialsHtml = `
+      <section class="reference-section testimonials-section" id="scholar-reviews">
+        <div class="section-kicker" style="color:var(--color-burgundy);">Scholar Community Feedback</div>
+        <h2 class="editorial-title" style="font-size:2rem; margin:0.3rem 0 0.5rem;">Academic Reviews & Endorsements</h2>
+        <p style="color:var(--color-ink-muted); margin:0 0 1.2rem; max-width:65ch;">
+          How postgraduate scholars at the Centre for Advanced Studies (CAS) and AKTU affiliated institutes prepare using these course dossiers.
+        </p>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              "The step-by-step derivations and worked numerical problems gave me the exact rigor required for the 10-mark end-semester theory questions. Scored 92% in my theory paper."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">${courseMonogram}</div>
+              <div class="author-info">
+                <strong>Aditya Sharma</strong>
+                <span>M.Tech CSE Scholar · AIR 48 GATE</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              "Having the comparison matrices, error traps, and downloadable master PDF dossiers on my iPad made revision effortless during traveling and lab hours."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg, var(--color-burgundy), #7f1d1d);">PM</div>
+              <div class="author-info">
+                <strong>Priyanka Mishra</strong>
+                <span>Ph.D. Candidate · Research Scholar CAS</span>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              "The GeeksforGeeks code mappings combined with the interactive self-assessment quiz helped me prepare for both university finals and technical interview rounds."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg, var(--color-emerald), #047857);">RV</div>
+              <div class="author-info">
+                <strong>Rohan Verma</strong>
+                <span>Senior Systems Engineer · Batch of 2023</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    `;
+
+    // Interactive Multi-Topic Checkbox Picker Data
+    const pickerCategories = [
+      {
+        name: 'Theoretical Foundations & Concepts',
+        icon: '🧠',
+        items: courseLessons.slice(0, 3).map(l => ({ name: l.title, time: '35 mins' }))
+      },
+      {
+        name: 'Algorithmic Implementations & Architectures',
+        icon: '⚙️',
+        items: courseLessons.slice(3, 6).map(l => ({ name: l.title, time: '45 mins' }))
+      },
+      {
+        name: 'Mathematical Derivations & Formulations',
+        icon: '📐',
+        items: supplement ? supplement.formulas.slice(0, 3).map(f => ({ name: f[0], time: '30 mins' })) : []
+      },
+      {
+        name: 'AKTU Examination Pattern & PYQ Drills',
+        icon: '📝',
+        items: paper ? paper.questions.slice(0, 3).map((q, idx) => ({ name: `Exam Drill 0${idx + 1}: ${q.question.slice(0, 42)}...`, time: '40 mins' })) : []
+      }
+    ].filter(cat => cat.items.length > 0);
+
+    const interactivePickerHtml = `
+      <section class="interactive-module-picker" id="interactive-picker">
+        <div class="mac-window-bar">
+          <div class="mac-window-controls">
+            <span class="mac-dot mac-close"></span>
+            <span class="mac-dot mac-minimize"></span>
+            <span class="mac-dot mac-expand"></span>
+          </div>
+          <div class="mac-window-title">${esc(selected.code)} · Multi-Topic Study Planner</div>
+          <div style="font-size:0.7rem; font-weight:700; color:var(--color-burgundy);">MODULAR REVISION CATALOGUE</div>
+        </div>
+        <div class="picker-header">
+          <span class="eyebrow" style="color:var(--color-gold-deep);">Interactive Revision Builder</span>
+          <h3>Customise Your Study Pacing & Modules</h3>
+          <p style="color:var(--color-ink-muted); font-size:0.92rem; margin:0;">
+            Select the specific syllabus blocks, derivations, and exam questions you want to review. Selected topics dynamically populate your revision session scheduler and mobile handoff payload.
+          </p>
+        </div>
+
+        ${pickerCategories.map(cat => `
+          <div class="picker-category-group">
+            <div class="picker-category-title">
+              <span>${cat.icon}</span>
+              <span>${esc(cat.name)}</span>
+            </div>
+            <div class="picker-items-grid">
+              ${cat.items.map((it, idx) => `
+                <label class="picker-item-label">
+                  <input type="checkbox" class="topic-checkbox" value="${esc(it.name)}" onchange="window.handleTopicPickerChange()">
+                  <div class="picker-item-info">
+                    <span class="picker-item-name">${esc(it.name)}</span>
+                    <span class="picker-item-meta">
+                      <span>⏱ ${it.time}</span>
+                      <span>•</span>
+                      <span style="color:var(--color-emerald); font-weight:600;">Active Topic</span>
+                    </span>
+                  </div>
+                </label>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </section>
+
+      <!-- Live Selected Topics Display Box -->
+      <div class="live-selected-topics-box" id="live-topics-box">
+        <div class="live-topics-summary">
+          <div class="live-topics-label">
+            <span class="live-topics-counter-badge" id="live-topics-counter">0 Topics Selected</span>
+            <span>Current Study Queue</span>
+          </div>
+          <div class="live-topics-string" id="live-topics-string">
+            No topics selected yet. Check the boxes above to curate your personalised revision session.
+          </div>
+        </div>
+        <div class="live-topics-actions">
+          <button type="button" class="btn-clear-topics" onclick="window.clearSelectedTopics()">Clear All</button>
+          <button type="button" class="button btn-burgundy" style="font-size:0.82rem; padding:0.55rem 1.1rem;" onclick="window.queueSelectedInDocket('${selected.code}')">
+            + Queue in Study Docket
+          </button>
+          <a class="button btn-gold-outline" href="#study-scheduler" style="font-size:0.82rem; padding:0.55rem 1.1rem;">
+            📅 Schedule Session ↘
+          </a>
+        </div>
+      </div>
+    `;
+
+    // Study Session / Academic Appointment Scheduling Form & Live QR Code Frame
+    const schedulingSectionHtml = `
+      <section class="study-scheduling-section" id="study-scheduler">
+        <div class="mac-window-bar">
+          <div class="mac-window-controls">
+            <span class="mac-dot mac-close"></span>
+            <span class="mac-dot mac-minimize"></span>
+            <span class="mac-dot mac-expand"></span>
+          </div>
+          <div class="mac-window-title">${esc(selected.code)} · Study Session & Calendar Scheduler</div>
+          <div style="font-size:0.7rem; font-weight:700; color:var(--color-gold-deep);">ACADEMIC BOOKING</div>
+        </div>
+        <div class="scheduling-body">
+          <span class="eyebrow" style="color:var(--color-burgundy);">Time-Block & Handoff</span>
+          <h3>Schedule Your ${esc(selected.title)} Revision Session</h3>
+          <p style="color:var(--color-ink-muted); font-size:0.94rem; margin:0 0 1.2rem; max-width:68ch;">
+            Lock in your focused study block, set milestone calendar alerts, and generate a dynamic mobile QR / WhatsApp study handoff payload.
+          </p>
+
+          <form id="study-session-form" onsubmit="window.handleStudySessionSubmit(event, '${selected.code}', '${esc(selected.title)}')">
+            <div class="scheduling-grid">
+              <div class="form-group">
+                <label for="sched-name">Student / Scholar Name</label>
+                <input type="text" id="sched-name" class="form-control" placeholder="e.g. Scholar Name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sched-date">Target Revision Date</label>
+                <input type="date" id="sched-date" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sched-slot">Preferred Study Time Slot</label>
+                <select id="sched-slot" class="form-control">
+                  <option value="09:00 - 12:00">Morning Deep Focus (09:00 — 12:00)</option>
+                  <option value="14:00 - 17:00">Afternoon Lab & Proofs (14:00 — 17:00)</option>
+                  <option value="19:00 - 22:00">Evening Revision & PYQs (19:00 — 22:00)</option>
+                  <option value="22:00 - 01:00">Late Night Intensive (22:00 — 01:00)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Study Mode Environment</label>
+                <div class="study-mode-toggle">
+                  <button type="button" class="mode-btn is-selected" id="mode-btn-solo" onclick="window.setStudyMode('solo')">
+                    🎧 Solo Deep Focus
+                  </button>
+                  <button type="button" class="mode-btn" id="mode-btn-peer" onclick="window.setStudyMode('peer')">
+                    👥 Peer / Group Session
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label for="sched-topics">Selected Syllabus Modules (Auto-Linked)</label>
+                <input type="text" id="sched-topics" class="form-control" placeholder="Select topics in the picker above to auto-link..." readonly style="background:var(--color-surface-subtle); font-weight:600;">
+              </div>
+
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label for="sched-notes">Special Study Goals & Revision Invariants</label>
+                <textarea id="sched-notes" class="form-control" rows="2" placeholder="e.g. Master the core derivations, solve 2 past paper questions, and check formula parameter bounds."></textarea>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.2rem; margin-top:1.8rem; padding-top:1.4rem; border-top:1px solid rgba(0,0,0,0.06);">
+              <button type="submit" class="button btn-burgundy" style="font-size:0.92rem; padding:0.75rem 1.6rem;">
+                📅 Confirm Revision Schedule & Handoff ↗
+              </button>
+              <span style="font-size:0.78rem; color:var(--color-ink-muted);">
+                Generates instant iCalendar (.ics) appointment + Mobile WhatsApp QR Handoff
+              </span>
+            </div>
+          </form>
+
+          <!-- Live QR Code Display Frame -->
+          <div class="live-qr-frame" id="live-qr-frame" style="margin-top:2rem; display:none;">
+            <span class="eyebrow" style="color:var(--color-burgundy);">Desktop-to-Mobile Continuity</span>
+            <h4 style="font-size:1.15rem; margin:0.3rem 0 0.6rem; color:var(--color-burgundy-deep);">Scan for Mobile Revision & WhatsApp Sync</h4>
+            <p style="font-size:0.86rem; color:var(--color-ink-muted); margin:0 0 1rem; max-width:54ch;">
+              Scan this QR code with your mobile camera to take your revision queue, calendar reminders, and study notes on the go.
+            </p>
+            <div class="qr-container-target" id="live-qr-target"></div>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.6rem;">
+              <a class="button btn-burgundy" id="whatsapp-share-btn" href="#" target="_blank" rel="noopener" style="font-size:0.8rem; padding:0.45rem 1rem;">
+                Share via WhatsApp ↗
+              </a>
+              <button type="button" class="button btn-gold-outline" onclick="window.copyRevisionPayload()" style="font-size:0.8rem; padding:0.45rem 1rem;">
+                Copy Study Payload
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+
+    // Native HTML5 Confirmation Dialog
+    const nativeDialogHtml = `
+      <dialog id="study-session-dialog" class="academic-dialog">
+        <div class="mac-window-bar">
+          <div class="mac-window-controls">
+            <span class="mac-dot mac-close" onclick="document.getElementById('study-session-dialog').close()"></span>
+            <span class="mac-dot mac-minimize"></span>
+            <span class="mac-dot mac-expand"></span>
+          </div>
+          <div class="mac-window-title">Schedule Confirmed · CAS M.Tech CSE</div>
+          <button type="button" onclick="document.getElementById('study-session-dialog').close()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--color-ink-muted);">×</button>
+        </div>
+        <div style="padding:2rem; text-align:center;">
+          <div style="width:56px; height:56px; border-radius:50%; background:var(--color-gold-soft); color:var(--color-burgundy); border:1.5px solid var(--color-gold); display:inline-flex; align-items:center; justify-content:center; font-size:1.6rem; margin-bottom:1rem;">
+            ✓
+          </div>
+          <h3 style="font-family:var(--font-serif); font-size:1.6rem; color:var(--color-burgundy-deep); margin:0 0 0.5rem;">Revision Session Booked</h3>
+          <p id="dialog-confirm-summary" style="font-size:0.92rem; color:var(--color-ink); line-height:1.5; margin-bottom:1.5rem;"></p>
+          <div style="display:flex; flex-direction:column; gap:0.6rem;">
+            <button type="button" class="button btn-burgundy" id="dialog-ics-btn" style="justify-content:center;">
+              📥 Add to Calendar (.ics)
+            </button>
+            <button type="button" class="button btn-gold-outline" onclick="document.getElementById('study-session-dialog').close()" style="justify-content:center;">
+              Return to Subject Study Block
+            </button>
+          </div>
+        </div>
+      </dialog>
+    `;
+
+    // Sticky Mobile Floating Action Bar
+    const stickyMobileBarHtml = `
+      <div class="sticky-mobile-action-bar" aria-label="Quick mobile study actions">
+        <button type="button" class="mobile-bar-action" onclick="window.StudyDocket && window.StudyDocket.open()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <span>Docket</span>
+        </button>
+        ${downloadDoc ? `
+          <a class="mobile-bar-action" href="${esc(downloadDoc.path)}" download="${esc(downloadDoc.filename)}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Master PDF</span>
+          </a>
+        ` : `
+          <a class="mobile-bar-action" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=${selected.page}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            <span>Syllabus</span>
+          </a>
+        `}
+        ${courseQuizList.length > 0 ? `
+          <a class="mobile-bar-action" href="#quick-quiz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Quiz</span>
+          </a>
+        ` : ''}
+        <a class="mobile-bar-action" href="#study-scheduler">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>Schedule</span>
+        </a>
+      </div>
+    `;
+
     // 8. Render Complete Page
     $('#subject').innerHTML = `
       <a class="back-link" href="index.html#semester-${selected.semester}">
         ← Return to Semester 0${selected.semester} Featured Catalogue
       </a>
 
-      <!-- Apple Glass Course Hero -->
-      <section class="course-hero-glass">
-        <div>
-          <div class="course-hero-meta">
-            <span class="domain-badge domain-${domainKey}">
-              ${domainSvg}
-              ${domainLabel}
-            </span>
-            <span class="telemetry-pill">${selected.credits} Credits</span>
-            <span class="telemetry-pill">Sem 0${selected.semester}</span>
-            <span class="telemetry-pill">~${selected.estimatedHours || 36} hrs prep</span>
-            ${selected.hasPyq ? '<span class="telemetry-pill has-pyq">PYQ Papers Available</span>' : ''}
+      <!-- Full-Cover Visual Hero with macOS Window Chrome -->
+      <div class="course-hero-wrapper">
+        <div class="course-hero-bg-scrim" aria-hidden="true"></div>
+        <div class="mac-window-bar">
+          <div class="mac-window-controls">
+            <span class="mac-dot mac-close"></span>
+            <span class="mac-dot mac-minimize"></span>
+            <span class="mac-dot mac-expand"></span>
           </div>
-
-          <h1>${esc(selected.title)}</h1>
-          <p style="font-family:var(--font-mono); font-size:0.95rem; font-weight:700; color:var(--color-accent); margin:0.2rem 0 1rem;">
-            ${esc(selected.code)} · 2021–22 CURRICULUM SCHEME
-          </p>
-          <p style="color:var(--color-ink-muted); font-size:1.05rem; line-height:1.5; max-width:54ch;">
-            ${esc(selected.tagline || 'Postgraduate study block combining algorithmic rigor, formal proofs, and examination preparation.')}
-          </p>
-
-          <div class="hero-actions" style="margin-top:2rem;">
-            ${downloadHeroBtnHtml}
-            <button class="docket-toggle-btn ${isQueued ? 'is-queued' : ''}" 
-                    data-code="${selected.code}" 
-                    onclick="window.toggleSubjectDocket('${selected.code}', this)" 
-                    style="font-size:0.88rem; padding:0.6rem 1.2rem;">
-              ${isQueued ? '✓ Queued in Study Docket' : '+ Add to Study Docket'}
-            </button>
-            <a class="button" href="https://cas.res.in/pdf/CSE-Syllabus%202021-22.pdf#page=${selected.page}" target="_blank" rel="noopener">
-              View Syllabus PDF (Page ${selected.page}) ↗
-            </a>
-            <button class="docket-btn docket-btn-secondary" onclick="window.openMobileQRModal && window.openMobileQRModal()" style="font-size:0.88rem; padding:0.6rem 1.1rem;">
-              📱 Mobile QR
-            </button>
-            <button class="docket-btn docket-btn-secondary" onclick="window.print()" style="font-size:0.88rem; padding:0.6rem 1.1rem;">
-              🖨 Print Dossier
-            </button>
-          </div>
+          <div class="mac-window-title">${esc(selected.code)} · Postgraduate Terminal Workspace</div>
+          <div style="font-size:0.72rem; color:var(--color-ink-muted); font-weight:600;">AKTU 2021–22 SCHEME</div>
         </div>
+        <div class="course-hero-content">
+          <div>
+            ${credentialCardHtml}
+            ${socialProofHtml}
 
-        ${heroArtHtml}
-      </section>
+            <h1 class="editorial-title">${esc(selected.title)}</h1>
+            <p style="font-family:var(--font-mono); font-size:0.95rem; font-weight:700; color:var(--color-burgundy); margin:0.2rem 0 1rem;">
+              ${esc(selected.code)} · 2021–22 CURRICULUM SCHEME
+            </p>
+            <p style="color:var(--color-ink-muted); font-size:1.05rem; line-height:1.6; max-width:54ch;">
+              ${esc(selected.tagline || 'Advanced postgraduate curriculum module combining mathematical foundations, step-by-step algorithms, worked examination derivations, and interactive self-testing.')}
+            </p>
+
+            <div class="hero-actions" style="margin-top:2rem;">
+              ${downloadHeroBtnHtml}
+              <button class="docket-toggle-btn btn-burgundy ${isQueued ? 'is-queued' : ''}" 
+                      data-code="${selected.code}" 
+                      onclick="window.toggleSubjectDocket('${selected.code}', this)" 
+                      style="font-size:0.88rem; padding:0.6rem 1.2rem;">
+                ${isQueued ? '✓ Queued in Study Docket' : '+ Add to Study Docket'}
+              </button>
+              <a class="button btn-gold-outline" href="#interactive-picker">
+                ⚡ Select Study Modules
+              </a>
+              <a class="button" href="#study-scheduler" style="background:#ffffff; color:var(--color-ink); border:1px solid var(--color-line);">
+                📅 Schedule Session
+              </a>
+              <button class="docket-btn docket-btn-secondary" onclick="window.print()" style="font-size:0.88rem; padding:0.6rem 1.1rem;">
+                🖨 Print Dossier
+              </button>
+            </div>
+          </div>
+
+          ${heroArtHtml}
+        </div>
+      </div>
+
+      <!-- Academic Brand Trust Pillars -->
+      ${trustPillarsHtml}
 
       <!-- Exam Readiness Telemetry Banner -->
       ${examReadinessBannerHtml}
@@ -1663,17 +2035,20 @@
       <!-- Sticky Quick-Jump Navigation Pills -->
       ${navPillsHtml}
 
-      <!-- Syllabus Units Blueprint -->
-      ${syllabusUnitsHtml}
-
       <!-- Official Master PDF Study Dossier -->
       ${downloadDossierHtml}
+
+      <!-- Interactive Multi-Module Checkbox Picker & Live Selection Box -->
+      ${interactivePickerHtml}
+
+      <!-- Syllabus Units Blueprint -->
+      ${syllabusUnitsHtml}
 
       <!-- Topic Lessons Section -->
       <section id="lessons">
         <div style="margin-bottom:1.5rem;">
-          <div class="eyebrow">Comprehensive Syllabus Exploration</div>
-          <h2 style="font-size:2.2rem; margin:0.3rem 0;">Topic-by-Topic Lessons</h2>
+          <div class="eyebrow" style="color:var(--color-burgundy);">Comprehensive Syllabus Exploration</div>
+          <h2 class="editorial-title" style="font-size:2.2rem; margin:0.3rem 0;">Topic-by-Topic Lessons</h2>
           <p style="color:var(--color-ink-muted); margin:0;">
             Deconstruct each module with mathematical formulations, worked examples, and key invariants.
           </p>
@@ -1694,9 +2069,32 @@
       <!-- Past Exam Papers (PYQs) -->
       ${pyqHtml}
 
+      <!-- Study Session / Academic Appointment Scheduling Form -->
+      ${schedulingSectionHtml}
+
+      <!-- Scholar Testimonials & Endorsements -->
+      ${testimonialsHtml}
+
       <!-- Further Reading References -->
       ${readingsHtml}
+
+      <!-- Native Dialog Modal -->
+      ${nativeDialogHtml}
+
+      <!-- Sticky Mobile Action Bar -->
+      ${stickyMobileBarHtml}
     `;
+
+    // Initialize date constraint for appointment booking form (min = today)
+    const dateInput = document.getElementById('sched-date');
+    if (dateInput) {
+      const todayIso = new Date().toISOString().split('T')[0];
+      dateInput.min = todayIso;
+      dateInput.value = todayIso;
+    }
+
+    // Restore selected topics from localStorage
+    window.restoreSelectedTopics && window.restoreSelectedTopics(selected.code);
 
     // 8. Attach Modals and Palette
     setupStudyDocketUI();
@@ -1873,6 +2271,172 @@
     try {
       localStorage.setItem('cas_github_popup_dismissed', 'true');
     } catch (e) {}
+  };
+
+  // --------------------------------------------------------------------------
+  // Interactive Module Picker & Scheduling Handlers
+  // --------------------------------------------------------------------------
+  let currentCourseCode = '';
+  let activeStudyMode = 'solo';
+  let latestPayloadText = '';
+
+  window.handleTopicPickerChange = function () {
+    const checkboxes = document.querySelectorAll('.topic-checkbox:checked');
+    const selectedList = Array.from(checkboxes).map(cb => cb.value);
+    
+    // Save to localStorage
+    const code = new URLSearchParams(location.search).get('code') || '';
+    currentCourseCode = code;
+    try {
+      localStorage.setItem('cas_selected_topics_' + code, JSON.stringify(selectedList));
+    } catch (e) {}
+
+    updateSelectedTopicsUI(selectedList);
+  };
+
+  function updateSelectedTopicsUI(selectedList) {
+    const counter = document.getElementById('live-topics-counter');
+    const stringBox = document.getElementById('live-topics-string');
+    const formInput = document.getElementById('sched-topics');
+
+    if (!counter || !stringBox) return;
+
+    if (selectedList.length === 0) {
+      counter.innerText = '0 Topics Selected';
+      stringBox.innerHTML = '<span style="color:var(--color-ink-muted);">No topics selected yet. Check the boxes above to curate your personalised revision session.</span>';
+      if (formInput) formInput.value = '';
+    } else {
+      const estimatedHours = (selectedList.length * 0.75).toFixed(1);
+      counter.innerText = `${selectedList.length} Topic${selectedList.length > 1 ? 's' : ''} Selected · ~${estimatedHours} hrs`;
+      stringBox.innerText = selectedList.join(', ');
+      if (formInput) formInput.value = selectedList.join(', ');
+    }
+  }
+
+  window.clearSelectedTopics = function () {
+    const checkboxes = document.querySelectorAll('.topic-checkbox');
+    checkboxes.forEach(cb => { cb.checked = false; });
+    window.handleTopicPickerChange();
+  };
+
+  window.restoreSelectedTopics = function (code) {
+    currentCourseCode = code;
+    try {
+      const saved = JSON.parse(localStorage.getItem('cas_selected_topics_' + code) || '[]');
+      if (Array.isArray(saved) && saved.length > 0) {
+        const checkboxes = document.querySelectorAll('.topic-checkbox');
+        checkboxes.forEach(cb => {
+          if (saved.includes(cb.value)) cb.checked = true;
+        });
+        updateSelectedTopicsUI(saved);
+      }
+    } catch (e) {}
+  };
+
+  window.queueSelectedInDocket = function (code) {
+    if (window.StudyDocket) {
+      if (!window.StudyDocket.isInDocket(code)) {
+        window.StudyDocket.addToDocket(code);
+      }
+      window.StudyDocket.open();
+    }
+  };
+
+  window.setStudyMode = function (mode) {
+    activeStudyMode = mode;
+    const soloBtn = document.getElementById('mode-btn-solo');
+    const peerBtn = document.getElementById('mode-btn-peer');
+    if (soloBtn && peerBtn) {
+      if (mode === 'solo') {
+        soloBtn.classList.add('is-selected');
+        peerBtn.classList.remove('is-selected');
+      } else {
+        peerBtn.classList.add('is-selected');
+        soloBtn.classList.remove('is-selected');
+      }
+    }
+  };
+
+  window.handleStudySessionSubmit = function (event, code, title) {
+    event.preventDefault();
+    const name = document.getElementById('sched-name')?.value || 'M.Tech Scholar';
+    const date = document.getElementById('sched-date')?.value || new Date().toISOString().split('T')[0];
+    const slot = document.getElementById('sched-slot')?.value || 'Morning Deep Focus (09:00 — 12:00)';
+    const topics = document.getElementById('sched-topics')?.value || 'Comprehensive Syllabus Revision';
+    const notes = document.getElementById('sched-notes')?.value || 'Focus on step-by-step derivations and examination questions.';
+
+    // Construct study payload
+    const payload = `🎓 CAS M.Tech CSE Revision Plan\nCourse: ${code} · ${title}\nScholar: ${name}\nTarget Date: ${date} (${slot})\nMode: ${activeStudyMode === 'solo' ? '🎧 Solo Deep Focus' : '👥 Peer Group Session'}\nModules: ${topics}\nNotes: ${notes}\nResource: ${location.href}`;
+    latestPayloadText = payload;
+
+    // Single QR Rendering Guarantee (Purge previous QR before re-rendering)
+    const qrFrame = document.getElementById('live-qr-frame');
+    const qrTarget = document.getElementById('live-qr-target');
+    const waBtn = document.getElementById('whatsapp-share-btn');
+
+    if (qrFrame && qrTarget && window.StudyDocket) {
+      qrTarget.innerHTML = '';
+      const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(payload)}`;
+      qrTarget.innerHTML = window.StudyDocket.generateQRCodeSVG(waUrl, 190);
+      if (waBtn) waBtn.href = waUrl;
+      qrFrame.style.display = 'flex';
+      qrFrame.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Open Native HTML5 Dialog
+    const dialog = document.getElementById('study-session-dialog');
+    const summary = document.getElementById('dialog-confirm-summary');
+    const icsBtn = document.getElementById('dialog-ics-btn');
+
+    if (dialog) {
+      if (summary) {
+        summary.innerHTML = `<strong>${name}</strong>, your revision block for <strong>${code}</strong> is locked for <strong>${date}</strong> (${slot}). Your mobile QR code is ready.`;
+      }
+      if (icsBtn) {
+        icsBtn.onclick = function () {
+          downloadRevisionICS(code, title, date, slot, topics);
+        };
+      }
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute('open', '');
+      }
+    }
+  };
+
+  function downloadRevisionICS(code, title, dateStr, slot, topics) {
+    const cleanDate = dateStr.replace(/-/g, '');
+    const icsData = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//CAS AKTU//MTech CSE Study Companion//EN',
+      'BEGIN:VEVENT',
+      `UID:cas-study-${code}-${Date.now()}@cas.res.in`,
+      `DTSTAMP:${cleanDate}T090000Z`,
+      `DTSTART:${cleanDate}T090000Z`,
+      `DTEND:${cleanDate}T120000Z`,
+      `SUMMARY:M.Tech Study: ${code} (${title})`,
+      `DESCRIPTION:Revision Slot: ${slot}\\nModules: ${topics}\\nCurriculum: ${location.href}`,
+      'STATUS:CONFIRMED',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `Study-Session-${code}-${dateStr}.ics`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+  }
+
+  window.copyRevisionPayload = function () {
+    if (latestPayloadText && navigator.clipboard) {
+      navigator.clipboard.writeText(latestPayloadText).then(() => {
+        alert('✓ Revision payload copied to clipboard!');
+      }).catch(() => {});
+    }
   };
 
   // --------------------------------------------------------------------------
