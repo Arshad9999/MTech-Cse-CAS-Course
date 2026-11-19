@@ -1062,8 +1062,9 @@
   
     function getCourseMonogram(title) {
       if (!title) return 'CS';
-      const words = title.replace(/[^a-zA-Z0-9 ]/g, '').split(' ')
-        .filter(w => !['and', 'of', 'the', 'in', 'for', 'to', 'on', 'with', 'a', 'an'].includes(w.toLowerCase()));
+      const words = title.replace(/[^a-zA-Z0-9 ]/g, ' ').split(/\s+/)
+        .filter(w => w.length > 0 && !['and', 'of', 'the', 'in', 'for', 'to', 'on', 'with', 'a', 'an'].includes(w.toLowerCase()));
+      if (words.length === 0) return 'CS';
       if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
       return words.slice(0, 3).map(w => w[0].toUpperCase()).join('');
     }
@@ -1098,9 +1099,8 @@
     }
 
     // Fetch all study resources: guides, visuals, supplements, papers, readings, and GeeksforGeeks vault
-    let guides = {}, visuals = {}, supplements = {}, papers = {}, readings = {}, legacy = { courses: [] }, gfgData = {};
+    let guides = {}, visuals = {}, supplements = {}, papers = {}, readings = {}, legacy = { courses: [] }, gfgData = {}, quizzesData = {};
     try {
-      let quizzesData = {};
       const [g, v, s, p, r, l, gfg, qz] = await Promise.all([
         fetch('assets/featured-guides.json').then(res => res.json()).catch(() => ({})),
         fetch('assets/course-visuals.json').then(res => res.json()).catch(() => ({})),
@@ -1131,6 +1131,9 @@
 
     const courseGfgList = gfgData[selected.code] || [];
     const unitsList = selected.units || [];
+    const courseLessons = guides[selected.code] || [];
+    const courseVisualList = visuals[selected.code] || [];
+    const courseQuizList = quizzesData[selected.code] || [];
 
     // 1. Apple Course Hero Art
     const diagramInfo = courseDiagramVisuals[selected.code] || (selected.guide ? [`assets/${selected.guide}.svg`, selected.title, 'Curriculum Reference Model', '#'] : null);
@@ -1191,8 +1194,6 @@
       </section>
     ` : '';
 
-    const courseQuizList = (typeof quizzesData !== 'undefined' && quizzesData[selected.code]) || [];
-
     // 2. Quick Jump Navigation Pills
     const navPillsHtml = `
       <nav class="course-nav-pills" aria-label="Course Sections">
@@ -1249,9 +1250,6 @@
     ` : '';
 
     // 4. Topic Lessons & User Figures with GeeksforGeeks Deep-Dive Handoffs
-    const courseLessons = guides[selected.code] || [];
-    const courseVisualList = visuals[selected.code] || [];
-
     const userFigureHtml = item => `
       <figure class="user-visual">
         <a href="${esc(item.src)}" target="_blank" rel="noopener" aria-label="Open full-size illustration: ${esc(item.alt)}">
@@ -2556,23 +2554,18 @@
   async function initLegacyCoursePage() {
     const depth = document.body.dataset.depth || '../';
     const slug = document.body.dataset.course;
-    const [data, supplements] = await Promise.all([
-      fetch(depth + 'assets/course-data.json').then(r => r.json()),
-      fetch(depth + 'assets/course-supplements.json').then(r => r.json())
-    ]);
-
+    const data = await fetch(depth + 'assets/course-data.json').then(r => r.json()).catch(() => ({ courses: [] }));
     const selected = data.courses.find(c => c.slug === slug);
-    const supplement = supplements[slug];
-    if (!selected || !supplement) throw new Error('Course guide not found');
 
+    if (selected && selected.code) {
+      // Seamlessly redirect to the modern flagship subject master hub
+      window.location.replace(depth + 'subject.html?code=' + encodeURIComponent(selected.code));
+      return;
+    }
+
+    // Fallback if not matched
     $('#nav').innerHTML = renderNav(depth);
     $('#foot').innerHTML = renderFoot();
-    document.title = `${selected.code} · ${selected.title}`;
-
-    if (window.CommandPalette) {
-      const catalog = await (await fetch(depth + 'data/courses.json')).json();
-      window.CommandPalette.init(catalog);
-    }
   }
 
   // --------------------------------------------------------------------------
