@@ -124,8 +124,8 @@
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 64) {
-            const edgeAlpha = (1 - dist / 64) * Math.min(p1.alpha, p2.alpha) * 0.28;
-            ctx.strokeStyle = `rgba(0, 113, 227, ${edgeAlpha})`;
+            const edgeAlpha = (1 - dist / 64) * Math.min(p1.alpha, p2.alpha) * 0.32;
+            ctx.strokeStyle = `rgba(197, 160, 89, ${edgeAlpha})`;
 
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
@@ -137,12 +137,18 @@
 
       projected.sort((a, b) => a.z - b.z);
 
-      // Render crisp light mode nodes
+      // Render crisp luxury palette nodes (Burgundy, Gold, Emerald, Charcoal)
       for (let i = 0; i < projected.length; i++) {
         const p = projected[i];
-        ctx.fillStyle = (p.colorIndex === 0)
-          ? `rgba(0, 113, 227, ${p.alpha * 0.95})`
-          : `rgba(45, 55, 72, ${p.alpha * 0.85})`;
+        if (p.colorIndex === 0) {
+          ctx.fillStyle = `rgba(74, 14, 23, ${p.alpha * 0.95})`; // Velvet Burgundy
+        } else if (p.colorIndex === 1) {
+          ctx.fillStyle = `rgba(197, 160, 89, ${p.alpha * 0.95})`; // Champagne Gold
+        } else if (p.colorIndex === 2) {
+          ctx.fillStyle = `rgba(15, 118, 110, ${p.alpha * 0.9})`; // Emerald Green
+        } else {
+          ctx.fillStyle = `rgba(45, 55, 72, ${p.alpha * 0.75})`; // Deep Charcoal
+        }
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
